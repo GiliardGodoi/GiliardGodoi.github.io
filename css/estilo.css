@@ -1,0 +1,36 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu-lateral {
+    position: fixed;
+    float: right;
+    background-color: grey;
+    width: 200px;
+    height: 100%;
+}
+
+.painel-conteudo {
+    position: relative;
+    margin-left: 200px;
+}
+
+.painel-texto {
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+li {
+   display: inline;
+}
+
+ul {
+ list-style: none;
+}
