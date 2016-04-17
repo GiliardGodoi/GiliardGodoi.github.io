@@ -5,18 +5,17 @@ body {
 
 .menu-lateral {
     position: fixed;
-    float: right;
-    background-color: grey;
+    background-color: #004166;
     width: 200px;
     height: 100%;
 }
 
-.painel-conteudo {
+.painel-principal {
     position: relative;
     margin-left: 200px;
 }
 
-.painel-texto {
+.painel-conteudo {
     margin-left: 7px;
     margin-right: 7px;
     margin-top: 0px;
@@ -27,10 +26,24 @@ body {
     padding-bottom: 3px;
 }
 
-li {
+li.links {
    display: inline;
 }
 
+li.menu{
+    text-decoration-color: white;
+}
+
+span.menu-text{
+    color: white;
+}
+
 ul {
- list-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+
+p {
+    position: inherit;
 }
