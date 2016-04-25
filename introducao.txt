@@ -1,0 +1,12 @@
+<div class="painel-conteudo">
+                <h2>Giliard Almeida de Godoi</h2>
+                <hr>
+                <p> 
+                    Licenciado em Matemática pela Universidade Estadual do Norte do Paraná, <i>Campus</i> de Jacarezinho (2013). Atualmente cursa Tecnologia em Análise e Desenvolvimento de Sistemas, na Universidade Tecnológica Federal do Paraná, <i>Campus</i> de Cornélio Procópio. É, ainda, servidor público efetivo na Câmara Municipal de Santo Antônio da Platina.
+                </p>
+                <hr>
+                <ul class="link-container">
+                    <li class="links"><a href="https://www.facebook.com/Giliard.Godoi" target="_blank">facebook</a></li>
+                    <li class="links"><a href="https://github.com/GiliardGodoi" target="_blank">git hub</a></li>
+                </ul>
+            </div>
