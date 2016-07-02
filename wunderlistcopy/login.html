@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>LOGIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/forms.css" type="text/css"/>
+    </head>
+    <body>
+        <div class="cadastro">
+            <form action="./controller" method="POST" accept-charset="UTF-8">
+                <input type="hidden" value="LogarUsuario" name="logica">
+                
+                    <h3>ENTRAR... </h3>
+                    <div class="linha-cadastro">
+                        <label for="login">Login:</label> <input class="entrada" type="text" id="login" name="login" required>
+                    </div>
+                    <div class="linha-cadastro">
+                        <label for="senha">Senha: </label> <input class="entrada" type="password" id="senha" name="senha" required>
+                    </div>
+                    <div class="linha-cadastro">
+                        <input class="botao" type="submit" value="LOG IN">
+                    </div>                   
+            </form>
+            <p>ou então...</p>
+            <div class="linha-cadastro">
+                <form action="./cadastrar-usuario.html" method="GET">
+                    <input class="botao" type="submit" value="CADASTRE-SE" name="cadastrar" >
+                </form>
+            </div>
+            
+            <a href="./index.html">voltar</a>
+        </div>
+        
+    </body>
+</html>

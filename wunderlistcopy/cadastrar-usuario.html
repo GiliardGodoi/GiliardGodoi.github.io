@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>CADASTRO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/forms.css" type="text/css"/>
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="js/cadastro.js"></script>
+    </head>
+    <body>
+        <div class="cadastro">
+            <form action="/" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+                <input type="file" name="arquivo"/>
+                <input type="submit" name="enviar" value="ENVIAR">
+            </form>
+            <form action="." method="GET" accept-charset="UTF-8" autocomplete="off">
+                <input type="hidden" name="logica" value="CadastrarUsuario">
+                <fieldset>
+                    <legend>Cadastro Novo Usuário</legend>
+                    <div class="linha-cadastro">
+                        <label for="nome">Nome:</label>
+                        <input class="entrada" type="text" name="nome" id="nome" required>
+                    </div>
+                    <div class="linha-cadastro">
+                        <label for="email">E-mail:</label>
+                        <input class="entrada" type="text" name="email" id="email" required>
+                    </div>
+                    <div class="linha-cadastro">
+                        <label for="login">Login:</label>
+                        <input class="entrada" type="text" name="login" id="login" required>
+                    </div>
+					<div class="linha-cadastro">
+                        <label for="CEP">CEP:</label>
+                        <input class="entrada" type="text" name="cep" id="cep" required>
+                    </div>
+					<div class="linha-cadastro">
+                        <label for="rua">Rua:</label>
+                        <input class="entrada" type="text" name="rua" id="rua" required>
+                    </div>
+					<div class="linha-cadastro">
+                        <label for="bairro">Bairro:</label>
+                        <input class="entrada" type="text" name="bairro" id="bairro" required>
+                    </div>
+					<div class="linha-cadastro">
+                        <label for="cidade">Cidade:</label>
+                        <input class="entrada" type="text" name="cidade" id="cidade" required>
+                    </div>
+					<div class="linha-cadastro">
+                        <label for="uf">Estado:</label>
+                        <input class="entrada" type="text" name="uf" id="uf" required>
+                    </div>
+					
+                    <div class="linha-cadastro">
+                        <label for="senha">Senha: </label>
+                        <input class="entrada" type="password" name="senha" id="senha" required>
+                    </div>
+                    <div class="linha-cadastro">
+                        <label for="confirma-senha">Confirme a sua senha:</label>
+                        <input class="entrada" type="password" name="confirma-senha" id="confirma-senha" required>
+                    </div>
+                    <div class="linha-cadastro">
+                        <br>
+                        <input class="botao" type="submit" value="CADASTRAR" name="cadastrar">
+                        <button id="btncadastrar"></button>
+                    </div>
+                </fieldset>                    
+            </form>
+
+            <a href="index.html">voltar</a>
+        </div>
+    </body>
+</html>
