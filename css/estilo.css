@@ -37,11 +37,12 @@ li a:hover{
 	display: block;
 	width: 100%;
 	height: auto;
-	background-color: #ed8b27;
+	background-color: rgb(230, 150, 69);
 }
 
 #project{
 	display: block;
+	position: relative;
 	width: 100%;
 	height: 500px;
 	background-color: white;
@@ -51,7 +52,7 @@ li a:hover{
 	display: block;
 	width: 100%;
 	height: 500px;
-	background-color: #ed8b27;
+	background-color: rgba(252, 146, 39, 0.81);
 }
 
 #footer{
@@ -69,6 +70,6 @@ h2{
 p{
 	font-size: 20px;
 }
-img{
-	margin: 30px 15px;
+.img-responsive{
+	margin: 30px 20px;
 }
