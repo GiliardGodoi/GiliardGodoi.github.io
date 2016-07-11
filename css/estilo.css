@@ -56,9 +56,27 @@ body{
 }
 
 .img-perfil {
-	margin: 30px 0px 0px 30px;
+	margin: 30px 0px 30px 30px;
 	border-style: double;
 	border-color: dimgrey;
+}
+
+#project{
+	background-color:#f7d754;
+}
+
+#project h2{
+	font-size: 25px;
+	margin: 20px 0px 5px 15px;
+	color: #5e5e5e;
+	font-family: 'Architects Daughter', cursive;
+}
+
+#social h2{
+	font-size: 25px;
+	margin: 20px 0px 5px 15px;
+	color: #5e5e5e;
+	font-family: 'Architects Daughter', cursive;
 }
 
 #social ul{
