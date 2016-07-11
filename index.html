@@ -13,31 +13,86 @@
 		<!--JavaScript/bootstrap -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
 		<!-- Font Google -->
-		<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<ul>
-			<li><a href="#about">About</a></li>
-			<li><a href="#project">Projects</a></li>
-			<li><a href="#social">Contact</a></li>
-		</ul> </br>
-		<!-- <div id="about">
-			<img class="img-responsive img-circle img-thumbnail" src="img/perfil.jpg" alt="foto de perfil" width="400px" height="400px">
-			<div>
-				<h2>Quem sou eu?</h2>
-				<p>Licenciado em Matemática pela Universidade Estadual do Norte do Paraná (UENP) <i>Campus</i> de Jacarezinho, Estado do Paraná (PR).</p>
-				<p>Atualmente, estudante no Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas, na Universidade Tecnológica Federal do Paraná (UTFPR) <i>Campus</i> de Cornélio Procópio (PR).</p>
-				<p>É ainda, servidor público municipal na Câmara Municipal de Santo Antônio da Platina (PR).</p>
+		<div class="menu">
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#project">Projects</a></li>
+				<li><a href="#social">Contact</a></li>
+			</ul> </br>
+		</div>
+	<div id="content">
+		<div id="about">
+			<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<img src="img/perfil.jpg" width="400px" height="400px" alt="Foto de Perfil: Giliard" class="img-circle img-perfil">
+				</div>
+				<div class="col-sm-6 col-md-8"><div id="quem-sou-eu">
+					<h2>Quem sou eu?</h2>
+					<p>Licenciado em Matemática pela Universidade Estadual do Norte do Paraná (UENP) <i>Campus</i> de Jacarezinho (PR).<p>
+					<p>Atualmente, é estudante do Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas, na Universidade Tecnológica Federal do Paraná, <i>Campus</i> de Cornélio Procópio (PR).</p>
+					<p>Também é funcionário público na Câmara Municipal de Santo Antônio da Platina, cidade onde vive há seis anos.</p>
+				</div> </div>
+			</div>
 			</div>
 		</div>
-			<div id="project">
-				<h2>Projetos</h2>
-				
+		<div id="project">
+			<div class="container-fluid">
+			<h2 class="text-center">Projetos</h2>
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="well well-lg thumbnail">
+						<a href="https://sourceforge.net/projects/smartlist-utfpr/"><img src="img/smartlist.png" width="200px" height="200px">
+						</a>	
+						<div class="caption">
+							<h3 class="text-center">SmartList</h3>
+							<p class="text-justify">Projeto para a disciplina de Oficina de Integração, da Universidade Tecnologica Federal do Paraná - Campus Cornélio Procópio.</p>
+							<p class="text-justify">Trata-se de um aplicativo web de listas para supermercados, onde essas empresas teriam um espaço virtual para divulgar os seus produtos e promoções.</p>
+						</div>					
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="well well-lg thumbnail">
+						<a href="./wunderlistcopy/index.html"><img src="img/wunderlist.png" alt="Wunderlist" class="img-circle" width="200px" height="200px"></a>
+						<div class="capiton">
+							<h3 class="text-center">Wunderlist (fake)</h3>
+							<p class="text-justify">Desenvolvido durante uma disciplina de Programação Web, tinha como objetivo 'copiar' uma página web a escolha do aluno.
+							<p class="text-justify">O projeto foi desenvolvido em três etapas: desenvolver o front-end (HTML e CSS), um servidor (foi utilizado Servlet em Java) e alguns padrões de projeto ajax.</p>
+							</br>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="well well-lg thumbnail">
+						<img src="img/histograma.png" alt="histograma" class="img-circle" width="200px" height="200px">
+						<div class="caption">
+							<h3 class="text-center">Trabalho Conclusão de Curso</h3>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div id="social">
 			</div>
-
-		<div id="footer">
-		</div>-->
+		</div>
+		<div id="social">
+		<div class="container-fluid">
+		<h2>Contato</h2>
+			<ul>
+				<li><a href="https://github.com/GiliardGodoi" target="_blank"><img class="icone" src="img/icon-github.png">Git Hub</a>
+				</li>
+				<li><a href="https://br.linkedin.com/in/giliard-almeida-de-godoi-5300a547" target="_blank"><img class="icone" src="img/icon-linkedin.png">LinkedIn</a>
+				</li>
+				<li><a href="https://www.instagram.com/giliardgodoi/" target="_blank"><img class="icone" src="img/icon-insta.png">Instagram</a>
+				</li>
+			</ul>
+		</div>	
+		</div>
+	</div>
+	<footer>
+		<p>Todos os direitos reservados</p>
+	</footer>
 	</body>    
 </html>
