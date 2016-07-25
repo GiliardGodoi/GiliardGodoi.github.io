@@ -3,36 +3,43 @@ body{
 	padding: 0px;
 }
 
-.menu ul{
-	list-style: none;
-	background-color:rgba(5, 119, 67, 0.85);
-	padding: 0;
-	margin-top: 0;
-	overflow: hidden;
-	width:100%;
-	position: fixed;
-	z-index: 1;
-	box-shadow: 10px 0px 5px black;
+.navbar-brand{
+	font-family: inherit;
+	color: inherit;
 }
 
-.menu li{
-	float: left;
+.menu.navbar-default{
+	background-color:rgba(5, 119, 67, 0.85);
+	color: white;
+	font-family: 'Dosis', sans-serif;
+	box-shadow: 10px 0px 5px black;
+	border: none;
+}
+
+.menu.navbar{
+	border-radius: 0px;
+}
+
+#nome{
+	color: white;
+}
+
+#myMenu li a {
+	color: white;
+}
+
+#myMenu li a:hover{
+	color: black;
+	background-color:white;
+	text-decoration: none;
 }
 
 .menu li a{
 	display: block;
-	color: white;
 	text-align: center;
 	padding: 20px 10px 20px 10px;
 	text-decoration: none;
 	font-size: 20px;
-	font-family: 'Dosis', sans-serif;
-}
-
-.menu li a:hover{
-	color: black;
-	background-color:white;
-	text-decoration: none;
 }
 
 #content {
