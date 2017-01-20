@@ -1,7 +1,0 @@
-{ "lista" :[
-    { "id": "2", "texto" : "Ir para Parecida do Norte" },
-    { "id": "3", "texto" : "Passear no parque Birigui" },
-    { "id": "4", "texto" : "Estudar para a prova" },
-    { "id": "5", "texto" : "Filme de Luta" },
-    { "id": "6", "texto" : "Fazer uma festa de arromba para abalar geral" }
-]}
