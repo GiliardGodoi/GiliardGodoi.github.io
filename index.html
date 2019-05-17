@@ -3,44 +3,114 @@
 		<title>Giliard Godoi</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<style>
-			body {
+			
+            body {
+                font-family: Georgia, Times, serif;
+                margin: auto;
+				align-content: center;
 				background-image:url('./img/back_mini.jpg');
 				background-size:cover;
+            }
+
+            a:link, a:visited {
+                color: #0052cc;
+            }
+
+            a:hover {
+                color: #6600cc;
+            }
+
+            body > div {
+				margin-top: 5%;
+            }
+
+			h3 {
+				margin-bottom: 5px;
 			}
-			.section {
-				margin: 50px 0 0 0;
+
+			p {
+				margin-bottom: 2px;
 			}
+
+			.main-content{
+				background-color: whitesmoke;
+				border-radius: 1%;
+			}
+            .contact {
+                font-size: 24px;
+                font-weight:bold;
+                margin-top: 0;
+            }
+
+            .contact a {
+                padding-right: 15px;
+            }
+
+            .order {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .order a:last-child() {
+                padding-right: 15px;
+            }
+
+            .related {
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .toc ul {
+                font-family: helvetica, arial, sans-serif;
+                /*color: #00b0e6;*/
+                font-weight:bold;
+                list-style: none;
+                margin: 10px 0;
+            }
+
+            .toc ul li {
+                margin: 15px 0;
+            }
+
+            .toc ul li ul li {
+                margin: 3px 0;
+            }
+
+            .toc ul ul {
+                color: #333;
+                font-family: Georgia, Times, serif;
+                font-weight: normal;
+                margin: 0;
+            }
+
 		</style>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	</head>
 	<body>
-		<div class="section">
-			<div class="container">
+		<div class="">
+			<div class="container main-content">
 				<div class="jumbotron">
 					<h1 class="display-4">Giliard A. Godoi</h1>
 					<p class="lead">Frases não definem caráter, ações sim.</p>
 				</div>
-			</div>
-			<div class="container">
-				<div class="card-deck">
-					<div class="card bg-light border-light p-3">
-						<div class="card-body">
-							<h5 class="card-title">Interesses:</h5>
-							<ul class="card-text">
-								<li>Matemática</li>
-								<li>Tecnologia</li>
-							</ul>
-						</div>
-					</div>
-					<div class="card bg-light border-light p-3">
-						<div class="card-body">
-							<h5 class="card-title">Formação:</h5>
-							<ul class="card-text">
-								<li><strong>Universidade Estadual do Norte do Paraná</strong> - Licenciatura em Matemática (2010-2013)</li>
-								<li><strong>Universidade Tecnológica Federal do Paraná</strong> - Análise e Desenvolvimento de Sistemas (2014-2018)</li>
-							</ul>
-						</div>
-					</div>
+				<div class="section">
+					<h3>Formação:</h3>
+					<ul>
+						<li><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong> (2014-2018) <br> Universidade Tecnológica Federal do Paraná, Cornélio Procópio, Paraná</li>
+						<li><strong>Licenciatura em Matemática</strong> (2010-2013) </br> Universidade Estadual do Norte do Paraná, Jacarezinho, Paraná</li>
+					</ul>
+				</div>
+				<div class="section">
+					<h3>Desenvolvimento:</h3>
+					
+					<p>Alguns projetos que desenvolvo podem ser encontrados na minha página no <a href="https://github.com/GiliardGodoi">GitHub</a>.	</p>
+
+				</div>
+				<div class="section">
+					<h3>Interesses:</h3>
+
+					<p>Atualmente tenho me dedicado em aprender a linguagem Python para análise de dados e alguns tópicos sobre inteligência computacional.</p>
+					<p>Como os algoritmos podem nos ajudar a resolver problemas desafiadores da nossa sociedade?</p>
 				</div>
 			</div>
 		</div>
