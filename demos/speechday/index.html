@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      p, li {
+          font-size: 35px;
+      }
+
+      .small {
+          font-size: 10pt;
+          color: gray;
+      }
+
+      .small > img {
+          width : 40%;
+          height : 40%;
+          margin : 0;
+      }
+
+      .myimage > img {
+          width : 60%;
+          height : 60%;
+          margin : 0;
+      }
+
+      .sideimage > img {
+          z-index: 5;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+        class: center, middle
+
+        # Computer language programming: a brief introduction
+
+        ---
+
+        class: middle
+
+        Our daily lives are full of Apps, the Internet, and many others technologies.
+
+        ---
+
+        class: middle, center
+
+        .myimage[![Appollo Computer](./img/apollo_computer.jpg)]
+
+        .small[Apollo Guidance Computer (AGC), 1962]
+
+        ---
+        class: center
+
+        How do all these applications work?
+
+        .small[![Whatsapp](./img/whatssapp.png)]
+
+        ---
+
+        # What is an algorithm?
+
+        It's a set of steps to do something.
+        
+        - Making a cake
+        - Solving a math puzzle (Baskara Equation)
+
+        .center.small[![Equation example](./img/baskara.jpg)]
+
+        ---
+
+        class: middle
+
+        # An example
+
+        ```javascript
+            function baskara(a,b,c) {
+                if (a == 0) {
+                    throw "There isn't a quadratic equation anymore"
+                }
+                delta = (b ** 2) - (4 * a * c)
+                let response = {}
+
+                if (delta < 0) {
+                    throw "There aren't any root numbers"
+                }
+
+                if (delta === 0 ) {
+                    x1 = -b / 2 * a
+                    response = { x1 }
+                }
+
+                if (delta >  0 ){
+                    x1 = (-b + Math.sqrt(delta)) / (2 * a)
+                    x2 = (-b - Math.sqrt(delta)) / (2 * a)
+
+                    response = {x1, x2}
+                }
+
+                return response
+            }
+        ```
+
+        ---
+
+        class: center, middle
+
+        # Questions
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLanguage : 'javascript',
+        highlightStyle : 'monokai-sublime',  // tomorrow-night-blue, googlecode
+        highlightLines : true
+      });
+    </script>
+  </body>
+</html>
