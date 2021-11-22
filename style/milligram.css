@@ -657,4 +657,8 @@ li.navigation-item {
   padding-bottom: auto;
 }
 
+nav ~ section.container {
+  padding-top: 7rem;
+}
+
 /*# sourceMappingURL=milligram.css.map */
