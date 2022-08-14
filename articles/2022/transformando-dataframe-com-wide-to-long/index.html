@@ -1304,7 +1304,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe table-hover table-striped table">
+<table border="1" class="dataframe table-striped table table-hover">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1497,7 +1497,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe table-hover table-striped table">
+<table border="1" class="dataframe table-striped table table-hover">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1706,7 +1706,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe table-hover table-striped table">
+<table border="1" class="dataframe table-striped table table-hover">
 <thead>
 <tr>
 <th></th>
@@ -1896,7 +1896,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe table-hover table-striped table">
+<table border="1" class="dataframe table-striped table table-hover">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2062,7 +2062,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe table-hover table-striped table">
+<table border="1" class="dataframe table-striped table table-hover">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2239,7 +2239,13 @@ Um exemplo básico seria esse:</p>
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">stubnames</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="s1">'id'</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="s1">'type'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">'(tv|internet)'</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'B-radio'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
+<div class="highlight hl-python"><pre><span></span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> 
+                    <span class="n">stubnames</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">],</span> 
+                    <span class="n">i</span><span class="o">=</span><span class="s1">'id'</span><span class="p">,</span> 
+                    <span class="n">j</span><span class="o">=</span><span class="s1">'type'</span><span class="p">,</span> 
+                    <span class="n">sep</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> 
+                    <span class="n">suffix</span><span class="o">=</span><span class="s1">'(tv|internet)'</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'B-radio'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2265,7 +2271,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe table-hover table-striped table">
+<table border="1" class="dataframe table-striped table table-hover">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2457,7 +2463,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe table-hover table-striped table">
+<table border="1" class="dataframe table-striped table table-hover">
 <thead>
 <tr style="text-align: right;">
 <th></th>
