@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>  Transformando dados no formato JSON em pandas DataFrames | Giliard Godoi
+  <title>  Transformando dados no formato JSON em pandas DataFrames | Giliard Godoi
 </title>
   <link rel="canonical" href="../../../articles/2022/transformando-dados-json-pandas-dataframe/index.html">
 
@@ -50,8 +50,8 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
             <li class=" list-inline-item text-muted">|</li>
           <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/giliardgodoi" target="_blank"></a></li>
           <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/GiliardGodoi" target="_blank"></a></li>
-          <li class="list-inline-item"><a class="fab fa-linkedin" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
-          <li class="list-inline-item"><a class="fab fa-" href="https://www.getrevue.co/profile/giliardgodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-youtube" href="https://www.youtube.com/user/GiliardGodoi" target="_blank"></a></li>
       </ul>
   </div>
 </div>    </div>
@@ -59,7 +59,7 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 
   <div class="main">
     <div class="container">
-      <h1>  Transformando dados no formato JSON em pandas DataFrames
+      <h1>  Transformando dados no formato <span class="caps">JSON</span> em pandas&nbsp;DataFrames
 </h1>
       <hr>
   <article class="article">
@@ -84,15 +84,15 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
+/* <span class="caps">CSS</span> font colors for translated <span class="caps">ANSI</span> escape sequences */
 /* The color values are a mix of
    http://www.xcolors.net/dl/baskerville-ivorylight and
    http://www.xcolors.net/dl/euphrasia */
 .ansi-black-fg {
-  color: #3E424D;
+  color: #<span class="caps">3E424D</span>;
 }
 .ansi-black-bg {
-  background-color: #3E424D;
+  background-color: #<span class="caps">3E424D</span>;
 }
 .ansi-black-intense-fg {
   color: #282C36;
@@ -101,16 +101,16 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
   background-color: #282C36;
 }
 .ansi-red-fg {
-  color: #E75C58;
+  color: #<span class="caps">E75C58</span>;
 }
 .ansi-red-bg {
-  background-color: #E75C58;
+  background-color: #<span class="caps">E75C58</span>;
 }
 .ansi-red-intense-fg {
-  color: #B22B31;
+  color: #<span class="caps">B22B31</span>;
 }
 .ansi-red-intense-bg {
-  background-color: #B22B31;
+  background-color: #<span class="caps">B22B31</span>;
 }
 .ansi-green-fg {
   color: #00A250;
@@ -125,34 +125,34 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
   background-color: #007427;
 }
 .ansi-yellow-fg {
-  color: #DDB62B;
+  color: #<span class="caps">DDB62B</span>;
 }
 .ansi-yellow-bg {
-  background-color: #DDB62B;
+  background-color: #<span class="caps">DDB62B</span>;
 }
 .ansi-yellow-intense-fg {
-  color: #B27D12;
+  color: #<span class="caps">B27D12</span>;
 }
 .ansi-yellow-intense-bg {
-  background-color: #B27D12;
+  background-color: #<span class="caps">B27D12</span>;
 }
 .ansi-blue-fg {
-  color: #208FFB;
+  color: #<span class="caps">208FFB</span>;
 }
 .ansi-blue-bg {
-  background-color: #208FFB;
+  background-color: #<span class="caps">208FFB</span>;
 }
 .ansi-blue-intense-fg {
-  color: #0065CA;
+  color: #<span class="caps">0065CA</span>;
 }
 .ansi-blue-intense-bg {
-  background-color: #0065CA;
+  background-color: #<span class="caps">0065CA</span>;
 }
 .ansi-magenta-fg {
-  color: #D160C4;
+  color: #<span class="caps">D160C4</span>;
 }
 .ansi-magenta-bg {
-  background-color: #D160C4;
+  background-color: #<span class="caps">D160C4</span>;
 }
 .ansi-magenta-intense-fg {
   color: #A03196;
@@ -161,31 +161,31 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
   background-color: #A03196;
 }
 .ansi-cyan-fg {
-  color: #60C6C8;
+  color: #<span class="caps">60C6C8</span>;
 }
 .ansi-cyan-bg {
-  background-color: #60C6C8;
+  background-color: #<span class="caps">60C6C8</span>;
 }
 .ansi-cyan-intense-fg {
-  color: #258F8F;
+  color: #<span class="caps">258F8F</span>;
 }
 .ansi-cyan-intense-bg {
-  background-color: #258F8F;
+  background-color: #<span class="caps">258F8F</span>;
 }
 .ansi-white-fg {
-  color: #C5C1B4;
+  color: #<span class="caps">C5C1B4</span>;
 }
 .ansi-white-bg {
-  background-color: #C5C1B4;
+  background-color: #<span class="caps">C5C1B4</span>;
 }
 .ansi-white-intense-fg {
-  color: #A1A6B2;
+  color: #<span class="caps">A1A6B2</span>;
 }
 .ansi-white-intense-bg {
-  background-color: #A1A6B2;
+  background-color: #<span class="caps">A1A6B2</span>;
 }
 .ansi-default-inverse-fg {
-  color: #FFFFFF;
+  color: #<span class="caps">FFFFFF</span>;
 }
 .ansi-default-inverse-bg {
   background-color: #000000;
@@ -294,12 +294,12 @@ div.cell:before {
   background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #E3F2FD;
+  border-left-color: #<span class="caps">E3F2FD</span>;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #E3F2FD;
+  border-right-color: #<span class="caps">E3F2FD</span>;
   border-right-width: 1px;
-  background: #E3F2FD;
+  background: #<span class="caps">E3F2FD</span>;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -319,7 +319,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #42A5F5;
+  background: #<span class="caps">42A5F5</span>;
 }
 @media print {
   div.cell.selected,
@@ -328,7 +328,7 @@ div.cell.selected.jupyter-soft-selected:before {
   }
 }
 .edit_mode div.cell.selected {
-  border-color: #66BB6A;
+  border-color: #<span class="caps">66BB6A</span>;
 }
 .edit_mode div.cell.selected:before {
   position: absolute;
@@ -338,7 +338,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #66BB6A;
+  background: #<span class="caps">66BB6A</span>;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -491,7 +491,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #303F9F;
+  color: #<span class="caps">303F9F</span>;
   border-top: 1px solid transparent;
 }
 div.input_area > div.highlight {
@@ -532,7 +532,7 @@ div.input_area > div.highlight > pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* In <span class="caps">CM2</span>, this used to be 0.4em, but in <span class="caps">CM3</span> it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   /* Note that this should set vertical padding only, since CodeMirror assumes
        that horizontal padding will be set on CodeMirror pre */
@@ -546,7 +546,7 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+  /* In <span class="caps">CM3</span> this went to 4px from 0 in <span class="caps">CM2</span>. This sets horizontal padding only,
     use .CodeMirror-lines for vertical */
   padding: 0 0.4em;
   border: 0;
@@ -584,7 +584,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #BA2121;
+  color: #<span class="caps">BA2121</span>;
 }
 .highlight-comment {
   color: #408080;
@@ -607,11 +607,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -659,7 +659,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -673,13 +673,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #BA2121;
+  color: #<span class="caps">BA2121</span>;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -734,9 +734,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but FF barfs all over that */
+  /* ideally, this would be max-height, but <span class="caps">FF</span> barfs all over that */
   height: 24em;
-  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* <span class="caps">FF</span> needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -770,7 +770,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  /* use inner shadow to get border that is computed the same on WebKit/<span class="caps">FF</span> */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -1129,16 +1129,16 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
  .highlight pre  .hll { background-color: #ffffcc }
  .highlight pre  { background: #f8f8f8; }
- .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
- .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .c { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
  .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
  .highlight pre  .o { color: #666666 } /* Operator */
- .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
- .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .ch { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Multiline */
  .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
- .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
- .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
- .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .cpf { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Special */
  .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
  .highlight pre  .ge { font-style: italic } /* Generic.Emph */
  .highlight pre  .gr { color: #E40000 } /* Generic.Error */
@@ -1148,7 +1148,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
  .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
  .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
- .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
  .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
  .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
  .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -1156,41 +1156,41 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
  .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
  .highlight pre  .m { color: #666666 } /* Literal.Number */
- .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
  .highlight pre  .na { color: #687822 } /* Name.Attribute */
  .highlight pre  .nb { color: #008000 } /* Name.Builtin */
- .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
  .highlight pre  .no { color: #880000 } /* Name.Constant */
- .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
  .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
- .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
- .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .ne { color: #<span class="caps">CB3F38</span>; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
  .highlight pre  .nl { color: #767600 } /* Name.Label */
- .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
  .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
  .highlight pre  .nv { color: #19177C } /* Name.Variable */
- .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
  .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
  .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
  .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
  .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
  .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
  .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
- .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
- .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
- .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
- .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
- .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
- .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
- .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
- .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
- .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sa { color: #<span class="caps">BA2121</span> } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
+ .highlight pre  .dl { color: #<span class="caps">BA2121</span> } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
+ .highlight pre  .se { color: #<span class="caps">AA5D1F</span>; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #<span class="caps">A45A77</span>; font-weight: bold } /* Literal.String.Interpol */
  .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
- .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
- .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .sr { color: #<span class="caps">A45A77</span> } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
  .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
  .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
- .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .fm { color: #<span class="caps">0000FF</span> } /* Name.Function.Magic */
  .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
  .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
  .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
@@ -1198,18 +1198,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="O-que-é-JSON?">O que é JSON?<a class="anchor-link" href="#O-que-é-JSON?">¶</a></h2><p><em>JavaScript Object Notation</em> (JSON) é uma representação de dados baseado em chave-valor, seguindo a sintaxe dos objetos da linguagem JavaScript.
-Popularizou-se como uma forma de transmissão de dados pela Web, como uma alternativa à estrutura XML.</p>
-<p>Outras linguagens também oferecem suporte para se trabalhar com dados nesse formato. Por exemplo, a biblioteca nativa <a href="https://docs.python.org/3/library/json.html"><code>json</code></a> permite converter strings no formato JSON para dicionários da linguagem Python.</p>
-<p>Para que essa conversão seja possível, é necessário estabelecer uma relação entre os tipos primitivos dessas duas linguagens. Essa correspondência é bastante simples pois ambas as linguagem oferecem um tipo primitivo para strings (texto), valores numéricos (inteiros e floats), tipos booleanos (True, False) e listas, dicionários e o valor nulo (Null no caso do JavaScript e None no caso do Python).</p>
-<p>Nesse artigo, veremos como transformar dados em JSON em dataframes em quatro exemplos.</p>
+<h2 id="O-que-é-JSON?">O que é <span class="caps">JSON</span>?<a class="anchor-link" href="#O-que-é-JSON?">¶</a></h2><p><em>JavaScript Object Notation</em> (<span class="caps">JSON</span>) é uma representação de dados baseado em chave-valor, seguindo a sintaxe dos objetos da linguagem JavaScript.
+Popularizou-se como uma forma de transmissão de dados pela Web, como uma alternativa à estrutura <span class="caps">XML</span>.</p>
+<p>Outras linguagens também oferecem suporte para se trabalhar com dados nesse formato. Por exemplo, a biblioteca nativa <a href="https://docs.python.org/3/library/json.html"><code>json</code></a> permite converter strings no formato <span class="caps">JSON</span> para dicionários da linguagem Python.</p>
+<p>Para que essa conversão seja possível, é necessário estabelecer uma relação entre os tipos primitivos dessas duas linguagens. Essa correspondência é bastante simples pois ambas as linguagem oferecem um tipo primitivo para strings (texto), valores numéricos (inteiros e floats), tipos booleanos (True, False) e listas, dicionários e o valor nulo (Null no caso do JavaScript e None no caso do Python).</p>
+<p>Nesse artigo, veremos como transformar dados em <span class="caps">JSON</span> em dataframes em quatro exemplos.</p>
 <ul>
-<li>Um exemplo básico;</li>
-<li>Um exemplo intermediário</li>
-<li>Um exemplo avançado;</li>
-<li>E um exemplo um pouco mais avançado.</li>
+<li>Um exemplo básico;</li>
+<li>Um exemplo intermediário</li>
+<li>Um exemplo avançado;</li>
+<li>E um exemplo um pouco mais avançado.</li>
 </ul>
-<p>O exemplo de dados no formato JSON utilizado nesse artigo é adaptado daquele presente na página de documentação da <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON">Mozilla Web Docs</a>, e que pode ser consultado nesse link.</p>
+<p>O exemplo de dados no formato <span class="caps">JSON</span> utilizado nesse artigo é adaptado daquele presente na página de documentação da <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON">Mozilla Web Docs</a>, e que pode ser consultado nesse link.</p>
 <p>Uma versão interativa desse artigo pode ser encontrada nesse link que leva a um <a href="https://colab.research.google.com/drive/1or7ToH83QZ7IQWgtOucAwzqarW44sBis?usp=sharing">notebook do Google Collab</a>.</p>
 </div>
 </div>
@@ -1217,7 +1217,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exemplo-básico">Exemplo básico<a class="anchor-link" href="#Exemplo-básico">¶</a></h2><p>Nesse primeiro exemplo, transformaremos a string no formato JSON em um dicionário em Python utilizando a biblioteca nativa <code>json</code>.</p>
+<h2 id="Exemplo-básico">Exemplo básico<a class="anchor-link" href="#Exemplo-básico">¶</a></h2><p>Nesse primeiro exemplo, transformaremos a string no formato <span class="caps">JSON</span> em um dicionário em Python utilizando a biblioteca nativa <code>json</code>.</p>
 </div>
 </div>
 </div>
@@ -1235,8 +1235,8 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A variável <code>single_character</code> é string com um único objeto no formato JSON. Esse objeto temos as chaves <code>'name'</code>, <code>'age'</code>, <code>'secretIdentity'</code> e <code>'powers'</code>, e seus respectivos valores.</p>
-<p>Note que o valor correspondente a chave <code>'powers'</code> é uma lista de strings. O uso de listas (ou <em>arrays</em> do JavaScript) codifica uma relação de um-para-muitos. No caso, um super-heroí possui vários poderes.</p>
+<p>A variável <code>single_character</code> é string com um único objeto no formato <span class="caps">JSON</span>. Esse objeto temos as chaves <code>'name'</code>, <code>'age'</code>, <code>'secretIdentity'</code> e <code>'powers'</code>, e seus respectivos valores.</p>
+<p>Note que o valor correspondente a chave <code>'powers'</code> é uma lista de strings. O uso de listas (ou <em>arrays</em> do JavaScript) codifica uma relação de um-para-muitos. No caso, um super-heroí possui vários poderes.</p>
 </div>
 </div>
 </div>
@@ -1267,7 +1267,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos transformar (ou decodificar) esses dados em um dicionário Python utilizando a função <code>json.loads</code>. E magicamente, temos um dicionário.</p>
+<p>Podemos transformar (ou decodificar) esses dados em um dicionário Python utilizando a função <code>json.loads</code>. E magicamente, temos um dicionário.</p>
 </div>
 </div>
 </div>
@@ -1298,7 +1298,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Um pandas Dataframe pode ser construído a partir de uma lista de dicionários. Mas se passarmos esse simples dicionário <code>superhero</code> para o construtor do dataframe, também obtemos um dataframe.</p>
+<p>Um pandas Dataframe pode ser construído a partir de uma lista de dicionários. Mas se passarmos esse simples dicionário <code>superhero</code> para o construtor do dataframe, também obtemos um dataframe.</p>
 </div>
 </div>
 </div>
@@ -1342,7 +1342,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1385,7 +1385,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note que o atributo <code>powers</code>, que codifica uma lista de três poderes, e ele se desdobra em três registros (linhas).</p>
+<p>Note que o atributo <code>powers</code>, que codifica uma lista de três poderes, e ele se desdobra em três registros (linhas).</p>
 <p>Porém, esse mesmo resultado pode ser obtido utilizando a função <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html"><code>pd.read_json</code></a></p>
 </div>
 </div>
@@ -1419,7 +1419,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1462,7 +1462,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exemplo-Intermediário">Exemplo Intermediário<a class="anchor-link" href="#Exemplo-Intermediário">¶</a></h2><p>Nesse próximo exemplo, a variável <code>squad</code> é uma lista de heróis, e ainda temos o mesmo atributo <code>powers</code> com uma lista de poderes para esses heróis.</p>
+<h2 id="Exemplo-Intermediário">Exemplo Intermediário<a class="anchor-link" href="#Exemplo-Intermediário">¶</a></h2><p>Nesse próximo exemplo, a variável <code>squad</code> é uma lista de heróis, e ainda temos o mesmo atributo <code>powers</code> com uma lista de poderes para esses heróis.</p>
 </div>
 </div>
 </div>
@@ -1515,7 +1515,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nesse caso função <code>pd.read_json</code> não desdobra os valores da coluna <code>powers</code>. Os valores dessa coluna são diversas listas.</p>
+<p>Nesse caso função <code>pd.read_json</code> não desdobra os valores da coluna <code>powers</code>. Os valores dessa coluna são diversas listas.</p>
 </div>
 </div>
 </div>
@@ -1548,7 +1548,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1564,21 +1564,21 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <td>Molecule Man</td>
 <td>29</td>
 <td>Dan Jukes</td>
-<td>[Radiation resistance, Turning tiny, Radiation...</td>
+<td>[Radiation resistance, Turning tiny, Radiation…</td>
 </tr>
 <tr>
 <th>1</th>
 <td>Madame Uppercut</td>
 <td>39</td>
 <td>Jane Wilson</td>
-<td>[Million tonne punch, Damage resistance, Super...</td>
+<td>[Million tonne punch, Damage resistance, Super…</td>
 </tr>
 <tr>
 <th>2</th>
 <td>Eternal Flame</td>
 <td>1000000</td>
 <td>Unknown</td>
-<td>[Immortality, Heat Immunity, Inferno, Teleport...</td>
+<td>[Immortality, Heat Immunity, Inferno, Teleport…</td>
 </tr>
 </tbody>
 </table>
@@ -1624,7 +1624,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1723,8 +1723,8 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exemplo-Avançado">Exemplo Avançado<a class="anchor-link" href="#Exemplo-Avançado">¶</a></h2><p>No próximo exemplo, os temos as informações do esquadrão de super-heróis: nomes, cidade, ano de formação, base secreta, além da relação de membros.</p>
-<p>Novamente temos uma relação de um-para-muitos: um esquadrão e vários super-heróis. Nesse exemplo, vamos omitir a relação um-para-muitos entre heróis e poderes.</p>
+<h2 id="Exemplo-Avançado">Exemplo Avançado<a class="anchor-link" href="#Exemplo-Avançado">¶</a></h2><p>No próximo exemplo, os temos as informações do esquadrão de super-heróis: nomes, cidade, ano de formação, base secreta, além da relação de membros.</p>
+<p>Novamente temos uma relação de um-para-muitos: um esquadrão e vários super-heróis. Nesse exemplo, vamos omitir a relação um-para-muitos entre heróis e poderes.</p>
 </div>
 </div>
 </div>
@@ -1769,8 +1769,8 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O dataframe resultante da função <code>pd.read_json</code> possui os atributos do esquadrão nome, cidade, ano de formação, base secreta e se está ou não em atividade.</p>
-<p>Os valores da coluna <code>members</code> no entanto, são dicionários correspondentes aos super-heróis.</p>
+<p>O dataframe resultante da função <code>pd.read_json</code> possui os atributos do esquadrão nome, cidade, ano de formação, base secreta e se está ou não em atividade.</p>
+<p>Os valores da coluna <code>members</code> no entanto, são dicionários correspondentes aos super-heróis.</p>
 </div>
 </div>
 </div>
@@ -1803,7 +1803,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1823,7 +1823,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <td>2016</td>
 <td>Super tower</td>
 <td>True</td>
-<td>{'name': 'Molecule Man', 'age': 29, 'secretIde...</td>
+<td>{‘name’: ‘Molecule Man’, ‘age’: 29, ‘secretIde…</td>
 </tr>
 <tr>
 <th>1</th>
@@ -1832,7 +1832,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <td>2016</td>
 <td>Super tower</td>
 <td>True</td>
-<td>{'name': 'Madame Uppercut', 'age': 39, 'secret...</td>
+<td>{‘name’: ‘Madame Uppercut’, ‘age’: 39, ‘secret…</td>
 </tr>
 <tr>
 <th>2</th>
@@ -1841,7 +1841,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <td>2016</td>
 <td>Super tower</td>
 <td>True</td>
-<td>{'name': 'Eternal Flame', 'age': 1000000, 'sec...</td>
+<td>{‘name’: ‘Eternal Flame’, ‘age’: 1000000, ‘sec…</td>
 </tr>
 </tbody>
 </table>
@@ -1854,8 +1854,8 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ao utilizar o método <code>explode</code> para desdobrar essa relação os valores da coluna <code>members</code> corresponderá às chaves dos dicionários.</p>
-<p>Muito provavelmente, esse não é o resultado esperado para as nossas análises, conforme podemos ver.</p>
+<p>Ao utilizar o método <code>explode</code> para desdobrar essa relação os valores da coluna <code>members</code> corresponderá às chaves dos dicionários.</p>
+<p>Muito provavelmente, esse não é o resultado esperado para as nossas análises, conforme podemos ver.</p>
 </div>
 </div>
 </div>
@@ -1888,7 +1888,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2020,9 +2020,9 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nesses casos podemos utilizar a função <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html"><code>pd.json_normalize</code></a> para obter melhores resultados.</p>
-<p>Contudo, essa função aceita dicionários Python, por isso é necessário utilizar a função <code>json.loads</code> para decodificar os dados JSON.</p>
-<p>Essa função recebe o parâmetro <code>record_paths</code> que indica qual é o atributo principal dos dados, nesse caso o atributo <code>members</code> com informações dos nossos três super-heróis.</p>
+<p>Nesses casos podemos utilizar a função <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html"><code>pd.json_normalize</code></a> para obter melhores resultados.</p>
+<p>Contudo, essa função aceita dicionários Python, por isso é necessário utilizar a função <code>json.loads</code> para decodificar os dados <span class="caps">JSON</span>.</p>
+<p>Essa função recebe o parâmetro <code>record_paths</code> que indica qual é o atributo principal dos dados, nesse caso o atributo <code>members</code> com informações dos nossos três super-heróis.</p>
 </div>
 </div>
 </div>
@@ -2057,7 +2057,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2100,8 +2100,8 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Para manter os atributos que se refere às informações do esquadrão, utilizamos os parâmetros <code>meta</code> e passamos a lista de atributos que queremos manter.</p>
-<p>Note que os valores desses atributos são repetidos para cada um dos três super-heróis.</p>
+<p>Para manter os atributos que se refere às informações do esquadrão, utilizamos os parâmetros <code>meta</code> e passamos a lista de atributos que queremos manter.</p>
+<p>Note que os valores desses atributos são repetidos para cada um dos três super-heróis.</p>
 </div>
 </div>
 </div>
@@ -2136,7 +2136,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2251,10 +2251,10 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Então, seguimos os mesmos passos:</p>
+<p>Então, seguimos os mesmos passos:</p>
 <ol>
-<li>Decodificamos os dados em JSON em dicionários;</li>
-<li>Utilizamos a função <code>pd.json_normalize</code> definindo os parâmetros <code>record_paths</code> para chave que contém os nossos principais dados, e <code>meta</code> para aquelas chaves que queremos manter;</li>
+<li>Decodificamos os dados em <span class="caps">JSON</span> em dicionários;</li>
+<li>Utilizamos a função <code>pd.json_normalize</code> definindo os parâmetros <code>record_paths</code> para chave que contém os nossos principais dados, e <code>meta</code> para aquelas chaves que queremos manter;</li>
 </ol>
 </div>
 </div>
@@ -2294,7 +2294,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2313,7 +2313,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <td>Molecule Man</td>
 <td>29</td>
 <td>Dan Jukes</td>
-<td>[Radiation resistance, Turning tiny, Radiation...</td>
+<td>[Radiation resistance, Turning tiny, Radiation…</td>
 <td>Super hero squad</td>
 <td>Metro City</td>
 <td>Super tower</td>
@@ -2323,7 +2323,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <td>Madame Uppercut</td>
 <td>39</td>
 <td>Jane Wilson</td>
-<td>[Million tonne punch, Damage resistance, Super...</td>
+<td>[Million tonne punch, Damage resistance, Super…</td>
 <td>Super hero squad</td>
 <td>Metro City</td>
 <td>Super tower</td>
@@ -2333,7 +2333,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <td>Eternal Flame</td>
 <td>1000000</td>
 <td>Unknown</td>
-<td>[Immortality, Heat Immunity, Inferno, Teleport...</td>
+<td>[Immortality, Heat Immunity, Inferno, Teleport…</td>
 <td>Super hero squad</td>
 <td>Metro City</td>
 <td>Super tower</td>
@@ -2349,8 +2349,8 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A coluna que corresponde a chave <code>powers</code>, que mantém informações sobre os poderes dos super-heróis, mantém listas com nomes dos poderes de cada super-herói.</p>
-<p>Poderíamos desdobrar os valores dessa coluna utilizando o método <code>explode</code>, conforme pode-se ver a seguir.</p>
+<p>A coluna que corresponde a chave <code>powers</code>, que mantém informações sobre os poderes dos super-heróis, mantém listas com nomes dos poderes de cada super-herói.</p>
+<p>Poderíamos desdobrar os valores dessa coluna utilizando o método <code>explode</code>, conforme pode-se ver a seguir.</p>
 </div>
 </div>
 </div>
@@ -2383,7 +2383,7 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2518,8 +2518,8 @@ Popularizou-se como uma forma de transmissão de dados pela Web, como uma altern
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusão">Conclusão<a class="anchor-link" href="#Conclusão">¶</a></h2><p>JSON permite estruturar dados nos mais diferentes formatos. Atributos podem manter listas de valores, ou até mesmo lista de dicionários. As possibilidades são numerosas.</p>
-<p>Nesse artigo, comentamos sobre o uso de algumas funções e métodos para transformados dados no formato JSON em dataframes, sendo elas:</p>
+<h2 id="Conclusão">Conclusão<a class="anchor-link" href="#Conclusão">¶</a></h2><p><span class="caps">JSON</span> permite estruturar dados nos mais diferentes formatos. Atributos podem manter listas de valores, ou até mesmo lista de dicionários. As possibilidades são numerosas.</p>
+<p>Nesse artigo, comentamos sobre o uso de algumas funções e métodos para transformados dados no formato <span class="caps">JSON</span> em dataframes, sendo elas:</p>
 <ol>
 <li><a href="https://docs.python.org/3/library/json.html"><code>json.loads</code></a></li>
 <li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html"><code>pd.read_json</code></a></li>

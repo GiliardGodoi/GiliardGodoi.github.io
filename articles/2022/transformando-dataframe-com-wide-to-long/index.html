@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>  Transformando pandas dataframes com wide_to_long | Giliard Godoi
+  <title>  Transformando pandas dataframes com wide_to_long | Giliard Godoi
 </title>
   <link rel="canonical" href="../../../articles/2022/transformando-dataframe-com-wide-to-long/index.html">
 
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="../../../theme/css/theme.css">
 
   
-  <meta name="description" content="Quando os nomes das colunas guardam informações que podem ser importantes">
+  <meta name="description" content="Quando os nomes das colunas guardam informações que podem ser importantes">
 
 
 </head>
@@ -50,8 +50,8 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
             <li class=" list-inline-item text-muted">|</li>
           <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/giliardgodoi" target="_blank"></a></li>
           <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/GiliardGodoi" target="_blank"></a></li>
-          <li class="list-inline-item"><a class="fab fa-linkedin" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
-          <li class="list-inline-item"><a class="fab fa-" href="https://www.getrevue.co/profile/giliardgodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-youtube" href="https://www.youtube.com/user/GiliardGodoi" target="_blank"></a></li>
       </ul>
   </div>
 </div>    </div>
@@ -59,7 +59,7 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 
   <div class="main">
     <div class="container">
-      <h1>  Transformando pandas dataframes com wide_to_long
+      <h1>  Transformando pandas dataframes com&nbsp;wide_to_long
 </h1>
       <hr>
   <article class="article">
@@ -84,15 +84,15 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
+/* <span class="caps">CSS</span> font colors for translated <span class="caps">ANSI</span> escape sequences */
 /* The color values are a mix of
    http://www.xcolors.net/dl/baskerville-ivorylight and
    http://www.xcolors.net/dl/euphrasia */
 .ansi-black-fg {
-  color: #3E424D;
+  color: #<span class="caps">3E424D</span>;
 }
 .ansi-black-bg {
-  background-color: #3E424D;
+  background-color: #<span class="caps">3E424D</span>;
 }
 .ansi-black-intense-fg {
   color: #282C36;
@@ -101,16 +101,16 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
   background-color: #282C36;
 }
 .ansi-red-fg {
-  color: #E75C58;
+  color: #<span class="caps">E75C58</span>;
 }
 .ansi-red-bg {
-  background-color: #E75C58;
+  background-color: #<span class="caps">E75C58</span>;
 }
 .ansi-red-intense-fg {
-  color: #B22B31;
+  color: #<span class="caps">B22B31</span>;
 }
 .ansi-red-intense-bg {
-  background-color: #B22B31;
+  background-color: #<span class="caps">B22B31</span>;
 }
 .ansi-green-fg {
   color: #00A250;
@@ -125,34 +125,34 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
   background-color: #007427;
 }
 .ansi-yellow-fg {
-  color: #DDB62B;
+  color: #<span class="caps">DDB62B</span>;
 }
 .ansi-yellow-bg {
-  background-color: #DDB62B;
+  background-color: #<span class="caps">DDB62B</span>;
 }
 .ansi-yellow-intense-fg {
-  color: #B27D12;
+  color: #<span class="caps">B27D12</span>;
 }
 .ansi-yellow-intense-bg {
-  background-color: #B27D12;
+  background-color: #<span class="caps">B27D12</span>;
 }
 .ansi-blue-fg {
-  color: #208FFB;
+  color: #<span class="caps">208FFB</span>;
 }
 .ansi-blue-bg {
-  background-color: #208FFB;
+  background-color: #<span class="caps">208FFB</span>;
 }
 .ansi-blue-intense-fg {
-  color: #0065CA;
+  color: #<span class="caps">0065CA</span>;
 }
 .ansi-blue-intense-bg {
-  background-color: #0065CA;
+  background-color: #<span class="caps">0065CA</span>;
 }
 .ansi-magenta-fg {
-  color: #D160C4;
+  color: #<span class="caps">D160C4</span>;
 }
 .ansi-magenta-bg {
-  background-color: #D160C4;
+  background-color: #<span class="caps">D160C4</span>;
 }
 .ansi-magenta-intense-fg {
   color: #A03196;
@@ -161,31 +161,31 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
   background-color: #A03196;
 }
 .ansi-cyan-fg {
-  color: #60C6C8;
+  color: #<span class="caps">60C6C8</span>;
 }
 .ansi-cyan-bg {
-  background-color: #60C6C8;
+  background-color: #<span class="caps">60C6C8</span>;
 }
 .ansi-cyan-intense-fg {
-  color: #258F8F;
+  color: #<span class="caps">258F8F</span>;
 }
 .ansi-cyan-intense-bg {
-  background-color: #258F8F;
+  background-color: #<span class="caps">258F8F</span>;
 }
 .ansi-white-fg {
-  color: #C5C1B4;
+  color: #<span class="caps">C5C1B4</span>;
 }
 .ansi-white-bg {
-  background-color: #C5C1B4;
+  background-color: #<span class="caps">C5C1B4</span>;
 }
 .ansi-white-intense-fg {
-  color: #A1A6B2;
+  color: #<span class="caps">A1A6B2</span>;
 }
 .ansi-white-intense-bg {
-  background-color: #A1A6B2;
+  background-color: #<span class="caps">A1A6B2</span>;
 }
 .ansi-default-inverse-fg {
-  color: #FFFFFF;
+  color: #<span class="caps">FFFFFF</span>;
 }
 .ansi-default-inverse-bg {
   background-color: #000000;
@@ -294,12 +294,12 @@ div.cell:before {
   background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #E3F2FD;
+  border-left-color: #<span class="caps">E3F2FD</span>;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #E3F2FD;
+  border-right-color: #<span class="caps">E3F2FD</span>;
   border-right-width: 1px;
-  background: #E3F2FD;
+  background: #<span class="caps">E3F2FD</span>;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -319,7 +319,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #42A5F5;
+  background: #<span class="caps">42A5F5</span>;
 }
 @media print {
   div.cell.selected,
@@ -328,7 +328,7 @@ div.cell.selected.jupyter-soft-selected:before {
   }
 }
 .edit_mode div.cell.selected {
-  border-color: #66BB6A;
+  border-color: #<span class="caps">66BB6A</span>;
 }
 .edit_mode div.cell.selected:before {
   position: absolute;
@@ -338,7 +338,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #66BB6A;
+  background: #<span class="caps">66BB6A</span>;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -491,7 +491,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #303F9F;
+  color: #<span class="caps">303F9F</span>;
   border-top: 1px solid transparent;
 }
 div.input_area > div.highlight {
@@ -532,7 +532,7 @@ div.input_area > div.highlight > pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* In <span class="caps">CM2</span>, this used to be 0.4em, but in <span class="caps">CM3</span> it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   /* Note that this should set vertical padding only, since CodeMirror assumes
        that horizontal padding will be set on CodeMirror pre */
@@ -546,7 +546,7 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+  /* In <span class="caps">CM3</span> this went to 4px from 0 in <span class="caps">CM2</span>. This sets horizontal padding only,
     use .CodeMirror-lines for vertical */
   padding: 0 0.4em;
   border: 0;
@@ -584,7 +584,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #BA2121;
+  color: #<span class="caps">BA2121</span>;
 }
 .highlight-comment {
   color: #408080;
@@ -607,11 +607,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -659,7 +659,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -673,13 +673,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #BA2121;
+  color: #<span class="caps">BA2121</span>;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #AA22FF;
+  color: #<span class="caps">AA22FF</span>;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -734,9 +734,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but FF barfs all over that */
+  /* ideally, this would be max-height, but <span class="caps">FF</span> barfs all over that */
   height: 24em;
-  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* <span class="caps">FF</span> needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -770,7 +770,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  /* use inner shadow to get border that is computed the same on WebKit/<span class="caps">FF</span> */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -1129,16 +1129,16 @@ td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
  .highlight pre  .hll { background-color: #ffffcc }
  .highlight pre  { background: #f8f8f8; }
- .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
- .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .c { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
  .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
  .highlight pre  .o { color: #666666 } /* Operator */
- .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
- .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .ch { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Multiline */
  .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
- .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
- .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
- .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .cpf { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Special */
  .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
  .highlight pre  .ge { font-style: italic } /* Generic.Emph */
  .highlight pre  .gr { color: #E40000 } /* Generic.Error */
@@ -1148,7 +1148,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
  .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
  .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
- .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
  .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
  .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
  .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -1156,41 +1156,41 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
  .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
  .highlight pre  .m { color: #666666 } /* Literal.Number */
- .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
  .highlight pre  .na { color: #687822 } /* Name.Attribute */
  .highlight pre  .nb { color: #008000 } /* Name.Builtin */
- .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
  .highlight pre  .no { color: #880000 } /* Name.Constant */
- .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
  .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
- .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
- .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .ne { color: #<span class="caps">CB3F38</span>; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
  .highlight pre  .nl { color: #767600 } /* Name.Label */
- .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
  .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
  .highlight pre  .nv { color: #19177C } /* Name.Variable */
- .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
  .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
  .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
  .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
  .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
  .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
  .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
- .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
- .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
- .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
- .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
- .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
- .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
- .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
- .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
- .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sa { color: #<span class="caps">BA2121</span> } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
+ .highlight pre  .dl { color: #<span class="caps">BA2121</span> } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
+ .highlight pre  .se { color: #<span class="caps">AA5D1F</span>; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #<span class="caps">A45A77</span>; font-weight: bold } /* Literal.String.Interpol */
  .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
- .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
- .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .sr { color: #<span class="caps">A45A77</span> } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
  .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
  .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
- .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .fm { color: #<span class="caps">0000FF</span> } /* Name.Function.Magic */
  .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
  .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
  .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
@@ -1198,60 +1198,60 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
  .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="TL;DR">TL;DR<a class="anchor-link" href="#TL;DR">¶</a></h2><ul>
-<li>Formato wide table</li>
-<li>Formato long table</li>
+<h2 id="TL;DR"><span class="caps">TL</span>;<span class="caps">DR</span><a class="anchor-link" href="#TL;DR">¶</a></h2><ul>
+<li>Formato wide table</li>
+<li>Formato long table</li>
 <li>Para que serve a função <code>pd.wide_to_long</code></li>
-<li>Parâmetros da função</li>
+<li>Parâmetros da função</li>
 <li>Exemplos</li>
-<li>Outros métodos e funções relacionados.</li>
+<li>Outros métodos e funções relacionados.</li>
 </ul>
 <p>Documentação: <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.wide_to_long.html"><code>pd.wide_to_long</code></a></p>
-<p>Exemplos mencionados no artigo também estão disponíveis no Google Collab.</p>
+<p>Exemplos mencionados no artigo também estão disponíveis no Google Collab.</p>
 <h2 id="Introdução">Introdução<a class="anchor-link" href="#Introdução">¶</a></h2><p>Este artigo discute a utilização da função <code>pd.wide_to_long</code> da biblioteca <a href="https://pandas.pydata.org/">Pandas</a>. 
-“Wide tables” e “long tables” referem-se a como os dados estão organizados nas tabelas. Não sei se existe uma tradução melhor, mas eu vou adotar os conceitos de tabela no formato amplo (wide) e tabela no formato longo (long).</p>
-<h2 id="Formato-wide-table-(Formato-amplo?)">Formato wide table (Formato amplo?)<a class="anchor-link" href="#Formato-wide-table-(Formato-amplo?)">¶</a></h2><p>A organização da tabela no formato amplo é, possivelmente, o que mais naturalmente vem a mente quando pensamos em tabelas.</p>
-<p>Esse formato possui as seguintes características:</p>
+“Wide tables” e “long tables” referem-se a como os dados estão organizados nas tabelas. Não sei se existe uma tradução melhor, mas eu vou adotar os conceitos de tabela no formato amplo (wide) e tabela no formato longo (long).</p>
+<h2 id="Formato-wide-table-(Formato-amplo?)">Formato wide table (Formato amplo?)<a class="anchor-link" href="#Formato-wide-table-(Formato-amplo?)">¶</a></h2><p>A organização da tabela no formato amplo é, possivelmente, o que mais naturalmente vem a mente quando pensamos em tabelas.</p>
+<p>Esse formato possui as seguintes características:</p>
 <ul>
-<li>Cada linha corresponde a uma observação de um fenômeno (dados de uma pessoa, de uma transação bancária, etc.)</li>
-<li>Cada coluna guarda o valor de um respectivo atributo dessa observação. Por exemplo, no caso de uma pessoa, poderíamos ter uma coluna para a altura, outra para o peso, outra para a data de nascimento.</li>
+<li>Cada linha corresponde a uma observação de um fenômeno (dados de uma pessoa, de uma transação bancária, etc.)</li>
+<li>Cada coluna guarda o valor de um respectivo atributo dessa observação. Por exemplo, no caso de uma pessoa, poderíamos ter uma coluna para a altura, outra para o peso, outra para a data de nascimento.</li>
 </ul>
 <h2 id="Formato-long-table">Formato long table<a class="anchor-link" href="#Formato-long-table">¶</a></h2><p>Já no formato longo os atributos de uma observação (isto é, o que seria as colunas) estão organizados como registros de uma tabela, isto é, distribuídos pelas linhas da tabela.
-Um exemplo básico seria esse:</p>
+Um exemplo básico seria esse:</p>
 <p><img alt="Imagem com exemplo de tabelas no formato longo e amplo" class="img-fluid" src="../../../images/long-wide-table-example.jpg"/></p>
-<h2 id="Mas-para-que-serve-a-função-pd.wide_to_long?">Mas para que serve a função <code>pd.wide_to_long</code>?<a class="anchor-link" href="#Mas-para-que-serve-a-função-pd.wide_to_long?">¶</a></h2><p>O próximo exemplo é baseado em um exemplo existente na documentação, mas eu inventei um contexto a mais para esses dados.</p>
-<p>No mundo real, e pelas mais diferentes razões, os dados podem estar organizados nas mais variadas formas.</p>
-<p>Imagine por exemplo, que por alguma razão, os nomes das colunas de uma tabela codificam uma informação importante, e queiramos utilizar essa informação como valores na nossa tabela.</p>
-<p>Por exemplo, imagine a seguinte tabela com informações sobre a quantidade de vendas de dois produtos ‘A’ e ‘B’, durante cinco semanas dos anos de 2020 e 2021.</p>
-<p>Os dados estão organizados na tabela com as seguintes colunas:</p>
+<h2 id="Mas-para-que-serve-a-função-pd.wide_to_long?">Mas para que serve a função <code>pd.wide_to_long</code>?<a class="anchor-link" href="#Mas-para-que-serve-a-função-pd.wide_to_long?">¶</a></h2><p>O próximo exemplo é baseado em um exemplo existente na documentação, mas eu inventei um contexto a mais para esses dados.</p>
+<p>No mundo real, e pelas mais diferentes razões, os dados podem estar organizados nas mais variadas formas.</p>
+<p>Imagine por exemplo, que por alguma razão, os nomes das colunas de uma tabela codificam uma informação importante, e queiramos utilizar essa informação como valores na nossa tabela.</p>
+<p>Por exemplo, imagine a seguinte tabela com informações sobre a quantidade de vendas de dois produtos ‘A’ e ‘B’, durante cinco semanas dos anos de 2020 e 2021.</p>
+<p>Os dados estão organizados na tabela com as seguintes colunas:</p>
 <pre><code>    'A(weekly)-2020', 'A(weekly)-2021', 'B(weekly)-2020', 'B(weekly)-2021', 'week'
 
 </code></pre>
-<p>As colunas com informações do produto seguem o seguinte padrão: A ou B para identificar o produto seguido da expressão (weekly); um carácter de separação ‘-’; mais o valor que representa o ano (2020 ou 2021).</p>
-<p>Os nomes das colunas podem ser divididos em duas partes que, para seguir a nomeação dada pela documentação, chamaremos de prefixo e sufixo.</p>
-<p>Os prefixos seriam as expressões ‘A(weekly)’ e ‘B(weekly)’ que codificam a informação do tipo do produto.</p>
-<p>Já os sufixos seriam os valores para os anos: 2020 e 2021.</p>
-<p>Então, antes de seguir a leitura, note que identificamos nos nomes das colunas:</p>
+<p>As colunas com informações do produto seguem o seguinte padrão: A ou B para identificar o produto seguido da expressão (weekly); um carácter de separação ‘-’; mais o valor que representa o ano (2020 ou 2021).</p>
+<p>Os nomes das colunas podem ser divididos em duas partes que, para seguir a nomeação dada pela documentação, chamaremos de prefixo e sufixo.</p>
+<p>Os prefixos seriam as expressões ‘A(weekly)’ e ‘B(weekly)’ que codificam a informação do tipo do produto.</p>
+<p>Já os sufixos seriam os valores para os anos: 2020 e 2021.</p>
+<p>Então, antes de seguir a leitura, note que identificamos nos nomes das colunas:</p>
 <ul>
-<li>Um prefixo: ‘A(weekly)’ e ‘B(weekly)’ </li>
-<li>Um carácter de separação: ‘-’</li>
-<li>Um sufixo: os valores </li>
+<li>Um prefixo: ‘A(weekly)’ e ‘B(weekly)’ </li>
+<li>Um carácter de separação: ‘-’</li>
+<li>Um sufixo: os valores </li>
 </ul>
-<h2 id="Parâmetros-da-função">Parâmetros da função<a class="anchor-link" href="#Parâmetros-da-função">¶</a></h2><p>De acordo com a documentação, a função <code>pd.wide_to_long</code> possui os seguintes parâmetros:</p>
+<h2 id="Parâmetros-da-função">Parâmetros da função<a class="anchor-link" href="#Parâmetros-da-função">¶</a></h2><p>De acordo com a documentação, a função <code>pd.wide_to_long</code> possui os seguintes parâmetros:</p>
 <ul>
-<li>df é o dataframe a ser transformado.</li>
+<li>df é o dataframe a ser transformado.</li>
 <li>stubnames (str ou uma lista) indica os valores dos prefixos presentes nos nomes das colunas, que serão utilizados para transformar o dataframe. Uma definição da palavra <em>stub</em> pode ser encontrada no <a href="https://dictionary.cambridge.org/dictionary/english/stub">dicionário Cambridge</a>;</li>
-<li>i (str ou uma lista) indica as colunas que serão utilizadas com identificadores (id) das observações, essas colunas serão transformadas em índices do dataframe retornado.</li>
-<li>j (str) : indica o nome da coluna que será criada com os valores identificados pelos sufixos </li>
-<li>sep : indica o caractere de separação entre os prefixos e os sufixos dos nomes das colunas.</li>
+<li>i (str ou uma lista) indica as colunas que serão utilizadas com identificadores (id) das observações, essas colunas serão transformadas em índices do dataframe retornado.</li>
+<li>j (str) : indica o nome da coluna que será criada com os valores identificados pelos sufixos </li>
+<li>sep : indica o caractere de separação entre os prefixos e os sufixos dos nomes das colunas.</li>
 <li>suffix: aceita uma expressão regular que será utilizada para a identificação dos sufixos; <ul>
-<li>O valor padrão é <code>\d+</code> que captura valores numéricos. </li>
-<li>Esse parâmetro pode ser alterado para <code>\w+</code> que captura strings</li>
+<li>O valor padrão é <code>\d+</code> que captura valores numéricos. </li>
+<li>Esse parâmetro pode ser alterado para <code>\w+</code> que captura strings</li>
 </ul>
 </li>
 </ul>
-<p>Particularmente, eu tenho a impressão que a biblioteca pandas poderia ser muito mais consistente na escolha dos nomes dos parâmetros. Porém, eu entendo que o desenvolvimento de qualquer software é uma atividade dinâmica que envolve diversas pessoas, durante um longo período de tempo, e ter essa consistência não é uma tarefa simples.</p>
-<p>De qualquer forma, eu não acho que o nome desses parâmetros (i e j) sejam bons indicadores do que eles são. Repare que o parâmetro i pode receber uma string ou uma lista, mas o parâmetro <code>j</code> só recebe uma string, que é o nome da nova (e única) coluna criada. À primeira vista, isso pareceu meio confuso para mim.</p>
+<p>Particularmente, eu tenho a impressão que a biblioteca pandas poderia ser muito mais consistente na escolha dos nomes dos parâmetros. Porém, eu entendo que o desenvolvimento de qualquer software é uma atividade dinâmica que envolve diversas pessoas, durante um longo período de tempo, e ter essa consistência não é uma tarefa simples.</p>
+<p>De qualquer forma, eu não acho que o nome desses parâmetros (i e j) sejam bons indicadores do que eles são. Repare que o parâmetro i pode receber uma string ou uma lista, mas o parâmetro <code>j</code> só recebe uma string, que é o nome da nova (e única) coluna criada. À primeira vista, isso pareceu meio confuso para mim.</p>
 <h2 id="Exemplos-de-uso">Exemplos de uso<a class="anchor-link" href="#Exemplos-de-uso">¶</a></h2>
 </div>
 </div>
@@ -1311,7 +1311,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1388,7 +1388,7 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert {
-      background-color: #E8F0FE;
+      background-color: #<span class="caps">E8F0FE</span>;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -1400,21 +1400,21 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert:hover {
-      background-color: #E2EBFA;
+      background-color: #<span class="caps">E2EBFA</span>;
       box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
+      fill: #<span class="caps">174EA6</span>;
     }
 
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
-      fill: #D2E3FC;
+      fill: #<span class="caps">D2E3FC</span>;
     }
 
     [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
+      background-color: #<span class="caps">434B5C</span>;
       box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
+      fill: #<span class="caps">FFFFFF</span>;
     }
   </style>
 <script>
@@ -1504,7 +1504,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1609,7 +1609,7 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert {
-      background-color: #E8F0FE;
+      background-color: #<span class="caps">E8F0FE</span>;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -1621,21 +1621,21 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert:hover {
-      background-color: #E2EBFA;
+      background-color: #<span class="caps">E2EBFA</span>;
       box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
+      fill: #<span class="caps">174EA6</span>;
     }
 
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
-      fill: #D2E3FC;
+      fill: #<span class="caps">D2E3FC</span>;
     }
 
     [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
+      background-color: #<span class="caps">434B5C</span>;
       box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
+      fill: #<span class="caps">FFFFFF</span>;
     }
   </style>
 <script>
@@ -1672,7 +1672,7 @@ Um exemplo básico seria esse:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Para transformar essa tabela do formato longo para o amplo (wide), podemos utilizar o método <code>unstack</code>, como mostra o exemplo a seguir.</p>
+<p>Para transformar essa tabela do formato longo para o amplo (wide), podemos utilizar o método <code>unstack</code>, como mostra o exemplo a seguir.</p>
 </div>
 </div>
 </div>
@@ -1713,7 +1713,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr>
 <th></th>
@@ -1795,7 +1795,7 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert {
-      background-color: #E8F0FE;
+      background-color: #<span class="caps">E8F0FE</span>;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -1807,21 +1807,21 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert:hover {
-      background-color: #E2EBFA;
+      background-color: #<span class="caps">E2EBFA</span>;
       box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
+      fill: #<span class="caps">174EA6</span>;
     }
 
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
-      fill: #D2E3FC;
+      fill: #<span class="caps">D2E3FC</span>;
     }
 
     [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
+      background-color: #<span class="caps">434B5C</span>;
       box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
+      fill: #<span class="caps">FFFFFF</span>;
     }
   </style>
 <script>
@@ -1859,8 +1859,8 @@ Um exemplo básico seria esse:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Um-exemplo-avançado-do-uso-do-parâmetro-suffix">Um exemplo avançado do uso do parâmetro <code>suffix</code><a class="anchor-link" href="#Um-exemplo-avançado-do-uso-do-parâmetro-suffix">¶</a></h3><p>A página da documentação menciona rapidamente um caso de uso alternativo para o uso parâmetro <code>suffix</code>. Na verdade, essa menção encontra-se na própria descrição do parâmetro <code>suffix</code>.</p>
-<p>Imagine que temos dois produtos ‘A’ e ‘B’ e três canais de anúncio: TV, internet e rádio. Agora, digamos que estejamos interessados somente nos dados para dois canais de anúncio: TV e internet.</p>
-<p>Podemos utilizar o poder das expressões regulares para transformar os dados referente a esses dois canais de vendas e deixar o terceiro intacto.</p>
+<p>Imagine que temos dois produtos ‘A’ e ‘B’ e três canais de anúncio: <span class="caps">TV</span>, internet e rádio. Agora, digamos que estejamos interessados somente nos dados para dois canais de anúncio: <span class="caps">TV</span> e internet.</p>
+<p>Podemos utilizar o poder das expressões regulares para transformar os dados referente a esses dois canais de vendas e deixar o terceiro intacto.</p>
 <p>Neste caso, basta definir o parâmetro <code>suffix</code> com o seguinte valor <code>suffix=‘(tv|internet)’</code>.</p>
 </div>
 </div>
@@ -1903,7 +1903,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1978,7 +1978,7 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert {
-      background-color: #E8F0FE;
+      background-color: #<span class="caps">E8F0FE</span>;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -1990,21 +1990,21 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert:hover {
-      background-color: #E2EBFA;
+      background-color: #<span class="caps">E2EBFA</span>;
       box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
+      fill: #<span class="caps">174EA6</span>;
     }
 
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
-      fill: #D2E3FC;
+      fill: #<span class="caps">D2E3FC</span>;
     }
 
     [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
+      background-color: #<span class="caps">434B5C</span>;
       box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
+      fill: #<span class="caps">FFFFFF</span>;
     }
   </style>
 <script>
@@ -2069,7 +2069,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2174,7 +2174,7 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert {
-      background-color: #E8F0FE;
+      background-color: #<span class="caps">E8F0FE</span>;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -2186,21 +2186,21 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert:hover {
-      background-color: #E2EBFA;
+      background-color: #<span class="caps">E2EBFA</span>;
       box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
+      fill: #<span class="caps">174EA6</span>;
     }
 
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
-      fill: #D2E3FC;
+      fill: #<span class="caps">D2E3FC</span>;
     }
 
     [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
+      background-color: #<span class="caps">434B5C</span>;
       box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
+      fill: #<span class="caps">FFFFFF</span>;
     }
   </style>
 <script>
@@ -2237,7 +2237,7 @@ Um exemplo básico seria esse:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note que a coluna ‘B-radio’ ainda persiste no resultado final. Se não a desejamos, bastar aplicar o método <code>drop</code> nessa coluna.</p>
+<p>Note que a coluna ‘B-radio’ ainda persiste no resultado final. Se não a desejamos, bastar aplicar o método <code>drop</code> nessa coluna.</p>
 </div>
 </div>
 </div>
@@ -2278,7 +2278,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2371,7 +2371,7 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert {
-      background-color: #E8F0FE;
+      background-color: #<span class="caps">E8F0FE</span>;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -2383,21 +2383,21 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert:hover {
-      background-color: #E2EBFA;
+      background-color: #<span class="caps">E2EBFA</span>;
       box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
+      fill: #<span class="caps">174EA6</span>;
     }
 
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
-      fill: #D2E3FC;
+      fill: #<span class="caps">D2E3FC</span>;
     }
 
     [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
+      background-color: #<span class="caps">434B5C</span>;
       box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
+      fill: #<span class="caps">FFFFFF</span>;
     }
   </style>
 <script>
@@ -2434,8 +2434,8 @@ Um exemplo básico seria esse:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dica-para-definir-sutbnames-com-expressões-regulares">Dica para definir <code>sutbnames</code> com expressões regulares<a class="anchor-link" href="#Dica-para-definir-sutbnames-com-expressões-regulares">¶</a></h2><p>Um outro exemplo rapidamente mencionado na documentação, é utilizar expressões regulares para identificar os prefixos de forma programática.</p>
-<p>Por exemplo, voltemos ao dataframe do primeiro exemplo.</p>
+<h2 id="Dica-para-definir-sutbnames-com-expressões-regulares">Dica para definir <code>sutbnames</code> com expressões regulares<a class="anchor-link" href="#Dica-para-definir-sutbnames-com-expressões-regulares">¶</a></h2><p>Um outro exemplo rapidamente mencionado na documentação, é utilizar expressões regulares para identificar os prefixos de forma programática.</p>
+<p>Por exemplo, voltemos ao dataframe do primeiro exemplo.</p>
 </div>
 </div>
 </div>
@@ -2470,7 +2470,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table dataframe table-striped table-hover">
+<table border="1" class="table-striped table-hover table dataframe">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2547,7 +2547,7 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert {
-      background-color: #E8F0FE;
+      background-color: #<span class="caps">E8F0FE</span>;
       border: none;
       border-radius: 50%;
       cursor: pointer;
@@ -2559,21 +2559,21 @@ Um exemplo básico seria esse:</p>
     }
 
     .colab-df-convert:hover {
-      background-color: #E2EBFA;
+      background-color: #<span class="caps">E2EBFA</span>;
       box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
+      fill: #<span class="caps">174EA6</span>;
     }
 
     [theme=dark] .colab-df-convert {
       background-color: #3B4455;
-      fill: #D2E3FC;
+      fill: #<span class="caps">D2E3FC</span>;
     }
 
     [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
+      background-color: #<span class="caps">434B5C</span>;
       box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
       filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
+      fill: #<span class="caps">FFFFFF</span>;
     }
   </style>
 <script>
@@ -2610,7 +2610,7 @@ Um exemplo básico seria esse:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Poderíamos encontrar os valores dos prefixos utilizando o seguinte código:</p>
+<p>Poderíamos encontrar os valores dos prefixos utilizando o seguinte código:</p>
 </div>
 </div>
 </div>
@@ -2643,13 +2643,13 @@ Um exemplo básico seria esse:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Outras-funções-para-transformação-de-um-dataframe">Outras funções para transformação de um dataframe<a class="anchor-link" href="#Outras-funções-para-transformação-de-um-dataframe">¶</a></h2><p>A biblioteca pandas também oferece outras funções para alterar a estrutura de um dataframe conforme as nossas necessidades.</p>
+<h2 id="Outras-funções-para-transformação-de-um-dataframe">Outras funções para transformação de um dataframe<a class="anchor-link" href="#Outras-funções-para-transformação-de-um-dataframe">¶</a></h2><p>A biblioteca pandas também oferece outras funções para alterar a estrutura de um dataframe conforme as nossas necessidades.</p>
 <ul>
-<li><code>pd.melt</code> - converte um dataframe do formato wide para o formato longo.</li>
-<li><code>pd.pivot</code> - pode converter um dataframe do formato longo para wide.</li>
-<li><code>dataframe.pivot_table</code> - possui quase a mesma função que a função <code>pd.pivot</code> porém realiza operações de agregação de dados por exemplo, calcular uma média, mediana, realizar uma contagem.</li>
-<li><code>dataframe.stack</code> empilha colunas em índices;</li>
-<li><code>dataframe.unstack</code> desempilha índices em colunas.</li>
+<li><code>pd.melt</code> - converte um dataframe do formato wide para o formato longo.</li>
+<li><code>pd.pivot</code> - pode converter um dataframe do formato longo para wide.</li>
+<li><code>dataframe.pivot_table</code> - possui quase a mesma função que a função <code>pd.pivot</code> porém realiza operações de agregação de dados por exemplo, calcular uma média, mediana, realizar uma contagem.</li>
+<li><code>dataframe.stack</code> empilha colunas em índices;</li>
+<li><code>dataframe.unstack</code> desempilha índices em colunas.</li>
 </ul>
 </div>
 </div>
@@ -2658,7 +2658,7 @@ Um exemplo básico seria esse:</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusão">Conclusão<a class="anchor-link" href="#Conclusão">¶</a></h2><p>Neste rápido tutorial, vimos o uso da função <code>pd.wide_to_long</code>.</p>
-<p>Eu pessoalmente não conhecia essa função até bem pouco tempo atrás. Talvez porque o problema que essa função se propõe a resolver seja bem específico.</p>
+<p>Eu pessoalmente não conhecia essa função até bem pouco tempo atrás. Talvez porque o problema que essa função se propõe a resolver seja bem específico.</p>
 </div>
 </div>
 </div>
