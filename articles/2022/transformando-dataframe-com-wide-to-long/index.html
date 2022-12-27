@@ -46,7 +46,6 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
             <li class="list-inline-item"><a href="../../../pages/projetos/">Projetos</a></li>
             <li class="list-inline-item"><a href="../../../pages/organizacao/">Organização</a></li>
             <li class="list-inline-item"><a href="../../../pages/contato/">Contato</a></li>
-            <li class="list-inline-item"><a href="../../../pages/newsletter/">Newsletter</a></li>
             <li class=" list-inline-item text-muted">|</li>
           <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/giliardgodoi" target="_blank"></a></li>
           <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/GiliardGodoi" target="_blank"></a></li>
@@ -79,1126 +78,8 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
       </ul>
     </header>
     <div class="content">
-      <style type="text/css">/*!
-*
-* IPython notebook
-*
-*/
-/* <span class="caps">CSS</span> font colors for translated <span class="caps">ANSI</span> escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #<span class="caps">3E424D</span>;
-}
-.ansi-black-bg {
-  background-color: #<span class="caps">3E424D</span>;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #<span class="caps">E75C58</span>;
-}
-.ansi-red-bg {
-  background-color: #<span class="caps">E75C58</span>;
-}
-.ansi-red-intense-fg {
-  color: #<span class="caps">B22B31</span>;
-}
-.ansi-red-intense-bg {
-  background-color: #<span class="caps">B22B31</span>;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #<span class="caps">DDB62B</span>;
-}
-.ansi-yellow-bg {
-  background-color: #<span class="caps">DDB62B</span>;
-}
-.ansi-yellow-intense-fg {
-  color: #<span class="caps">B27D12</span>;
-}
-.ansi-yellow-intense-bg {
-  background-color: #<span class="caps">B27D12</span>;
-}
-.ansi-blue-fg {
-  color: #<span class="caps">208FFB</span>;
-}
-.ansi-blue-bg {
-  background-color: #<span class="caps">208FFB</span>;
-}
-.ansi-blue-intense-fg {
-  color: #<span class="caps">0065CA</span>;
-}
-.ansi-blue-intense-bg {
-  background-color: #<span class="caps">0065CA</span>;
-}
-.ansi-magenta-fg {
-  color: #<span class="caps">D160C4</span>;
-}
-.ansi-magenta-bg {
-  background-color: #<span class="caps">D160C4</span>;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #<span class="caps">60C6C8</span>;
-}
-.ansi-cyan-bg {
-  background-color: #<span class="caps">60C6C8</span>;
-}
-.ansi-cyan-intense-fg {
-  color: #<span class="caps">258F8F</span>;
-}
-.ansi-cyan-intense-bg {
-  background-color: #<span class="caps">258F8F</span>;
-}
-.ansi-white-fg {
-  color: #<span class="caps">C5C1B4</span>;
-}
-.ansi-white-bg {
-  background-color: #<span class="caps">C5C1B4</span>;
-}
-.ansi-white-intense-fg {
-  color: #<span class="caps">A1A6B2</span>;
-}
-.ansi-white-intense-bg {
-  background-color: #<span class="caps">A1A6B2</span>;
-}
-.ansi-default-inverse-fg {
-  color: #<span class="caps">FFFFFF</span>;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
-.ansibold {
-  font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
-}
-/* use dark versions for foreground, to improve visibility */
-.ansiblack {
-  color: black;
-}
-.ansired {
-  color: darkred;
-}
-.ansigreen {
-  color: darkgreen;
-}
-.ansiyellow {
-  color: #c4a000;
-}
-.ansiblue {
-  color: darkblue;
-}
-.ansipurple {
-  color: darkviolet;
-}
-.ansicyan {
-  color: steelblue;
-}
-.ansigray {
-  color: gray;
-}
-/* and light for background, for the same reason */
-.ansibgblack {
-  background-color: black;
-}
-.ansibgred {
-  background-color: red;
-}
-.ansibggreen {
-  background-color: green;
-}
-.ansibgyellow {
-  background-color: yellow;
-}
-.ansibgblue {
-  background-color: blue;
-}
-.ansibgpurple {
-  background-color: magenta;
-}
-.ansibgcyan {
-  background-color: cyan;
-}
-.ansibggray {
-  background-color: gray;
-}
-div.cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  border-radius: 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  width: 100%;
-  padding: 5px;
-  /* This acts as a spacer between cells, that is outside the border */
-  margin: 0px;
-  outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
-}
-div.cell.jupyter-soft-selected {
-  border-left-color: #<span class="caps">E3F2FD</span>;
-  border-left-width: 1px;
-  padding-left: 5px;
-  border-right-color: #<span class="caps">E3F2FD</span>;
-  border-right-width: 1px;
-  background: #<span class="caps">E3F2FD</span>;
-}
-@media print {
-  div.cell.jupyter-soft-selected {
-    border-color: transparent;
-  }
-}
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
-  border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #<span class="caps">42A5F5</span>;
-}
-@media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
-    border-color: transparent;
-  }
-}
-.edit_mode div.cell.selected {
-  border-color: #<span class="caps">66BB6A</span>;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #<span class="caps">66BB6A</span>;
-}
-@media print {
-  .edit_mode div.cell.selected {
-    border-color: transparent;
-  }
-}
-.prompt {
-  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
-  min-width: 14ex;
-  /* This padding is tuned to match the padding on the CodeMirror editor. */
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace;
-  text-align: right;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-  /* Don't highlight prompt number selection */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* Use default cursor */
-  cursor: default;
-}
-@media (max-width: 540px) {
-  .prompt {
-    text-align: left;
-  }
-}
-div.inner_cell {
-  min-width: 0;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_area {
-  border: 1px solid #cfcfcf;
-  border-radius: 2px;
-  background: #f7f7f7;
-  line-height: 1.21429em;
-}
-/* This is needed so that empty prompt areas can collapse to zero height when there
-   is no content in the output_subarea and the prompt. The main purpose of this is
-   to make sure that empty JavaScript output_subareas have no height. */
-div.prompt:empty {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-div.unrecognized_cell {
-  padding: 5px 5px 5px 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.unrecognized_cell .inner_cell {
-  border-radius: 2px;
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-  border: 1px solid #cfcfcf;
-  background: #eaeaea;
-}
-div.unrecognized_cell .inner_cell a {
-  color: inherit;
-  text-decoration: none;
-}
-div.unrecognized_cell .inner_cell a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-@media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
-    display: none;
-  }
-}
-div.code_cell {
-  /* avoid page breaking on code cells when printing */
-}
-@media print {
-  div.code_cell {
-    page-break-inside: avoid;
-  }
-}
-/* any special styling for code cells that are currently running goes here */
-div.input {
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.input {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_prompt {
-  color: #<span class="caps">303F9F</span>;
-  border-top: 1px solid transparent;
-}
-div.input_area > div.highlight {
-  margin: 0.4em;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-div.input_area > div.highlight > pre {
-  margin: 0px;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-/* The following gets added to the <head> if it is detected that the user has a
- * monospace font with inconsistent normal/bold/italic height.  See
- * notebookmain.js.  Such fonts will have keywords vertically offset with
- * respect to the rest of the text.  The user should select a better font.
- * See: https://github.com/ipython/ipython/issues/1503
- *
- * .CodeMirror span {
- *      vertical-align: bottom;
- * }
- */
-.CodeMirror {
-  line-height: 1.21429em;
-  /* Changed from 1em to our global default */
-  font-size: 14px;
-  height: auto;
-  /* Changed to auto to autogrow */
-  background: none;
-  /* Changed from white to allow our bg to show through */
-}
-.CodeMirror-scroll {
-  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
-  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-.CodeMirror-lines {
-  /* In <span class="caps">CM2</span>, this used to be 0.4em, but in <span class="caps">CM3</span> it went to 4px. We need the em value because */
-  /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
-}
-.CodeMirror-linenumber {
-  padding: 0 8px 0 4px;
-}
-.CodeMirror-gutters {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-}
-.CodeMirror pre {
-  /* In <span class="caps">CM3</span> this went to 4px from 0 in <span class="caps">CM2</span>. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
-  border: 0;
-  border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
-}
-/*
-
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-Adapted from GitHub theme
-
-*/
-.highlight-base {
-  color: #000;
-}
-.highlight-variable {
-  color: #000;
-}
-.highlight-variable-2 {
-  color: #1a1a1a;
-}
-.highlight-variable-3 {
-  color: #333333;
-}
-.highlight-string {
-  color: #<span class="caps">BA2121</span>;
-}
-.highlight-comment {
-  color: #408080;
-  font-style: italic;
-}
-.highlight-number {
-  color: #080;
-}
-.highlight-atom {
-  color: #88F;
-}
-.highlight-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.highlight-builtin {
-  color: #008000;
-}
-.highlight-error {
-  color: #f00;
-}
-.highlight-operator {
-  color: #<span class="caps">AA22FF</span>;
-  font-weight: bold;
-}
-.highlight-meta {
-  color: #<span class="caps">AA22FF</span>;
-}
-/* previously not defined, copying from default codemirror */
-.highlight-def {
-  color: #00f;
-}
-.highlight-string-2 {
-  color: #f50;
-}
-.highlight-qualifier {
-  color: #555;
-}
-.highlight-bracket {
-  color: #997;
-}
-.highlight-tag {
-  color: #170;
-}
-.highlight-attribute {
-  color: #00c;
-}
-.highlight-header {
-  color: blue;
-}
-.highlight-quote {
-  color: #090;
-}
-.highlight-link {
-  color: #00c;
-}
-/* apply the same style to codemirror */
-.cm-s-ipython span.cm-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-atom {
-  color: #88F;
-}
-.cm-s-ipython span.cm-number {
-  color: #080;
-}
-.cm-s-ipython span.cm-def {
-  color: #00f;
-}
-.cm-s-ipython span.cm-variable {
-  color: #000;
-}
-.cm-s-ipython span.cm-operator {
-  color: #<span class="caps">AA22FF</span>;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-variable-2 {
-  color: #1a1a1a;
-}
-.cm-s-ipython span.cm-variable-3 {
-  color: #333333;
-}
-.cm-s-ipython span.cm-comment {
-  color: #408080;
-  font-style: italic;
-}
-.cm-s-ipython span.cm-string {
-  color: #<span class="caps">BA2121</span>;
-}
-.cm-s-ipython span.cm-string-2 {
-  color: #f50;
-}
-.cm-s-ipython span.cm-meta {
-  color: #<span class="caps">AA22FF</span>;
-}
-.cm-s-ipython span.cm-qualifier {
-  color: #555;
-}
-.cm-s-ipython span.cm-builtin {
-  color: #008000;
-}
-.cm-s-ipython span.cm-bracket {
-  color: #997;
-}
-.cm-s-ipython span.cm-tag {
-  color: #170;
-}
-.cm-s-ipython span.cm-attribute {
-  color: #00c;
-}
-.cm-s-ipython span.cm-header {
-  color: blue;
-}
-.cm-s-ipython span.cm-quote {
-  color: #090;
-}
-.cm-s-ipython span.cm-link {
-  color: #00c;
-}
-.cm-s-ipython span.cm-error {
-  color: #f00;
-}
-.cm-s-ipython span.cm-tab {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-div.output_wrapper {
-  /* this position must be relative to enable descendents to be absolute within it */
-  position: relative;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  z-index: 1;
-}
-/* class for the output area when it should be height-limited */
-div.output_scroll {
-  /* ideally, this would be max-height, but <span class="caps">FF</span> barfs all over that */
-  height: 24em;
-  /* <span class="caps">FF</span> needs this *and the wrapper* to specify full width, or it will shrinkwrap */
-  width: 100%;
-  overflow: auto;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  display: block;
-}
-/* output div while it is collapsed */
-div.output_collapsed {
-  margin: 0px;
-  padding: 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-div.out_prompt_overlay {
-  height: 100%;
-  padding: 0px 0.4em;
-  position: absolute;
-  border-radius: 2px;
-}
-div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/<span class="caps">FF</span> */
-  -webkit-box-shadow: inset 0 0 1px #000;
-  box-shadow: inset 0 0 1px #000;
-  background: rgba(240, 240, 240, 0.5);
-}
-div.output_prompt {
-  color: #D84315;
-}
-/* This class is the outer container of all output sections. */
-div.output_area {
-  padding: 0px;
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.output_area .MathJax_Display {
-  text-align: left !important;
-}
-div.output_area 
-div.output_area 
-div.output_area img,
-div.output_area svg {
-  max-width: 100%;
-  height: auto;
-}
-div.output_area img.unconfined,
-div.output_area svg.unconfined {
-  max-width: none;
-}
-div.output_area .mglyph > img {
-  max-width: none;
-}
-/* This is needed to protect the pre formating from global settings such
-   as that of bootstrap */
-.output {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.output_area {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-div.output_area pre {
-  margin: 0;
-  padding: 1px 0 1px 0;
-  border: 0;
-  vertical-align: baseline;
-  color: black;
-  background-color: transparent;
-  border-radius: 0;
-}
-/* This class is for the output subarea inside the output_area and after
-   the prompt div. */
-div.output_subarea {
-  overflow-x: auto;
-  padding: 0.4em;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-  max-width: calc(100% - 14ex);
-}
-div.output_scroll div.output_subarea {
-  overflow-x: visible;
-}
-/* The rest of the output_* classes are for special styling of the different
-   output types */
-/* all text output has this class: */
-div.output_text {
-  text-align: left;
-  color: #000;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-}
-/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
-div.output_stderr {
-  background: #fdd;
-  /* very light red background for stderr */
-}
-div.output_latex {
-  text-align: left;
-}
-/* Empty output_javascript divs should have no height */
-div.output_javascript:empty {
-  padding: 0;
-}
-.js-error {
-  color: darkred;
-}
-/* raw_input styles */
-div.raw_input_container {
-  line-height: 1.21429em;
-  padding-top: 5px;
-}
-pre.raw_input_prompt {
-  /* nothing needed here. */
-}
-input.raw_input {
-  font-family: monospace;
-  font-size: inherit;
-  color: inherit;
-  width: auto;
-  /* make sure input baseline aligns with prompt */
-  vertical-align: baseline;
-  /* padding + margin = 0.5em between prompt and cursor */
-  padding: 0em 0.25em;
-  margin: 0em 0.25em;
-}
-input.raw_input:focus {
-  box-shadow: none;
-}
-p.p-space {
-  margin-bottom: 10px;
-}
-div.output_unrecognized {
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-}
-div.output_unrecognized a {
-  color: inherit;
-  text-decoration: none;
-}
-div.output_unrecognized a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.rendered_html {
-  color: #000;
-  /* any extras will just be numbers: */
-}
-
-
-
-.rendered_html :link {
-  text-decoration: underline;
-}
-.rendered_html :visited {
-  text-decoration: underline;
-}
-
-
-
-
-
-
-.rendered_html h1:first-child {
-  margin-top: 0.538em;
-}
-.rendered_html h2:first-child {
-  margin-top: 0.636em;
-}
-.rendered_html h3:first-child {
-  margin-top: 0.777em;
-}
-.rendered_html h4:first-child {
-  margin-top: 1em;
-}
-.rendered_html h5:first-child {
-  margin-top: 1em;
-}
-.rendered_html h6:first-child {
-  margin-top: 1em;
-}
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
-
-
-
-
-
-
-
-
-.rendered_html * + ul {
-  margin-top: 1em;
-}
-.rendered_html * + ol {
-  margin-top: 1em;
-}
-
-
-
-
-
-.rendered_html pre,
-
-
-
-
-.rendered_html tr,
-.rendered_html th,
-
-
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-.rendered_html * + table {
-  margin-top: 1em;
-}
-
-.rendered_html * + p {
-  margin-top: 1em;
-}
-
-.rendered_html * + img {
-  margin-top: 1em;
-}
-.rendered_html img,
-
-.rendered_html img.unconfined,
-
-
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] 
-div.text_cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.text_cell > div.prompt {
-    display: none;
-  }
-}
-div.text_cell_render {
-  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
-  outline: none;
-  resize: none;
-  width: inherit;
-  border-style: none;
-  padding: 0.5em 0.5em 0.5em 0.4em;
-  color: #000;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-a.anchor-link:link {
-  text-decoration: none;
-  padding: 0px 20px;
-  visibility: hidden;
-}
-h1:hover .anchor-link,
-h2:hover .anchor-link,
-h3:hover .anchor-link,
-h4:hover .anchor-link,
-h5:hover .anchor-link,
-h6:hover .anchor-link {
-  visibility: visible;
-}
-.text_cell.rendered .input_area {
-  display: none;
-}
-.text_cell.rendered 
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered 
-.text_cell.unrendered .text_cell_render {
-  display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
-}
-.cm-header-1,
-.cm-header-2,
-.cm-header-3,
-.cm-header-4,
-.cm-header-5,
-.cm-header-6 {
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.cm-header-1 {
-  font-size: 185.7%;
-}
-.cm-header-2 {
-  font-size: 157.1%;
-}
-.cm-header-3 {
-  font-size: 128.6%;
-}
-.cm-header-4 {
-  font-size: 110%;
-}
-.cm-header-5 {
-  font-size: 100%;
-  font-style: italic;
-}
-.cm-header-6 {
-  font-size: 100%;
-  font-style: italic;
-}
-</style>
-<style type="text/css">pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
- .highlight pre  .hll { background-color: #ffffcc }
- .highlight pre  { background: #f8f8f8; }
- .highlight pre  .c { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment */
- .highlight pre  .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
- .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
- .highlight pre  .o { color: #666666 } /* Operator */
- .highlight pre  .ch { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Hashbang */
- .highlight pre  .cm { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Multiline */
- .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
- .highlight pre  .cpf { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.PreprocFile */
- .highlight pre  .c1 { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Single */
- .highlight pre  .cs { color: #<span class="caps">3D7B7B</span>; font-style: italic } /* Comment.Special */
- .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
- .highlight pre  .ge { font-style: italic } /* Generic.Emph */
- .highlight pre  .gr { color: #E40000 } /* Generic.Error */
- .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
- .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
- .highlight pre  .go { color: #717171 } /* Generic.Output */
- .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
- .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
- .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
- .highlight pre  .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
- .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
- .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
- .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
- .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
- .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
- .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
- .highlight pre  .m { color: #666666 } /* Literal.Number */
- .highlight pre  .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
- .highlight pre  .na { color: #687822 } /* Name.Attribute */
- .highlight pre  .nb { color: #008000 } /* Name.Builtin */
- .highlight pre  .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
- .highlight pre  .no { color: #880000 } /* Name.Constant */
- .highlight pre  .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
- .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
- .highlight pre  .ne { color: #<span class="caps">CB3F38</span>; font-weight: bold } /* Name.Exception */
- .highlight pre  .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
- .highlight pre  .nl { color: #767600 } /* Name.Label */
- .highlight pre  .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
- .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
- .highlight pre  .nv { color: #19177C } /* Name.Variable */
- .highlight pre  .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
- .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
- .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
- .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
- .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
- .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
- .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
- .highlight pre  .sa { color: #<span class="caps">BA2121</span> } /* Literal.String.Affix */
- .highlight pre  .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
- .highlight pre  .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
- .highlight pre  .dl { color: #<span class="caps">BA2121</span> } /* Literal.String.Delimiter */
- .highlight pre  .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
- .highlight pre  .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
- .highlight pre  .se { color: #<span class="caps">AA5D1F</span>; font-weight: bold } /* Literal.String.Escape */
- .highlight pre  .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
- .highlight pre  .si { color: #<span class="caps">A45A77</span>; font-weight: bold } /* Literal.String.Interpol */
- .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
- .highlight pre  .sr { color: #<span class="caps">A45A77</span> } /* Literal.String.Regex */
- .highlight pre  .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
- .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
- .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
- .highlight pre  .fm { color: #<span class="caps">0000FF</span> } /* Name.Function.Magic */
- .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
- .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
- .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
- .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
- .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="TL;DR"><span class="caps">TL</span>;<span class="caps">DR</span><a class="anchor-link" href="#TL;DR">¶</a></h2><ul>
+      <h2><span class="caps">TL</span>;<span class="caps">DR</span></h2>
+<ul>
 <li>Formato wide table</li>
 <li>Formato long table</li>
 <li>Para que serve a função <code>pd.wide_to_long</code></li>
@@ -1208,25 +89,28 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </ul>
 <p>Documentação: <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.wide_to_long.html"><code>pd.wide_to_long</code></a></p>
 <p>Exemplos mencionados no artigo também estão disponíveis no Google Collab.</p>
-<h2 id="Introdução">Introdução<a class="anchor-link" href="#Introdução">¶</a></h2><p>Este artigo discute a utilização da função <code>pd.wide_to_long</code> da biblioteca <a href="https://pandas.pydata.org/">Pandas</a>. 
+<h2>Introdução</h2>
+<p>Este artigo discute a utilização da função <code>pd.wide_to_long</code> da biblioteca <a href="https://pandas.pydata.org/">Pandas</a>. 
 “Wide tables” e “long tables” referem-se a como os dados estão organizados nas tabelas. Não sei se existe uma tradução melhor, mas eu vou adotar os conceitos de tabela no formato amplo (wide) e tabela no formato longo (long).</p>
-<h2 id="Formato-wide-table-(Formato-amplo?)">Formato wide table (Formato amplo?)<a class="anchor-link" href="#Formato-wide-table-(Formato-amplo?)">¶</a></h2><p>A organização da tabela no formato amplo é, possivelmente, o que mais naturalmente vem a mente quando pensamos em tabelas.</p>
+<h2>Formato wide table (Formato amplo?)</h2>
+<p>A organização da tabela no formato amplo é, possivelmente, o que mais naturalmente vem a mente quando pensamos em tabelas.</p>
 <p>Esse formato possui as seguintes características:</p>
 <ul>
 <li>Cada linha corresponde a uma observação de um fenômeno (dados de uma pessoa, de uma transação bancária, etc.)</li>
 <li>Cada coluna guarda o valor de um respectivo atributo dessa observação. Por exemplo, no caso de uma pessoa, poderíamos ter uma coluna para a altura, outra para o peso, outra para a data de nascimento.</li>
 </ul>
-<h2 id="Formato-long-table">Formato long table<a class="anchor-link" href="#Formato-long-table">¶</a></h2><p>Já no formato longo os atributos de uma observação (isto é, o que seria as colunas) estão organizados como registros de uma tabela, isto é, distribuídos pelas linhas da tabela.
+<h2>Formato long table</h2>
+<p>Já no formato longo os atributos de uma observação (isto é, o que seria as colunas) estão organizados como registros de uma tabela, isto é, distribuídos pelas linhas da tabela.
 Um exemplo básico seria esse:</p>
 <p><img alt="Imagem com exemplo de tabelas no formato longo e amplo" class="img-fluid" src="../../../images/long-wide-table-example.jpg"/></p>
-<h2 id="Mas-para-que-serve-a-função-pd.wide_to_long?">Mas para que serve a função <code>pd.wide_to_long</code>?<a class="anchor-link" href="#Mas-para-que-serve-a-função-pd.wide_to_long?">¶</a></h2><p>O próximo exemplo é baseado em um exemplo existente na documentação, mas eu inventei um contexto a mais para esses dados.</p>
-<p>No mundo real, e pelas mais diferentes razões, os dados podem estar organizados nas mais variadas formas.</p>
+<h2>Mas para que serve a função <code>pd.wide_to_long</code>?</h2>
+<p>O próximo exemplo é baseado em um exemplo existente na documentação, mas eu inventei um contexto a mais para esses dados.</p>
+<p>No mundo real, e pelas mais diferentes razões, os dados podem estar organizados nas mais variadas formas. </p>
 <p>Imagine por exemplo, que por alguma razão, os nomes das colunas de uma tabela codificam uma informação importante, e queiramos utilizar essa informação como valores na nossa tabela.</p>
 <p>Por exemplo, imagine a seguinte tabela com informações sobre a quantidade de vendas de dois produtos ‘A’ e ‘B’, durante cinco semanas dos anos de 2020 e 2021.</p>
 <p>Os dados estão organizados na tabela com as seguintes colunas:</p>
-<pre><code>    'A(weekly)-2020', 'A(weekly)-2021', 'B(weekly)-2020', 'B(weekly)-2021', 'week'
-
-</code></pre>
+<div class="highlight"><pre><span></span><code>    'A(weekly)-2020', 'A(weekly)-2021', 'B(weekly)-2020', 'B(weekly)-2021', 'week'
+</code></pre></div>
 <p>As colunas com informações do produto seguem o seguinte padrão: A ou B para identificar o produto seguido da expressão (weekly); um carácter de separação ‘-’; mais o valor que representa o ano (2020 ou 2021).</p>
 <p>Os nomes das colunas podem ser divididos em duas partes que, para seguir a nomeação dada pela documentação, chamaremos de prefixo e sufixo.</p>
 <p>Os prefixos seriam as expressões ‘A(weekly)’ e ‘B(weekly)’ que codificam a informação do tipo do produto.</p>
@@ -1237,64 +121,32 @@ Um exemplo básico seria esse:</p>
 <li>Um carácter de separação: ‘-’</li>
 <li>Um sufixo: os valores </li>
 </ul>
-<h2 id="Parâmetros-da-função">Parâmetros da função<a class="anchor-link" href="#Parâmetros-da-função">¶</a></h2><p>De acordo com a documentação, a função <code>pd.wide_to_long</code> possui os seguintes parâmetros:</p>
+<h2>Parâmetros da função</h2>
+<p>De acordo com a documentação, a função <code>pd.wide_to_long</code> possui os seguintes parâmetros:</p>
 <ul>
 <li>df é o dataframe a ser transformado.</li>
 <li>stubnames (str ou uma lista) indica os valores dos prefixos presentes nos nomes das colunas, que serão utilizados para transformar o dataframe. Uma definição da palavra <em>stub</em> pode ser encontrada no <a href="https://dictionary.cambridge.org/dictionary/english/stub">dicionário Cambridge</a>;</li>
 <li>i (str ou uma lista) indica as colunas que serão utilizadas com identificadores (id) das observações, essas colunas serão transformadas em índices do dataframe retornado.</li>
 <li>j (str) : indica o nome da coluna que será criada com os valores identificados pelos sufixos </li>
 <li>sep : indica o caractere de separação entre os prefixos e os sufixos dos nomes das colunas.</li>
-<li>suffix: aceita uma expressão regular que será utilizada para a identificação dos sufixos; <ul>
+<li>suffix: aceita uma expressão regular que será utilizada para a identificação dos sufixos; </li>
 <li>O valor padrão é <code>\d+</code> que captura valores numéricos. </li>
 <li>Esse parâmetro pode ser alterado para <code>\w+</code> que captura strings</li>
 </ul>
-</li>
-</ul>
-<p>Particularmente, eu tenho a impressão que a biblioteca pandas poderia ser muito mais consistente na escolha dos nomes dos parâmetros. Porém, eu entendo que o desenvolvimento de qualquer software é uma atividade dinâmica que envolve diversas pessoas, durante um longo período de tempo, e ter essa consistência não é uma tarefa simples.</p>
+<p>Particularmente, eu tenho a impressão que a biblioteca pandas poderia ser muito mais consistente na escolha dos nomes dos parâmetros. Porém, eu entendo que o desenvolvimento de qualquer software é uma atividade dinâmica que envolve diversas pessoas, durante um longo período de tempo, e ter essa consistência não é uma tarefa simples. </p>
 <p>De qualquer forma, eu não acho que o nome desses parâmetros (i e j) sejam bons indicadores do que eles são. Repare que o parâmetro i pode receber uma string ou uma lista, mas o parâmetro <code>j</code> só recebe uma string, que é o nome da nova (e única) coluna criada. À primeira vista, isso pareceu meio confuso para mim.</p>
-<h2 id="Exemplos-de-uso">Exemplos de uso<a class="anchor-link" href="#Exemplos-de-uso">¶</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<h2>Exemplos de uso</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A(weekly)-2020'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A(weekly)-2020'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
                    <span class="s1">'A(weekly)-2021'</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
                    <span class="s1">'B(weekly)-2020'</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
                    <span class="s1">'B(weekly)-2021'</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">44</span><span class="p">],</span>
                    <span class="s1">'week'</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
 
 <span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[2]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
+</code></pre></div>
 <div id="df-14b1c82d-2b26-4bbd-a03a-9f527bc6e8c7">
 <div class="colab-df-container">
 <div>
@@ -1311,7 +163,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table-striped table-hover table dataframe">
+<table border="1" class="table-hover dataframe table-striped table">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1443,51 +295,16 @@ Um exemplo básico seria esse:</p>
       </script>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [3]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[3]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>Index(['A(weekly)-2020', 'A(weekly)-2021', 'B(weekly)-2020', 'B(weekly)-2021',
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Index(['A(weekly)-2020', 'A(weekly)-2021', 'B(weekly)-2020', 'B(weekly)-2021',
        'week'],
-      dtype='object')</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="c1"># Neste caso não seria necessário passar o valor do parâmetro `suffix` já que por padrão ele é '\d+'</span>
+      dtype='object')
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Neste caso não seria necessário passar o valor do parâmetro `suffix` já que por padrão ele é '\d+'</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">stubnames</span><span class="o">=</span><span class="p">[</span><span class="s1">'A(weekly)'</span><span class="p">,</span> <span class="s1">'B(weekly)'</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="s1">'week'</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="s1">'year'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">'\d+'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[4]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
+</code></pre></div>
 <div id="df-8a64cb72-21c9-4a46-9ccb-679f68e94dc0">
 <div class="colab-df-container">
 <div>
@@ -1504,7 +321,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table-striped table-hover table dataframe">
+<table border="1" class="table-hover dataframe table-striped table">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -1664,35 +481,11 @@ Um exemplo básico seria esse:</p>
       </script>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>Para transformar essa tabela do formato longo para o amplo (wide), podemos utilizar o método <code>unstack</code>, como mostra o exemplo a seguir.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [5]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">_</span> <span class="c1"># captura a resposta da célula anterior</span>
+<div class="highlight"><pre><span></span><code><span class="n">df2</span> <span class="o">=</span> <span class="n">_</span> <span class="c1"># captura a resposta da célula anterior</span>
 
 <span class="n">df2</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[5]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
+</code></pre></div>
 <div id="df-40b3196e-ce35-4583-bf71-ed6b0b65821e">
 <div class="colab-df-container">
 <div>
@@ -1713,7 +506,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table-striped table-hover table dataframe">
+<table border="1" class="table-hover dataframe table-striped table">
 <thead>
 <tr>
 <th></th>
@@ -1850,27 +643,12 @@ Um exemplo básico seria esse:</p>
       </script>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Um-exemplo-avançado-do-uso-do-parâmetro-suffix">Um exemplo avançado do uso do parâmetro <code>suffix</code><a class="anchor-link" href="#Um-exemplo-avançado-do-uso-do-parâmetro-suffix">¶</a></h3><p>A página da documentação menciona rapidamente um caso de uso alternativo para o uso parâmetro <code>suffix</code>. Na verdade, essa menção encontra-se na própria descrição do parâmetro <code>suffix</code>.</p>
-<p>Imagine que temos dois produtos ‘A’ e ‘B’ e três canais de anúncio: <span class="caps">TV</span>, internet e rádio. Agora, digamos que estejamos interessados somente nos dados para dois canais de anúncio: <span class="caps">TV</span> e internet.</p>
-<p>Podemos utilizar o poder das expressões regulares para transformar os dados referente a esses dois canais de vendas e deixar o terceiro intacto.</p>
+<h3>Um exemplo avançado do uso do parâmetro <code>suffix</code></h3>
+<p>A página da documentação menciona rapidamente um caso de uso alternativo para o uso parâmetro <code>suffix</code>. Na verdade, essa menção encontra-se na própria descrição do parâmetro <code>suffix</code>.</p>
+<p>Imagine que temos dois produtos ‘A’ e ‘B’ e três canais de anúncio: <span class="caps">TV</span>, internet e rádio. Agora, digamos que estejamos interessados somente nos dados para dois canais de anúncio: <span class="caps">TV</span> e internet. </p>
+<p>Podemos utilizar o poder das expressões regulares para transformar os dados referente a esses dois canais de vendas e deixar o terceiro intacto. </p>
 <p>Neste caso, basta definir o parâmetro <code>suffix</code> com o seguinte valor <code>suffix=‘(tv|internet)’</code>.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [6]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A-tv'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+<div class="highlight"><pre><span></span><code><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A-tv'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
                    <span class="s1">'A-internet'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
                    <span class="s1">'B-tv'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
                    <span class="s1">'B-internet'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
@@ -1878,15 +656,7 @@ Um exemplo básico seria esse:</p>
                    <span class="s1">'id'</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
                    <span class="p">})</span>
 <span class="n">df3</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[6]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
+</code></pre></div>
 <div id="df-170f846c-1846-4a75-a861-65ad48bb8e94">
 <div class="colab-df-container">
 <div>
@@ -1903,7 +673,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table-striped table-hover table dataframe">
+<table border="1" class="table-hover dataframe table-striped table">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2033,26 +803,8 @@ Um exemplo básico seria esse:</p>
       </script>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">stubnames</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="s1">'id'</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="s1">'type'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">'(tv|internet)'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[7]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">stubnames</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="s1">'id'</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="s1">'type'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">'(tv|internet)'</span><span class="p">)</span>
+</code></pre></div>
 <div id="df-41da72f8-dc3d-4f0f-ad82-89b7e05e30d8">
 <div class="colab-df-container">
 <div>
@@ -2069,7 +821,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table-striped table-hover table dataframe">
+<table border="1" class="table-hover dataframe table-striped table">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2229,39 +981,15 @@ Um exemplo básico seria esse:</p>
       </script>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>Note que a coluna ‘B-radio’ ainda persiste no resultado final. Se não a desejamos, bastar aplicar o método <code>drop</code> nessa coluna.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> 
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> 
                     <span class="n">stubnames</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">],</span> 
                     <span class="n">i</span><span class="o">=</span><span class="s1">'id'</span><span class="p">,</span> 
                     <span class="n">j</span><span class="o">=</span><span class="s1">'type'</span><span class="p">,</span> 
                     <span class="n">sep</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> 
                     <span class="n">suffix</span><span class="o">=</span><span class="s1">'(tv|internet)'</span><span class="p">)</span>
                 <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'B-radio'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[8]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
+</code></pre></div>
 <div id="df-ff2d824c-0a98-4ee6-842c-5f342c1f91a2">
 <div class="colab-df-container">
 <div>
@@ -2278,7 +1006,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table-striped table-hover table dataframe">
+<table border="1" class="table-hover dataframe table-striped table">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2426,34 +1154,11 @@ Um exemplo básico seria esse:</p>
       </script>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dica-para-definir-sutbnames-com-expressões-regulares">Dica para definir <code>sutbnames</code> com expressões regulares<a class="anchor-link" href="#Dica-para-definir-sutbnames-com-expressões-regulares">¶</a></h2><p>Um outro exemplo rapidamente mencionado na documentação, é utilizar expressões regulares para identificar os prefixos de forma programática.</p>
+<h2>Dica para definir <code>sutbnames</code> com expressões regulares</h2>
+<p>Um outro exemplo rapidamente mencionado na documentação, é utilizar expressões regulares para identificar os prefixos de forma programática.</p>
 <p>Por exemplo, voltemos ao dataframe do primeiro exemplo.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
+<div class="highlight"><pre><span></span><code><span class="n">df</span>
+</code></pre></div>
 <div id="df-9ea3b5f4-e1f2-42ae-aaf9-2d469077ce6d">
 <div class="colab-df-container">
 <div>
@@ -2470,7 +1175,7 @@ Um exemplo básico seria esse:</p>
         text-align: right;
     }
 </style>
-<table border="1" class="table-striped table-hover table dataframe">
+<table border="1" class="table-hover dataframe table-striped table">
 <thead>
 <tr style="text-align: right;">
 <th></th>
@@ -2602,48 +1307,18 @@ Um exemplo básico seria esse:</p>
       </script>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>Poderíamos encontrar os valores dos prefixos utilizando o seguinte código:</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [12]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-python"><pre><span></span><span class="n">stubnames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">stubnames</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
     <span class="nb">set</span><span class="p">([</span><span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
         <span class="sa">r</span><span class="s1">'[A-B]\(.*\)'</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="k">if</span> <span class="n">match</span> <span class="o">!=</span> <span class="p">[]</span> <span class="p">])</span>
 <span class="p">)</span>
 
 <span class="n">stubnames</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[12]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>['A(weekly)', 'B(weekly)']</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Outras-funções-para-transformação-de-um-dataframe">Outras funções para transformação de um dataframe<a class="anchor-link" href="#Outras-funções-para-transformação-de-um-dataframe">¶</a></h2><p>A biblioteca pandas também oferece outras funções para alterar a estrutura de um dataframe conforme as nossas necessidades.</p>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>['A(weekly)', 'B(weekly)']
+</code></pre></div>
+<h2>Outras funções para transformação de um dataframe</h2>
+<p>A biblioteca pandas também oferece outras funções para alterar a estrutura de um dataframe conforme as nossas necessidades.</p>
 <ul>
 <li><code>pd.melt</code> - converte um dataframe do formato wide para o formato longo.</li>
 <li><code>pd.pivot</code> - pode converter um dataframe do formato longo para wide.</li>
@@ -2651,46 +1326,9 @@ Um exemplo básico seria esse:</p>
 <li><code>dataframe.stack</code> empilha colunas em índices;</li>
 <li><code>dataframe.unstack</code> desempilha índices em colunas.</li>
 </ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusão">Conclusão<a class="anchor-link" href="#Conclusão">¶</a></h2><p>Neste rápido tutorial, vimos o uso da função <code>pd.wide_to_long</code>.</p>
+<h2>Conclusão</h2>
+<p>Neste rápido tutorial, vimos o uso da função <code>pd.wide_to_long</code>. </p>
 <p>Eu pessoalmente não conhecia essa função até bem pouco tempo atrás. Talvez porque o problema que essa função se propõe a resolver seja bem específico.</p>
-</div>
-</div>
-</div>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
-        "    showMathMenu: true," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['$','$'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        " linebreaks: { automatic: true, width: '95% container' }, " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
-
     </div>
   </article>
     </div>
