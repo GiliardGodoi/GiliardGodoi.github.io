@@ -256,8 +256,12 @@ e uma última para os arquivos de <em>datasets</em> que serão utilizados para i
 <div class="highlight"><pre><span></span><code><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"images"</span><span class="p">,</span> <span class="s2">"pdfs"</span><span class="p">,</span> <span class="s2">"extras"</span><span class="p">,</span> <span class="s2">"datasets"</span><span class="p">]</span>
 </code></pre></div>
 <p>Para fazer referência no nosso blog, dos arquivos contidos em uma dessas pastas, nós utilizamos a seguinte sintaxe  dentro dos nossos arquivos <em>markdown</em> que serão convertidos em <em>html</em>.</p>
-<div class="highlight"><pre><span></span><code><span class="gh"># ![python logo]({static}/images/python_icon.png)</span>
-<span class="gh"># [Pelican Documenation]({static}/pdfs/pelican.pdf)</span>
+<div class="highlight"><pre><span></span><code>Por exemplo, como é mostrado na imagem abaixo:
+
+![<span class="nt">python logo</span>](<span class="na">{static}/images/python_icon.png</span>)
+
+Exemplo de como disponibilizar um arquivo em pdf.
+[<span class="nt">Pelican Documenation</span>](<span class="na">{static}/pdfs/pelican.pdf</span>)
 </code></pre></div>
 <h2>Configurar o ícone do site</h2>
 <p>Favicon são aqueles ícones que identificam um site nas guias do navegador ou então na barra de endereços. Você pode saber mais sobre eles nessa página da <a href="https://pt.wikipedia.org/wiki/Favicon">Wikipedia</a>.</p>
