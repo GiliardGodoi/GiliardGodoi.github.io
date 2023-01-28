@@ -80,9 +80,12 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
     <div class="content">
       <p>No dia-a-dia, é comum criarmos ambientes diferentes para cada um dos nossos projeto, evitando possíveis conflitos entre versões de pacotes etc.
 Quando se trata de análise de dados, muitas vezes também somos tentados a instalar o <a href="https://jupyter.org/"><em>Jupyter Notebook</em></a> em cada um desses novos ambientes. </p>
-<p>Contudo, eu já me confrontei com uma situação em que eu tinha um ambiente para rodar simulações e um outro ambiente para analisar os dados dessas simulações. No ambiente de simulações, eu estava desenvolvendo um <a href="https://pt.wikipedia.org/wiki/Algoritmo_gen%C3%A9tico">Algoritmo Genético</a> com suas próprias dependências, que possívelmente seria aberto e distribuído depois.</p>
-<p>Nesse cenário não é interessante 
-Nesse caso eu decidir por isolar cada um dos ambientes, o de desenvolvimento do meu pacote ‘simulador’, e da análise de dados sobre as simulações.</p>
+<p>Contudo, eu já me confrontei com uma situação em que eu tinha um ambiente para rodar simulações e um outro ambiente para analisar os dados dessas simulações. 
+No ambiente de simulações, eu estava desenvolvendo um <a href="https://pt.wikipedia.org/wiki/Algoritmo_gen%C3%A9tico">Algoritmo Genético</a> (<span class="caps">AG</span>) com suas próprias dependências, que possívelmente seria aberto e distribuído depois.</p>
+<p>Nesse cenário, não seria interessante abrir o código do meu <span class="caps">AG</span> com as ‘dependências’ dos pacotes que eu utilizei para fazer a análise de dados (i.e. <code>pandas</code>, <code>matplotlib</code> etc.).
+Porém, existia algumas análises específicas em que eu queria demonstrar como os algoritmos de cruzamento em que eu estava trabalhando, funcionavam. 
+Então eu instalei eles, como se fossem um pacote, nesse ambiente em que eu estava fazendo a análise de dados.</p>
+<p>Recentemente, eu passei por uma situação semelhante e então resolvi escrever esse post.</p>
 <h1>Registrando um kernel para um ambiente</h1>
 <p>Vamos supor que eu criei um ambiente com a nova versão do Python 3.11 usando o <code>conda</code> (Eu gosto de usar o <code>conda</code> não me critique!)</p>
 <div class="highlight"><pre><span></span><code>conda create --name py311 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
