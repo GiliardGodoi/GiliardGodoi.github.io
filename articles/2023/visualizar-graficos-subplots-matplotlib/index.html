@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Visualizar vários gráficos com subplots no Matplotlib | Giliard Godoi
+</title>
+  <link rel="canonical" href="../../../articles/2023/visualizar-graficos-subplots-matplotlib/index.html">
+
+    <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../../../manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../../../theme/css/theme.css">
+
+  
+  <meta name="description" content="Nesse artigo, eu mostro como gerar vários gráficos em uma mesma figura com subplots e no final uma dica especial.">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="../../../">
+        <img class="img-fluid rounded" src=../../../images/profile-pic.png width=250 height=150 alt="Giliard Godoi">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="../../../">Giliard Godoi</a></h1>
+      <p class="text-muted">Machine Learning. Análise e visualização de dados. Inteligência Artificial. Computação Evolutiva.
+Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista.
+</p>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="../../../pages/sobre/">Sobre</a></li>
+            <li class="list-inline-item"><a href="../../../pages/projetos/">Projetos</a></li>
+            <li class="list-inline-item"><a href="../../../pages/organizacao/">Organização</a></li>
+            <li class="list-inline-item"><a href="../../../pages/contato/">Contato</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/giliardgodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/GiliardGodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-youtube" href="https://www.youtube.com/user/GiliardGodoi" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Visualizar vários gráficos com subplots no&nbsp;Matplotlib
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2023-02-25T00:00:00-03:00">
+          <i class="fas fa-clock"></i>
+          sáb 25 fevereiro 2023
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="../../../category/data-visualization">data-visualization</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="../../../tag/matplotlib">#matplotlib</a>,               <a href="../../../tag/subplots">#subplots</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>Quando fazemos Análise Exploratória dos Dados, talvez queiramos analisar a distribuição univariada dos atributos presentes em um conjunto de dados. </p>
+<p>Podemos utilizar a técnica <em>small multiplus</em> para criar pequenos gráficos, uma para cada atributo, para compor a nossa figura. Esse subgráficos são, para o <code>matplotlib</code> os <em>subplots</em>.</p>
+<p>Existem vários meios para construir vários gráficos em uma mesma figura ~que a princípio, nem eu mesmo sabia~.</p>
+<h2>Utilizando a função <code>plt.subplot</code></h2>
+<p>Sabemos que os diferentes <em>subplots</em> que compõe uma figura podiam ser acessados utilizando a sintaxe <code>.
+A função</code>plt.subplot` aceita que esses valores de linhas, colunas e indexes seja passado de duas formas:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># plt.subplot(rows columns index)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span> <span class="c1"># todo mundo junto</span>
+
+<span class="c1"># ... código do gráfico 1 aqui ...</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># todo mundo separado</span>
+
+<span class="c1"># ... código do gráfico 2 aqui ...</span>
+</code></pre></div>
+<p>Esse comando significa que estamos criando uma figura com 2 linhas e 2 colunas (2 x 2 = 4 gráficos) e estamos acessando (retornando) o primeiro, o segundo, o terceiro ou o quarto gráfico, isto é, o gráfico correspondente ao valor de <code>index</code>.</p>
+<p>Esse é o exemplo presente na <a href="https://matplotlib.org/stable/gallery/pyplots/pyplot_two_subplots.html#sphx-glr-gallery-pyplots-pyplot-two-subplots-py">documentação</a> do <code>matplotlib</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="n">t1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'tab:blue'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">t2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'tab:orange'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="gráfico da função" class="img-fluid" src="../../../images/2023/exemplo-com-subplots.png"/></p>
+<h2>Utilizando <code>plt.subplots</code></h2>
+<p>Sim, <code>subplots</code> no plural!</p>
+<p>Já a função <code>plt.subplots</code> também aceita como parâmetros o número de linhas e o número de colunas da nossa figura, porém ela retorna dois objetos: um objeto do tipo <code>Figure</code> e um <em>array</em> de <code>Axes</code>.</p>
+<p>No exemplo a seguir, é criado uma nova figura com dois gráficos, alinhados em uma linha e duas colunas. O <em>array</em> de Axes é desempacotado (<em>unpacked</em>) já na chamada da função.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Exemplo com grid unidimensional 1 por 2" class="img-fluid" src="../../../images/2023/exemplo-grid-unidimensional.png"/></p>
+<p>Essa chada cria dois gráficos lado à lado na figura.</p>
+<p>Nesse outro exemplo, é criado uma figura com quatro gráficos, distribuídos num <em>grid</em> de 2x2.</p>
+<div class="highlight"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Exemplo com grid bidimensional" class="img-fluid" src="../../../images/2023/exemplo-grid-bidimensional.png"/></p>
+<p>A variável <code>axs</code> retonarda nesse caso, nada mais é que um <em>array</em> do <code>numpy</code> </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">axs</span><span class="p">)</span>
+    <span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="s1">'&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">axs</span><span class="o">.</span><span class="n">shape</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p>Mas um <em>array</em> pode ser pouco intuitivo de se trabalhar.</p>
+<h2>A dica mágica: <code>flatten</code></h2>
+<p>Como a variável <code>axs</code> é um <em>array</em> do <code>numpy</code>, então nós podemos utilizar o método <code>flatten</code> para transformar esse <em>array</em> com mais de uma dimensão em um <em>array</em> unidimensional. </p>
+<p>Imagine, por exemplo, que tenhamos uma dataframe com nove atributos numéricos e nós queremos analisar analisar a distribuição desses atributos separadamente. </p>
+<p>Podemos então utilizar um padrão de código como o do exemplo a seguir:</p>
+<div class="highlight"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">axs</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">column</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</code></pre></div>
+<p>Eu vi esse padrão de código <a href="https://www.kaggle.com/code/prasadperera/the-boston-housing-dataset">nesse notebook</a> do kaggle, que é parecido com <a href="https://www.kaggle.com/code/agnihotri/linear-regression-and-pca-boston-housing">esse outro aqui</a>!</p>
+<p>E a minha “contribuição” foi usar o <code>enumerate</code> ali… rsrs</p>
+<p>Maravilha, né?</p>
+<h2>Referências</h2>
+<p>Documentação ofical do <code>Matplotlib</code>. <strong>matplotlib.pyplot.subplot</strong>. Disponível em <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html</a> Acessado em 24 de fev. de 2023.</p>
+<p>Documentação ofical do <code>Matplotlib</code>. <strong>matplotlib.pyplot.subplots</strong>. Disponível em <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</a> Acessado em 24 de fev. de 2023.</p>
+<p>Documentação oficial do <code>NumPy</code>. <strong>numpy.ndarray.flatten</strong>. Disponível em <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html">https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html</a> Acessado em 24 de fev. de 2023. </p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="../../../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../../../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../../../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
