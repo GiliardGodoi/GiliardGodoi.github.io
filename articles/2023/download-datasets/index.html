@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Diferentes formas de baixar dados da internet com bibliotecas do Python | Giliard Godoi
+</title>
+  <link rel="canonical" href="../../../articles/2023/download-datasets/index.html">
+
+    <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../../../manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../../../theme/css/theme.css">
+
+  
+  <meta name="description" content="Vamos explorar como baixar datasets da internet com algumas bibliotecas do Python como urllib, requests e até o pandas.">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="../../../">
+        <img class="img-fluid rounded" src=../../../images/profile-pic.png width=250 height=150 alt="Giliard Godoi">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="../../../">Giliard Godoi</a></h1>
+      <p class="text-muted">Machine Learning. Análise e visualização de dados. Inteligência Artificial. Computação Evolutiva.
+Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista.
+</p>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="../../../pages/sobre/">Sobre</a></li>
+            <li class="list-inline-item"><a href="../../../pages/projetos/">Projetos</a></li>
+            <li class="list-inline-item"><a href="../../../pages/organizacao/">Organização</a></li>
+            <li class="list-inline-item"><a href="../../../pages/contato/">Contato</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/giliardgodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/GiliardGodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-youtube" href="https://www.youtube.com/user/GiliardGodoi" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Diferentes formas de baixar dados da internet com bibliotecas do&nbsp;Python
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2023-04-13T00:00:00-03:00">
+          <i class="fas fa-clock"></i>
+          qui 13 abril 2023
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="../../../category/utils">utils</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="../../../tag/python">#python</a>,               <a href="../../../tag/urllib">#urllib</a>,               <a href="../../../tag/requests">#requests</a>,               <a href="../../../tag/pandas">#pandas</a>,               <a href="../../../tag/json">#json</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>(Re)Lendo o livro <a href="https://www.amazon.com.br/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646"><em>Hands-On Machine Learning with Scikit-Learn, Keras <span class="amp">&amp;</span> TensorFlow</em></a> o autor mostra diversas maneiras de baixar <em>datasets</em> da <em>internet</em>. Nesse artigo, vou resumir algumas maneiras utilizando as bibliotecas padrão do Python para fazer <em>download</em> de arquivos compactados, arquivos no formato <em>csv</em> e <em>json</em>.</p>
+<h2>Repositórios dados</h2>
+<p>Existem muitos sites que reunem e disponibilizam <em>datasets</em> de forma pública. Alguns desses repositório, inclusive, disponibilizam dados com a finalidade de incentivar o aprendizado e a prática de <em>machine learning</em>.</p>
+<p>Alguns desses repositórios são:</p>
+<ol>
+<li><a href="https://archive.ics.uci.edu/ml/index.php"><span class="caps">UCI</span> Machine Learning Repository</a>: que agora possui uma versão beta mais apresentável <a href="https://archive-beta.ics.uci.edu/">https://archive-beta.ics.uci.edu/</a></li>
+<li><a href="https://datasetsearch.research.google.com/">Google Dataset Search</a>: buscador especializado do Google para pesquisa de <em>datasets</em>, semelhante ao <a href="https://scholar.google.com/">Google Acadêmico</a>.</li>
+<li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a>: possui a promessa de <em>Find Open Datasets and Machine Learning Projects</em>.</li>
+<li>Portal de Dados Abertos do Governo Federal <a href="https://dados.gov.br/home">https://dados.gov.br/home</a></li>
+</ol>
+<h2>Baixando arquivos compactados</h2>
+<p>O primeiro exemplo é baixar um arquivo com compactado, na extensão .tar (e família) utilizando a biblioteca <code>urllib</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">tarfile</span>
+
+<span class="c1"># dataset aleatório</span>
+<span class="n">source_url</span> <span class="o">=</span> <span class="s2">"https://figshare.com/ndownloader/files/28272789"</span>
+<span class="n">dest_file</span> <span class="o">=</span> <span class="s2">"dataset.tar.xz"</span>
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s2">"my-folder"</span>
+
+<span class="n">downloaded_file</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">source_url</span><span class="p">,</span> <span class="n">dest_file</span><span class="p">)</span>
+<span class="n">tar_bz2_file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">downloaded_file</span><span class="p">)</span>
+<span class="n">tar_bz2_file</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">data_folder</span><span class="p">)</span>
+<span class="n">tar_bz2_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>Os passos são os seguintes:
+1. baixar os dados com o método <code>urllib.request.urlretrieve</code>
+2. criar um objeto <code>tarfile.TarFile</code> com o método <code>tarfile.open</code>
+3. extrair o arquivo compacta com <code>.extractall</code> passando o diretório destino
+4. fechar o arquivo com <code>.close</code></p>
+<p>O segundo exemplo é utilizando a biblioteca <code>zipfile</code> para extrair dados de arquivos compactados com a extensão <code>.zip</code></p>
+<p>Nesse exemplo, vamos incrementar e utilizar a biblioteca <code>pathlib</code> para representar os diretórios e arquivos.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://armazenamento-dadosabertos.s3.sa-east-1.amazonaws.com/Plano+2016_2018_Grupos+de+dados/INSS+-+Benef%C3%ADcios+Concedidos/beneficios-concedidos-06-2021.zip"</span>
+
+<span class="n">dest</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">'destination'</span><span class="p">)</span>
+<span class="n">dest</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">'dataset.zip'</span>
+
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+
+<span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
+</code></pre></div>
+<p>De forma semelhante, utilizamos os seguinte passo:
+1. Criamos a pasta destino e o arquivo
+2. Baixamos o arquivo com <code>urllib.requests.urlretrieve</code>
+3. criamos um objeto do tipo <code>zipfile.ZipFile</code> indicando o modo leitura <code>r</code> 
+4. E logo em seguida já estraímos os dados para a pasta destino</p>
+<p>Também podemos utilizar <code>urllib.requests.urlretrieve</code> para baixar arquivos em outros formatos como <code>.txt</code> ou <code>.csv</code>.</p>
+<p>Porém, vamos olhar outras possibilidades, como a biblioteca <code>requests</code>.</p>
+<h2>Baixando arquivos em outros formatos</h2>
+<p>O uso é similar com a biblioteca <code>requests</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv'</span>
+
+<span class="n">dest</span> <span class="o">=</span> <span class="s1">'sample.csv'</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+<ol>
+<li>Primeiro, fazemos uma requisição pelo arquivo, obtendo um objeto do tipo <code>requests.models.Response</code> e salvando na variável <code>response</code>.</li>
+<li>Para salvar o arquivo solicitado em um arquivo local, recuperamos o conteúdo da resposta, salvo no parametro <code>.content</code></li>
+<li>Aqui tomamos um cuidado ao garantir que estamos utilizando o conjunto de caractéres corretos para ler esse arquivo, que é o <code>utf-8</code></li>
+<li>E salvamos esse arquivo localmente</li>
+</ol>
+<h2>Utilizando <code>pandas</code></h2>
+<p>Uma outra opção interessante é passar a <code>url</code> direto como argumento da função <code>pd.read_csv</code> da biblioteca pandas.</p>
+<p>Assim para a url acima já poderíamos ter feito:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">'https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv'</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div>
+<p>Existe a possibilidade de salvar esses dados localmente com o método <code>df.to_csv</code> presente no objeto DataFrame.</p>
+<h2>Baixando arquivos <em><span class="caps">JSON</span></em></h2>
+<p>A última dica é sobre baixar arquivos no formato <span class="caps">JSON</span>. Em um primeiro momento, poderíamos utilizar a biblioteca <code>json</code> para transformar a <em>string</em> retornada na resposta para um dicionário do Python, como no exemplo abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</code></pre></div>
+<p>Porém, o próprio objeto de resposta possui um método <code>.json</code> que faz essa transformação.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://servicodados.ibge.gov.br/api/v1/localidades/municipios"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+<p>Pode não ser perfeito, mas deve resolver um punhado de situação.</p>
+<h2>Desabafo</h2>
+<p>A onda do chatGPT me desanimou para criara conteúdos desse tipo: sem querer encher linguiça, direto ao ponto; sem <em>enrolation</em> para ser um caça níquel de publicidade.</p>
+<p>Mas quer saber, eu vou fazer porque acho divertido! E é sobre isso!</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="../../../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../../../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../../../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
