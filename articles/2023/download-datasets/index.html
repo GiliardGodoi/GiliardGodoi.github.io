@@ -88,7 +88,7 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 <li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a>: possui a promessa de <em>Find Open Datasets and Machine Learning Projects</em>.</li>
 <li>Portal de Dados Abertos do Governo Federal <a href="https://dados.gov.br/home">https://dados.gov.br/home</a></li>
 </ol>
-<h2>Baixando arquivos compactados</h2>
+<h2>Baixando arquivos compactados com <code>urllib</code></h2>
 <p>O primeiro exemplo é baixar um arquivo com compactado, na extensão .tar (e família) utilizando a biblioteca <code>urllib</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">urllib</span>
 <span class="kn">import</span> <span class="nn">tarfile</span>
@@ -131,7 +131,7 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 4. E logo em seguida já estraímos os dados para a pasta destino</p>
 <p>Também podemos utilizar <code>urllib.requests.urlretrieve</code> para baixar arquivos em outros formatos como <code>.txt</code> ou <code>.csv</code>.</p>
 <p>Porém, vamos olhar outras possibilidades, como a biblioteca <code>requests</code>.</p>
-<h2>Baixando arquivos em outros formatos</h2>
+<h2>Baixando arquivos com <code>requests</code></h2>
 <p>O uso é similar com a biblioteca <code>requests</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -162,7 +162,7 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
 <p>Existe a possibilidade de salvar esses dados localmente com o método <code>df.to_csv</code> presente no objeto DataFrame.</p>
-<h2>Baixando arquivos <em><span class="caps">JSON</span></em></h2>
+<h2>Baixando arquivos <span class="caps">JSON</span></h2>
 <p>A última dica é sobre baixar arquivos no formato <span class="caps">JSON</span>. Em um primeiro momento, poderíamos utilizar a biblioteca <code>json</code> para transformar a <em>string</em> retornada na resposta para um dicionário do Python, como no exemplo abaixo:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 
