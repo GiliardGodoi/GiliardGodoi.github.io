@@ -103,11 +103,13 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 <span class="n">tar_bz2_file</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">data_folder</span><span class="p">)</span>
 <span class="n">tar_bz2_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<p>Os passos são os seguintes:
-1. baixar os dados com o método <code>urllib.request.urlretrieve</code>
-2. criar um objeto <code>tarfile.TarFile</code> com o método <code>tarfile.open</code>
-3. extrair o arquivo compacta com <code>.extractall</code> passando o diretório destino
-4. fechar o arquivo com <code>.close</code></p>
+<p>Os passos são os seguintes:</p>
+<ol>
+<li>baixar os dados com o método <code>urllib.request.urlretrieve</code>;</li>
+<li>criar um objeto <code>tarfile.TarFile</code> com o método <code>tarfile.open</code>;</li>
+<li>extrair o arquivo compacta com <code>.extractall</code> passando o diretório destino;</li>
+<li>fechar o arquivo com <code>.close</code>.</li>
+</ol>
 <p>O segundo exemplo é utilizando a biblioteca <code>zipfile</code> para extrair dados de arquivos compactados com a extensão <code>.zip</code></p>
 <p>Nesse exemplo, vamos incrementar e utilizar a biblioteca <code>pathlib</code> para representar os diretórios e arquivos.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">zipfile</span>
@@ -124,11 +126,13 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 
 <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
 </code></pre></div>
-<p>De forma semelhante, utilizamos os seguinte passo:
-1. Criamos a pasta destino e o arquivo
-2. Baixamos o arquivo com <code>urllib.requests.urlretrieve</code>
-3. criamos um objeto do tipo <code>zipfile.ZipFile</code> indicando o modo leitura <code>r</code> 
-4. E logo em seguida já estraímos os dados para a pasta destino</p>
+<p>De forma semelhante, utilizamos os seguinte passo:</p>
+<ol>
+<li>Criamos a pasta destino e o arquivo;</li>
+<li>Baixamos o arquivo com <code>urllib.requests.urlretrieve</code>;</li>
+<li>criamos um objeto do tipo <code>zipfile.ZipFile</code> indicando o modo leitura <code>r</code> ;</li>
+<li>E logo em seguida já estraímos os dados para a pasta destino.</li>
+</ol>
 <p>Também podemos utilizar <code>urllib.requests.urlretrieve</code> para baixar arquivos em outros formatos como <code>.txt</code> ou <code>.csv</code>.</p>
 <p>Porém, vamos olhar outras possibilidades, como a biblioteca <code>requests</code>.</p>
 <h2>Baixando arquivos com <code>requests</code></h2>
@@ -145,10 +149,10 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </code></pre></div>
 <ol>
-<li>Primeiro, fazemos uma requisição pelo arquivo, obtendo um objeto do tipo <code>requests.models.Response</code> e salvando na variável <code>response</code>.</li>
-<li>Para salvar o arquivo solicitado em um arquivo local, recuperamos o conteúdo da resposta, salvo no parametro <code>.content</code></li>
-<li>Aqui tomamos um cuidado ao garantir que estamos utilizando o conjunto de caractéres corretos para ler esse arquivo, que é o <code>utf-8</code></li>
-<li>E salvamos esse arquivo localmente</li>
+<li>Primeiro, fazemos uma requisição pelo arquivo, obtendo um objeto do tipo <code>requests.models.Response</code> e salvando na variável <code>response</code>;</li>
+<li>Para salvar o arquivo solicitado em um arquivo local, recuperamos o conteúdo da resposta, salvo no parametro <code>.content</code>;</li>
+<li>Aqui tomamos um cuidado ao garantir que estamos utilizando o conjunto de caractéres corretos para ler esse arquivo, que é o <code>utf-8</code>;</li>
+<li>E salvamos esse arquivo localmente.</li>
 </ol>
 <h2>Utilizando <code>pandas</code></h2>
 <p>Uma outra opção interessante é passar a <code>url</code> direto como argumento da função <code>pd.read_csv</code> da biblioteca pandas.</p>
