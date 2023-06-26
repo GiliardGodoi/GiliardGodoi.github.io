@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Aplicações Web para projetos de Data Science e IA com Streamlit | Giliard Godoi
+</title>
+  <link rel="canonical" href="../../../articles/2023/streamlit-primeiras-impressoes/index.html">
+
+    <link rel="apple-touch-icon" href="../../../apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../../../manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="../../../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../../../theme/css/theme.css">
+
+  
+  <meta name="description" content="Um pouco sobre a minha experiência utilizando streamlit para prototipação de aplicações web">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="../../../">
+        <img class="img-fluid rounded" src=../../../images/profile-pic.png width=250 height=150 alt="Giliard Godoi">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="../../../">Giliard Godoi</a></h1>
+      <p class="text-muted">Machine Learning. Análise e visualização de dados. Inteligência Artificial. Computação Evolutiva.
+Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista.
+</p>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="../../../pages/sobre/">Sobre</a></li>
+            <li class="list-inline-item"><a href="../../../pages/projetos/">Projetos</a></li>
+            <li class="list-inline-item"><a href="../../../pages/organizacao/">Organização</a></li>
+            <li class="list-inline-item"><a href="../../../pages/contato/">Contato</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/giliardgodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/GiliardGodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-youtube" href="https://www.youtube.com/user/GiliardGodoi" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Aplicações Web para projetos de Data Science e <span class="caps">IA</span> com&nbsp;Streamlit
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2023-06-26T00:00:00-03:00">
+          <i class="fas fa-clock"></i>
+          seg 26 junho 2023
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="../../../category/utils">utils</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="../../../tag/streamlit">#streamlit</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>Este artigo não é um tutorial de como criar uma aplicação com Streamlit, porém é um relato da minha experiência utilizando o Streamlit Community.</p>
+<p><a href="https://streamlit.io/">Streamlit</a> é uma biblioteca low code que auxilia a construir aplicações sofisticadas para projetos de Data Science e Inteligência Artificial. Imagine que você quer prototipar rapidamente uma tela para o seu cliente, para demonstrar o predição de seu modelo, ou como ele poderá ser utilizado pelos consultores internos da empresa. São nesses casos que o streamlit pode ser utilizado.</p>
+<p>Fácil desde a instalação (tudo o que você precisa é fazer <code>pip install streamlit</code>) uma aplicação é definida por uma <em>script</em> em Python. Por exemplo para criar uma tela de boas vindas, só precisaríamos do seguinte <em>script</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+
+<span class="sd">'''# Boas Vindas ao mundo do Streamlit'''</span>
+
+<span class="n">nome</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s1">'Digite o seu nome:'</span><span class="p">)</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Seja bem vindo, </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div>
+<p>Para executar esse código e exibir no seu navegador, basta executar o comando <code>streamlit run [app.py](http://app.py)</code> ( digamos que o <em>script</em> foi salvo no arquivo <code>app.py</code>). </p>
+<p>Observe que a mensagem de boas vindas foi escrita como uma <em>string</em> no corpo do cript,sem definir uma variável, e também utilizamos a função <code>st.write</code> para escrever uma mensagem customizada. O streamit entende que as duas formas são mensagem que devem ser exibidas ao usuário.</p>
+<p>O <a href="https://docs.streamlit.io/">streamlit possui uma documentação</a> relativamente curta, fácil de entender, o que permitiu que em poucas semanas eu dominasse a maior partes das eaturesda biblioteca. Existem diversos componentes prontos que podem ser invocados como mostrado no exemplo anterior como <code>st.text_input</code>. Além do <code>text_input</code>, existem <em>widgets</em> como botões, checkboxes, seletores, seletores com valores múltiplos, sliders. Também existem componentes que permitem o upload de arquivos para aplicação ou entrada de imagens pela câmera do computador.  Vale a pena dar uma conferida na <a href="https://docs.streamlit.io/library/api-reference/widgets">documentação do *streamlit</a>.*</p>
+<p>Para usuários avançados existe a possibilidade de criar componentes customizados, o que é ensinado uma playlist de tutoriais feitos por desenvolvedores da biblioteca. Por debaixo dos panos, os componentes são definidos utilizando <a href="https://pt-br.legacy.reactjs.org/">React e TypeScript</a>. O que parece ser bem divertido, para quem gosta. Porém, vários componentes desenvolvidos por terceiros, de maneira não oficial, são disponibilizados como pacotes. Alguns exemplos podem até mesmo ser encontrados no <a href="https://streamlit.io/components">site do streamlit</a>.</p>
+<p>Como uma aplicação é definida em um <em>script</em>, toda vez que ocorre uma interação na tela, como o clique em um botão, todo o <em>script</em> é executado novamente. </p>
+<p>E isso é um fato importante, e alguns cuidados devem ser tomados para não se concluir com uma interface lenta toda vez que ocorre uma interação. </p>
+<p>Alguns desses cuidados são:</p>
+<ol>
+<li>Utilizar os recursos de <em>caching</em> (<a href="https://docs.streamlit.io/library/advanced-features/caching">ver documentação</a>) nas operações de leitura de dados, estabelecer conexões com banco de dados, ou subir um modelo de predição.</li>
+<li>Comportamentos estranhos devido a constante atualização do estado (valores) das variáveis e componentes. (Veja <a href="https://docs.streamlit.io/library/advanced-features/button-behavior-and-examples">essa postagem</a> para entender mais sobre esse caso).</li>
+</ol>
+<p>O desenvolvimento do streamlit é frenético, com uma nova versão saindo a cada mês. Se por um lado isso adiciona novas e interessantes eaturesà biblioteca, por outro, algumas APIs podem quebrar de uma versão para outra em pouco tempo. Existem até mesmo algumas funções teste que são precedidas pela palavra <code>experimental</code> para justamente indicar que podem haver mudanças no futuro, sem aviso prévio. (Isso é detalhado <a href="https://docs.streamlit.io/library/advanced-features/prerelease">nessa seção</a>).</p>
+<p>A empresa mantenedora do projeto também oferece o Streamlit Community que permite fazer o deploy de aplicações na nuvem. </p>
+<p>O código da aplicação precisa estar em um repositório do GitHub e após permitir que o Streamlit Community se conecte a sua conta no Git Hub, os passos para subir o aplicativo são bem simples, basta seguir o tutorial desse <a href="https://docs.streamlit.io/streamlit-community-cloud/get-started">post aqui</a>.</p>
+<p>A versão gratuita do Streamlit Community permite aplicações que consuma até 1Gb de memória, o que eu acho pouco, se pensarmos que alguns modelos de Deep Learning podem ser grandes. Além disso, a versão gratuita permite apenas um app privado, e promete uma quantidade ilimitada de apps públicos, onde qualquer pessoa na <em>web</em> pode pesquisar e acessar.</p>
+<p>Recentemente eu fiz um teste com o Streamlit Community, com uma aplicação que consulta uma <span class="caps">API</span> de documentos (o famoso <a href="https://sapl.santoantoniodaplatina.pr.leg.br/"><span class="caps">SAPL</span></a>) e retorna um relatório com documentos cadastrados em determinada semana. O repositório dessa aplicação pode ser encontrado <a href="https://github.com/giliardgodoi/streamlit-sapl/blob/main/01_INICIAL.py">nesse link</a>.</p>
+<p>Mas existem uma grande variedade de exemplos de aplicações desenvolvidas com streamlit, para citar algumas:</p>
+<ol>
+<li><a href="https://blog.streamlit.io/monte-carlo-simulations-with-streamlit/">Monte Carlo simulations with Streamlit</a></li>
+<li><a href="https://blog.streamlit.io/semantic-search-part-1-implementing-cosine-similarity/">Semantic search, Part 1: Implementing cosine similarity (streamlit.io)</a></li>
+<li><a href="https://blog.streamlit.io/scienceio-manages-billions-of-rows-of-training-data-with-streamlit/">ScienceIO manages billions of rows of training data with Streamlit</a></li>
+<li><a href="https://blog.streamlit.io/esg-reporting-with-streamlit/"><span class="caps">ESG</span> reporting with Streamlit</a></li>
+</ol>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="../../../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../../../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../../../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
