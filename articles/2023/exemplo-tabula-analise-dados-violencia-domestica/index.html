@@ -78,21 +78,27 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
       </ul>
     </header>
     <div class="content">
-      <p>No ano de 2020, a Câmara Municipal solicitou a Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher. O requerimento de solicitação está disponibilizado no site da entidade no <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">seguinte link</a>. </p>
-<p>O problema dessas solicitações de informações, é que elas são respondidas com extensões de arquivos que dificultam a leitura do dados por outros programas de computador, como arquivos em <code>.pdf</code>. Esses formatos, além de não permitem a leitura dos dados por máquina, também impedem que outras análises sejam realizadas.</p>
-<p>O software <a href="https://tabula.technology/">Tabula</a> é um extrator de tabelas de documentos em <span class="caps">PDF</span>. Com ele é possível extrair os dados das tabelas e exportar para arquivos abertos com <span class="caps">CSV</span>. Esse é um programa escrito em Java, então você vai precisar instalar o Java na sua máquina para executar o Tabula.</p>
+      <p>No ano de 2020, a Câmara Municipal de Santo Antônio da Platina solicitou à Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher. 
+O requerimento de solicitação está disponibilizado no site da entidade no <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">seguinte link</a>. </p>
+<p>O problema é que essas solicitações são respondidas em formatos de arquivos fechados, como arquivos em formado <code>pdf</code>, que impedem a leitura de dados por outros programas de computador.
+E com isso impedem também a realização de outras análises.</p>
+<p>O software <a href="https://tabula.technology/">Tabula</a> é um extrator de tabelas de documentos em <code>PDF</code>. 
+Com é possível extrair os dados das tabelas e exportar para arquivos abertos como arquivos com valores separados por vírgulas (csv - <a href="https://pt.wikipedia.org/wiki/Comma-separated_values">Comma-Separated Values</a>). </p>
+<p>Esse é um programa feito em Java, então você vai precisar instalar o Java na sua máquina para executar o Tabula. As instruções para instalação podem ser encontradas na documentação do repositório da ferramenta, disponível nesse <a href="https://github.com/tabulapdf/tabula?tab=readme-ov-file#using-tabula">endereço</a>.</p>
 <p>Após executar o programa, só precisa selecionar o arquivo em <span class="caps">PDF</span> e selecionar a área em que está a sua tabela.</p>
+<!-- ![Exemplo do software Tabula](../../images/2023/tabula-exemplo.png) -->
 <p><img alt="Exemplo do software Tabula" class="img-fluid" src="../../../images/2023/tabula-exemplo.png"/></p>
-<p>E então, o próprio software extrai os dados os dados:</p>
+<p>E então, o programa cuida do resto…</p>
+<!-- ![Dados extraidos com o software tabula](../../images/2023/tabula-exemplo-dois.png) -->
 <p><img alt="Dados extraidos com o software tabula" class="img-fluid" src="../../../images/2023/tabula-exemplo-dois.png"/></p>
-<p>Com os dados em um formato aberto, em que é possível realizar a leitura com outro programa de computador, é possível realizar análises complementares e criar gráficos como o observados a seguir.</p>
+<p>Com os dados em um formato aberto, então é possível realizar a leitura com um código em Python, por exemplo, e realizar análises complementares e criar gráficos como o observados a seguir.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="n">anos</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">'20</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">21</span><span class="p">)]</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'tabula-tabela03.csv'</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'tabela-03-dados.csv'</span><span class="p">)</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'TOTAL'</span><span class="p">])</span>
 <span class="n">df</span><span class="p">[</span><span class="n">anos</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">anos</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -128,10 +134,21 @@ Algoritmos Genéticos. Otimização combinatória. Teoria dos Grafos. Pythonista
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Quantidade"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Ano"</span><span class="p">);</span>
 </code></pre></div>
+<p>O gráfico a seguir apresenta a quantidade dos casos de violência doméstica, por natureza jurídica, nos municípios da região do Norte Pioneiro do Estado do Paraná, no período de 01/01/2016 a 31/12/2020.</p>
+<!-- ![Registro de violência doméstica no Norte Pioneiro](../../images/2023/grafico-violencia-domestica-norte-pioneiro.png) -->
 <p><img alt="Registro de violência doméstica no Norte Pioneiro" class="img-fluid" src="../../../images/2023/grafico-violencia-domestica-norte-pioneiro.png"/></p>
-<p>O gráfico acima apresenta o quantitativo de ocorrências de natureza jurídicas de violência doméstica geral, por municípios da região do Norte Pioneiro do Estado do Paraná, no período de 01/01/2016 a 31/12/2020.</p>
-<p>O município de Jacarezinho, o único entre os demais município do Norte Pioneiro que possui uma Delegacia Especial da Mulher, destaca-se dos demais nos registros de violência doméstica. </p>
+<p>No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020.
+Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.</p>
+<p>Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais. 
+A razão para tanto, pode ser que este é o único município da região que possui uma Delegacia Especial da Mulher.</p>
 <p>Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos casos de violência doméstica nos demais municípios que não contam com uma unidade especializada para atender a esses casos.</p>
+<h1>Aviso</h1>
+<blockquote class="blockquote">
+<p>As opiniões expressas nesse artigo são somente minhas, e não refletem necessáriamente a opinião de instituições ou pessoas eventualmente citadas nesse artigo.</p>
+</blockquote>
+<h1>Referências</h1>
+<p>Câmara de Santo Antônio da Platina. <strong>Requerimento nº 598 de 2020, de autoria da Vereadora Mirian Rodrigues Bonomo Montanheiro</strong>. Disponível em: <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613</a>. Último acesso em 07 de abr. de 2024.</p>
+<p>Tabula Oficial Webpage. <a href="https://tabula.technology/">https://tabula.technology/</a></p>
     </div>
   </article>
     </div>

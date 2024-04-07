@@ -91,26 +91,26 @@ Então eu instalei eles, como se fossem um pacote, nesse ambiente em que eu esta
 <p>Recentemente, eu passei por uma situação semelhante e então resolvi escrever esse post.</p>
 <h1>Registrando um kernel para um ambiente</h1>
 <p>Vamos supor que eu criei um ambiente com a nova versão do Python 3.11 usando o <code>conda</code> (Eu gosto de usar o <code>conda</code> não me critique!)</p>
-<div class="highlight"><pre><span></span><code>conda create --name py311 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
-conda activate py311
-python --version <span class="c1">## Python 3.11.0</span>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>py311<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>py311
+python<span class="w"> </span>--version<span class="w"> </span><span class="c1">## Python 3.11.0</span>
 </code></pre></div>
 <p><em>Sim, o <code>conda</code> já disponibiliza essa versão do Python, mas como a atualização de pacotes do Anaconda demora mais do que <a href="https://pypi.org/">PyPi</a> algumas coisas podem não funcionar muito bem. Prosseguindo…</em></p>
 <p>No nosso novo ambiente vamos instalar o <code>ipykernel</code>:</p>
-<div class="highlight"><pre><span></span><code>conda install pip       <span class="c1"># opcional</span>
-conda install ipykernel <span class="c1"># ou então pip install ipykernel</span>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>pip<span class="w">       </span><span class="c1"># opcional</span>
+conda<span class="w"> </span>install<span class="w"> </span>ipykernel<span class="w"> </span><span class="c1"># ou então pip install ipykernel</span>
 </code></pre></div>
 <p>Na data de publicação desse artigo, a versão do <code>ipykernel</code> disponível no canal padrão do anaconda, não suporta a versão 3.11 do Python. 
 Uma saída é instalar via <code>pip</code> mesmo.</p>
-<div class="highlight"><pre><span></span><code>python -m pip install ipykernel
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ipykernel
 </code></pre></div>
 <p>Agora vamos instalar, ou registrar, esse novo ambiente como um <em>Jupyter</em> kernel (supondo que estamos dentro do ambiente, no caso o <code>py311</code>, que desejamos registrar.)</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># conda activate py311             </span>
 <span class="c1"># python -m pip install ipykernel</span>
-python -m ipykernel install --user --name py11 --display-name <span class="s2">"Python (3.11)"</span>
+python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>py11<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">"Python (3.11)"</span>
 </code></pre></div>
 <p>Pronto! Agora podemos sair do ambiente <code>py311</code> e voltar para o ambiente <code>base</code> onde o nosso <em>full Jupyter Notebook</em>  está instalado.</p>
-<div class="highlight"><pre><span></span><code>conda deactivate
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>deactivate
 </code></pre></div>
 <h1>Criando um notebook com um kernel específico</h1>
 <p>Para criar um novo <em>notebook</em> basta selecionar o kernel desejado no menu <em>new</em>.</p>
@@ -121,7 +121,7 @@ python -m ipykernel install --user --name py11 --display-name <span class="s2">"
 <p>Então essa não é a versão do kernel que estamos ativando.</p>
 <h1>Listando os Kernels disponíveis</h1>
 <p>Para listar os kernels disponíveis, utilize o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code>jupyter kernelspec list
+<div class="highlight"><pre><span></span><code>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>list
 </code></pre></div>
 <h1>Removendo um kernel</h1>
 <p>Segundo esse post <a href="https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove">aqui</a> para remover um kernel basta utilizar o seguinte comando:</p>

@@ -96,16 +96,16 @@ Também é possível utilizar outras extensões de arquivos (como .ipynb) com o 
 <li><a href="https://docs.getpelican.com/en/latest/install.html">docs.getpelican.com/en/latest/install.html</a>.</li>
 </ul>
 <p>É recomendado definir uma ambiente de desenvolvimento próprio e, como eu uso o <a href="https://docs.conda.io/projects/conda/en/stable/"><code>conda</code></a>, eu fiz isso utilizando os seguintes comandos:</p>
-<div class="highlight"><pre><span></span><code>conda create --name blog-demo <span class="nv">python</span><span class="o">==</span><span class="m">3</span>.9
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>blog-demo<span class="w"> </span><span class="nv">python</span><span class="o">==</span><span class="m">3</span>.9
 </code></pre></div>
 <p>E depois:</p>
-<div class="highlight"><pre><span></span><code>conda activate blog-demo
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>blog-demo
 </code></pre></div>
 <p>Como eu prefiro escrever utilizando <em>markdown</em>, eu já fiz a instalação incluíndo a opção para esse formato de arquivo.</p>
-<div class="highlight"><pre><span></span><code>python -m pip install <span class="s2">"pelican[markdown]"</span>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"pelican[markdown]"</span>
 </code></pre></div>
 <p>Também já fiz a instalação de pacotes adicionais como é o caso do typogrify, conforme recomendado — ainda que eu não entendi muito bem, quando e onde essa biblioteca é utilizada.</p>
-<div class="highlight"><pre><span></span><code>python -m pip install typogrify
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>typogrify
 </code></pre></div>
 <h1>Primeiro projeto</h1>
 <p>Pelican possui uma ferramenta de linha de comando que facilita a criação dos nossos projetos.
@@ -136,7 +136,7 @@ Instruções sobre como escrever conteúdo para o site pode ser encontrada na se
 <p>A pasta <code>output</code> contém todo o conteúdo publicável do site, isto é, arquivos html e css. É possível alterar essa pasta destino nos arquivos de configurações, alterando a variável <code>OUTPUT_PATH</code>. Para conhecer mais sobre as configurações, visite a seguinte página <a href="https://docs.getpelican.com/en/latest/settings.html">docs.getpelican.com/ … /settings.html</a>.</p>
 <h1>Quero controlar as versões do meu site?</h1>
 <p>Para controlar as versões do projeto utilizando o <code>Git</code> precisamos inicializar o repositório antes com:</p>
-<div class="highlight"><pre><span></span><code>git init
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>init
 </code></pre></div>
 <p>Particularmente, eu não utilizo muito esse comando. 
 Eu prefiro criar o repositório no GitHub primeiro, para fazer o clone localmente depois. 
@@ -153,12 +153,12 @@ O meu próprio <em>blog</em> utiliza esse tema.</p>
 Porém, a dificuldade de instalar o <a href="https://stork-search.net/">`stork-search</a> no meu <span class="caps">SO</span> me impediu de usar esse tema. ~~Pois, sem tempo irmão~~.</p>
 <p>Portanto, eu decidi utilizar para esse tutorial o tema <a href="https://github.com/limbenjamin/voce"><code>voce</code></a>.</p>
 <p>Primeiro precisamos adicionar uma pasta à estrutura do projeto para manter o tema do nosso site. Então na pasta raiz do projeto executamos o seguinte código:</p>
-<div class="highlight"><pre><span></span><code>mkdir themes
-<span class="nb">cd</span> themes
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>themes
+<span class="nb">cd</span><span class="w"> </span>themes
 </code></pre></div>
 <p>Note que essa pasta ficará no mesmo nível que as pastas <code>content</code> e <code>output</code>.</p>
 <p>Depois instalamos o tema como um submódulo no diretório de temas.</p>
-<div class="highlight"><pre><span></span><code>git submodule add --depth <span class="m">5</span> https://github.com/limbenjamin/voce themes/voce
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>--depth<span class="w"> </span><span class="m">5</span><span class="w"> </span>https://github.com/limbenjamin/voce<span class="w"> </span>themes/voce
 </code></pre></div>
 <p>Agora indicamos nos arquivos de configuração (<code>pelicanconf.py</code>) o caminho do tema que desejamos utilizar, e definimos outras variáveis requisitadas pelo tema. 
 Em caso de dúvida, leia as instruções de instalação do tema de sua escolha.</p>
