@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Giliard Godoi">
-<meta name="dcterms.date" content="2024-09-07">
-<meta name="description" content="Agora utilizando o framework quarto para escrever e gerenciar o conteúdo">
+<meta name="dcterms.date" content="2023-02-25">
+<meta name="description" content="Como gerar vários gráficos em uma mesma figura com subplots e no final uma dica especial.">
 
-<title>Migrando meu blog – Giliard Godoi</title>
+<title>Vários gráficos em uma única figura com Matplotlib – Giliard Godoi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -120,14 +154,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Migrando meu blog</h1>
+      <h1 class="title">Vários gráficos em uma única figura com Matplotlib</h1>
                   <div>
         <div class="description">
-          Agora utilizando o framework quarto para escrever e gerenciar o conteúdo
+          Como gerar vários gráficos em uma mesma figura com <code>subplots</code> e no final uma dica especial.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">data visualization</div>
+                <div class="quarto-category">matplotlib</div>
               </div>
                   </div>
   </div>
@@ -145,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 7, 2024</p>
+        <p class="date">February 25, 2023</p>
       </div>
     </div>
     
@@ -164,9 +199,130 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="por-que-eu-decidi-outro-gerenciador-de-conteúdo" class="level1">
-<h1>Por que eu decidi outro gerenciador de conteúdo?</h1>
-<p>Por algum tempo eu usei o framework <a href="https://docs.getpelican.com/en/latest/">Pelican</a> para escrever os posts e gerar as páginas em <em>html</em> desse site. E a experiência foi boa!</p>
+<p>Quando fazemos Análise Exploratória dos Dados, talvez queiramos analisar a distribuição univariada dos atributos presentes em um conjunto de dados.</p>
+<p>Podemos utilizar a técnica <em>small multiplus</em> para criar pequenos gráficos, uma para cada atributo, para compor a nossa figura. Esse subgráficos são, para o <code>matplotlib</code> os <em>subplots</em>.</p>
+<p>Existem vários meios para construir vários gráficos em uma mesma figura <em>que a princípio, nem eu mesmo sabia</em>. Primeiro vamos importar a biblioteca.</p>
+<div id="cell-2" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="utilizando-a-função-plt.subplot" class="level2">
+<h2 class="anchored" data-anchor-id="utilizando-a-função-plt.subplot">Utilizando a função <code>plt.subplot</code></h2>
+<p>Sabemos que os diferentes <em>subplots</em> que compõe uma figura podiam ser acessados utilizando a sintaxe <code>. A função</code>plt.subplot` aceita que esses valores de linhas, colunas e indexes seja passado de duas formas:</p>
+<div id="cell-4" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.subplot(rows columns index)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">221</span>) <span class="co"># todo mundo junto</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ... código do gráfico 1 aqui ...</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>) <span class="co"># todo mundo separado</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ... código do gráfico 2 aqui ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esse comando significa que estamos criando uma figura com 2 linhas e 2 colunas (2 x 2 = 4 gráficos) e estamos acessando (retornando) o primeiro, o segundo, o terceiro ou o quarto gráfico, isto é, o gráfico correspondente ao valor de <code>index</code>.</p>
+<p>Esse é o exemplo presente na <a href="https://matplotlib.org/stable/gallery/pyplots/pyplot_two_subplots.html#sphx-glr-gallery-pyplots-pyplot-two-subplots-py">documentação</a> do <code>matplotlib</code>:</p>
+<div id="cell-6" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(t):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(<span class="op">-</span>t) <span class="op">*</span> np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>t)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> np.arange(<span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> np.arange(<span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">0.02</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">211</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.plot(t1, f(t1), color<span class="op">=</span><span class="st">'tab:blue'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.plot(t2, f(t2), color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">212</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.plot(t2, np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>t2), color<span class="op">=</span><span class="st">'tab:orange'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="utilizando-plt.subplots" class="level2">
+<h2 class="anchored" data-anchor-id="utilizando-plt.subplots">Utilizando <code>plt.subplots</code></h2>
+<p>Sim, <code>subplots</code> no plural!</p>
+<p>Já a função <code>plt.subplots</code> também aceita como parâmetros o número de linhas e o número de colunas da nossa figura, porém ela retorna dois objetos: um objeto do tipo <code>Figure</code> e um <em>array</em> de <code>Axes</code>.</p>
+<p>No exemplo a seguir, é criado uma nova figura com dois gráficos, alinhados em uma linha e duas colunas. O <em>array</em> de Axes é desempacotado (<em>unpacked</em>) já na chamada da função.</p>
+<div id="cell-8" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esse comando cria dois gráficos lado à lado, conforme mostrado na figura.</p>
+<p>Nesse outro exemplo, é criado uma figura com quatro gráficos, distribuídos num <em>grid</em> de 2x2.</p>
+<div id="cell-10" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A variável <code>axs</code> retonarda nesse caso, nada mais é que um <em>array</em> do <code>numpy</code></p>
+<div id="cell-12" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(axs), axs.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'numpy.ndarray'&gt; (2, 2)</code></pre>
+</div>
+</div>
+<p>E é aqui que temos a nossa dica <del>mágica</del>.</p>
+<p>Como a variável <code>axs</code> é um <em>array</em> do <code>numpy</code>, então nós podemos utilizar o método <code>flatten</code> para transformar esse <em>array</em> com mais de uma dimensão em um <em>array</em> unidimensional.</p>
+<p>Imagine, por exemplo, que tenhamos uma dataframe com nove atributos numéricos e nós queremos analisar analisar a distribuição desses atributos separadamente.</p>
+<p>Podemos então utilizar um padrão de código como o do exemplo a seguir:</p>
+<div id="cell-14" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_california_housing</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>california_housing <span class="op">=</span> fetch_california_housing(as_frame<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> california_housing.frame</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">3</span>, nrows<span class="op">=</span><span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>axs <span class="op">=</span> axs.flatten()</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col, ax <span class="kw">in</span> <span class="bu">zip</span>(df.columns, axs):</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    ax.hist(df[col], bins<span class="op">=</span><span class="dv">50</span>, edgecolor<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    ax.set_title(col)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Eu vi esse padrão de código <a href="https://www.kaggle.com/code/prasadperera/the-boston-housing-dataset">nesse notebook</a> do kaggle, que é parecido com <a href="https://www.kaggle.com/code/agnihotri/linear-regression-and-pca-boston-housing">esse outro aqui</a>!</p>
+<p>E a minha “contribuição” foi usar o <code>enumerate</code> ali… rsrs</p>
+<p>Maravilha, né?</p>
+</section>
+<section id="referências" class="level2">
+<h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<p>Documentação ofical do <code>Matplotlib</code>. <strong>matplotlib.pyplot.subplot</strong>. Disponível em <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html" class="uri">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html</a> Acessado em 24 de fev. de 2023.</p>
+<p>Documentação ofical do <code>Matplotlib</code>. <strong>matplotlib.pyplot.subplots</strong>. Disponível em <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html" class="uri">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</a> Acessado em 24 de fev. de 2023.</p>
+<p>Documentação oficial do <code>NumPy</code>. <strong>numpy.ndarray.flatten</strong>. Disponível em <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html" class="uri">https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html</a> Acessado em 24 de fev. de 2023.</p>
 
 
 </section>

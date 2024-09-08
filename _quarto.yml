@@ -8,6 +8,8 @@ website:
   description: 'A personal blog by Giliard Godoi'
   favicon: favico.png
   navbar:
+    logo: favico.png
+    background: light
     right:
       - about.qmd
       - icon: github
@@ -20,5 +22,5 @@ website:
   draft-mode: unlinked
 format:
   html:
-    theme: cosmo
+    theme: yeti
     css: styles.css

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Giliard Godoi">
-<meta name="dcterms.date" content="2024-09-07">
-<meta name="description" content="Agora utilizando o framework quarto para escrever e gerenciar o conteúdo">
+<meta name="dcterms.date" content="2023-08-04">
+<meta name="description" content="Desde a extração dos dados de arquivos em PDF, até a produção de alguns gráficos mostrando a evolução de casos em Municípios da Região">
 
-<title>Migrando meu blog – Giliard Godoi</title>
+<title>Uma análise sobre a violência doméstica no Norte Pioneiro Paranaense – Giliard Godoi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -120,14 +154,14 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Migrando meu blog</h1>
+      <h1 class="title">Uma análise sobre a violência doméstica no Norte Pioneiro Paranaense</h1>
                   <div>
         <div class="description">
-          Agora utilizando o framework quarto para escrever e gerenciar o conteúdo
+          Desde a extração dos dados de arquivos em PDF, até a produção de alguns gráficos mostrando a evolução de casos em Municípios da Região
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">data-analysis</div>
               </div>
                   </div>
   </div>
@@ -145,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 7, 2024</p>
+        <p class="date">August 4, 2023</p>
       </div>
     </div>
     
@@ -164,9 +198,88 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="por-que-eu-decidi-outro-gerenciador-de-conteúdo" class="level1">
-<h1>Por que eu decidi outro gerenciador de conteúdo?</h1>
-<p>Por algum tempo eu usei o framework <a href="https://docs.getpelican.com/en/latest/">Pelican</a> para escrever os posts e gerar as páginas em <em>html</em> desse site. E a experiência foi boa!</p>
+<p>A Câmara Municipal de Santo Antônio da Platina solicitou à Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher.</p>
+<p>Normalmente essas solicitações são respondidas em formatos que facilitam a leitura por uma pessoa, mas dificultam a leitura de forma automática por uma máquina. No entanto, esses arquivos fechados impedem que outras análises sejam feitas, aplicando técnicas estatísticas ou de visualização de dados.</p>
+<p>Não diferente, a resposta para essa solicitação foi encaminhada na forma de um relatório em formato PDF. Para extrair os dados necessários então podemos utilizar alguns softwares especializados na extração de dados tabulares como o <a href="https://tabula.technology/">Tabula</a>. Esse software permite extrair os dados dos arquivos em PDF para formatos abertos e que podem ser manipulados como o formato CSV (<a href="https://pt.wikipedia.org/wiki/Comma-separated_values">Comma-separated Values</a>).</p>
+<p>As instruções para instalação e operação desse software podem ser encontradas na sua página da <a href="https://github.com/tabulapdf/tabula?tab=readme-ov-file#using-tabula">documentação oficial</a>.</p>
+<p>Após executar o programa, só precisamos selecionar o arquivo em PDF e selecionar ou ajustar a área em que está a sua tabela se encontra no arquivo, conforme ilustrado a seguir</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="tabula-exemplo.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo do software Tabula</figcaption>
+</figure>
+</div>
+<p>Clicando no botão <code>Preview and Export Extracted Data</code> é gerado uma visualização com os dados extraídos.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./tabula-exemplo-dois.png" class="img-fluid figure-img"></p>
+<figcaption>Dados extraidos com o software tabula</figcaption>
+</figure>
+</div>
+<p>Arquivos no formato CSV nada mais são que arquivos de textos possuem seus valores separados por um caracter delimitador, nesse caso a vírgula.</p>
+<p>Por exemplo, digamos que tenhamos salvo os dados no arquivo <code>tabela-03-dados.csv</code>. Agora é possível realizar a leitura desses dados em um código da linguagem Python utilizando, por exemplo, a biblioteca <a href="https://pandas.pydata.org/">Pandas</a>, conforme o exemplo a seguir:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>anos <span class="op">=</span> [<span class="ss">f'20</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">16</span>,<span class="dv">21</span>)]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'tabela-03-dados.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Também é possível utilizar essa biblioteca para realizar algumas modificações quanto a estrutura da tabela que os nossos dados estão organizados.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'TOTAL'</span>])</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[anos] <span class="op">=</span> df[anos].astype(<span class="bu">int</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> df.melt(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    id_vars<span class="op">=</span>[<span class="st">"MUNICÍPIO"</span>],</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    value_vars<span class="op">=</span>anos,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    var_name<span class="op">=</span><span class="st">"ANO"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    value_name<span class="op">=</span><span class="st">'value'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O código a seguir cria um gráfico de linha que mostra a evolução do casos de registro de casos de violência doméstica para os Municípios da <a href="https://pt.wikipedia.org/wiki/Lista_de_mesorregi%C3%B5es_e_microrregi%C3%B5es_do_Paran%C3%A1#Mesorregi%C3%A3o_do_Norte_Pioneiro_Paranaense">Região do Norte Pioneiro Paranaense</a>, entre os anos de 2016 a 2020, destacando os Municípios de Jacarezinho e Santo Antônio da Platina.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>select <span class="op">=</span> (df2[<span class="st">'MUNICÍPIO'</span>] <span class="op">==</span> <span class="st">"SANTO ANTONIO DA PLATINA"</span>) <span class="op">|</span> (df2[<span class="st">'MUNICÍPIO'</span>] <span class="op">==</span> <span class="st">"JACAREZINHO"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">7</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.lineplot(data<span class="op">=</span>df2[<span class="op">~</span>select],</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                 x<span class="op">=</span><span class="st">"ANO"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                 y<span class="op">=</span><span class="st">"value"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                 units<span class="op">=</span><span class="st">"MUNICÍPIO"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                 estimator<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                 markers<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                 color<span class="op">=</span><span class="st">".7"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                 linewidth<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                 legend<span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>g4 <span class="op">=</span> sns.lineplot(data<span class="op">=</span>df2[select],</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                  x<span class="op">=</span><span class="st">"ANO"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                  y<span class="op">=</span><span class="st">"value"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                  hue<span class="op">=</span><span class="st">"MUNICÍPIO"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                  markers<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                  dashes<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                  legend<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>sns.despine(right<span class="op">=</span><span class="va">True</span>, left<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Quantidade"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Ano"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./grafico-violencia-domestica-norte-pioneiro.png" class="img-fluid figure-img"></p>
+<figcaption>Registro de violência doméstica no Norte Pioneiro</figcaption>
+</figure>
+</div>
+<p>No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020. Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.</p>
+<p>Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais. A razão para tanto, pode ser que este é o único município da região que possui uma Delegacia Especial da Mulher.</p>
+<p>Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos casos de violência doméstica nos demais municípios que não contam com uma unidade especializada para atender a esses casos.</p>
+<section id="aviso" class="level1">
+<h1>Aviso</h1>
+<blockquote class="blockquote">
+<p>As opiniões expressas nesse artigo são somente minhas, e não refletem necessáriamente a opinião de instituições ou pessoas eventualmente citadas nesse artigo.</p>
+</blockquote>
+</section>
+<section id="referências" class="level1">
+<h1>Referências</h1>
+<p>Câmara de Santo Antônio da Platina. <strong>Requerimento nº 598 de 2020</strong>. Disponível em: <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613" class="uri">https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613</a>. Último acesso em 07 de abr. de 2024.</p>
+<p>Tabula Oficial Webpage. <a href="https://tabula.technology/" class="uri">https://tabula.technology/</a></p>
 
 
 </section>

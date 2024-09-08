@@ -116,6 +116,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../favico.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Giliard Godoi</span>
     </a>
@@ -195,6 +198,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mindmap.jpg" class="img-fluid figure-img"></p>
+<figcaption>Mind Map</figcaption>
+</figure>
+</div>
 <p>Existem várias especificações para arquivos de configuração ou parametrização, tais como os arquivos <code>ini</code>, <code>yaml</code>, e <code>toml</code>. Cada uma dessas especificações define uma forma de organizar as informações e representar tipos comuns das linguagens de programação como inteiros (<code>int</code>), números de ponto flutuante (<code>float</code>), valores booleanos (<code>bool</code>), strings, e até mesmo estruturas de dados como listas e dicionários.</p>
 <p>Nessa postagem vamos conhecer um pouco sobre a biblioteca padrão da linguagem Python para manipular arquivos <code>ini</code>, a biblioteca <code>configparser</code>.</p>
 <p>Essa especificação foi inicialmente projetadas para sistemas do <a href="https://en.wikipedia.org/wiki/INI_file">Microsoft Windows</a>, porém, com o tempo, passou a ser adotada por outras empresas, aparecendo inclusive em softwares open source sob a extensão <code>cfg</code>.</p>
@@ -211,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Ao realizar o parse de um arquivo, a estrutura de dados retornados se assemelha a um dicionário do Python.</li>
 </ol>
 <p>A seguir, é mostrado um exemplo de como um arquivo de configuração é definido</p>
-<div id="cell-3" class="cell" data-execution_count="1">
+<div id="cell-4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>configuration_string <span class="op">=</span> <span class="st">'''</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">[DEFAULT]</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">name  = Giliard Godoi</span></span>
@@ -241,11 +250,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">'''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para manipular esse arquivo, vamos fazer a importação da biblioteca.</p>
-<div id="cell-5" class="cell" data-execution_count="2">
+<div id="cell-6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> configparser</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Depois instanciamos um objeto do tipo <code>ConfigParser</code>, porém ele ainda está vazio, isto é, sem campos ou valores definidos.</p>
-<div id="cell-7" class="cell" data-execution_count="3">
+<div id="cell-8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>config <span class="op">=</span> configparser.ConfigParser()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(config)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -254,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>A partir do objeto <code>config</code>, podemos realizar o parse de uma string de configuração da seguinte maneira, populando as suas seções e valores.</p>
-<div id="cell-9" class="cell" data-outputid="6c3c03f4-2f4b-4c21-8937-376dcbcc903e" data-execution_count="4">
+<div id="cell-10" class="cell" data-outputid="6c3c03f4-2f4b-4c21-8937-376dcbcc903e" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>config.read_string(configuration_string)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -264,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Cada seção é acessível pelo seu nome, de forma semelhante a um dicionário.</p>
-<div id="cell-11" class="cell" data-outputid="c060c31c-8ae9-4d08-dddb-2252972517ab" data-execution_count="5">
+<div id="cell-12" class="cell" data-outputid="c060c31c-8ae9-4d08-dddb-2252972517ab" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O que é uma seção?</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>config[<span class="st">'DEFAULT'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -272,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>O método <code>sections</code> retorna quais as seções definidas pelo arquivo. No nosso exemplo temos as seções <code>education</code> e <code>skills</code>. Note que a seção <code>DEFAULT</code> não é retornada.</p>
-<div id="cell-13" class="cell" data-outputid="f6551677-d949-4541-afd8-bd3a35886e52" data-execution_count="6">
+<div id="cell-14" class="cell" data-outputid="f6551677-d949-4541-afd8-bd3a35886e52" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como saber quais são as demais seções?</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>config.sections()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -280,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Também é possível verificar se uma seção existe em um arquivo de configuração pelo método <code>has_section</code> ou pelo o operator <code>in</code>.</p>
-<div id="cell-15" class="cell" data-outputid="46b9215e-9167-4118-e78c-ddb106b009cf" data-execution_count="7">
+<div id="cell-16" class="cell" data-outputid="46b9215e-9167-4118-e78c-ddb106b009cf" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como verificar se uma seção existe dentro de config?</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>(<span class="st">'education'</span> <span class="kw">in</span> config) <span class="kw">or</span> config.has_section(<span class="st">'education'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -288,14 +297,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Para conhecer quais os parâmetros de uma seção, podemos utilizar o método <code>options</code> passando o nome de uma seção.</p>
-<div id="cell-17" class="cell" data-execution_count="8">
+<div id="cell-18" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>config.options(<span class="st">'education'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>['school', 'major', 'year', 'name', 'email', 'local', 'secret_agent']</code></pre>
 </div>
 </div>
 <p>Mas se utilizarmos esse método para tentar descobrir as opções da seção DEFAULT nós obtemos um erro</p>
-<div id="cell-19" class="cell" data-execution_count="9">
+<div id="cell-20" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    config.options(<span class="st">'DEFAULT'</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
@@ -305,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Isso porque a seção default serve como um default. Isto é, se procurarmos uma opção em uma das seções e essa opção não estiver definida para aquela seção, o valor retornado será aquele presente na seção DEFAULT. Veja o exemplo a seguir:</p>
-<div id="cell-21" class="cell" data-execution_count="10">
+<div id="cell-22" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    config.get(<span class="st">'education'</span>, <span class="st">'year'</span>),</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -318,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Porém, o método <code>defaults</code> retorna um dicionário contendo os parâmetros e respectivos valores presentes nessa seção.</p>
-<div id="cell-23" class="cell" data-execution_count="11">
+<div id="cell-24" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>config.defaults()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>{'name': 'Giliard Godoi',
@@ -329,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>É possível verificar ser uma opção foi definida em uma seção através do método <code>has_option</code>.</p>
-<div id="cell-25" class="cell" data-outputid="341c8cda-0ad9-436c-e672-01d7799228ec" data-execution_count="12">
+<div id="cell-26" class="cell" data-outputid="341c8cda-0ad9-436c-e672-01d7799228ec" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como verificar se existe uma opção (chave) dentro de uma seção?</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>config.has_option(section<span class="op">=</span><span class="st">'education'</span>, option<span class="op">=</span><span class="st">'year'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -337,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Nesse método, se o valor correspondente a section for passado como <code>None</code> ou uma string vazia, o valor da opção definida na seção DEFAULT é retornado.</p>
-<div id="cell-27" class="cell" data-outputid="6b570665-55ad-4947-97f4-d9fe0282f671" data-execution_count="13">
+<div id="cell-28" class="cell" data-outputid="6b570665-55ad-4947-97f4-d9fe0282f671" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como verificar se existe uma opção para a seção default?</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>config.has_option(section<span class="op">=</span><span class="va">None</span>, option<span class="op">=</span><span class="st">'company'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -345,14 +354,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Os valores das opções (ou parâmetros) também estão acessíveis por indexação.</p>
-<div id="cell-29" class="cell" data-outputid="5eba3fce-19b0-4b7d-d824-8dadf795b616" data-execution_count="14">
+<div id="cell-30" class="cell" data-outputid="5eba3fce-19b0-4b7d-d824-8dadf795b616" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como acessar um valor na seção default?</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>config[<span class="st">'DEFAULT'</span>][<span class="st">'name'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>'Giliard Godoi'</code></pre>
 </div>
 </div>
-<div id="cell-30" class="cell" data-outputid="d8c10391-bd44-479c-d1b9-8041bac190c1" data-execution_count="15">
+<div id="cell-31" class="cell" data-outputid="d8c10391-bd44-479c-d1b9-8041bac190c1" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como acessar um valor em uma outra seção?</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>config[<span class="st">'education'</span>][<span class="st">'school'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -360,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Também é definio o método <code>get</code> para acessar o valor definido nos parâmetros. Como parâmetros esses métodos recebem o nome da seção e da opção que queremos consultar.</p>
-<div id="cell-32" class="cell" data-outputid="d1101fb4-3b41-4f2f-ac1d-90c7caf6b6a3" data-execution_count="16">
+<div id="cell-33" class="cell" data-outputid="d1101fb4-3b41-4f2f-ac1d-90c7caf6b6a3" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ou então, utilizar o método get</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>config.get(section<span class="op">=</span><span class="st">'education'</span>, option<span class="op">=</span><span class="st">'school'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -368,7 +377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>É importante dizer que a operação de parser do arquivo de configuração <code>.ini</code> não realiza a conversão dos dados para tipos primitivos da linguagem. Assim, todos os valores são retornados como string.</p>
-<div id="cell-34" class="cell" data-outputid="bf72c2b3-36c2-4a46-f729-9fc95fa7d1ae" data-execution_count="17">
+<div id="cell-35" class="cell" data-outputid="bf72c2b3-36c2-4a46-f729-9fc95fa7d1ae" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Qual é o tipo de dado retornado por padrão?</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    config[<span class="st">'education'</span>][<span class="st">'year'</span>]</span>
@@ -378,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>A lista de linguagens de programação por exemplo, são retornadas como uma string e cada valor é separado pelo caracter de quebra de linha <code>\n</code>.</p>
-<div id="cell-36" class="cell" data-outputid="f4f3e47a-87b3-4384-ef91-438b53617db7" data-execution_count="18">
+<div id="cell-37" class="cell" data-outputid="f4f3e47a-87b3-4384-ef91-438b53617db7" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Isso serve também para listas?</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>config[<span class="st">'skills'</span>][<span class="st">'programing'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -386,7 +395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Para retornar esses valores como uma lista de strings, podemos utilizar o método <code>split</code>, conforme o exemplo a seguir.</p>
-<div id="cell-38" class="cell" data-outputid="4ce7a4b5-0e2e-4fce-ed8f-d80b85a431bd" data-execution_count="19">
+<div id="cell-39" class="cell" data-outputid="4ce7a4b5-0e2e-4fce-ed8f-d80b85a431bd" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como converter os valores para listas?</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>config[<span class="st">'skills'</span>][<span class="st">'programing'</span>].split()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -394,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Existem alguns métodos derivados de <code>get</code> que realizam a conversão para tipos primitivos, sendo eles: - getint - getboolean - getfloat</p>
-<div id="cell-40" class="cell" data-outputid="eba5ca50-853e-4b0a-e9c6-5e84083b1db2" data-execution_count="20">
+<div id="cell-41" class="cell" data-outputid="eba5ca50-853e-4b0a-e9c6-5e84083b1db2" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como converter o valor de uma variável para um tipo específico?</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'''</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="ss">-----------------------------------</span></span>
@@ -413,7 +422,7 @@ True : &lt;class 'bool'&gt;
 </code></pre>
 </div>
 </div>
-<div id="cell-41" class="cell" data-outputid="2ce323d9-83ee-483d-dafb-888e144341fd" data-execution_count="21">
+<div id="cell-42" class="cell" data-outputid="2ce323d9-83ee-483d-dafb-888e144341fd" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    config.getint(<span class="st">'education'</span>, <span class="st">'year'</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -421,7 +430,7 @@ True : &lt;class 'bool'&gt;
 <pre><code>int</code></pre>
 </div>
 </div>
-<div id="cell-42" class="cell" data-outputid="54629f07-097f-43ea-8f33-291483b97ce0" data-execution_count="22">
+<div id="cell-43" class="cell" data-outputid="54629f07-097f-43ea-8f33-291483b97ce0" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    config.getboolean(<span class="st">'DEFAULT'</span>, <span class="st">'secret_agent'</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -430,7 +439,7 @@ True : &lt;class 'bool'&gt;
 </div>
 </div>
 <p>O método get também define um parâmetro <code>fallback</code> que é retornado se a opção desejada não existe na seção e nem foi definida em default.</p>
-<div id="cell-44" class="cell" data-outputid="8b07773e-3f3d-4559-c123-994d50e1532e" data-execution_count="23">
+<div id="cell-45" class="cell" data-outputid="8b07773e-3f3d-4559-c123-994d50e1532e" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># É possível definir um valor fallback nos métodos get?</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="kw">not</span> config.has_option(section<span class="op">=</span><span class="st">'company'</span>, option<span class="op">=</span><span class="st">'name'</span>)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -440,7 +449,7 @@ True : &lt;class 'bool'&gt;
 </div>
 </div>
 <p>Também é possível retornar um dicionário com os parâmetros e respectivos valores presentes em uma seção. Note que todos os valores discriminados na seção default também são retornados. Isso pode ser bom ou uma falha de segurança, a depender do caso.</p>
-<div id="cell-46" class="cell" data-outputid="5ce94d3e-8f03-4cd5-c11f-3a26da829f51" data-execution_count="24">
+<div id="cell-47" class="cell" data-outputid="5ce94d3e-8f03-4cd5-c11f-3a26da829f51" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como obter os itens (chave-valor) para uma seção?</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>config.items(<span class="st">'education'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
@@ -453,7 +462,7 @@ True : &lt;class 'bool'&gt;
  ('major', 'Software Development')]</code></pre>
 </div>
 </div>
-<div id="cell-47" class="cell" data-outputid="0048ec08-250b-462a-f394-13d8233a2607" data-execution_count="25">
+<div id="cell-48" class="cell" data-outputid="0048ec08-250b-462a-f394-13d8233a2607" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como obter os itens (chave-valor) para a seção default?</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>config.defaults()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
@@ -468,13 +477,13 @@ True : &lt;class 'bool'&gt;
 <section id="arquivos" class="level1">
 <h1>Arquivos</h1>
 <p>O arquivo de configuração definido no início dessa postagem pode ser salvo passando um ponteiro de arquivo para o método <code>write</code>.</p>
-<div id="cell-50" class="cell" data-execution_count="26">
+<div id="cell-51" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como salvar as configurações em um arquivo?</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'config.ini'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    config.write(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para ler novamente esse arquivo, podemos fazer a leitura desse arquivo através do método <code>read</code>.</p>
-<div id="cell-52" class="cell" data-outputid="81943e81-49ba-4878-c700-352d850bb578" data-execution_count="27">
+<div id="cell-53" class="cell" data-outputid="81943e81-49ba-4878-c700-352d850bb578" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Como ler o arquivo config.ini?</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>other <span class="op">=</span> configparser.ConfigParser()</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>other.sections() <span class="co"># o arquivo está vazio</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -482,13 +491,13 @@ True : &lt;class 'bool'&gt;
 <pre><code>[]</code></pre>
 </div>
 </div>
-<div id="cell-53" class="cell" data-outputid="95df45f1-7268-489e-a476-04e087c0bf28" data-execution_count="28">
+<div id="cell-54" class="cell" data-outputid="95df45f1-7268-489e-a476-04e087c0bf28" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>other.read(<span class="st">'config.ini'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>['config.ini']</code></pre>
 </div>
 </div>
-<div id="cell-54" class="cell" data-outputid="f9c21d4c-b442-4e7f-ee4b-4eac788e0d3f" data-execution_count="29">
+<div id="cell-55" class="cell" data-outputid="f9c21d4c-b442-4e7f-ee4b-4eac788e0d3f" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>other.sections()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>['education', 'skills']</code></pre>
