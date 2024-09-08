@@ -1,0 +1,103 @@
+---
+title: 'Uma análise sobre a violência doméstica no Norte Pioneiro Paranaense'
+description: 'Desde a extração dos dados de arquivos em PDF, até a produção de alguns gráficos mostrando a evolução de casos em Municípios da Região'
+author: 'Giliard Godoi'
+date: '2023-08-04'
+categories: ['data-analysis']
+---
+
+A Câmara Municipal de Santo Antônio da Platina solicitou à Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher.
+
+Normalmente essas solicitações são respondidas em formatos que facilitam a leitura por uma pessoa, mas dificultam a leitura de forma automática por uma máquina.
+No entanto, esses arquivos fechados impedem que outras análises sejam feitas, aplicando técnicas estatísticas ou de visualização de dados.
+
+Não diferente, a resposta para essa solicitação foi encaminhada na forma de um relatório em formato PDF. Para extrair os dados necessários então podemos utilizar alguns softwares especializados na extração de dados tabulares como o [Tabula](https://tabula.technology/).
+Esse software permite extrair os dados dos arquivos em PDF para formatos abertos e que podem ser manipulados como o formato CSV ([Comma-separated Values](https://pt.wikipedia.org/wiki/Comma-separated_values)).
+
+As instruções para instalação e operação desse software podem ser encontradas na sua página da [documentação oficial](https://github.com/tabulapdf/tabula?tab=readme-ov-file#using-tabula).
+
+Após executar o programa, só precisamos selecionar o arquivo em PDF e selecionar ou ajustar a área em que está a sua tabela se encontra no arquivo, conforme ilustrado a seguir
+
+![Exemplo do software Tabula](tabula-exemplo.png)
+
+Clicando no botão `Preview and Export Extracted Data` é gerado uma visualização com os dados extraídos.
+
+![Dados extraidos com o software tabula](./tabula-exemplo-dois.png)
+
+Arquivos no formato CSV nada mais são que arquivos de textos possuem seus valores separados por um caracter delimitador, nesse caso a vírgula.
+
+Por exemplo, digamos que tenhamos salvo os dados no arquivo `tabela-03-dados.csv`.
+Agora é possível realizar a leitura desses dados em um código da linguagem Python utilizando, por exemplo, a biblioteca [Pandas](https://pandas.pydata.org/), conforme o exemplo a seguir:
+
+```python
+import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
+
+anos = [f'20{x}' for x in range(16,21)]
+
+df = pd.read_csv('tabela-03-dados.csv')
+```
+
+Também é possível utilizar essa biblioteca para realizar algumas modificações quanto a estrutura da tabela que os nossos dados estão organizados.
+
+```python
+df = df.drop(columns=['TOTAL'])
+df[anos] = df[anos].astype(int)
+
+df2 = df.melt(
+    id_vars=["MUNICÍPIO"],
+    value_vars=anos,
+    var_name="ANO",
+    value_name='value')
+
+df2.head()
+```
+
+O código a seguir cria um gráfico de linha que mostra a evolução do casos de registro de casos de violência doméstica para os Municípios da [Região do Norte Pioneiro Paranaense](https://pt.wikipedia.org/wiki/Lista_de_mesorregi%C3%B5es_e_microrregi%C3%B5es_do_Paran%C3%A1#Mesorregi%C3%A3o_do_Norte_Pioneiro_Paranaense), entre os anos de 2016 a 2020, destacando os Municípios de Jacarezinho e Santo Antônio da Platina.
+
+```python
+select = (df2['MUNICÍPIO'] == "SANTO ANTONIO DA PLATINA") | (df2['MUNICÍPIO'] == "JACAREZINHO")
+
+fig = plt.figure(figsize=(15,7))
+g = sns.lineplot(data=df2[~select],
+                 x="ANO",
+                 y="value",
+                 units="MUNICÍPIO",
+                 estimator=None,
+                 markers=True,
+                 color=".7",
+                 linewidth=1,
+                 legend= False)
+
+g4 = sns.lineplot(data=df2[select],
+                  x="ANO",
+                  y="value",
+                  hue="MUNICÍPIO",
+                  markers=True,
+                  dashes=False,
+                  legend=True)
+
+sns.despine(right=True, left=True)
+plt.ylabel("Quantidade")
+plt.xlabel("Ano");
+```
+![Registro de violência doméstica no Norte Pioneiro](./grafico-violencia-domestica-norte-pioneiro.png)
+
+No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020.
+Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.
+
+Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais.
+A razão para tanto, pode ser que este é o único município da região que possui uma Delegacia Especial da Mulher.
+
+Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos casos de violência doméstica nos demais municípios que não contam com uma unidade especializada para atender a esses casos.
+
+# Aviso
+
+> As opiniões expressas nesse artigo são somente minhas, e não refletem necessáriamente a opinião de instituições ou pessoas eventualmente citadas nesse artigo.
+
+# Referências
+
+Câmara de Santo Antônio da Platina. **Requerimento nº 598 de 2020**. Disponível em: <https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613>. Último acesso em 07 de abr. de 2024.
+
+Tabula Oficial Webpage. <https://tabula.technology/>

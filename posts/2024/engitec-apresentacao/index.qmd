@@ -6,6 +6,8 @@ author: 'Giliard Godoi'
 categories: [engitec, talks]
 ---
 
+![Associação entre as palavras de uma frase e suas respectivas entidades](ner_exemplo.png)
+
 No dia 05 de junho de 2024 eu fiz uma apresentação remota no 14º Encontro do Grupo Interlegis de Tecnologia, o EnGITEC.
 
 O tema do encontro desse ano foi Legislativo Inteligente, e eu fiz uma apresentação sobre Inteligência Artifical, dando uma ideia sobre como é o desenvolvimento de um modelo de Aprendizado de Máquina (*Machine Learning*).
