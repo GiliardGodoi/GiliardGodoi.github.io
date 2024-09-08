@@ -1,0 +1,13 @@
+---
+title: "Postagens"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  date-format: DD.MM.YYYY
+page-layout: article
+title-block-banner: true
+---

@@ -1,0 +1,13 @@
+---
+title: 'Migrando meu blog'
+description: 'Agora utilizando o framework quarto para escrever e gerenciar o conteúdo'
+author: 'Giliard Godoi'
+date: "2024-09-07"
+categories: [news]
+---
+
+# Por que eu decidi outro gerenciador de conteúdo?
+
+Por algum tempo eu usei o framework [Pelican](https://docs.getpelican.com/en/latest/) para escrever os posts e gerar as páginas em *html* desse site.
+E a experiência foi boa!
+
