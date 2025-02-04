@@ -1,0 +1,90 @@
+---
+title: 'A arte de escrever efetivamente'
+description: 'Uma visão pouco convencional sobre o processo de escrita científica'
+author: 'Giliard Godoi'
+date : '2024-09-15'
+categories : ['scientific writing']
+image: thumbnail.png
+---
+
+{{< video https://www.youtube.com/embed/vtIzMaLkCaM?si=zV5-CxnW_ngGssnY >}}
+
+---
+
+O Professor Larry McEnerney, na época da gravação desse vídeo era Diretor do Programa de Escrita da Universidade de Chigaco (*University of Chicago's Writing Program*).
+Nesse *post* eu vou tentar resumir e destacar o que eu acho ser os principais pontos dessa apresentação.
+
+Além disso, eu recomendo assistir a todo o vídeo.
+As ideias do Professor McEnerney alteraram a minha maneira de pensar e fazer ciência enquanto pesquisador.
+
+---
+
+Segundo Prof. McEnerney, a escrita é considerada uma habilidade básica que todos os estudantes de pós-graduação já dominam ou deveriam dominar.
+E como pesquisadores somos algo como "escritores profissionais."
+Não existe, necessariamente, um pensamento critíco que envolva o processo da escrita.
+Por isso, ele tenta levantar certas provocações sobre esse tema.
+
+Para ele, a maioria dos pesquisadores usam a escrita para pensar o mundo, isto é, para desenvolver o nosso entendimento sobre o mundo.
+Ele chama isso como o processo horizontal da escrita (@fig-visao-horizontal) e que é desenolvido estritamente na relação aluno-orientador.
+Porém, uma das atribuições dos orientadores é ler os textos dos seus alunos, o que o Prof. McEnerney vai dizer que *"os professores são pagos para lerem os textos dos seus alunos."*
+
+![Processo horizontal: usar a escrita para pensar o mundo](escrita-para-pensar-mundo.png){#fig-visao-horizontal}
+
+Segundo esse processo vertical de escrita, o pesquisador acredita que o seu texto possui a função de explicar a sua visão de mundo sobre determinado tema.
+O problema é que, segundo o Prof. McEnerney os leitores não estão interessados nas nossas ideias ou sobre o que pensamos sobre o mundo.
+Não! O leitor está interessado em alterar a sua própria visão de mundo ou no mínimo, algo que resolva algum problema para eles.
+
+A essa segundo visão, Prof. McEnerney chama de processo vertical de leitura, conforme pode ser visto na @fig-visao-vertical.
+
+![Processo vertical: os leitores usam o texto para modificar a sua visão de mundo](leitores-endenterem-mundo.png){#fig-visao-vertical}
+
+Enquanto os pesquisadores estão escrevendo os seus textos nessa segundo a visão horizontal do processo, os leitores leêm os artigos segundo essa visão vertical. E é nessa assincronia que reside o problam da publicação acadêmcia.
+
+
+
+Isso também tem haver com a perspectiva do acumulo do conhecimento. (@fig-acumulo-conhecimento).
+Nessa perspectiva, a medida que você progride na carreira, nós vamos acumulando e concentrando conhecimento.
+No doutorado, o que nós talvez iremos conseguir fazer é estourar um pouquinho essa bolha. É o pequeno calombinho que vemos representado na figura.
+
+![Percepção centrada no acúmulo de conhecimento.](acumulo-conhecimento.png){#fig-acumulo-conhecimento}
+
+Qual é o problema com essa perspectiva, então? Segundo essa perspectiva o conhecimento é sempre linear, ele está sempre acumulando.
+E você estar na fronteira do conhecimento significa que você caminhou ou acumulou muito conhecimento.
+Mas essa visão não resalta as tensões que existem no nosso conhecimento atual. Os pontos de tensões, de conflito, daquilo que ainda não conseguimos explicar ou dar uma resposta satisfatória.
+
+Ao invés disso, o Prof. McEnerney propõe encarar o conhecimento como uma conversa através do tempo. Uma conversa que existe entre os membros de uma comunidade.
+Nesse modelo o conhecimento está muito mais fluído, existe a possibilidade de propor um novo conhecimento, de refutá-lo logo em seguida, de adotar um ponto de vista para logo em seguida refutá-lo.
+As pessoas dentro dessas comunidades estão mudando, e elas se movem ao longo do tempo.
+
+![O conhecimento é uma conversa o longo do tempo.](conhecimento-conversa-tempo.png){#fig-conhecimento-conversa-tempo}
+
+E isso para mim se torna bem claro quando eu começava a ler um artigo.
+O fato daquele artigo estar publicado carrega um peso de que é impossível refutá-lo ou no mínimo critica-lo.
+Mas o fato daquilo ser publicado não o torna menos propenso à crítica.
+
+Nesse sentido a relevância de um trabalho vai estar relacionada à audiência que ele consegue atingir.
+Por exemplo, as ideias de Eisntein sobre a Relatividade Geral impactaram não só a Física, mas outras áreas do conhecimento, incluindo à áreas Humanas e da Arte.
+
+A primeira dica é conhecer a sua comunidade. Sobre o que elas estão conversando, o que elas estão pensando.
+
+O levantamento dos trabalhos recentes possui essa proposta de conhecermos o estágio atual dessa conversa. A primeira tarefa que o levantamento bibliográfico nos permita conhecer o estágio atual dessa conversa.
+
+> A visão tradicional reforça a continuidade do problema, enquanto a visão proposta a instabilidade do movimento.
+
+A comunidade acadêmica é diferente da comunidade formada por profissionais da industria. Como eles se dialogam entre si?
+
+O propósito da escrita seria:
+
+> O texto ajuda aos leitores a entenderem melhor um assunto que eles querem entender bem!
+
+Diante dessa comunidade como podemos nos inserir nessa conversa? Conhecendo os códigos da comunidade.
+
+Usar a linguagem (código) do custo e do benefício, para mostrar que a instabilidade impõe um custo sobre o leitor e sobre a sua visão de mundo.
+Se a instabilidade for resolvida, existe um benefício um valor.
+
+Importante observar que nem toda instabilidade (ou problema) vão acarretar um prejuízo que deve ser evitado a qualquer custo.
+Alguns custos (problemas) podem ser perfeitamente tolerados ou não estão dentros da prioridades definidas pela comunidade.
+
+---
+
+Na verdade essa visão de mundo, para mim, reflete bem as relações de poder que ocorrem na sociedade.

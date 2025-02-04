@@ -5,10 +5,10 @@ project:
 website:
   title: "Giliard Godoi"
   site-url: 'https://giliardgodoi.github.io/'
-  description: 'A personal blog by Giliard Godoi'
+  description: 'Giliard Godoi personal blog'
   favicon: favico.png
   navbar:
-    logo: favico.png
+    logo: profile.png
     background: light
     right:
       - about.qmd

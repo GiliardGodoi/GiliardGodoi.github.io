@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Giliard Godoi">
+<meta name="dcterms.date" content="2023-01-28">
+<meta name="description" content="Instale o Jupyter Notebook uma vez e rode diferentes ambientes nele registrando kernels.">
 
-<title>Sobre – Giliard Godoi</title>
+<title>Registrando diferentes ambientes em uma única instalação do Jupyter – Giliard Godoi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +23,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favico.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favico.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +106,20 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./profile.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../favico.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Giliard Godoi</span>
     </a>
   </div>
@@ -92,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">Sobre</span></a>
   </li>  
   <li class="nav-item compact">
@@ -113,37 +151,116 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Registrando diferentes ambientes em uma única instalação do Jupyter</h1>
+                  <div>
+        <div class="description">
+          Instale o <em>Jupyter Notebook</em> uma vez e rode diferentes ambientes nele registrando kernels.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">utils</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Giliard Godoi </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 28, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.png" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Sobre</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/giliardgodoi/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://github.com/GiliardGodoi" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
+
+
+
+<p>No dia-a-dia, é comum criarmos ambientes diferentes para cada um dos nossos projeto, evitando possíveis conflitos entre versões de pacotes etc. Quando se trata de análise de dados, muitas vezes também somos tentados a instalar o <a href="https://jupyter.org/"><em>Jupyter Notebook</em></a> em cada um desses novos ambientes.</p>
+<p>Contudo, eu já me confrontei com uma situação em que eu tinha um ambiente para rodar simulações e um outro ambiente para analisar os dados dessas simulações. No ambiente de simulações, eu estava desenvolvendo um <a href="https://pt.wikipedia.org/wiki/Algoritmo_gen%C3%A9tico">Algoritmo Genético</a> (AG) com suas próprias dependências, que possívelmente seria aberto e distribuído depois.</p>
+<p>Nesse cenário, não seria interessante abrir o código do meu AG com as ‘dependências’ dos pacotes que eu utilizei para fazer a análise de dados (i.e.&nbsp;<code>pandas</code>, <code>matplotlib</code> etc.). Porém, existia algumas análises específicas em que eu queria demonstrar como os algoritmos de cruzamento em que eu estava trabalhando, funcionavam. Então eu instalei eles, como se fossem um pacote, nesse ambiente em que eu estava fazendo a análise de dados.</p>
+<p>Recentemente, eu passei por uma situação semelhante e então resolvi escrever esse post.</p>
+<section id="registrando-um-kernel-para-um-ambiente" class="level1">
+<h1>Registrando um kernel para um ambiente</h1>
+<p>Vamos supor que eu criei um ambiente com a nova versão do Python 3.11 usando o <code>conda</code> (Eu gosto de usar o <code>conda</code> não me critique!)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> py311 python=3.11</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate py311</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span> <span class="co">## Python 3.11.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Sim, o <code>conda</code> já disponibiliza essa versão do Python, mas como a atualização de pacotes do Anaconda demora mais do que <a href="https://pypi.org/">PyPi</a> algumas coisas podem não funcionar muito bem. Prosseguindo…</em></p>
+<p>No nosso novo ambiente vamos instalar o <code>ipykernel</code>:</p>
+<pre class="shell"><code>conda install pip       # opcional
+conda install ipykernel # ou então pip install ipykernel</code></pre>
+<p>Na data de publicação desse artigo, a versão do <code>ipykernel</code> disponível no canal padrão do anaconda, não suporta a versão 3.11 do Python. Uma saída é instalar via <code>pip</code> mesmo.</p>
+<pre class="shell"><code>python -m pip install ipykernel</code></pre>
+<p>Agora vamos instalar, ou registrar, esse novo ambiente como um <em>Jupyter</em> kernel (supondo que estamos dentro do ambiente, no caso o <code>py311</code>, que desejamos registrar.)</p>
+<pre class="shell"><code># conda activate py311
+# python -m pip install ipykernel
+python -m ipykernel install --user --name py11 --display-name "Python (3.11)"</code></pre>
+<p>Pronto! Agora podemos sair do ambiente <code>py311</code> e voltar para o ambiente <code>base</code> onde o nosso <em>full Jupyter Notebook</em> está instalado.</p>
+<pre class="shell"><code>conda deactivate</code></pre>
+</section>
+<section id="criando-um-notebook-com-um-kernel-específico" class="level1">
+<h1>Criando um notebook com um kernel específico</h1>
+<p>Para criar um novo <em>notebook</em> basta selecionar o kernel desejado no menu <em>new</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\jupyter-kernels.png" class="img-fluid figure-img"></p>
+<figcaption>Kernels disponíveis.</figcaption>
+</figure>
 </div>
+<p>Para checar a versão do python do kernel selecionado podemos usar tando o <code>sys.version</code> quanto a função <code>python_version</code> do módulo <code>platform</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src=".\jupyter-kernels-version.png" class="img-fluid figure-img"></p>
+<figcaption>Verificando a versão do kernel.</figcaption>
+</figure>
 </div>
- <!-- /main -->
+<p>É importante observar que, quando utilizamos o comando <code>!python --version</code> é como se esse comando fosse jogado para o terminal e recuperasse a versão do python do terminal, isto é, do terminal em que estamos rodando o ambiente <code>base</code>.</p>
+<p>Então essa não é a versão do kernel que estamos ativando.</p>
+</section>
+<section id="listando-os-kernels-disponíveis" class="level1">
+<h1>Listando os Kernels disponíveis</h1>
+<p>Para listar os kernels disponíveis, utilize o seguinte comando:</p>
+<pre class="shell"><code>jupyter kernelspec list</code></pre>
+</section>
+<section id="removendo-um-kernel" class="level1">
+<h1>Removendo um kernel</h1>
+<p>Segundo esse post <a href="https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove">aqui</a> para remover um kernel basta utilizar o seguinte comando:</p>
+<pre><code>jupyter kernelspec remove &lt;kernel-name&gt;</code></pre>
+<p>Porém, eu não testei o que acontece se eu remover (desinstalar) o ambiente primeiro e depois remover o kernel, ou fazer o inverso.</p>
+</section>
+<section id="referências" class="level1">
+<h1>Referências</h1>
+<p>Ipython Documentation. <em>Installing the IPython kernel</em>. Disponível em: <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html" class="uri">https://ipython.readthedocs.io/en/stable/install/kernel_install.html</a>. Acessado em 28 de jan. de 2023.</p>
+<p>Noopur R K. <em>How to add your Conda environment to your jupyter notebook in just 4 steps</em>. Disponível em: <a href="https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084" class="uri">https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084</a>. Acessado em 28 de jan. de 2023.</p>
+<p>Felipe Almeida. <em>Jupyter Notebook Kernels: How to Add, Change, Remove</em>. Disponível em <a href="https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove" class="uri">https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove</a>. Acessado em 28 de jan. de 2023.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -164,6 +281,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
