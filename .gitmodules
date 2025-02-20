@@ -1,0 +1,15 @@
+[submodule "themes/pelican-clean-blog"]
+	path = themes/pelican-clean-blog
+	url = https://github.com/gilsondev/pelican-clean-blog.git
+[submodule "themes/genus"]
+	path = themes/genus
+	url = https://github.com/vaiski/genus.git
+[submodule "themes/pelican-clean-genus"]
+	path = themes/pelican-clean-genus
+	url = https://github.com/GiliardGodoi/pelican-clean-genus.git
+[submodule "themes/genus-clean"]
+	path = themes/genus-clean
+	url = https://github.com/GiliardGodoi/genus-clean.git
+[submodule "themes/pelican-natureza"]
+	path = themes/pelican-natureza
+	url = https://github.com/GiliardGodoi/pelican-natureza.git
