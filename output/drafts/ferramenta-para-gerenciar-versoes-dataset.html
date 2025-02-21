@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Data Version Control | Giliard Godoi
+</title>
+  <link rel="canonical" href="../drafts/ferramenta-para-gerenciar-versoes-dataset.html">
+
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#333333">
+
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../theme/css/theme.css">
+  <link rel="stylesheet" href="../theme/css/oldstyle.css">
+
+  
+  <meta name="description" content="Ferramenta para gerenciar versões de datasets em seu projeto de Inteligência Artificial">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="../">
+        <img class="img-fluid rounded" src=../images/profile-park.png width=250 height=150 alt="Giliard Godoi">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="../">Giliard Godoi</a></h1>
+      <p class="text-muted">Uma história sobre aprendizados</p>
+      <ul class="list-inline">
+            <li class="list-inline-item"><a href="../pages/sobre/">Sobre</a></li>
+            <li class="list-inline-item"><a href="../pages/contato/">Contato</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/giliardgodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/GiliardGodoi" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-youtube" href="https://www.youtube.com/user/GiliardGodoi" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Data Version Control
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2024-05-29T00:00:00-03:00">
+          <i class="fas fa-clock"></i>
+          qua 29 maio 2024
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="../category/utils">utils</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-user"></i>
+              <a href="../author/giliard-godoi.html">Giliard Godoi</a>          </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="../tag/dvc">#dvc</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <hr>
+<p><a href="https://dvc.org/doc">Data Version Control</a> (DVC) é uma ferramenta  criada para gerenciar versões dos <em>datasets</em> em um projeto de <em>Machine Learning</em>, tal qual o <code>git</code> foi criado para gerenciar versões no desenvolvimento de software.</p>
+<p>Nesse tutorial, vamos passar pelo passo-a-passo do fluxo básico desse gerenciamento de versões dos <em>datasets.</em> O código utilizado nesse tutorial</p>
+<h2>passo 0: instalar o <code>dvc</code></h2>
+<p>A <a href="https://dvc.org/doc/install">página</a> de instalação do dvc traz diversas formas que esse programa pode ser instalado.
+Eu prefiro fazer da forma mais simples:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dvc
+</code></pre></div>
+
+<p>Se você procurar, existe também uma extensão do <code>dvc</code> para o <code>VS Code</code>.</p>
+<h2>1º passo: iniciar o projeto</h2>
+<p>Digamos que desejamos criar um projeto em um diretório chamado <code>dvc-tutorial</code>.
+Após criar a pasta, a primeira coisa a se fazer é iniciar um repositório <code>git</code>.</p>
+<p>O <code>dvc</code> e o <code>git</code> são duas ferramentas que andam juntas, e a primeira não sobrevive sem a segunda.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>dvc-tutorial
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>dvc-tutorial
+$<span class="w"> </span>git<span class="w"> </span>init
+$<span class="w"> </span>dvc<span class="w"> </span>init
+</code></pre></div>
+
+<p>Alguns arquivos de configuração já são criados logo de cara, na estrutura de diretório. Eles são uma pasta <code>.dvc</code> e um arquivo <code>.dvcignore</code>.</p>
+<p>Observe que esses arquivos e diretórios já estão adicionados à área de <em>stage</em> do <code>git</code>. Para verificar isso, execute o comando:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>status
+Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>committed:
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span><span class="w">        </span>new<span class="w"> </span>file:<span class="w">   </span>.dvc/.gitignore
+<span class="w">        </span>new<span class="w"> </span>file:<span class="w">   </span>.dvc/config
+<span class="w">        </span>new<span class="w"> </span>file:<span class="w">   </span>.dvcignore
+</code></pre></div>
+
+<p>Portanto, já podemos dar um <em>commit</em> nessas mudanças:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;Inicializando projeto DVC&#39;</span>
+</code></pre></div>
+
+<h2>2º passo: rastrear o dataset</h2>
+<p>Na documentação oficial, é sugerido obter um <em>dataset</em> de exemplo através do comando <code>dvc get</code>.</p>
+<p>No nosso caso vamos apenas gerar um <em>dataset fake</em> com o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>fake.py
+</code></pre></div>
+
+<p>Se executarmos o comando <code>dvc status</code> temos a seguinte mensagem:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>status
+There<span class="w"> </span>are<span class="w"> </span>no<span class="w"> </span>data<span class="w"> </span>or<span class="w"> </span>pipelines<span class="w"> </span>tracked<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>project<span class="w"> </span>yet.
+See<span class="w"> </span>&lt;https://dvc.org/doc/start&gt;<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>started!
+</code></pre></div>
+
+<p>Obviamente porque não começamos a rastrear o nosso <em>dataset</em>.
+Para tanto, basta executar o comando <code>dvc add &lt;caminho-para-dataset&gt;</code>, como no exemplo a seguir:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>add<span class="w"> </span>data/dirty_data.csv
+To<span class="w"> </span>track<span class="w"> </span>the<span class="w"> </span>changes<span class="w"> </span>with<span class="w"> </span>git,<span class="w"> </span>run:
+<span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span><span class="s1">&#39;data\dirty_data.csv.dvc&#39;</span><span class="w"> </span><span class="s1">&#39;data\.gitignore&#39;</span>To<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>auto<span class="w"> </span>staging,<span class="w"> </span>run:
+<span class="w">    </span>dvc<span class="w"> </span>config<span class="w"> </span>core.autostage<span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+
+<p>O <code>dvc</code> gera um arquivo com extensão <code>.dvc</code> no padrão <code>nome-do-arquivo.csv.dvc</code>.
+O exemplo a seguir mostra o conteúdo desse arquivo:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">outs:- md5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">416545c6a16b623635d3b35d8a65711b</span>
+<span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9757</span>
+<span class="nt">hash</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md5</span>
+<span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dirty_data.csv</span>
+</code></pre></div>
+
+<p>Se gerarmos outro ‘<em>dataset fake</em>’ e adiciona-lo com o <code>dvc add &lt;caminho-para-o-dataset&gt;</code>, será gerado outro arquivo como o anterior.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>fake.py<span class="w"> </span><span class="c1"># one more time$ dvc add data/dirty_dirty_data.csv</span>
+</code></pre></div>
+
+<p>Aqui está um ponto importante!
+É através desses arquivos, que contém um hash do <em>dataset</em> e outras informações, é que o <code>dvc</code> irá fazer o versionamento dos dados.</p>
+<p>Então, toda vez que alterarmos o <em>dataset</em>, mas manter o mesmo nome do arquivo, o <code>dvc</code> vai saber que não se trata do mesmo <em>dataset</em> através da informação do <em>hash</em>.</p>
+<p>Uma recomendação é sempre após gerar uma nova versão do <em>dataset</em>, realizar um <em>commit</em> do arquivo de controle do <code>dvc</code>.
+Assim, estaremos também <code>versionando</code> os nossos <em>datasets</em>.</p>
+<h2>3º passo: definir um repositório remoto</h2>
+<p>Podemos também querer compartilhar os nossos dados de alguma forma.
+O <code>dvc</code> possibilita a configuração de um repositório remoto de dados de forma semelhante ao que se propõe o <code>git</code>.</p>
+<p>A <a href="https://dvc.org/doc/start#storing-and-sharing">documentação</a> fornece maiores detalhes sobre as possibilidades dessa funcionalidade.
+É possível configurar um repositório de dados remotos utilizando diversos provedores disponíveis no mercado.</p>
+<p>Nesse exemplo, o repositório remoto vai ser apenas um outro diretório no mesmo nível que a pasta do nosso projeto.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+$<span class="w"> </span>mkdir<span class="w"> </span>dvc-repo
+$<span class="w"> </span>ls<span class="w"> </span>dvc-repo<span class="w"> </span><span class="c1"># empty</span>
+</code></pre></div>
+
+<p>Vamos vamos apontar ao repositório remoto com o comando:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>dvc-tutorial
+$<span class="w"> </span>dvc<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>-d<span class="w"> </span>myremote<span class="w"> </span>..<span class="se">\d</span>vc-repo
+</code></pre></div>
+
+<p>Agora estamos prontos para enviar o nosso <em>dataset</em> para esse repositório de dados remoto:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>push
+</code></pre></div>
+
+<p>Ou obter um <em>dataset</em> com o comando <code>dvc pull</code>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>pull
+</code></pre></div>
+
+<p>Lembre-se, o <code>dvc</code> sempre vai utilizar aqueles arquivos <code>.dvc</code> gerenciar os <em>datasets</em>.
+Quando damos o comando <code>dvc pull</code> ele vai olhar para esses arquivos para determinar qual a versão do dataset que ele irá resgatar.</p>
+<p>É bom lembrar que o GitHub não lida muito bem com <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github">arquivos grandes</a>.</p>
+<h2>4º passo: Alterar e voltar ao que era antes</h2>
+<p>Nesse passo, vamos supor que realizamos alguma alteração no nosso <em>dataset</em> original:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>change.py
+$<span class="w"> </span>dvc<span class="w"> </span>status
+data<span class="se">\d</span>irty_data.csv.dvc:<span class="w">    </span>changed<span class="w"> </span>outs:
+<span class="w">        </span>modified:<span class="w">           </span>data<span class="se">\d</span>irty_data.csv
+</code></pre></div>
+
+<p>Caso tenhamos comitados no <code>git</code>, podemos nos certificar que o arquivo <code>data/dirty_data.csv.dvc</code> não foi alterado.
+Isto é, o <code>dvc</code> ainda está apontando a versão anterior do <em>dataset</em>.</p>
+<p>Nós podemos realizar um <code>dvc commit</code> para dizer ao <code>dvc</code> que o <em>dataset</em> foi alterado.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>commit
+</code></pre></div>
+
+<p>Novamente, com o comando <code>git status</code> podemos ver que o conteúdo do nosso arquivo <code>data/dirty_data.csv.dvc</code> foi alterado:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>master
+Changes<span class="w"> </span>not<span class="w"> </span>staged<span class="w"> </span><span class="k">for</span><span class="w"> </span>commit:
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>what<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>committed<span class="o">)</span><span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git restore &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>discard<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>working<span class="w"> </span>directory<span class="o">)</span><span class="w">        </span>modified:<span class="w">   </span>data/dirty_data.csv.dvc
+</code></pre></div>
+
+<p>Agora, por um momento, imagine que essa alteração não era exatamente o que queríamos.
+Podemos voltar o arquivo <code>data/dirty_data.csv.dvc</code> à sua versão anterior.
+Nesse exemplo, vamos fazer isso com o comando:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>restore<span class="w"> </span>.<span class="se">\d</span>ata<span class="se">\d</span>irty_data.csv.dvc
+</code></pre></div>
+
+<p>Agora, se executarmos o seguinte comando, o nosso arquivo de dataset volta ao que era antes.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>checkout
+Building<span class="w"> </span>workspace<span class="w"> </span>index<span class="w">                                                                            </span><span class="p">|</span><span class="m">2</span>.00<span class="w"> </span><span class="o">[</span><span class="m">00</span>:00,<span class="w">  </span>128entry/s<span class="o">]</span>
+Comparing<span class="w"> </span>indexes<span class="w">                                                                                   </span><span class="p">|</span><span class="m">3</span>.00<span class="w"> </span><span class="o">[</span><span class="m">00</span>:00,<span class="w">    </span>?entry/s<span class="o">]</span>
+Applying<span class="w"> </span>changes<span class="w">                                                                                    </span><span class="p">|</span><span class="m">1</span>.00<span class="w"> </span><span class="o">[</span><span class="m">00</span>:00,<span class="w">  </span><span class="m">64</span>.0file/s<span class="o">]</span>
+M<span class="w">       </span>data<span class="se">\d</span>irty_data.csv
+</code></pre></div>
+
+<p>O <code>dvc</code> mantém um cache das nossas versões do <em>dataset</em> na pasta <code>.dvc\cache\files\md5\..</code>.</p>
+<p>E sim, se não tomarmos cuidado, várias versões do <em>dataset</em> pode consumir muito espaço de armazenamento.
+Porém, talvez apenas precisemos manter os passos seguidos para obter o nosso <em>dataset</em>.</p>
+<h2>5º passo: incluindo um pipeline</h2>
+<p>O pipeline pode ser descrito como diferentes estágios necessários para se obter um resultado ou cumprir uma tarefa.</p>
+<p>Através do comando <code>dvc stage add</code> é possível definir um estágio do pipeline.
+Um estágio é definido através de um nome para identificação e de um comando que define o <em>script</em> que é executado.
+Também é possível definir os arquivos dos quais o estágio depende (arquivos de dependência) e os arquivos de saída gerados (<em>outputs</em>).</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>stage<span class="w"> </span>add<span class="w"> </span>--name<span class="w"> </span>prepare<span class="w"> </span><span class="se">\ </span><span class="w">               </span>--deps<span class="w"> </span><span class="se">\p</span>ipe.py
+<span class="w">                </span>--deps<span class="w"> </span>data<span class="se">\d</span>irty_data.csv<span class="w"> </span><span class="se">\ </span><span class="w">               </span>--outs<span class="w"> </span>data<span class="se">\n</span>ormalized<span class="se">\c</span>lean_data.csv
+<span class="w">                </span>python<span class="w"> </span>pipe.py
+Added<span class="w"> </span>stage<span class="w"> </span><span class="s1">&#39;prepare&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;dvc.yaml&#39;</span>To<span class="w"> </span>track<span class="w"> </span>the<span class="w"> </span>changes<span class="w"> </span>with<span class="w"> </span>git,<span class="w"> </span>run:
+<span class="w">        </span>git<span class="w"> </span>add<span class="w"> </span>dvc.yaml<span class="w"> </span><span class="s1">&#39;data\normalized\.gitignore&#39;</span>
+</code></pre></div>
+
+<p>Note que após executar o comando, o texto de saída sugere rastrear o arquivo <code>dvc.yaml</code> com o <code>git</code>.</p>
+<h2>Reproduzir um pipeline</h2>
+<p>É possível reproduzir todo o pipeline do projeto com o comando <code>dvc repro</code>.
+O dvc irá executar os <em>scripts</em> de cada estágio, se observar que houve uma mudança nos arquivos que um estágio depende (arquivos de entrada, ou de dados) ou mudanças em parâmetros (registrados no arquivo <code>params.yaml</code>).</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>repro
+<span class="s1">&#39;data\dirty_data.csv.dvc&#39;</span><span class="w"> </span>didn<span class="s1">&#39;t change, skippingRunning stage &#39;</span>prepare<span class="s1">&#39;:&gt; python .\pipe.pyGenerating lock file &#39;</span>dvc.lock<span class="s1">&#39;Updating lock file &#39;</span>dvc.lock<span class="err">&#39;</span>To<span class="w"> </span>track<span class="w"> </span>the<span class="w"> </span>changes<span class="w"> </span>with<span class="w"> </span>git,<span class="w"> </span>run:<span class="w">        </span>git<span class="w"> </span>add<span class="w"> </span>dvc.lock
+</code></pre></div>
+
+<p>Ao reproduzir a sequência de estágios de um pipeline, é gerado um arquivo chamado <code>dvc.lock</code> que registra o <em>hash</em> dos arquivos de dependência e arquivos de saída (<em>outputs</em>) gerados.
+Conforme podemos ver no exemplo de saída reproduzido acima, o <code>dvc</code> recomenda que esse arquivo seja rastreado pelo <code>git</code>.</p>
+<h2>Visualizando o pipeline</h2>
+<p>É possível visualizar o pipeline, isto é, a sequência de etapas registrada em nosso projeto com o comando <code>dvc dag</code>.
+É possível gerar essa visualização em diferentes formatos. Para saber mais consulte a documentação <a href="https://dvc.org/doc/command-reference/dag">nesta página</a>.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>dag
+</code></pre></div>
+
+<p>DAG nesse contexto significa <em>Directed Acyclic Graph</em>.
+Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possuir dependências circulares, isto é, C depende de B, que depende de A, e este último depende de C.</p>
+<p>Também é possível utilizar o comando <code>dvc stage list</code> para listar todos os estágios registrados no arquivo <code>dvc.yaml</code>.</p>
+<h1>Referências</h1>
+<p>DVC Documentation. Disponível em <a href="https://dvc.org/doc">https://dvc.org/doc</a>. Último acesso em:</p>
+<p>Awesome Pipeline:A curated list of awesome pipeline toolkits. Disponível em <a href="https://github.com/pditommaso/awesome-pipeline">https://github.com/pditommaso/awesome-pipeline</a></p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="../authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+      <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>
