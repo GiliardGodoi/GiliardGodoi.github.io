@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>  Extrair dados de arquivos PDFs | Giliard Godoi
+  <title>  Extrair dados de arquivos PDFs | Giliard Godoi
 </title>
   <link rel="canonical" href="../../../articles/2023/exemplo-tabula-analise-dados-violencia-domestica/index.html">
 
@@ -18,12 +18,12 @@
 
   <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../../theme/css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../../../theme/css/pygments/monokai.min.css">
   <link rel="stylesheet" href="../../../theme/css/theme.css">
   <link rel="stylesheet" href="../../../theme/css/oldstyle.css">
 
   
-  <meta name="description" content="Um exemplo de como extrair dados de tabelas em arquivos pdf, para análise dos casos de violência doméstica em Municípios do Norte Pioneiro Paranaense.">
+  <meta name="description" content="Um exemplo de como extrair dados de tabelas em arquivos pdf, para análise dos casos de violência doméstica em Municípios do Norte Pioneiro Paranaense.">
 
 
 </head>
@@ -55,11 +55,14 @@
 
   <div class="main">
     <div class="container">
-      <h1>  Extrair dados de arquivos PDFs
+      <h1>  Extrair dados de arquivos&nbsp;PDFs
 </h1>
       <hr>
   <article class="article">
     <header>
+      <p style="font-style: italic;">
+        Um exemplo de como extrair dados de tabelas em arquivos pdf, para análise dos casos de violência doméstica em Municípios do Norte Pioneiro Paranaense.
+      </p>
       <ul class="list-inline">
         <li class="list-inline-item text-muted" title="2023-08-04T00:00:00-03:00">
           <i class="fas fa-clock"></i>
@@ -69,83 +72,79 @@
           <i class="fas fa-folder-open"></i>
           <a href="../../../category/data-analysis">data-analysis</a>
         </li>
-          <li class="list-inline-item">
-            <i class="fas fa-user"></i>
-              <a href="../../../author/giliard-godoi.html">Giliard Godoi</a>          </li>
       </ul>
     </header>
     <div class="content">
-      <p>No ano de 2020, a Câmara Municipal de Santo Antônio da Platina solicitou à Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher. 
-O requerimento de solicitação está disponibilizado no site da entidade no <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">seguinte link</a>. </p>
-<p>O problema é que essas solicitações são respondidas em formatos de arquivos fechados, como arquivos em formado <code>pdf</code>, que impedem a leitura de dados por outros programas de computador.
-E com isso impedem também a realização de outras análises.</p>
-<p>O software <a href="https://tabula.technology/">Tabula</a> é um extrator de tabelas de documentos em <code>PDF</code>. 
-Com é possível extrair os dados das tabelas e exportar para arquivos abertos como arquivos com valores separados por vírgulas (csv - <a href="https://pt.wikipedia.org/wiki/Comma-separated_values">Comma-Separated Values</a>). </p>
+      <p>No ano de 2020, a Câmara Municipal de Santo Antônio da Platina solicitou à Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher.
+O requerimento de solicitação está disponibilizado no site da entidade no <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">seguinte link</a>.</p>
+<p>O problema é que essas solicitações são respondidas em formatos de arquivos fechados, como arquivos em formado <code>pdf</code>, que impedem a leitura de dados por outros programas de computador.
+E com isso impedem também a realização de outras análises.</p>
+<p>O software <a href="https://tabula.technology/">Tabula</a> é um extrator de tabelas de documentos em <code>PDF</code>.
+Com é possível extrair os dados das tabelas e exportar para arquivos abertos como arquivos com valores separados por vírgulas (csv - <a href="https://pt.wikipedia.org/wiki/Comma-separated_values">Comma-Separated Values</a>).</p>
 <p>Esse é um programa feito em Java, então você vai precisar instalar o Java na sua máquina para executar o Tabula. As instruções para instalação podem ser encontradas na documentação do repositório da ferramenta, disponível nesse <a href="https://github.com/tabulapdf/tabula?tab=readme-ov-file#using-tabula">endereço</a>.</p>
-<p>Após executar o programa, só precisa selecionar o arquivo em PDF e selecionar a área em que está a sua tabela.</p>
+<p>Após executar o programa, só precisa selecionar o arquivo em <span class="caps">PDF</span> e selecionar a área em que está a sua tabela.</p>
 <!-- ![Exemplo do software Tabula](../../images/2023/tabula-exemplo.png) -->
-<p><img alt="Exemplo do software Tabula" src="../../../images/2023/tabula-exemplo.png"></p>
-<p>E então, o programa cuida do resto...</p>
+<p><img alt="Exemplo do software Tabula" class="img-fluid" src="../../../images/2023/tabula-exemplo.png"/></p>
+<p>E então, o programa cuida do resto…</p>
 <!-- ![Dados extraidos com o software tabula](../../images/2023/tabula-exemplo-dois.png) -->
-<p><img alt="Dados extraidos com o software tabula" src="../../../images/2023/tabula-exemplo-dois.png"></p>
-<p>Com os dados em um formato aberto, então é possível realizar a leitura com um código em Python, por exemplo, e realizar análises complementares e criar gráficos como o observados a seguir.</p>
+<p><img alt="Dados extraidos com o software tabula" class="img-fluid" src="../../../images/2023/tabula-exemplo-dois.png"/></p>
+<p>Com os dados em um formato aberto, então é possível realizar a leitura com um código em Python, por exemplo, e realizar análises complementares e criar gráficos como o observados a seguir.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
-<span class="n">anos</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;20</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">21</span><span class="p">)]</span>
+<span class="n">anos</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">'20</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">21</span><span class="p">)]</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;tabela-03-dados.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'tabela-03-dados.csv'</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TOTAL&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'TOTAL'</span><span class="p">])</span>
 <span class="n">df</span><span class="p">[</span><span class="n">anos</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">anos</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-    <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;MUNICÍPIO&quot;</span><span class="p">],</span>
+    <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">"MUNICÍPIO"</span><span class="p">],</span>
     <span class="n">value_vars</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span>
-    <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;ANO&quot;</span><span class="p">,</span>
-    <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+    <span class="n">var_name</span><span class="o">=</span><span class="s2">"ANO"</span><span class="p">,</span>
+    <span class="n">value_name</span><span class="o">=</span><span class="s1">'value'</span><span class="p">)</span>
 
-<span class="n">select</span> <span class="o">=</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;MUNICÍPIO&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SANTO ANTONIO DA PLATINA&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;MUNICÍPIO&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;JACAREZINHO&quot;</span><span class="p">)</span>
+<span class="n">select</span> <span class="o">=</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">'MUNICÍPIO'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"SANTO ANTONIO DA PLATINA"</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df2</span><span class="p">[</span><span class="s1">'MUNICÍPIO'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"JACAREZINHO"</span><span class="p">)</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">[</span><span class="o">~</span><span class="n">select</span><span class="p">],</span>
-                 <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ANO&quot;</span><span class="p">,</span>
-                 <span class="n">y</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
-                 <span class="n">units</span><span class="o">=</span><span class="s2">&quot;MUNICÍPIO&quot;</span><span class="p">,</span>
+                 <span class="n">x</span><span class="o">=</span><span class="s2">"ANO"</span><span class="p">,</span>
+                 <span class="n">y</span><span class="o">=</span><span class="s2">"value"</span><span class="p">,</span>
+                 <span class="n">units</span><span class="o">=</span><span class="s2">"MUNICÍPIO"</span><span class="p">,</span>
                  <span class="n">estimator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                 <span class="n">color</span><span class="o">=</span><span class="s2">&quot;.7&quot;</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s2">".7"</span><span class="p">,</span>
                  <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                  <span class="n">legend</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 
 <span class="n">g4</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df2</span><span class="p">[</span><span class="n">select</span><span class="p">],</span>
-                  <span class="n">x</span><span class="o">=</span><span class="s2">&quot;ANO&quot;</span><span class="p">,</span>
-                  <span class="n">y</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
-                  <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;MUNICÍPIO&quot;</span><span class="p">,</span>
+                  <span class="n">x</span><span class="o">=</span><span class="s2">"ANO"</span><span class="p">,</span>
+                  <span class="n">y</span><span class="o">=</span><span class="s2">"value"</span><span class="p">,</span>
+                  <span class="n">hue</span><span class="o">=</span><span class="s2">"MUNICÍPIO"</span><span class="p">,</span>
                   <span class="n">markers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                   <span class="n">dashes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                   <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Quantidade&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Ano&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Quantidade"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Ano"</span><span class="p">);</span>
 </code></pre></div>
-
-<p>O gráfico a seguir apresenta a quantidade dos casos de violência doméstica, por natureza jurídica, nos municípios da região do Norte Pioneiro do Estado do Paraná, no período de 01/01/2016 a 31/12/2020.</p>
+<p>O gráfico a seguir apresenta a quantidade dos casos de violência doméstica, por natureza jurídica, nos municípios da região do Norte Pioneiro do Estado do Paraná, no período de 01/01/2016 a 31/12/2020.</p>
 <!-- ![Registro de violência doméstica no Norte Pioneiro](../../images/2023/grafico-violencia-domestica-norte-pioneiro.png) -->
-<p><img alt="Registro de violência doméstica no Norte Pioneiro" src="../../../images/2023/grafico-violencia-domestica-norte-pioneiro.png"></p>
+<p><img alt="Registro de violência doméstica no Norte Pioneiro" class="img-fluid" src="../../../images/2023/grafico-violencia-domestica-norte-pioneiro.png"/></p>
 <p>No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020.
-Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.</p>
-<p>Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais. 
-A razão para tanto, pode ser que este é o único município da região que possui uma Delegacia Especial da Mulher.</p>
-<p>Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos casos de violência doméstica nos demais municípios que não contam com uma unidade especializada para atender a esses casos.</p>
+Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.</p>
+<p>Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais.
+A razão para tanto, pode ser que este é o único município da região que possui uma Delegacia Especial da Mulher.</p>
+<p>Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos casos de violência doméstica nos demais municípios que não contam com uma unidade especializada para atender a esses casos.</p>
 <h1>Aviso</h1>
-<blockquote>
-<p>As opiniões expressas nesse artigo são somente minhas, e não refletem necessáriamente a opinião de instituições ou pessoas eventualmente citadas nesse artigo.</p>
+<blockquote class="blockquote">
+<p>As opiniões expressas nesse artigo são somente minhas, e não refletem necessáriamente a opinião de instituições ou pessoas eventualmente citadas nesse artigo.</p>
 </blockquote>
 <h1>Referências</h1>
-<p>Câmara de Santo Antônio da Platina. <strong>Requerimento nº 598 de 2020, de autoria da Vereadora Mirian Rodrigues Bonomo Montanheiro</strong>. Disponível em: <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613</a>. Último acesso em 07 de abr. de 2024.</p>
+<p>Câmara de Santo Antônio da Platina. <strong>Requerimento nº 598 de 2020, de autoria da Vereadora Mirian Rodrigues Bonomo Montanheiro</strong>. Disponível em: <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613</a>. Último acesso em 07 de abr. de 2024.</p>
 <p>Tabula Oficial Webpage. <a href="https://tabula.technology/">https://tabula.technology/</a></p>
     </div>
   </article>
@@ -156,7 +155,6 @@ A razão para tanto, pode ser que este é o único município da região que pos
     <div class="container">
 <div class="row">
   <ul class="col-sm-6 list-inline">
-      <li class="list-inline-item"><a href="../../../authors.html">Authors</a></li>
     <li class="list-inline-item"><a href="../../../archives.html">Archives</a></li>
     <li class="list-inline-item"><a href="../../../categories.html">Categories</a></li>
       <li class="list-inline-item"><a href="../../../tags.html">Tags</a></li>

@@ -22,6 +22,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+HIDE_AUTHORS = True
+
 # Blogroll
 # LINKS = (
 #     ("Pelican", "https://getpelican.com/"),
@@ -48,6 +50,7 @@ ICONS = (
 )
 
 
+DISPLAY_CATEGORIES_ON_MENU = False
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -64,15 +67,14 @@ THEME_CSS_OVERRIDES = ['theme/css/oldstyle.css']
 # THEME = Path('themes', 'pelican-natureza')
 # COLOR_SCHEME_CSS = 'monokai.css'
 
-DISPLAY_CATEGORIES_ON_MENU = False
 
 # URLs configuration
 STATIC_PATHS = ["images", "pdfs", "extras", "datasets"]
 
 PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
-# PAGE_EXCLUDES    = ARTICLE_PATHS + STATIC_PATHS
-# ARTICLE_EXCLUDES = PAGE_PATHS + STATIC_PATHS
+PAGE_EXCLUDES    = STATIC_PATHS + ARTICLE_PATHS
+ARTICLE_EXCLUDES = STATIC_PATHS + PAGE_PATHS
 
 # Fomatação dos arquivos gerados
 ARTICLE_URL = "articles/{date:%Y}/{slug}/"
@@ -104,26 +106,26 @@ EXTRA_PATH_METADATA = {
 }
 
 RFG_FAVICONS = True
+PYGMENTS_STYLE = 'monokai'
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
 # plugins
-# MARKUP = ("md", "ipynb")
+MARKUP = ("md", "ipynb")
 
-# PLUGIN_PATHS = ['plugins/']
-# # PLUGINS = ['pelican-bootstrapify']
+PLUGIN_PATHS = ['plugins/']
+PLUGINS = ['pelican-bootstrapify']
 
-# # IPYNB_SKIP_CSS = False
-# IGNORE_FILES = [".ipynb_checkpoints"]
+IPYNB_SKIP_CSS = False
+IGNORE_FILES = [".ipynb_checkpoints"]
 
-# BOOTSTRAPIFY = {
-#     "table": ["table", "table-striped", "table-hover"],
-#     "img": ["img-fluid"],
-#     "blockquote": ["blockquote"],
-# }
-# BOOTSTRAP_THEME = "flatly"
-# PYGMENTS_STYLE = "default"
+BOOTSTRAP_THEME = "flatly"
+BOOTSTRAPIFY = {
+    "table": ["table", "table-striped", "table-hover"],
+    "img": ["img-fluid"],
+    "blockquote": ["blockquote"],
+}
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
-LOAD_CONTENT_CACHE = False
 
-# TYPOGRIFY = True
+TYPOGRIFY = True

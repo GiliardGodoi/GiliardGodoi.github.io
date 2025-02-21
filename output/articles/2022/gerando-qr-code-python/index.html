@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>  Gerando QR code com Python | Giliard Godoi
+  <title>  Gerando QR code com Python | Giliard Godoi
 </title>
   <link rel="canonical" href="../../../articles/2022/gerando-qr-code-python/index.html">
 
@@ -18,12 +18,12 @@
 
   <link rel="stylesheet" href="../../../theme/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../../theme/css/fontawesome.min.css">
-  <link rel="stylesheet" href="../../../theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="../../../theme/css/pygments/monokai.min.css">
   <link rel="stylesheet" href="../../../theme/css/theme.css">
   <link rel="stylesheet" href="../../../theme/css/oldstyle.css">
 
   
-  <meta name="description" content="Customizando a geração de QR codes">
+  <meta name="description" content="Customizando a geração de QR codes">
 
 
 </head>
@@ -55,11 +55,14 @@
 
   <div class="main">
     <div class="container">
-      <h1>  Gerando QR code com Python
+      <h1>  Gerando <span class="caps">QR</span> code com&nbsp;Python
 </h1>
       <hr>
   <article class="article">
     <header>
+      <p style="font-style: italic;">
+        Customizando a geração de QR codes
+      </p>
       <ul class="list-inline">
         <li class="list-inline-item text-muted" title="2022-09-27T00:00:00-03:00">
           <i class="fas fa-clock"></i>
@@ -67,50 +70,41 @@
         </li>
         <li class="list-inline-item">
           <i class="fas fa-folder-open"></i>
-          <a href="../../../category/utils">utils</a>
+          <a href="../../../category/programming-skills">programming-skills</a>
         </li>
-          <li class="list-inline-item">
-            <i class="fas fa-user"></i>
-              <a href="../../../author/giliard-godoi.html">Giliard Godoi</a>          </li>
-          <li class="list-inline-item">
-            <i class="fas fa-tag"></i>
-              <a href="../../../tag/qrcode">#qrcode</a>          </li>
       </ul>
     </header>
     <div class="content">
-      <h1>Criando QR codes com Python</h1>
-<p>Por esses dias eu queria produzir um QR code para um link do <em>site</em> da Câmara de Vereadores de Santo Antônio da Platina - PR.</p>
-<p>A maioria dos geradores disponíveis na <em>internet</em> produzem imagens padrões, e seria interessante customizar esse QR code com as cores dominantes do <em>site</em> da instituição. </p>
-<p>Como bom programador Python eu utilizei uma biblioteca chamada <code>qrcode</code>. Ela está disponível no PyPl (<a href="https://pypi.org/project/qrcode/">link</a>) e também nesse repositório: <a href="https://github.com/lincolnloop/python-qrcode">github.com/lincolnloop/python-qrcode</a>.</p>
-<h2>Como funciona os QR codes</h2>
-<p>Eu tentei encontrar algum artigo didático sobre a geração de QR code e como eles funcionam, porém não encontrei uma resposta satisfatória. </p>
-<p>Porém, quis o destino (ou o algortimo do Twitter) que eu esbarrasse com essa <em>thread</em> que faz uma introdução bem legal e com várias imagens ilustrativas.</p>
-<p>Seria interessante dar uma olhada nessa <em>thread</em> antes de continuar lendo essa postagem.</p>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-theme="light">
-    <p lang="en" dir="ltr">Ever wondered how a QR code works? <br>No, me neither but it&#39;s low-key fascinating.
-    <br><br>(Warning, there is some extremely nerdy s*** here.👇 ) 
-    <a href="https://t.co/SgQJVvhu0q">pic.twitter.com/SgQJVvhu0q</a> </p>&mdash; Dan Hollick 🇿🇦 (@DanHollick) 
+      <h1>Criando <span class="caps">QR</span> codes com Python</h1>
+<p>Por esses dias eu queria produzir um <span class="caps">QR</span> code para um link do <em>site</em> da Câmara de Vereadores de Santo Antônio da Platina - <span class="caps">PR</span>.</p>
+<p>A maioria dos geradores disponíveis na <em>internet</em> produzem imagens padrões, e seria interessante customizar esse <span class="caps">QR</span> code com as cores dominantes do <em>site</em> da instituição.</p>
+<p>Como bom programador Python eu utilizei uma biblioteca chamada <code>qrcode</code>. Ela está disponível no PyPl (<a href="https://pypi.org/project/qrcode/">link</a>) e também nesse repositório: <a href="https://github.com/lincolnloop/python-qrcode">github.com/lincolnloop/python-qrcode</a>.</p>
+<h2>Como funciona os <span class="caps">QR</span> codes</h2>
+<p>Eu tentei encontrar algum artigo didático sobre a geração de <span class="caps">QR</span> code e como eles funcionam, porém não encontrei uma resposta satisfatória.</p>
+<p>Porém, quis o destino (ou o algortimo do Twitter) que eu esbarrasse com essa <em>thread</em> que faz uma introdução bem legal e com várias imagens ilustrativas.</p>
+<p>Seria interessante dar uma olhada nessa <em>thread</em> antes de continuar lendo essa postagem.</p>
+<script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
+<blockquote class="twitter-tweet blockquote" data-dnt="true" data-lang="en" data-theme="light">
+<p dir="ltr" lang="en">Ever wondered how a <span class="caps">QR</span> code works? <br/>No, me neither but it's low-key fascinating.
+    <br/><br/>(Warning, there is some extremely nerdy s*** here.👇 )
+    <a href="https://t.co/SgQJVvhu0q">pic.twitter.com/SgQJVvhu0q</a> </p>— Dan Hollick 🇿🇦 (@DanHollick)
         <a href="https://twitter.com/DanHollick/status/1570040185500626947?ref_src=twsrc%5Etfw">September 14, 2022</a>
 </blockquote>
-
-<p>Outra referência interessante é esse artigo da empresa responsável pela criação do QR code, Denso Wave, contando um pouco da história da criação do QR code.</p>
-<blockquote>
-<p><a href="https://www.denso-wave.com/en/technology/vol1.html">QR code: development history</a></p>
+<p>Outra referência interessante é esse artigo da empresa responsável pela criação do <span class="caps">QR</span> code, Denso Wave, contando um pouco da história da criação do <span class="caps">QR</span> code.</p>
+<blockquote class="blockquote">
+<p><a href="https://www.denso-wave.com/en/technology/vol1.html"><span class="caps">QR</span> code: development history</a></p>
 </blockquote>
 <h2>Instalação</h2>
-<p>Para instalar a biblioteca segui as instruções apresentadas no repositório. A adição do comando <code>[pil]</code> força a instalação da biblioteca <a href="https://pypi.org/project/Pillow/">Pillow</a>, responsável por gerar e trabalhar com alguns formatos de imagens (<code>.png</code> por exemplo).</p>
+<p>Para instalar a biblioteca segui as instruções apresentadas no repositório. A adição do comando <code>[pil]</code> força a instalação da biblioteca <a href="https://pypi.org/project/Pillow/">Pillow</a>, responsável por gerar e trabalhar com alguns formatos de imagens (<code>.png</code> por exemplo).</p>
 <div class="highlight"><pre><span></span><code><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">qrcode</span><span class="p">[</span><span class="n">pil</span><span class="p">]</span>
 </code></pre></div>
-
-<h2>Gerando QR Codes</h2>
-<p>O meu objetivo é produzir um QR code que direcione uma pessoa até a página <em>web</em> em que está disponível a pauta das reuniões da Câmara Municipal.</p>
-<p>Então, a <em>url</em> que eu vou codificar é a seguinte:</p>
-<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://sapl.santoantoniodaplatina.pr.leg.br/sessao/pauta-sessao&quot;</span>
+<h2>Gerando <span class="caps">QR</span> Codes</h2>
+<p>O meu objetivo é produzir um <span class="caps">QR</span> code que direcione uma pessoa até a página <em>web</em> em que está disponível a pauta das reuniões da Câmara Municipal.</p>
+<p>Então, a <em>url</em> que eu vou codificar é a seguinte:</p>
+<div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://sapl.santoantoniodaplatina.pr.leg.br/sessao/pauta-sessao"</span>
 </code></pre></div>
-
-<p>Nesse tutorial vamos explorar a criação das imagens através da classe <code>QRCode</code>, que fornece opções algumas opções avançadas.</p>
-<p>O código abaixo apresenta uma forma de utilizar a classe <code>QRCode</code>, alguns parâmertos dela, e as funções necessárias para produzir um QR code.</p>
+<p>Nesse tutorial vamos explorar a criação das imagens através da classe <code>QRCode</code>, que fornece opções algumas opções avançadas.</p>
+<p>O código abaixo apresenta uma forma de utilizar a classe <code>QRCode</code>, alguns parâmertos dela, e as funções necessárias para produzir um <span class="caps">QR</span> code.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">qrcode</span>
 
 <span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span>
@@ -123,24 +117,22 @@
 <span class="n">qr</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="c1"># adiciona dados para serem codificados</span>
 
 <span class="n">qr</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="n">fit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># se o parâmetro `fit` está marcado como True</span>
-<span class="c1"># a versão do QR code pode ser alterada para suportar a codificação de uma </span>
+<span class="c1"># a versão do QR code pode ser alterada para suportar a codificação de uma</span>
 <span class="c1"># quantidade maior de informações. Faça o seguinte teste: inicie o objeto `qr`</span>
 <span class="c1"># com o parâmetro `version=1` e o parâmetro `fit` na função `make` como False.</span>
 <span class="c1"># É esperado que uma exceção seja gerada nessas condições.</span>
 
 <span class="n">img</span> <span class="o">=</span> <span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">()</span>
 <span class="c1"># esse método possui os seguintes valores padrões</span>
-<span class="c1"># img = qr.make_image(fill_color=&quot;black&quot;, back_color=&quot;white&quot;)</span>
+<span class="c1"># img = qr.make_image(fill_color="black", back_color="white")</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">img</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">img</span><span class="p">))</span>
 <span class="n">img</span>
 </code></pre></div>
-
-<div class="highlight"><pre><span></span><code>&lt;class &#39;qrcode.image.pil.PilImage&#39;&gt;
+<div class="highlight"><pre><span></span><code>&lt;class 'qrcode.image.pil.PilImage'&gt;
 </code></pre></div>
-
-<p><img alt="png" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_9_1.png"></p>
-<p>Observe que alterando o parâmetro <code>error_correction</code> para <code>qrcode.constants.ERROR_CORRECT_H</code>altera-se o padrão da imagem. Isso significa também que existe uma maior redundância na codificação de informações que torna o QR code mais robusto a danos ou obstruções que impeçam a leitura dos dados codificados.</p>
+<p><img alt="png" class="img-fluid" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_9_1.png"/></p>
+<p>Observe que alterando o parâmetro <code>error_correction</code> para <code>qrcode.constants.ERROR_CORRECT_H</code>altera-se o padrão da imagem. Isso significa também que existe uma maior redundância na codificação de informações que torna o <span class="caps">QR</span> code mais robusto a danos ou obstruções que impeçam a leitura dos dados codificados.</p>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span>
     <span class="n">version</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
     <span class="n">error_correction</span><span class="o">=</span><span class="n">qrcode</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ERROR_CORRECT_H</span><span class="p">,</span>
@@ -156,14 +148,12 @@
 
 <span class="n">img</span>
 </code></pre></div>
-
-<div class="highlight"><pre><span></span><code>&lt;class &#39;qrcode.image.pil.PilImage&#39;&gt;
+<div class="highlight"><pre><span></span><code>&lt;class 'qrcode.image.pil.PilImage'&gt;
 </code></pre></div>
-
-<p><img alt="png" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_11_1.png"></p>
+<p><img alt="png" class="img-fluid" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_11_1.png"/></p>
 <h3>Customização</h3>
-<p><code>qrcodes</code> oferece possibilidade de customizar as cores do QR code com a máscara <code>SolidFillColorMask</code>, ou opções de gradiente, além de inserir imagens no <em>background</em>.</p>
-<p>Também é possível escolher entre diferentes estilos de formas e desenhos para o QR code.</p>
+<p><code>qrcodes</code> oferece possibilidade de customizar as cores do <span class="caps">QR</span> code com a máscara <code>SolidFillColorMask</code>, ou opções de gradiente, além de inserir imagens no <em>background</em>.</p>
+<p>Também é possível escolher entre diferentes estilos de formas e desenhos para o <span class="caps">QR</span> code.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># factory para gerar uma imagem que poderá ser transformada em .png e jpeg</span>
 <span class="kn">from</span> <span class="nn">qrcode.image.styledpil</span> <span class="kn">import</span> <span class="n">StyledPilImage</span>
 
@@ -177,7 +167,7 @@
 
 <span class="c1"># customização sobre a forma dos traços</span>
 <span class="kn">from</span> <span class="nn">qrcode.image.styles.moduledrawers</span> <span class="kn">import</span> <span class="p">(</span><span class="n">RoundedModuleDrawer</span><span class="p">,</span>
-                                               <span class="n">VerticalBarsDrawer</span><span class="p">,</span> 
+                                               <span class="n">VerticalBarsDrawer</span><span class="p">,</span>
                                                <span class="n">HorizontalBarsDrawer</span><span class="p">,</span>
                                                <span class="n">GappedSquareModuleDrawer</span><span class="p">,</span>
                                                <span class="n">CircleModuleDrawer</span><span class="p">)</span>
@@ -185,55 +175,48 @@
 <span class="c1"># definindo um tom de azul para a cor do QR code</span>
 <span class="n">custom_blue_color</span> <span class="o">=</span> <span class="n">SolidFillColorMask</span><span class="p">(</span><span class="n">front_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">107</span><span class="p">))</span>
 </code></pre></div>
-
-<p>Para saber como instânciar essas classes que oferecem diferentes opções, dê um <code>help</code>.</p>
+<p>Para saber como instânciar essas classes que oferecem diferentes opções, dê um <code>help</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># help(RadialGradiantColorMask)</span>
 <span class="c1"># help(SquareGradiantColorMask)</span>
 <span class="c1"># help(HorizontalGradiantColorMask)</span>
 <span class="c1"># help(VerticalGradiantColorMask)</span>
 </code></pre></div>
-
 <h4>RoundedModuleDrawer</h4>
-<div class="highlight"><pre><span></span><code><span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span><span class="n">error_correction</span><span class="o">=</span><span class="n">qrcode</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ERROR_CORRECT_L</span><span class="p">,</span> 
-                   <span class="n">box_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  
+<div class="highlight"><pre><span></span><code><span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span><span class="n">error_correction</span><span class="o">=</span><span class="n">qrcode</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ERROR_CORRECT_L</span><span class="p">,</span>
+                   <span class="n">box_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                    <span class="n">border</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 <span class="n">qr</span><span class="o">.</span><span class="n">add_data</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-<span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span> 
-              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">RoundedModuleDrawer</span><span class="p">(),</span> 
+<span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
+              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">RoundedModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-
-<p><img alt="png" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_17_0.png"></p>
+<p><img alt="png" class="img-fluid" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_17_0.png"/></p>
 <h4>CircleModuleDrawer</h4>
-<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span> 
-              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">CircleModuleDrawer</span><span class="p">(),</span> 
+<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
+              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">CircleModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span><span class="p">)</span>
 </code></pre></div>
-
-<p><img alt="png" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_19_0.png"></p>
+<p><img alt="png" class="img-fluid" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_19_0.png"/></p>
 <h4>GappedSquareModuleDrawer</h4>
-<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span> 
-              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">GappedSquareModuleDrawer</span><span class="p">(),</span> 
+<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
+              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">GappedSquareModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-
-<p><img alt="png" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_21_0.png"></p>
+<p><img alt="png" class="img-fluid" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_21_0.png"/></p>
 <h4>HorizontalBarsDrawer</h4>
-<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span> 
-              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">HorizontalBarsDrawer</span><span class="p">(),</span> 
+<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
+              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">HorizontalBarsDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span><span class="p">)</span>
 </code></pre></div>
-
-<p><img alt="png" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_23_0.png"></p>
+<p><img alt="png" class="img-fluid" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_23_0.png"/></p>
 <h4>VerticalBarsDrawer</h4>
-<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span> 
-              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">VerticalBarsDrawer</span><span class="p">(),</span> 
+<div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
+              <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">VerticalBarsDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-
-<p><img alt="png" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_25_0.png"></p>
+<p><img alt="png" class="img-fluid" src="../../../images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_25_0.png"/></p>
     </div>
   </article>
     </div>
@@ -243,7 +226,6 @@
     <div class="container">
 <div class="row">
   <ul class="col-sm-6 list-inline">
-      <li class="list-inline-item"><a href="../../../authors.html">Authors</a></li>
     <li class="list-inline-item"><a href="../../../archives.html">Archives</a></li>
     <li class="list-inline-item"><a href="../../../categories.html">Categories</a></li>
       <li class="list-inline-item"><a href="../../../tags.html">Tags</a></li>
