@@ -4,14 +4,14 @@ date: 2023-06-21
 modified: 2023-06-21
 slug: dados-eleicoes-municipais-parana
 authors: Giliard Godoi
-category: utils
+category: data-analysis
 tags: datasets
 
 Em 2022 um aluno de mestrado em Geografia veio até o meu trabalho, a Câmara Municipal, perguntando se tínhamos dados históricos sobre as eleições do Município: os candidatos, partidos, quantidade de votos.
 
 Nós não temos esse tipo de dados prontos.
 
-Disse a ele que possivelmente no site da Justiça Eleitoral ele poderia encontrar esses dados. Aquele dia foi um dia atribulado, várias pessoas querendo conversar comigo e não pude dar muita atenção a ele. Porém, assim que ele saiu da minha sala, eu encontrei os dados que ele precisava no site da Justiça Eleitoral. 
+Disse a ele que possivelmente no site da Justiça Eleitoral ele poderia encontrar esses dados. Aquele dia foi um dia atribulado, várias pessoas querendo conversar comigo e não pude dar muita atenção a ele. Porém, assim que ele saiu da minha sala, eu encontrei os dados que ele precisava no site da Justiça Eleitoral.
 
 Infelizmente ele não deixou nome, telefone ou algo que eu pudesse entrar em contato.
 

@@ -1,8 +1,8 @@
 Title: Transformando pandas dataframes com wide_to_long
 Slug: transformando-dataframe-com-wide-to-long
 Date: 2022-07-26
-Category: data-analysis
-Tags: python, pandas, dataframe-reshaping
+Category: data-analysis, programming-skills
+Tags: python, pandas, reshaping
 Author: Giliard Godoi
 Summary: Quando os nomes das colunas guardam informações que podem ser importantes
 
@@ -21,7 +21,7 @@ Exemplos mencionados no artigo também estão disponíveis no Google Collab.
 
 
 ## Introdução
-Este artigo discute a utilização da função `pd.wide_to_long` da biblioteca [Pandas](https://pandas.pydata.org/). 
+Este artigo discute a utilização da função `pd.wide_to_long` da biblioteca [Pandas](https://pandas.pydata.org/).
 “Wide tables” e “long tables” referem-se a como os dados estão organizados nas tabelas. Não sei se existe uma tradução melhor, mas eu vou adotar os conceitos de tabela no formato amplo (wide) e tabela no formato longo (long).
 
 ## Formato wide table (Formato amplo?)
@@ -43,7 +43,7 @@ Um exemplo básico seria esse:
 
 O próximo exemplo é baseado em um exemplo existente na documentação, mas eu inventei um contexto a mais para esses dados.
 
-No mundo real, e pelas mais diferentes razões, os dados podem estar organizados nas mais variadas formas. 
+No mundo real, e pelas mais diferentes razões, os dados podem estar organizados nas mais variadas formas.
 
 Imagine por exemplo, que por alguma razão, os nomes das colunas de uma tabela codificam uma informação importante, e queiramos utilizar essa informação como valores na nossa tabela.
 
@@ -63,9 +63,9 @@ Já os sufixos seriam os valores para os anos: 2020 e 2021.
 
 Então, antes de seguir a leitura, note que identificamos nos nomes das colunas:
 
-- Um prefixo: ‘A(weekly)’ e ‘B(weekly)’ 
+- Um prefixo: ‘A(weekly)’ e ‘B(weekly)’
 - Um carácter de separação: ‘-’
-- Um sufixo: os valores 
+- Um sufixo: os valores
 
 
 ## Parâmetros da função
@@ -75,13 +75,13 @@ De acordo com a documentação, a função `pd.wide_to_long` possui os seguintes
 - df é o dataframe a ser transformado.
 - stubnames (str ou uma lista) indica os valores dos prefixos presentes nos nomes das colunas, que serão utilizados para transformar o dataframe. Uma definição da palavra *stub* pode ser encontrada no [dicionário Cambridge](https://dictionary.cambridge.org/dictionary/english/stub);
 - i (str ou uma lista) indica as colunas que serão utilizadas com identificadores (id) das observações, essas colunas serão transformadas em índices do dataframe retornado.
-- j (str) : indica o nome da coluna que será criada com os valores identificados pelos sufixos 
+- j (str) : indica o nome da coluna que será criada com os valores identificados pelos sufixos
 - sep : indica o caractere de separação entre os prefixos e os sufixos dos nomes das colunas.
-- suffix: aceita uma expressão regular que será utilizada para a identificação dos sufixos; 
-   - O valor padrão é `\d+` que captura valores numéricos. 
+- suffix: aceita uma expressão regular que será utilizada para a identificação dos sufixos;
+   - O valor padrão é `\d+` que captura valores numéricos.
    - Esse parâmetro pode ser alterado para `\w+` que captura strings
 
-Particularmente, eu tenho a impressão que a biblioteca pandas poderia ser muito mais consistente na escolha dos nomes dos parâmetros. Porém, eu entendo que o desenvolvimento de qualquer software é uma atividade dinâmica que envolve diversas pessoas, durante um longo período de tempo, e ter essa consistência não é uma tarefa simples. 
+Particularmente, eu tenho a impressão que a biblioteca pandas poderia ser muito mais consistente na escolha dos nomes dos parâmetros. Porém, eu entendo que o desenvolvimento de qualquer software é uma atividade dinâmica que envolve diversas pessoas, durante um longo período de tempo, e ter essa consistência não é uma tarefa simples.
 
 De qualquer forma, eu não acho que o nome desses parâmetros (i e j) sejam bons indicadores do que eles são. Repare que o parâmetro i pode receber uma string ou uma lista, mas o parâmetro `j` só recebe uma string, que é o nome da nova (e única) coluna criada. À primeira vista, isso pareceu meio confuso para mim.
 
@@ -665,9 +665,9 @@ df2.unstack()
 
 A página da documentação menciona rapidamente um caso de uso alternativo para o uso parâmetro `suffix`. Na verdade, essa menção encontra-se na própria descrição do parâmetro `suffix`.
 
-Imagine que temos dois produtos ‘A’ e ‘B’ e três canais de anúncio: TV, internet e rádio. Agora, digamos que estejamos interessados somente nos dados para dois canais de anúncio: TV e internet. 
+Imagine que temos dois produtos ‘A’ e ‘B’ e três canais de anúncio: TV, internet e rádio. Agora, digamos que estejamos interessados somente nos dados para dois canais de anúncio: TV e internet.
 
-Podemos utilizar o poder das expressões regulares para transformar os dados referente a esses dois canais de vendas e deixar o terceiro intacto. 
+Podemos utilizar o poder das expressões regulares para transformar os dados referente a esses dois canais de vendas e deixar o terceiro intacto.
 
 Neste caso, basta definir o parâmetro `suffix` com o seguinte valor `suffix=‘(tv|internet)’`.
 
@@ -1043,11 +1043,11 @@ Note que a coluna ‘B-radio’ ainda persiste no resultado final. Se não a des
 
 
 ```python
-(pd.wide_to_long(df3, 
-                    stubnames=['A', 'B'], 
-                    i='id', 
-                    j='type', 
-                    sep='-', 
+(pd.wide_to_long(df3,
+                    stubnames=['A', 'B'],
+                    i='id',
+                    j='type',
+                    sep='-',
                     suffix='(tv|internet)')
                 .drop('B-radio', axis='columns'))
 ```
@@ -1434,6 +1434,6 @@ A biblioteca pandas também oferece outras funções para alterar a estrutura de
 
 ## Conclusão
 
-Neste rápido tutorial, vimos o uso da função `pd.wide_to_long`. 
+Neste rápido tutorial, vimos o uso da função `pd.wide_to_long`.
 
 Eu pessoalmente não conhecia essa função até bem pouco tempo atrás. Talvez porque o problema que essa função se propõe a resolver seja bem específico.

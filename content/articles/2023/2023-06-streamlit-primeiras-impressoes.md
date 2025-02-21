@@ -4,17 +4,17 @@ date: 2023-06-26
 modified: 2024-04-07
 slug: streamlit-primeiras-impressoes
 authors: Giliard Godoi
-category: utils
+category: programming-skills
 tags: streamlit
 
 
-[Streamlit](https://streamlit.io/) é uma biblioteca low-code para construir interfaces web para projetos de Data Science e Inteligência Artificial. 
+[Streamlit](https://streamlit.io/) é uma biblioteca low-code para construir interfaces web para projetos de Data Science e Inteligência Artificial.
 Imagine que você quer prototipar rapidamente uma tela, para demonstrar o funcionamento de seu modelo, ou como ele poderá ser utilizado pelo seu cliente.
 O Streamlit pode te ajudar a criar o protótipo de sua aplicação, demonstrando o real valor do seu projeto para possíveis [*stakeholders*](https://pt.wikipedia.org/wiki/Stakeholder).
 
 # Facilidade de uso
 
-Diferente de outras opções, o Streamlit presa pela facilidade do seu uso. 
+Diferente de outras opções, o Streamlit presa pela facilidade do seu uso.
 O comando para instalar é:
 
 ```bash
@@ -24,7 +24,7 @@ pip install streamlit
 > Alguns meses atrás o streamlit não estava disponível para instalar via  `conda install` . Porém, parece que agora está como segundo informações oficiais dessa [página](https://anaconda.org/conda-forge/streamlit).
 
 
-Uma aplicação é definida por um *script* em Python. 
+Uma aplicação é definida por um *script* em Python.
 Por exemplo, para criar uma tela de boas vindas, só precisaríamos das seguintes linhas de código:
 
 ```python
@@ -58,7 +58,7 @@ O bloco de código abaixo lista algumas dessas funções:
 ```python
 import streamlit as st
 
-st.markdown("# Hello **world**!") 
+st.markdown("# Hello **world**!")
 st.title("Title")
 st.header("Header")
 st.subheader("Subheader")
@@ -72,7 +72,7 @@ with st.echo():
 
 st.text("Text")
 st.latex("x + 2")
-st.divider() 
+st.divider()
 ```
 
 Também existem funções especializadas para apresentar dados:
@@ -140,14 +140,14 @@ Uma lista completa dos widgets disponíveis pode ser encontrada no seguinte [end
 
 # Para usuários avançados
 
-Caso os widgets disponíveis não sejam suficientes, é possível criar componentes customizados para a ferramenta. 
+Caso os widgets disponíveis não sejam suficientes, é possível criar componentes customizados para a ferramenta.
 Os desenvolvedores do Streamlit já disponibilizaram alguns tutoriais que mostram como novos componentes podem ser criados.
-Existe também a possibilidade de utilizar componentes desenvolvidos por terceiros, e que são disponibilizados como pacotes. 
+Existe também a possibilidade de utilizar componentes desenvolvidos por terceiros, e que são disponibilizados como pacotes.
 O site da ferramente chega a listar alguns desses componentes em seu [site oficial](https://streamlit.io/components).
 
 # Desvantagens
 
-Como uma aplicação é definida em um *script*, qualquer intereção com um elemento da tela (botões, caixas de *inputs* para texto, cliques) todo o *script* é executado novamente. 
+Como uma aplicação é definida em um *script*, qualquer intereção com um elemento da tela (botões, caixas de *inputs* para texto, cliques) todo o *script* é executado novamente.
 
 Portanto, esse é um princípio que devemos sempre ter em mente:
 > Em qualquer interação com a tela, todo o *script* é executado novamente!
@@ -162,20 +162,20 @@ Para lidar com esse problema podemos lançar mão de algumas boas práticas e re
 O desenvolvimento do Streamlit é frenético e em poucos meses a API da biblioteca pode mudar significativamente.
 Se por um lado isso permite entregar novas funcionalidades de forma rápida, por outro, aplicativos podem ficar rapidamente desatualizados e simplesmente quebrarem (isto é, não rodar mais).
 
-Uma convensão adotada é adicionar o termo `experimental` em algumas funções, para indicar que elas são disponibilizadas em caráter de testes e que elas podem ser alteradas ou removidas entre uma versão e outra. 
+Uma convensão adotada é adicionar o termo `experimental` em algumas funções, para indicar que elas são disponibilizadas em caráter de testes e que elas podem ser alteradas ou removidas entre uma versão e outra.
 Esse fato detalhado [nessa seção](https://docs.streamlit.io/library/advanced-features/prerelease) da documentação.
 
 
 # Bônus: deploy o seu protótipo na nuvem
 
-A empresa que mantém o projeto do Streamlit também oferece o *Streamlit Community* que permite fazer o deploy de aplicações na nuvem. 
+A empresa que mantém o projeto do Streamlit também oferece o *Streamlit Community* que permite fazer o deploy de aplicações na nuvem.
 
 O código da aplicação precisa estar em um repositório público do GitHub e com a devida atuorização para que o Streamlit Community se conecte a sua conta no GitHub. Seguindo passo-a-passo deste [tutorial](https://docs.streamlit.io/streamlit-community-cloud/get-started) é bem fácil realizar essas configurações.
 
-A versão gratuita do *Streamlit Community* permite aplicações que requeiram até 1Gb de memória, o que eu acho pouco, se pensarmos que alguns modelos de Deep Learning podem ser grandes. 
+A versão gratuita do *Streamlit Community* permite aplicações que requeiram até 1Gb de memória, o que eu acho pouco, se pensarmos que alguns modelos de Deep Learning podem ser grandes.
 Além disso, a versão gratuita permite apenas um app privado, e promete uma quantidade ilimitada de apps públicos.
 
-Recentemente eu fiz um teste com o Streamlit Community, com uma aplicação que consulta a API de documentos do (famoso) [SAPL](https://sapl.santoantoniodaplatina.pr.leg.br/) e retorna um relatório com documentos cadastrados em determinada semana. 
+Recentemente eu fiz um teste com o Streamlit Community, com uma aplicação que consulta a API de documentos do (famoso) [SAPL](https://sapl.santoantoniodaplatina.pr.leg.br/) e retorna um relatório com documentos cadastrados em determinada semana.
 O repositório dessa aplicação pode ser encontrado [nesse link](https://github.com/giliardgodoi/streamlit-sapl/blob/main/01_INICIAL.py).
 
 Existe uma grande variedade de outros exemplos de aplicações desenvolvidas com streamlit, e para citar algumas:

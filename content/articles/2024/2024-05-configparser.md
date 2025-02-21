@@ -3,7 +3,7 @@ summary: Conheçendo um pouco sobre a biblioteca `configparser`
 date: 2024-05-26
 slug: conhecendo-arquivos-configuracao-configini
 authors: Giliard Godoi
-category: utils
+category: programming-skills
 tags: config, toml, yaml
 
 ---

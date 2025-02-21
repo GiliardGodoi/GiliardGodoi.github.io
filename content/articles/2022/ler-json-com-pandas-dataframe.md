@@ -1,7 +1,7 @@
 Title: Lendo dados no formato JSON com pandas
 Slug: ler-json-com-pandas-dataframe
 Date: 2022-08-15
-Category: data-analysis
+Category: data-analysis, programming-skills
 Tags: python, pandas, json
 Author: Giliard Godoi
 Summary: Conheça funções úteis da biblioteca pandas para trabalhar com dados no formato JSON
@@ -539,7 +539,7 @@ pd.read_json(squad_advanced)
 
 
 
-Ao utilizar o método `explode` para desdobrar essa relação os valores da coluna `members` corresponderá às chaves dos dicionários. 
+Ao utilizar o método `explode` para desdobrar essa relação os valores da coluna `members` corresponderá às chaves dos dicionários.
 
 Muito provavelmente, esse não é o resultado esperado para as nossas análises, conforme podemos ver.
 
@@ -694,7 +694,7 @@ pd.read_json(squad_advanced).explode('members')
 
 Nesses casos podemos utilizar a função [`pd.json_normalize`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html) para obter melhores resultados.
 
-Contudo, essa função aceita dicionários Python, por isso é necessário utilizar a função `json.loads` para decodificar os dados JSON. 
+Contudo, essa função aceita dicionários Python, por isso é necessário utilizar a função `json.loads` para decodificar os dados JSON.
 
 Essa função recebe o parâmetro `record_paths` que indica qual é o atributo principal dos dados, nesse caso o atributo `members` com informações dos nossos três super-heróis.
 
@@ -766,8 +766,8 @@ Note que os valores desses atributos são repetidos para cada um dos três super
 
 
 ```python
-pd.json_normalize(squad_dict, 
-                  record_path='members', 
+pd.json_normalize(squad_dict,
+                  record_path='members',
                   meta=['squadName', 'homeTown', 'secretBase'])
 ```
 
@@ -899,8 +899,8 @@ Então, seguimos os mesmos passos:
 ```python
 squad_dict_2 = json.loads(squad_more_advanced)
 
-df = pd.json_normalize(squad_dict_2, 
-                  record_path='members', 
+df = pd.json_normalize(squad_dict_2,
+                  record_path='members',
                   meta=['squadName', 'homeTown', 'secretBase'])
 
 df

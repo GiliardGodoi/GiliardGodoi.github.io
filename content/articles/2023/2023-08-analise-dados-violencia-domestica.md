@@ -7,14 +7,14 @@ authors: Giliard Godoi
 category: data-analysis
 
 
-No ano de 2020, a Câmara Municipal de Santo Antônio da Platina solicitou à Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher. 
-O requerimento de solicitação está disponibilizado no site da entidade no [seguinte link](https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613). 
+No ano de 2020, a Câmara Municipal de Santo Antônio da Platina solicitou à Secretaria de Segurança Pública do Estado do Paraná dados sobre casos de violência doméstica e contra a mulher.
+O requerimento de solicitação está disponibilizado no site da entidade no [seguinte link](https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613).
 
 O problema é que essas solicitações são respondidas em formatos de arquivos fechados, como arquivos em formado `pdf`, que impedem a leitura de dados por outros programas de computador.
 E com isso impedem também a realização de outras análises.
 
-O software [Tabula](https://tabula.technology/) é um extrator de tabelas de documentos em `PDF`. 
-Com é possível extrair os dados das tabelas e exportar para arquivos abertos como arquivos com valores separados por vírgulas (csv - [Comma-Separated Values](https://pt.wikipedia.org/wiki/Comma-separated_values)). 
+O software [Tabula](https://tabula.technology/) é um extrator de tabelas de documentos em `PDF`.
+Com é possível extrair os dados das tabelas e exportar para arquivos abertos como arquivos com valores separados por vírgulas (csv - [Comma-Separated Values](https://pt.wikipedia.org/wiki/Comma-separated_values)).
 
 Esse é um programa feito em Java, então você vai precisar instalar o Java na sua máquina para executar o Tabula. As instruções para instalação podem ser encontradas na documentação do repositório da ferramenta, disponível nesse [endereço](https://github.com/tabulapdf/tabula?tab=readme-ov-file#using-tabula).
 
@@ -82,7 +82,7 @@ O gráfico a seguir apresenta a quantidade dos casos de violência doméstica, p
 No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020.
 Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.
 
-Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais. 
+Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais.
 A razão para tanto, pode ser que este é o único município da região que possui uma Delegacia Especial da Mulher.
 
 Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos casos de violência doméstica nos demais municípios que não contam com uma unidade especializada para atender a esses casos.
@@ -94,5 +94,5 @@ Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos 
 # Referências
 
 Câmara de Santo Antônio da Platina. **Requerimento nº 598 de 2020, de autoria da Vereadora Mirian Rodrigues Bonomo Montanheiro**. Disponível em: <https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613>. Último acesso em 07 de abr. de 2024.
- 
+
 Tabula Oficial Webpage. <https://tabula.technology/>

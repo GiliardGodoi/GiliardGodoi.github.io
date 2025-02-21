@@ -4,12 +4,12 @@ Modified: 2023-01-09
 Slug: meu-blog-com-pelican
 Authors: Giliard Godoi
 Summary: Da definição do ambiente até a instalação de temas.
-Category: utils
+Category: programming-skills
 Tags: pelican
 
 # O que é Pelican?
 
-[Pelican](https://getpelican.com/) é um gerador de site estático escrito em Python. 
+[Pelican](https://getpelican.com/) é um gerador de site estático escrito em Python.
 Essa ferramenta tem por objetivo criar e gerenciar um pequeno *blog* como é esse que você está lendo.
 Ou seja, não é uma ferramenta para criar documentação de projetos de *software*, como tantas outras ferramentas existentes por aí.
 
@@ -59,11 +59,11 @@ Para isso basta digitar:
 pelican-quickstart
 ```
 
-Esse utilitário faz uma série de perguntas para definição do seu projeto. 
-Por exemplo, ele pergunta sobre qual diretório onde você deseja criar o seu projeto; 
-o título do site; 
-o nome do autor principal; 
-a URL principal; 
+Esse utilitário faz uma série de perguntas para definição do seu projeto.
+Por exemplo, ele pergunta sobre qual diretório onde você deseja criar o seu projeto;
+o título do site;
+o nome do autor principal;
+a URL principal;
 se você deseja habilitar a paginação dos artigos;
 onde e como deseja hospedar o seu site na internet; entre outras perguntas.
 
@@ -78,10 +78,10 @@ A estrutura básica do projeto criada pelo utilitário, será:
     ├── pelicanconf.py       # Main settings file
     └── publishconf.py       # Settings to use when ready to publish
 
-Os scripts `pelicanconf.py` e `publishconf.py` possuem as configurações (as variáveis e valores) que o Pelican usa para construir o site. 
+Os scripts `pelicanconf.py` e `publishconf.py` possuem as configurações (as variáveis e valores) que o Pelican usa para construir o site.
 O primeiro *script* seria as configurações de desenvolvimento enquanto o segundo seria as de publicação. ~~Porém, para falar a verdade, não utilizo o segundo~~.
 
-A pasta `content` abriga o conteúdo do site: os artigos, imagens, as páginas de seções fixas, e outros arquivos de configuração. 
+A pasta `content` abriga o conteúdo do site: os artigos, imagens, as páginas de seções fixas, e outros arquivos de configuração.
 Instruções sobre como escrever conteúdo para o site pode ser encontrada na seguinte página: [docs.getpelican.com/ ... /content.html](https://docs.getpelican.com/en/latest/content.html).
 
 A pasta `output` contém todo o conteúdo publicável do site, isto é, arquivos html e css. É possível alterar essa pasta destino nos arquivos de configurações, alterando a variável `OUTPUT_PATH`. Para conhecer mais sobre as configurações, visite a seguinte página [docs.getpelican.com/ ... /settings.html](https://docs.getpelican.com/en/latest/settings.html).
@@ -94,13 +94,13 @@ Para controlar as versões do projeto utilizando o `Git` precisamos inicializar 
 git init
 ```
 
-Particularmente, eu não utilizo muito esse comando. 
-Eu prefiro criar o repositório no GitHub primeiro, para fazer o clone localmente depois. 
+Particularmente, eu não utilizo muito esse comando.
+Eu prefiro criar o repositório no GitHub primeiro, para fazer o clone localmente depois.
 Isso permite pular toda uma configuração para sincronizar o repositório local com o remoto.
 
 # Alterando o tema
 
-Existe uma diversidade de temas disponíveis para customizar o seu *blog*. 
+Existe uma diversidade de temas disponíveis para customizar o seu *blog*.
 Esses temas estão reunidos pelos organizadores do projeto no seguinte repositório:
 
 + [github.com/getpelican/pelican-themes](https://github.com/getpelican/pelican-themes)
@@ -108,7 +108,7 @@ Esses temas estão reunidos pelos organizadores do projeto no seguinte repositó
 Nessa [postagem de David Colton](https://davidcolton.github.io/articles/2020/03/08/new_theme_for_blog/) é ensinado a como instalar o tema [`Alchemy`](https://github.com/nairobilug/pelican-alchemy) e os seus suplementos necessários.
 O meu próprio *blog* utiliza esse tema.
 
-Eu queria instalar um tema legal como o [`Papyrus`](https://aleylara.github.io/Papyrus/installation.html). 
+Eu queria instalar um tema legal como o [`Papyrus`](https://aleylara.github.io/Papyrus/installation.html).
 Porém, a dificuldade de instalar o [`stork-search](https://stork-search.net/) no meu SO me impediu de usar esse tema. ~~Pois, sem tempo irmão~~.
 
 Portanto, eu decidi utilizar para esse tutorial o tema [`voce`](https://github.com/limbenjamin/voce).
@@ -127,13 +127,13 @@ Depois instalamos o tema como um submódulo no diretório de temas.
 git submodule add --depth 5 https://github.com/limbenjamin/voce themes/voce
 ```
 
-Agora indicamos nos arquivos de configuração (`pelicanconf.py`) o caminho do tema que desejamos utilizar, e definimos outras variáveis requisitadas pelo tema. 
+Agora indicamos nos arquivos de configuração (`pelicanconf.py`) o caminho do tema que desejamos utilizar, e definimos outras variáveis requisitadas pelo tema.
 Em caso de dúvida, leia as instruções de instalação do tema de sua escolha.
 
 ```python
 THEME = 'themes/voce'
 DEFAULT_DATE_FORMAT = "%b %d, %Y"
-USER_LOGO_URL = "http://i.imgur.com/zzCRZUH.jpg"  
+USER_LOGO_URL = "http://i.imgur.com/zzCRZUH.jpg"
 ```
 
 No caso do tema `voce`, para habilitar a nuvem de *tags* logo abaixo da imagem título do site é preciso adicionar as seguintes variáveis ao arquivo de configuração:
@@ -145,11 +145,11 @@ ARCHIVES_URL = 'archives.html'
 
 # Escrevendo uma publicação
 
-Para escrever postagens é bem simples, como pode ser visto nessa [página da documentação](https://docs.getpelican.com/en/latest/content.html#writing-content) da ferramenta. 
+Para escrever postagens é bem simples, como pode ser visto nessa [página da documentação](https://docs.getpelican.com/en/latest/content.html#writing-content) da ferramenta.
 
-No meu caso, eu prefiro escrever os conteúdos em Markdown. Portanto, as instruções a seguir serão feitas considerando esse formato de arquivo. 
+No meu caso, eu prefiro escrever os conteúdos em Markdown. Portanto, as instruções a seguir serão feitas considerando esse formato de arquivo.
 
-Primeiro, definimos o cabeçalho do arquivo com alguns parâmetros obrigatórios (como título, data e autor) e outros campos opcionais. 
+Primeiro, definimos o cabeçalho do arquivo com alguns parâmetros obrigatórios (como título, data e autor) e outros campos opcionais.
 
 ```markdown
 Title: Post's title
@@ -165,8 +165,8 @@ Here starts the content of my blog post.
 ...
 ```
 
-Logo abaixo desse cabeçalho já podemos escrever o texto de nossa postagem. 
-O título da postagem, definido pelo parâmetro `Title`, irá aparecer antes texto da postagem. 
+Logo abaixo desse cabeçalho já podemos escrever o texto de nossa postagem.
+O título da postagem, definido pelo parâmetro `Title`, irá aparecer antes texto da postagem.
 Então não é necessário incluí-lo novamente após o cabeçalho de parâmetros.
 
 # Escrevendo páginas para seções fixas
@@ -205,7 +205,7 @@ Note que as URLs das páginas possuem uma formatação especial adicionada por u
 
 # Customizando as URLs
 
-É possível alterar o local e alterar as configurações das URLs finais dos *posts*. 
+É possível alterar o local e alterar as configurações das URLs finais dos *posts*.
 Por exemplo, com as configurações básicas definidas anteriormente, as URLs dos artigos ficariam com o seguinte padrão:
 
 ```
@@ -215,7 +215,7 @@ blog-demo.com/my-first-article-with-papyrus.html
 Por padrão, o Pelican utiliza o título do artigo, definido no parâmetro `Title`, como base para criar a URL da postagem.
 É possível alterar esse comportamento adicionando o parâmetro `Slug` no cabeçalho das postagens.
 
-Também é possível agrupar todos os artigos sob a URL `articles` e agrupar as postagens por ano. 
+Também é possível agrupar todos os artigos sob a URL `articles` e agrupar as postagens por ano.
 Para tanto, basta alterar as variáveis `ARTICLE_URL` e `ARTICLE_SAVE_AS` nos arquivos de configuração.
 
 ```python
@@ -238,7 +238,7 @@ TAG_SAVE_AS = "tag/{slug}/index.html"
 
 Também é possível definir uma página customizada para o erro 404 de página não encontrada.
 
-A princípio basta adicionar um arquivo `404.md` sob o diretório `pages` com as seguintes configurações: 
+A princípio basta adicionar um arquivo `404.md` sob o diretório `pages` com as seguintes configurações:
 
 ```markdown
 Title: Not Found
@@ -257,13 +257,13 @@ Diferentemente do que diz a [documentação](https://docs.getpelican.com/en/late
 Conteúdos estáticos são arquivos que serão disponibilizados ao visitante do *blog* de alguma forma, mas não serão processados pelo Pelican, como acontece com os arquivos em *markdown* que serão convertidos em *html*.
 
 Arquivos estáticos são arquivos de imagens, favico (aquele ícone que aparece no guia do navegador junto com o título do site) e outros aruivos de configuração do site.
-Esses arquivos ficarão em pastas separadas, por exemplo, as imagens ficarão em uma pasta `images` e os arquivos demais arquivos de configuração na pasta `extras`. 
+Esses arquivos ficarão em pastas separadas, por exemplo, as imagens ficarão em uma pasta `images` e os arquivos demais arquivos de configuração na pasta `extras`.
 
 Existe uma variável que permite definir o local dessas diferentes pastas a partir da pasta `content`.
-Para o meu *blog*, eu configurei quatro pastas para servir conteúdos estáticos: 
-uma pasta para imagens; 
-outras para arquivos na extensão PDF; 
-outras para os arquivos de configuração; 
+Para o meu *blog*, eu configurei quatro pastas para servir conteúdos estáticos:
+uma pasta para imagens;
+outras para arquivos na extensão PDF;
+outras para os arquivos de configuração;
 e uma última para os arquivos de *datasets* que serão utilizados para ilustrar alguns dos meus *posts*.
 
 ```python
@@ -284,7 +284,7 @@ Exemplo de como disponibilizar um arquivo em pdf.
 
 Favicon são aqueles ícones que identificam um site nas guias do navegador ou então na barra de endereços. Você pode saber mais sobre eles nessa página da [Wikipedia](https://pt.wikipedia.org/wiki/Favicon).
 
-Para gerar os arquivos necessários, você pode utilizar um gerador de favicon existente na internet. 
+Para gerar os arquivos necessários, você pode utilizar um gerador de favicon existente na internet.
 Tudo o que você precisa é uma imagem base e o gerador vai gerar todos os arquivos necessários.
 No meu caso, o gerador também criou ícones adicionais para outras plataformas e de diferentes tamanhos, tudo a partir de uma única imagem base.
 

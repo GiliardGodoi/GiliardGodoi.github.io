@@ -3,17 +3,17 @@ date: 2023-01-28
 slug: registrando-novo-kernel-jupyter
 authors: Giliard Godoi
 summary: Instale o *Jupyter Notebook* uma vez e rode diferentes ambientes nele registrando kernels.
-category: utils
+category: programming-skills
 tags: python, jupyter
 
 No dia-a-dia, é comum criarmos ambientes diferentes para cada um dos nossos projeto, evitando possíveis conflitos entre versões de pacotes etc.
-Quando se trata de análise de dados, muitas vezes também somos tentados a instalar o [*Jupyter Notebook*](https://jupyter.org/) em cada um desses novos ambientes. 
+Quando se trata de análise de dados, muitas vezes também somos tentados a instalar o [*Jupyter Notebook*](https://jupyter.org/) em cada um desses novos ambientes.
 
-Contudo, eu já me confrontei com uma situação em que eu tinha um ambiente para rodar simulações e um outro ambiente para analisar os dados dessas simulações. 
+Contudo, eu já me confrontei com uma situação em que eu tinha um ambiente para rodar simulações e um outro ambiente para analisar os dados dessas simulações.
 No ambiente de simulações, eu estava desenvolvendo um [Algoritmo Genético](https://pt.wikipedia.org/wiki/Algoritmo_gen%C3%A9tico) (AG) com suas próprias dependências, que possívelmente seria aberto e distribuído depois.
 
 Nesse cenário, não seria interessante abrir o código do meu AG com as 'dependências' dos pacotes que eu utilizei para fazer a análise de dados (i.e. `pandas`, `matplotlib` etc.).
-Porém, existia algumas análises específicas em que eu queria demonstrar como os algoritmos de cruzamento em que eu estava trabalhando, funcionavam. 
+Porém, existia algumas análises específicas em que eu queria demonstrar como os algoritmos de cruzamento em que eu estava trabalhando, funcionavam.
 Então eu instalei eles, como se fossem um pacote, nesse ambiente em que eu estava fazendo a análise de dados.
 
 Recentemente, eu passei por uma situação semelhante e então resolvi escrever esse post.
@@ -36,7 +36,7 @@ conda install pip       # opcional
 conda install ipykernel # ou então pip install ipykernel
 ```
 
-Na data de publicação desse artigo, a versão do `ipykernel` disponível no canal padrão do anaconda, não suporta a versão 3.11 do Python. 
+Na data de publicação desse artigo, a versão do `ipykernel` disponível no canal padrão do anaconda, não suporta a versão 3.11 do Python.
 Uma saída é instalar via `pip` mesmo.
 
 ```shell
@@ -46,7 +46,7 @@ python -m pip install ipykernel
 Agora vamos instalar, ou registrar, esse novo ambiente como um *Jupyter* kernel (supondo que estamos dentro do ambiente, no caso o `py311`, que desejamos registrar.)
 
 ```shell
-# conda activate py311             
+# conda activate py311
 # python -m pip install ipykernel
 python -m ipykernel install --user --name py11 --display-name "Python (3.11)"
 ```

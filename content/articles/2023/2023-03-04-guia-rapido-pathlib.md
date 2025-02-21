@@ -4,11 +4,11 @@ date: 2023-03-04
 modified: 2023-03-04
 slug: guia-pathlib
 authors: Giliard Godoi
-category: utils
+category: programming-skills
 tags: python, pathlib
 
 
-As vezes eu tenho uma dúvida muito simples sobre o funcionamento de uma função ou método do Python. 
+As vezes eu tenho uma dúvida muito simples sobre o funcionamento de uma função ou método do Python.
 Então eu crio esses guias rápidos, no estilo "Perguntas e Respostas" para me ajudar a evitar uma pesquisa no Google.
 
 Nesse guia eu trato sobre o pacote para manipulação de diretórios e arquivos `pathlib`.
@@ -52,7 +52,7 @@ False
 
 Importante notar, entretanto, que se o arquivo ou o diretório realmente não existe no sistema operacional, os métodos `is_file` e `is_dir` sempre retornarão `False`.
 
-### Como saber o nome de um arquivo\\diretório ? 
+### Como saber o nome de um arquivo\\diretório ?
 
 ```python
 >>> foo = Path('bar\script.py')
@@ -92,9 +92,9 @@ Ou então:
 ```python
 >>> bar = foo.rename(Path('main.py'))
 ```
-Lembre-se que estamos trabalhando com objetos imutáveis. 
+Lembre-se que estamos trabalhando com objetos imutáveis.
 Então, a operação de `rename` retorna um novo objeto.
-Essa operação é refletida no sistema de arquivos do seu computador. 
+Essa operação é refletida no sistema de arquivos do seu computador.
 Diferente da próxima opção, mostrada a seguir.
 
 Também podemos nos referir a um mesmo arquivo com um nome diferente, mas que não necessáriamente existe no FS do computador.
@@ -103,7 +103,7 @@ Poderíamos renomea-lo de forma virtual somente.
 ```python
 >>> foo = Path('script.py')
 
->>> bar = foo.with_name('main.py') 
+>>> bar = foo.with_name('main.py')
 >>> bar.exists()
 False
 >>> foo.exists()
@@ -143,7 +143,7 @@ A maneira mais direta é utilizando os métodos `write_text` e `read_text`
 >>> foo = Path('README.md')
 >>> foo.write_text('Some text here!')
 15
->>> foo.exists() 
+>>> foo.exists()
 True
 >> foo.read_text()
 "Some text here!"
@@ -170,7 +170,7 @@ directories = [f for f in foo.iterdir() if f.is_dir()]
 
 Ou com a ajuda do método `glob` que aceita uma string com o padrão de nomes que queremos percorrer.
 
-```python 
+```python
 foo = Path('tutorial')
 
 # lista todos os arquivos e subdiretórios do diretório atual
@@ -183,11 +183,11 @@ foo.glob("*.ipynb")
 foo.glob("**/*")
 ```
 
-O método `rglob` server como um atalho para `glob` com a string `**/` já adicionada à direita do padrão passado como parâmetro. 
+O método `rglob` server como um atalho para `glob` com a string `**/` já adicionada à direita do padrão passado como parâmetro.
 ```python
 >>> foo.rglob('*.ipynb')
 
-# possui o mesmo efeito que 
+# possui o mesmo efeito que
 
 >>> foo.glob("**/*.ipynb")
 ```
@@ -272,7 +272,7 @@ Também conhecido como *current working diretory* ou `cwd`.
 
 ## Exemplos
 
-Os dois exemplos a seguir foram visto nesse post do [*blog Real Python*](https://realpython.com/python-pathlib/#examples) . 
+Os dois exemplos a seguir foram visto nesse post do [*blog Real Python*](https://realpython.com/python-pathlib/#examples) .
 1. Contar os arquivos em um diretório atual, agrupado pela extensão do arquivo;
 2. Mostrar a estrutura de diretórios.
 

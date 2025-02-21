@@ -10,3 +10,9 @@
 [submodule "themes/pelican-alchemy"]
 	path = themes/pelican-alchemy
 	url = https://github.com/GiliardGodoi/pelican-alchemy.git
+[submodule "plugins/plugins/pelican-bootstrapify"]
+	path = plugins/plugins/pelican-bootstrapify
+	url = https://github.com/ingwinlu/pelican-bootstrapify
+[submodule "plugins/pelican-bootstrapify"]
+	path = plugins/pelican-bootstrapify
+	url = https://github.com/ingwinlu/pelican-bootstrapify

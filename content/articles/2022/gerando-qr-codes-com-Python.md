@@ -1,7 +1,7 @@
 Title: Gerando QR code com Python
 Slug: gerando-qr-code-python
 Date: 2022-09-27
-Category: utils
+Category: programming-skills
 Tags: qrcode
 Author: Giliard Godoi
 Summary: Customizando a geração de QR codes
@@ -10,7 +10,7 @@ Summary: Customizando a geração de QR codes
 
 Por esses dias eu queria produzir um QR code para um link do *site* da Câmara de Vereadores de Santo Antônio da Platina - PR.
 
-A maioria dos geradores disponíveis na *internet* produzem imagens padrões, e seria interessante customizar esse QR code com as cores dominantes do *site* da instituição. 
+A maioria dos geradores disponíveis na *internet* produzem imagens padrões, e seria interessante customizar esse QR code com as cores dominantes do *site* da instituição.
 
 Como bom programador Python eu utilizei uma biblioteca chamada `qrcode`. Ela está disponível no PyPl ([link](https://pypi.org/project/qrcode/)) e também nesse repositório: [github.com/lincolnloop/python-qrcode](https://github.com/lincolnloop/python-qrcode).
 
@@ -18,7 +18,7 @@ Como bom programador Python eu utilizei uma biblioteca chamada `qrcode`. Ela est
 
 ## Como funciona os QR codes
 
-Eu tentei encontrar algum artigo didático sobre a geração de QR code e como eles funcionam, porém não encontrei uma resposta satisfatória. 
+Eu tentei encontrar algum artigo didático sobre a geração de QR code e como eles funcionam, porém não encontrei uma resposta satisfatória.
 
 Porém, quis o destino (ou o algortimo do Twitter) que eu esbarrasse com essa *thread* que faz uma introdução bem legal e com várias imagens ilustrativas.
 
@@ -27,10 +27,10 @@ Seria interessante dar uma olhada nessa *thread* antes de continuar lendo essa p
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-theme="light">
     <p lang="en" dir="ltr">Ever wondered how a QR code works? <br>No, me neither but it&#39;s low-key fascinating.
-    <br><br>(Warning, there is some extremely nerdy s*** here.👇 ) 
-    <a href="https://t.co/SgQJVvhu0q">pic.twitter.com/SgQJVvhu0q</a> </p>&mdash; Dan Hollick 🇿🇦 (@DanHollick) 
+    <br><br>(Warning, there is some extremely nerdy s*** here.👇 )
+    <a href="https://t.co/SgQJVvhu0q">pic.twitter.com/SgQJVvhu0q</a> </p>&mdash; Dan Hollick 🇿🇦 (@DanHollick)
         <a href="https://twitter.com/DanHollick/status/1570040185500626947?ref_src=twsrc%5Etfw">September 14, 2022</a>
-</blockquote> 
+</blockquote>
 
 
 Outra referência interessante é esse artigo da empresa responsável pela criação do QR code, Denso Wave, contando um pouco da história da criação do QR code.
@@ -45,7 +45,7 @@ Para instalar a biblioteca segui as instruções apresentadas no repositório. A
 ```python
 ! pip install qrcode[pil]
 ```
-    
+
 
 ## Gerando QR Codes
 
@@ -77,7 +77,7 @@ qr = qrcode.QRCode(
 qr.add_data(url) # adiciona dados para serem codificados
 
 qr.make(fit=True) # se o parâmetro `fit` está marcado como True
-# a versão do QR code pode ser alterada para suportar a codificação de uma 
+# a versão do QR code pode ser alterada para suportar a codificação de uma
 # quantidade maior de informações. Faça o seguinte teste: inicie o objeto `qr`
 # com o parâmetro `version=1` e o parâmetro `fit` na função `make` como False.
 # É esperado que uma exceção seja gerada nessas condições.
@@ -86,16 +86,16 @@ img = qr.make_image()
 # esse método possui os seguintes valores padrões
 # img = qr.make_image(fill_color="black", back_color="white")
 
-print(type(img)) 
+print(type(img))
 img
 ```
 
     <class 'qrcode.image.pil.PilImage'>
-    
+
 
 
 ![png]({static}/images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_9_1.png)
-    
+
 
 
 
@@ -120,14 +120,14 @@ img
 ```
 
     <class 'qrcode.image.pil.PilImage'>
-    
 
 
 
 
-    
+
+
 ![png]({static}/images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_11_1.png)
-    
+
 
 
 
@@ -152,7 +152,7 @@ from qrcode.image.styles.colormasks import (SolidFillColorMask,
 
 # customização sobre a forma dos traços
 from qrcode.image.styles.moduledrawers import (RoundedModuleDrawer,
-                                               VerticalBarsDrawer, 
+                                               VerticalBarsDrawer,
                                                HorizontalBarsDrawer,
                                                GappedSquareModuleDrawer,
                                                CircleModuleDrawer)
@@ -175,23 +175,23 @@ Para saber como instânciar essas classes que oferecem diferentes opções, dê 
 
 
 ```python
-qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_L, 
-                   box_size=10,  
+qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_L,
+                   box_size=10,
                    border=4)
 
 qr.add_data(url)
 
-qr.make_image(image_factory = StyledPilImage, 
-              module_drawer = RoundedModuleDrawer(), 
+qr.make_image(image_factory = StyledPilImage,
+              module_drawer = RoundedModuleDrawer(),
               color_mask = custom_blue_color )
 ```
 
 
 
 
-    
+
 ![png]({static}/images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_17_0.png)
-    
+
 
 
 
@@ -199,17 +199,17 @@ qr.make_image(image_factory = StyledPilImage,
 
 
 ```python
-qr.make_image(image_factory = StyledPilImage, 
-              module_drawer = CircleModuleDrawer(), 
+qr.make_image(image_factory = StyledPilImage,
+              module_drawer = CircleModuleDrawer(),
               color_mask = custom_blue_color)
 ```
 
 
 
 
-    
+
 ![png]({static}/images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_19_0.png)
-    
+
 
 
 
@@ -217,17 +217,17 @@ qr.make_image(image_factory = StyledPilImage,
 
 
 ```python
-qr.make_image(image_factory = StyledPilImage, 
-              module_drawer = GappedSquareModuleDrawer(), 
+qr.make_image(image_factory = StyledPilImage,
+              module_drawer = GappedSquareModuleDrawer(),
               color_mask = custom_blue_color )
 ```
 
 
 
 
-    
+
 ![png]({static}/images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_21_0.png)
-    
+
 
 
 
@@ -235,17 +235,17 @@ qr.make_image(image_factory = StyledPilImage,
 
 
 ```python
-qr.make_image(image_factory = StyledPilImage, 
-              module_drawer = HorizontalBarsDrawer(), 
+qr.make_image(image_factory = StyledPilImage,
+              module_drawer = HorizontalBarsDrawer(),
               color_mask = custom_blue_color)
 ```
 
 
 
 
-    
+
 ![png]({static}/images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_23_0.png)
-    
+
 
 
 
@@ -253,16 +253,16 @@ qr.make_image(image_factory = StyledPilImage,
 
 
 ```python
-qr.make_image(image_factory = StyledPilImage, 
-              module_drawer = VerticalBarsDrawer(), 
+qr.make_image(image_factory = StyledPilImage,
+              module_drawer = VerticalBarsDrawer(),
               color_mask = custom_blue_color )
 ```
 
 
 
 
-    
+
 ![png]({static}/images/gerando-qr-codes-com-Python_files/gerando-qr-codes-com-Python_25_0.png)
-    
+
 
 
