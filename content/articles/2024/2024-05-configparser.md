@@ -121,100 +121,91 @@ type(
 ### O que é uma seção?
 
 ```python
-config['DEFAULT']
+>> config['DEFAULT']
+<Section: DEFAULT>
 ```
 
-    <Section: DEFAULT>
 
 ### Como saber quais são as demais seções?
 
 ```python
-config.sections()
+>> config.sections()
+['education', 'skills']
 ```
 
-    ['education', 'skills']
 
 ### Como verificar se uma seção existe dentro de um objeto `config`?
 
 ```python
-('education' in config) or config.has_section('education')
+>> ('education' in config) or config.has_section('education')
+True
 ```
 
-    True
 
 ### Como verificar se existe uma opção (chave) dentro de uma seção?
 
 ```python
-config.has_option(section='education', option='year')
+>> config.has_option(section='education', option='year')
+True
 ```
 
-    True
 
 ### Como verificar se existe uma opção para a seção default?
 ```python
 '''
-Se especificado `section` igual a None ou string vazia, a seção default é verificada.
+Se especificado `section` igual a None ou string vazia,
+a seção default é verificada.
 '''
-config.has_option(section=None, option='company')
+>> config.has_option(section=None, option='company')
+False
+
+>> config.has_option(section=None, option='email')
+True
 ```
 
-    False
-
-```python
-config.has_option(section=None, option='email')
-```
-
-    True
 
 ### Como acessar um valor na seção default?
 
 ```python
-config['DEFAULT']['name']
+>> config['DEFAULT']['name']
+'Giliard Godoi'
 ```
-
-    'Giliard Godoi'
 
 ### Como acessar um valor em uma outra seção?
 
 ```python
-config['education']['school']
+>> config['education']['school']
+'Federal University of Technology - Paraná'
 ```
-
-    'Federal University of Technology - Paraná'
 
 Ou então, utilizar o método get
 ```python
-config.get(section='education', option='school')
+>> config.get(section='education', option='school')
+'Federal University of Technology - Paraná'
 ```
-
-    'Federal University of Technology - Paraná'
 
 ### Qual é o tipo de dado retornado por padrão?
 
 ```python
-type(
-    config['education']['year']
-)
+>> type(  config['education']['year'] )
+str
 ```
-
-    str
 
 ### Isso serve também para listas?
 
 ```python
-config['skills']['programing']
-```
+>> config['skills']['programing']
 
-    '\nPython\nJavaScript\nC\nC++'
+'\nPython\nJavaScript\nC\nC++'
+```
 
 ### Como converter os valores para listas?
 
 ```python
-config['skills']['programing'].split()
+>> config['skills']['programing'].split()
+['Python', 'JavaScript', 'C', 'C++']
+
 ```
-
-    ['Python', 'JavaScript', 'C', 'C++']
-
 
 No entanto, a conversão (parse) para listas não é nativamente implementada para a linguagem Python.
 
@@ -222,85 +213,86 @@ No entanto, a conversão (parse) para listas não é nativamente implementada pa
 ### Como converter o valor de uma variável para um tipo específico?
 
 ```python
-print(f'''
------------------------------------
-{config.get(section='education', option='school')} : {type(config.get(section='education', option='school'))}
-{config.getint('education', 'year')} : {type(config.getint('education', 'year'))}
-{config.getboolean('DEFAULT', 'secret_agent')} : {type(config.getboolean('DEFAULT', 'secret_agent'))}
------------------------------------
-''')
-```
 
-    -----------------------------------
-    Federal University of Technology - Paraná : <class 'str'>
-    2018 : <class 'int'>
-    True : <class 'bool'>
-    -----------------------------------
+>> config.get(section='education', option='school')
+Federal University of Technology - Paraná
+
+>> type(config.get(section='education', option='school'))
+<class 'str'>
+
+>> config.getint('education', 'year')
+2018
+
+>> type(config.getint('education', 'year'))
+<class 'int'>
+
+>> config.getboolean('DEFAULT', 'secret_agent')
+True
+
+>> type(config.getboolean('DEFAULT', 'secret_agent'))
+<class 'bool'>
+```
 
 Ou seja, existem três métodos para converter para tipos específicos:
 
-1. `getint`
-2. `getfloat`
-3. `getboolean`
+   1. `getint`
+   2. `getfloat`
+   3. `getboolean`
 
 ```python
-type(
-    config.getint('education', 'year')
-)
-```
-    int
+>> type(config.getint('education', 'year') )
+int
 
-```python
-type(
-    config.getboolean('DEFAULT', 'secret_agent')
-)
+>> type(config.getboolean('DEFAULT', 'secret_agent'))
+bool
 ```
-    bool
 
 
 ### É possível definir um valor fallback nos métodos get?
 
 ```python
-assert not config.has_option(section='company', option='name')
+>> assert not config.has_option(section='company', option='name')
 
-config.get(section='company', option='name', fallback='Does not exist')
+>> config.get(section='company', option='name', fallback='Does not exist')
+'Does not exist'
 ```
-    'Does not exist'
 
 
 ### Como saber todas as variáveis existentes de uma seção?
 
 ```python
-config.options('education')
-```
+>> config.options('education')
     ['school', 'major', 'year', 'name', 'email', 'local', 'secret_agent']
+```
 
 
 ### Como obter os itens (chave-valor) para uma seção?
 
 ```python
-config.items('education')
-```
+>> config.items('education')
 
-    [('name', 'Giliard Godoi'),
-     ('email', 'ggodoi@email.com'),
-     ('local', 'Brasil'),
-     ('secret_agent', 'True'),
-     ('school', 'Federal University of Technology - Paraná'),
-     ('major', 'Software Development'),
-     ('year', '2018')]
+[
+    ('name', 'Giliard Godoi'),
+    ('email', 'ggodoi@email.com'),
+    ('local', 'Brasil'),
+    ('secret_agent', 'True'),
+    ('school', 'Federal University of Technology - Paraná'),
+    ('major', 'Software Development'),
+    ('year', '2018')
+]
+```
 
 ### Como obter os itens (chave-valor) para a seção default?
 
 ```python
-config.defaults()
-```
+>> config.defaults()
     {
         'name': 'Giliard Godoi',
         'email': 'ggodoi@email.com',
         'local': 'Brasil',
         'secret_agent': 'True'
     }
+```
 
 
 # Arquivos
@@ -318,25 +310,19 @@ with open('config.ini', 'w') as f:
 ### Como ler o arquivo config.ini?
 
 ```python
-other = configparser.ConfigParser()
-other.sections()
+>> other = configparser.ConfigParser()
+>> other.sections()
+[]
+
+>> other.read('config.ini')
+['config.ini']
+
+>> other.sections()
+['education', 'skills']
 ```
-    []
 
 
-```python
-other.read('config.ini')
-```
-    ['config.ini']
-
-
-```python
-other.sections()
-```
-    ['education', 'skills']
-
-
-# Referências
+## Referências
 
 1. <https://docs.python.org/3/library/configparser.html>
 2. <https://en.wikipedia.org/wiki/INI_file>
