@@ -1,7 +1,7 @@
 Title: Lendo dados no formato JSON com pandas
 Slug: ler-json-com-pandas-dataframe
 Date: 2022-08-15
-Category: data-analysis, programming-skills
+Category: data-analysis
 Tags: python, pandas, json
 Author: Giliard Godoi
 Summary: Conheça funções úteis da biblioteca pandas para trabalhar com dados no formato JSON

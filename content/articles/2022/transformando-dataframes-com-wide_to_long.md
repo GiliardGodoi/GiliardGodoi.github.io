@@ -1,7 +1,7 @@
 Title: Transformando pandas dataframes com wide_to_long
 Slug: transformando-dataframe-com-wide-to-long
 Date: 2022-07-26
-Category: data-analysis, programming-skills
+Category: data-analysis
 Tags: python, pandas, reshaping
 Author: Giliard Godoi
 Summary: Quando os nomes das colunas guardam informações que podem ser importantes
