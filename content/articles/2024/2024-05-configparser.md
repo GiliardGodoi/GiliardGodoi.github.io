@@ -1,4 +1,4 @@
-title: Como manipular arquivos de configuração config.ini
+title: Um guia rápido para arquivos de configuração config.ini
 summary: Conheçendo um pouco sobre a biblioteca `configparser`
 date: 2024-05-26
 slug: conhecendo-arquivos-configuracao-configini
@@ -6,7 +6,8 @@ authors: Giliard Godoi
 category: programming-skills
 tags: config, toml, yaml
 
----
+
+![Mapa mental das biblioteca configparser]({static}/images/2024/mind-map-configparser.png)
 
 Este artigo faz parte de uma série de três publicações que tratam de arquivos de configurações comuns em projetos desenvolvidos em Python.
 Esses formatos são `config.ini`, `yaml`, e `toml`.
@@ -15,7 +16,7 @@ Serão apresentados as características básicas desses formatos, e quais biblio
 
 O artigo está organizado sob o formatos de perguntas e respostas, com o correspondente exemplo de um código, para facilitar consultas futuras.
 
-# Config initialization (config.ini)
+## Config initialization (config.ini)
 
 Os arquivos `.ini` foram primeiramente projetados para o [sistema Microsoft Windows](https://en.wikipedia.org/wiki/INI_file).
 Contudo, eles foram adotados por outros softwares (inclusives de código aberto) onde podem aparecer sob a extensão `.cfg` com implementações ligeiramente diferente.

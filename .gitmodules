@@ -13,3 +13,6 @@
 [submodule "plugins/pelican-bootstrapify"]
 	path = plugins/plugins/pelican-bootstrapify
 	url = https://github.com/ingwinlu/pelican-bootstrapify
+[submodule "themes/pelican-minimum"]
+	path = themes/pelican-minimum
+	url = https://github.com/GiliardGodoi/pelican-minimum.git
