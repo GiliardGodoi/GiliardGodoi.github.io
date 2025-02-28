@@ -3,7 +3,10 @@ AUTHOR = 'Giliard Godoi'
 SITENAME = 'Giliard Godoi'
 SITEURL = ""
 SITETITLE = 'Giliard Godoi'
-SITESUBTITLE = 'Uma história sobre aprendizados'
+SITESUBTITLE = '''Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
+Aprendizado de Máquina. Análise e Visualização de Dados.
+Programador Python.
+'''
 
 SITEIMAGE = "/images/profile-park.png width=250 height=150"
 # GRAVATAR_IMAGE = 'https://gravatar.com/giliardgodoi'
@@ -51,7 +54,7 @@ ICONS = (
 
 
 DISPLAY_CATEGORIES_ON_MENU = False
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 7
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
@@ -59,13 +62,16 @@ DEFAULT_PAGINATION = 10
 # Theme configuration
 # THEME = Path('themes', 'abacate')
 # THEME = Path('themes', 'genus')
-THEME = Path('themes', 'pelican-alchemy', 'alchemy')
-THEME_CSS_OVERRIDES = ['theme/css/oldstyle.css']
+# THEME = Path('themes', 'pelican-alchemy', 'alchemy')
+# THEME_CSS_OVERRIDES = ['theme/css/oldstyle.css']
 
 # THEME = Path('themes', 'pelican-clean-blog')
 # THEME = Path('themes', 'pelican-clean-genus')
 # THEME = Path('themes', 'pelican-natureza')
 # COLOR_SCHEME_CSS = 'monokai.css'
+
+THEME = Path('themes', 'pelican-minimum')
+COLOR_SCHEME_CSS = 'monokai.css'
 
 
 # URLs configuration
