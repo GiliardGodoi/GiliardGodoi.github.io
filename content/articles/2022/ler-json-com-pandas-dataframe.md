@@ -30,17 +30,15 @@ O exemplo de dados no formato JSON utilizado nesse artigo é adaptado daquele pr
 
 Nesse primeiro exemplo, transformaremos a string no formato JSON em um dicionário em Python utilizando a biblioteca nativa `json`.
 
+A variável `single_character` é string com um único objeto no formato JSON. Esse objeto temos as chaves `'name'`, `'age'`, `'secretIdentity'` e `'powers'`, e seus respectivos valores.
+
+Note que o valor correspondente a chave `powers` é uma lista de strings. O uso de listas (ou *arrays* do JavaScript) codifica uma relação de um-para-muitos. No caso, um super-heroí possui vários poderes.
+
+Podemos transformar (ou decodificar) esses dados em um dicionário Python utilizando a função `json.loads`. E magicamente, temos um dicionário.
 
 ```python
 import json
-```
 
-A variável `single_character` é string com um único objeto no formato JSON. Esse objeto temos as chaves `'name'`, `'age'`, `'secretIdentity'` e `'powers'`, e seus respectivos valores.
-
-Note que o valor correspondente a chave `'powers'` é uma lista de strings. O uso de listas (ou *arrays* do JavaScript) codifica uma relação de um-para-muitos. No caso, um super-heroí possui vários poderes.
-
-
-```python
 single_character = '''
 {
       "name": "Molecule Man",
@@ -55,57 +53,25 @@ single_character = '''
 '''
 
 superhero = json.loads(single_character)
-```
 
-Podemos transformar (ou decodificar) esses dados em um dicionário Python utilizando a função `json.loads`. E magicamente, temos um dicionário.
-
-
-```python
 superhero
+{'name': 'Molecule Man',
+  'age': 29,
+  'secretIdentity': 'Dan Jukes',
+  'powers': ['Radiation resistance', 'Turning tiny', 'Radiation blast']}
 ```
-
-
-
-
-    {'name': 'Molecule Man',
-     'age': 29,
-     'secretIdentity': 'Dan Jukes',
-     'powers': ['Radiation resistance', 'Turning tiny', 'Radiation blast']}
-
-
 
 Um pandas Dataframe pode ser construído a partir de uma lista de dicionários. Mas se passarmos esse simples dicionário `superhero` para o construtor do dataframe, também obtemos um dataframe.
 
-
 ```python
 import pandas as pd
-```
-
-
-```python
 pd.DataFrame(superhero)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>
@@ -149,27 +115,10 @@ Porém, esse mesmo resultado pode ser obtido utilizando a função [`pd.read_jso
 ```python
 pd.read_json(single_character)
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>
@@ -251,31 +200,13 @@ squad = '''
 
 Nesse caso função `pd.read_json` não desdobra os valores da coluna `powers`. Os valores dessa coluna são diversas listas.
 
-
 ```python
 pd.read_json(squad)
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>
@@ -313,31 +244,13 @@ pd.read_json(squad)
 
 Caso se queira desdobrar esse relacionamento um-para-vários, é possível utilizar o método [`explode`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.explode.html).
 
-
 ```python
 pd.read_json(squad).explode('powers')
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>
@@ -471,31 +384,13 @@ O dataframe resultante da função `pd.read_json` possui os atributos do esquadr
 
 Os valores da coluna `members` no entanto, são dicionários correspondentes aos super-heróis.
 
-
 ```python
 pd.read_json(squad_advanced)
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>squadName</th>
       <th>homeTown</th>
@@ -543,31 +438,13 @@ Ao utilizar o método `explode` para desdobrar essa relação os valores da colu
 
 Muito provavelmente, esse não é o resultado esperado para as nossas análises, conforme podemos ver.
 
-
 ```python
 pd.read_json(squad_advanced).explode('members')
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>squadName</th>
       <th>homeTown</th>
@@ -698,33 +575,15 @@ Contudo, essa função aceita dicionários Python, por isso é necessário utili
 
 Essa função recebe o parâmetro `record_paths` que indica qual é o atributo principal dos dados, nesse caso o atributo `members` com informações dos nossos três super-heróis.
 
-
 ```python
 squad_dict = json.loads(squad_advanced)
 
 pd.json_normalize(squad_dict, record_path='members')
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>
@@ -764,33 +623,15 @@ Para manter os atributos que se refere às informações do esquadrão, utilizam
 
 Note que os valores desses atributos são repetidos para cada um dos três super-heróis.
 
-
 ```python
 pd.json_normalize(squad_dict,
                   record_path='members',
                   meta=['squadName', 'homeTown', 'secretBase'])
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>
@@ -895,7 +736,6 @@ Então, seguimos os mesmos passos:
 1.   Decodificamos os dados em JSON em dicionários;
 2.   Utilizamos a função `pd.json_normalize` definindo os parâmetros `record_paths` para chave que contém os nossos principais dados, e `meta` para aquelas chaves que queremos manter;
 
-
 ```python
 squad_dict_2 = json.loads(squad_more_advanced)
 
@@ -905,27 +745,10 @@ df = pd.json_normalize(squad_dict_2,
 
 df
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>
@@ -977,31 +800,13 @@ A coluna que corresponde a chave `powers`, que mantém informações sobre os po
 
 Poderíamos desdobrar os valores dessa coluna utilizando o método `explode`, conforme pode-se ver a seguir.
 
-
 ```python
 df.explode('powers')
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<div class='table-responsive'>
+<table border="0" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>name</th>
       <th>age</th>

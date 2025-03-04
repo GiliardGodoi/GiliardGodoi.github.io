@@ -7,7 +7,7 @@ category: programming-skills
 tags: config, toml, yaml
 
 
-![Mapa mental das biblioteca configparser]({static}/images/2024/mind-map-configparser.png)
+![Mapa mental das biblioteca configparser](./mind-map-configparser.png)
 
 Este artigo faz parte de uma série de três publicações que tratam de arquivos de configurações comuns em projetos desenvolvidos em Python.
 Esses formatos são `config.ini`, `yaml`, e `toml`.
@@ -324,6 +324,6 @@ with open('config.ini', 'w') as f:
 
 
 ## Referências
+1. [Documentação oficial do configparser](https://docs.python.org/3/library/configparser.html)
+2. [INI file - Wikipedia](https://en.wikipedia.org/wiki/INI_file)
 
-1. <https://docs.python.org/3/library/configparser.html>
-2. <https://en.wikipedia.org/wiki/INI_file>

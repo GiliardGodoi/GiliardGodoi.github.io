@@ -1,4 +1,4 @@
-title: Como utilizar diferentes ambientes no Jupyter Notebook?
+title: Registrando uma novo ambiente no Jupyter Notebook
 date: 2023-01-28
 slug: registrando-novo-kernel-jupyter
 authors: Giliard Godoi
@@ -60,11 +60,11 @@ conda deactivate
 
 Para criar um novo *notebook* basta selecionar o kernel desejado no menu *new*.
 
-![jupyter kernels disponíveis]({static}/images/2023/jupyter-kernels.png)
+![jupyter kernels disponíveis](./jupyter-kernels.png)
 
 Para checar a versão do python do kernel selecionado podemos usar tando o `sys.version` quanto a função `python_version` do módulo `platform`.
 
-![Versão do kernel]({static}/images/2023/jupyter-kernels-version.png)
+![Versão do kernel](./jupyter-kernels-version.png)
 
 É importante observar que, quando utilizamos o comando `!python --version` é como se esse comando fosse jogado para o terminal e recuperasse a versão do python do terminal, isto é, do terminal em que estamos rodando o ambiente `base`.
 

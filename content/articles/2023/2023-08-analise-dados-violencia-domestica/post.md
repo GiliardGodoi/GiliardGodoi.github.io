@@ -1,8 +1,8 @@
-title: Extrair dados de arquivos PDFs
-summary: Um exemplo de como extrair dados de tabelas em arquivos `pdf`, para análise dos casos de violência doméstica em Municípios do Norte Pioneiro Paranaense.
+title: Análise dos casos de violência doméstica no Norte Pioneiro
+summary: Um exemplo de extração de dados de arquivos `pdf` com o software Tabula.
 date: 2023-08-04
 modified: 2023-04-07
-slug: exemplo-tabula-analise-dados-violencia-domestica
+slug: exemplo-analise-dados-violencia-domestica
 authors: Giliard Godoi
 category: data-analysis
 
@@ -20,13 +20,11 @@ Esse é um programa feito em Java, então você vai precisar instalar o Java na 
 
 Após executar o programa, só precisa selecionar o arquivo em PDF e selecionar a área em que está a sua tabela.
 
-<!-- ![Exemplo do software Tabula](../../images/2023/tabula-exemplo.png) -->
-![Exemplo do software Tabula]({static}/images/2023/tabula-exemplo.png)
+![Exemplo do software Tabula](./tabula-exemplo.png)
 
 E então, o programa cuida do resto...
 
-<!-- ![Dados extraidos com o software tabula](../../images/2023/tabula-exemplo-dois.png) -->
-![Dados extraidos com o software tabula]({static}/images/2023/tabula-exemplo-dois.png)
+![Dados extraidos com o software tabula](./tabula-exemplo-dois.png)
 
 Com os dados em um formato aberto, então é possível realizar a leitura com um código em Python, por exemplo, e realizar análises complementares e criar gráficos como o observados a seguir.
 
@@ -77,7 +75,7 @@ plt.xlabel("Ano");
 O gráfico a seguir apresenta a quantidade dos casos de violência doméstica, por natureza jurídica, nos municípios da região do Norte Pioneiro do Estado do Paraná, no período de 01/01/2016 a 31/12/2020.
 
 <!-- ![Registro de violência doméstica no Norte Pioneiro](../../images/2023/grafico-violencia-domestica-norte-pioneiro.png) -->
-![Registro de violência doméstica no Norte Pioneiro]({static}/images/2023/grafico-violencia-domestica-norte-pioneiro.png)
+![Registro de violência doméstica no Norte Pioneiro](./grafico-violencia-domestica-norte-pioneiro.png)
 
 No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020.
 Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.

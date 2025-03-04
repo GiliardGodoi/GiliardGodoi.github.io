@@ -7,7 +7,7 @@ summary: Como gerar vários gráficos em uma mesma figura com `subplots` e no fi
 category: data-visualization
 tags: matplotlib, subplots
 
-Quando fazemos Análise Exploratória dos Dados, talvez queiramos analisar a distribuição univariada dos atributos presentes em um conjunto de dados. 
+Quando fazemos Análise Exploratória dos Dados, talvez queiramos analisar a distribuição univariada dos atributos presentes em um conjunto de dados.
 
 Podemos utilizar a técnica *small multiplus* para criar pequenos gráficos, uma para cada atributo, para compor a nossa figura. Esse subgráficos são, para o `matplotlib` os *subplots*.
 
@@ -52,9 +52,9 @@ plt.subplot(212)
 plt.plot(t2, np.cos(2*np.pi*t2), color='tab:orange', linestyle='--')
 plt.show()
 ```
-![gráfico da função]({static}/images/2023/exemplo-com-subplots.png)
+![gráfico da função](./exemplo-com-subplots.png)
 
-## Utilizando `plt.subplots` 
+## Utilizando `plt.subplots`
 
 Sim, `subplots` no plural!
 
@@ -65,7 +65,7 @@ No exemplo a seguir, é criado uma nova figura com dois gráficos, alinhados em 
 ```python
 fig, (ax1, ax2) = plt.subplots(1, 2)
 ```
-![Exemplo com grid unidimensional 1 por 2]({static}/images/2023/exemplo-grid-unidimensional.png)
+![Exemplo com grid unidimensional 1 por 2](./exemplo-grid-unidimensional.png)
 
 
 Essa chada cria dois gráficos lado à lado na figura.
@@ -75,9 +75,9 @@ Nesse outro exemplo, é criado uma figura com quatro gráficos, distribuídos nu
 ```python
 fig, axs = plt.subplots(2, 2)
 ```
-![Exemplo com grid bidimensional]({static}/images/2023/exemplo-grid-bidimensional.png)
+![Exemplo com grid bidimensional](./exemplo-grid-bidimensional.png)
 
-A variável `axs` retonarda nesse caso, nada mais é que um *array* do `numpy` 
+A variável `axs` retonarda nesse caso, nada mais é que um *array* do `numpy`
 
 ```python
 >>> fig, axs = plt.subplots(2, 2)
@@ -91,9 +91,9 @@ Mas um *array* pode ser pouco intuitivo de se trabalhar.
 
 ## A dica mágica: `flatten`
 
-Como a variável `axs` é um *array* do `numpy`, então nós podemos utilizar o método `flatten` para transformar esse *array* com mais de uma dimensão em um *array* unidimensional. 
+Como a variável `axs` é um *array* do `numpy`, então nós podemos utilizar o método `flatten` para transformar esse *array* com mais de uma dimensão em um *array* unidimensional.
 
-Imagine, por exemplo, que tenhamos uma dataframe com nove atributos numéricos e nós queremos analisar analisar a distribuição desses atributos separadamente. 
+Imagine, por exemplo, que tenhamos uma dataframe com nove atributos numéricos e nós queremos analisar analisar a distribuição desses atributos separadamente.
 
 Podemos então utilizar um padrão de código como o do exemplo a seguir:
 
@@ -104,7 +104,7 @@ axs = axs.flatten()
 for i, column in enumerate(df.columns):
     sns.boxplot(data=df, y=column, ax=axs[i])
     axs[i].set_yticks([])
-    
+
 plt.tight_layout()
 ```
 
@@ -120,4 +120,4 @@ Documentação ofical do `Matplotlib`. **matplotlib.pyplot.subplot**. Disponíve
 
 Documentação ofical do `Matplotlib`. **matplotlib.pyplot.subplots**. Disponível em <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html> Acessado em 24 de fev. de 2023.
 
-Documentação oficial do `NumPy`. **numpy.ndarray.flatten**. Disponível em <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html> Acessado em 24 de fev. de 2023. 
+Documentação oficial do `NumPy`. **numpy.ndarray.flatten**. Disponível em <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html> Acessado em 24 de fev. de 2023.
