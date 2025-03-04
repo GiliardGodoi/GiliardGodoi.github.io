@@ -10,7 +10,7 @@ Programador Python.
 
 SITEIMAGE = "/images/profile-park.png width=250 height=150"
 # GRAVATAR_IMAGE = 'https://gravatar.com/giliardgodoi'
-SITELOGO  = '/images/profile-park.png'
+SITELOGO  = '/images/logo.png'
 GRAVATAR_IMAGE = '/images/profile-park.png'
 
 PATH = "content"
@@ -75,7 +75,7 @@ COLOR_SCHEME_CSS = 'monokai.css'
 
 
 # URLs configuration
-STATIC_PATHS = ["images", "pdfs", "extras", "datasets"]
+STATIC_PATHS = ["images", "pdfs", "extras"]
 
 PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
@@ -108,7 +108,8 @@ EXTRA_PATH_METADATA = {
     "extras/mstile-150x150.png" : {"path" : "mstile-150x150.png"},
     "extras/safari-pinned-tab.svg" : {"path" : "safari-pinned-tab.svg"},
     "extras/site.webmanifest" : {"path" : "site.webmanifest"},
-    "extras/README.md" : {"path" : "README.md"}
+    "extras/README.md" : {"path" : "README.md"},
+    "extras/.nojekyll" : {"path" : '.nojekyll'}
 }
 
 RFG_FAVICONS = True
@@ -119,15 +120,20 @@ PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 MARKUP = ("md", "ipynb")
 
 PLUGIN_PATHS = ['plugins/']
-PLUGINS = ['pelican-bootstrapify']
+PLUGINS = [
+    'pelican-bootstrapify',
+    'image-article'
+    ]
 
-IPYNB_SKIP_CSS = False
+IPYNB_SKIP_CSS = True
 IGNORE_FILES = [".ipynb_checkpoints"]
 
 BOOTSTRAP_THEME = "flatly"
 BOOTSTRAPIFY = {
-    "table": ["table", "table-striped", "table-hover"],
+    "table": ["table", "table-hover", "table-striped", "text-center"],
+    "thead" : ["table-secondary"],
     "img": ["img-fluid"],
+    # "a" : ["link-secondary", "text-decoration-none"],
     "blockquote": ["blockquote"],
 }
 
