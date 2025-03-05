@@ -4,10 +4,7 @@ AUTHOR = 'Giliard Godoi'
 SITENAME = 'Giliard Godoi'
 SITEURL = ""
 SITETITLE = 'Giliard Godoi'
-SITESUBTITLE = '''Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-'''
+SITESUBTITLE = "Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial.Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python."
 
 SITEIMAGE = "/images/profile-park.png width=250 height=150"
 # GRAVATAR_IMAGE = 'https://gravatar.com/giliardgodoi'
@@ -37,21 +34,13 @@ HIDE_AUTHORS = True
 # )
 
 # Social widget
-SOCIAL = (
-    ("github", "https://github.com/GiliardGodoi"),
-    ("linkedin", "https://www.linkedin.com/in/giliardgodoi/"),
-    ('twitter', 'https://x.com/giliardgodoi')
-)
-
-GITHUB_URL = 'https://github.com/GiliardGodoi'
-TWITTER_URL = 'http://twitter.com/giliardgodoi'
-
-ICONS = (
-    ("twitter", "https://twitter.com/giliardgodoi"),
-    ("github", "https://github.com/GiliardGodoi"),
-    ("linkedin-in", "https://www.linkedin.com/in/giliardgodoi/"),
-    ('youtube', 'https://www.youtube.com/user/GiliardGodoi'),
-)
+SOCIAL = [
+    ("fab fa-twitter", "https://twitter.com/giliardgodoi"),
+    ("fab fa-github", "https://github.com/GiliardGodoi"),
+    ("fab fa-linkedin-in", "https://www.linkedin.com/in/giliardgodoi/"),
+    ('fab fa-youtube', 'https://www.youtube.com/user/GiliardGodoi'),
+    ('fa fa-graduation-cap', 'http://lattes.cnpq.br/3223316854344499'),
+]
 
 
 DISPLAY_CATEGORIES_ON_MENU = False
@@ -149,10 +138,10 @@ MARKDOWN = {
         "markdown.extensions.extra": {},
         "markdown.extensions.meta": {},
         # This is for enabling the TOC generation
-        # "markdown.extensions.toc": {
-        #                         "title": "Conteúdo",
-        #                         "toc_class" : "text-body-secondary",
-        #                     },
+        "markdown.extensions.toc": {
+                                "title": "Índice",
+                                # "toc_class" : "list-unstyled",
+                            },
         "markdown.extensions.footnotes" : {
             'PLACE_MARKER' : '[FOOTNOTES]'
         }
