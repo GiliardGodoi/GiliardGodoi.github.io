@@ -1,326 +1,247 @@
-title: Um guia rápido para arquivos de configuração config.ini
-summary: Conheçendo um pouco sobre a biblioteca `configparser`
+title: Um guia rápido para arquivos de configuração INI com `configparser`
+summary: Conheça as principais funções da biblioteca `configparser` para manipular arquivos `.ini` no Python.
 date: 2024-05-26
-slug: conhecendo-arquivos-configuracao-configini
+modified: 2025-03-04
+slug: guia-configparser-python
 authors: Giliard Godoi
 category: programming-skills
 tags: config, toml, yaml
 
-
 ![Mapa mental das biblioteca configparser](./mind-map-configparser.png)
 
-Este artigo faz parte de uma série de três publicações que tratam de arquivos de configurações comuns em projetos desenvolvidos em Python.
-Esses formatos são `config.ini`, `yaml`, e `toml`.
+## Caracterísitcas dos arquivos `.ini`
 
-Serão apresentados as características básicas desses formatos, e quais bibliotecas podem ser utilizadas para manipular os arquivos de cada uma dessas extensões.
+A extensão `.ini` são um formato simples e amplamente utilizados para armazenar configurações de aplicativos. A especificação foi primeiramente projetada para os programas do [sistema Microsoft Windows](https://en.wikipedia.org/wiki/INI_file). Contudo, eles acabaram sendo adotados pela comunidade de softwares abertos, onde também podem aparecer sob a extensão `.cfg` -- embora possam ter alguns detalhes diferentes.
 
-O artigo está organizado sob o formatos de perguntas e respostas, com o correspondente exemplo de um código, para facilitar consultas futuras.
+Um exemplo de arquivo `.ini` seria:
+```ini
+[DEFAULT]
+email = meu@email.com
+local = Brasil
+profession = Student # isso é um comentário
+major = Technology
 
-## Config initialization (config.ini)
-
-Os arquivos `.ini` foram primeiramente projetados para o [sistema Microsoft Windows](https://en.wikipedia.org/wiki/INI_file).
-Contudo, eles foram adotados por outros softwares (inclusives de código aberto) onde podem aparecer sob a extensão `.cfg` com implementações ligeiramente diferente.
+[personal]
+name = Giliard Godoi
 
 
-Basicamente, as informações são guardadas sob o esquema chave-valor e podem ser organizadas em diversas seções.
-O arquivo no entando deve possuir uma sessão `DEFAULT`.
+[education]
+school = Federal University of Technology - Paraná
+major  = Computer Science
+year   = 2018
 
-A manipulação desses arquivos podem ser feitas pela biblioteca padrão [`configparser`](https://docs.python.org/3/library/configparser.html).
+[skills]
+programming = Python, JavaScript, C, C++
+languages   = Portuguese, English
+```
 
 As principais características desse formato são:
 
-1. Ser facilmente lido (e entendido) por um humano
-2. Podem ser utilizados como delimitadores de valor os caracteres '`=`' ou '`:`'.
-3. Comentários são precedidos pelo caracter '`#`'
-4. Todos os valores são convertidos para `string`, porém existem alguns métodos especiais para converter os valores para determinado tipo;
-5. Ao realizar o parse de um arquivo, a estrutura de dados retornados se assemelha a um dicionário do Python.
+1. Estrutura de **chave-valor** organizada em **seções**.
+2. Permitem **comentários** após o carater `#`.
+3. Todos os valores são armazenados como **strings**, mas podem ser convertidos.
+4. A seção `DEFAULT` apresenta valores defaults que podem ser acessados pelas demais seções.
 
-## O básico sobre `configparser`
+No Python, a biblioteca padrão [`configparser`](https://docs.python.org/3/library/configparser.html) facilita a leitura e escrita desses arquivos.
 
-Um exemplo da organização desse arquivo pode ser vista em `configuration_string`, conforme definido abaixo:
+Ao realizar o parse de um arquivo, é retornado um objeto semelhante a um dicionário do Python, porém com alguns métodos extras que serão apresentados a seguir.
+
+## Configparser na prática
+
+De forma geral, a biblioteca `configparser` disponibiliza as seguintes funcionalidades:
+
+1. Realizar o parser de um arquivo `.ini` para um objeto do tipo `ConfigParser`.
+2. Escrever um arquivo `.ini` a partir de um objeto `ConfigParser`.
+3. Listar as seções e os seus atributos.
+4. Verificar a existencia de uma seção e de um atributo.
+5. Acessar os valores dos atributos.
+6. Converter os valores dos atributos para tipos específicos de dados.
+
+
+### Parse de um arquivo `.ini`
+
+Para realizar o parse de um arquivo `.ini` primeiro instanciamos um objeto do tipo `ConfigParser`, e então passamos a localização, isto é, o arquivo para o método `.read`.
 
 ```python
 import configparser
 
 config = configparser.ConfigParser()
+config.read('config.ini')
 
-configuration_string = '''
-[DEFAULT]
-name  = Giliard Godoi
-email = ggodoi@email.com
-local = Brasil
-secret_agent = True
-
-# This is a comment
-
-[education]
-school = Federal University of Technology - Paraná
-major  = Software Development
-year   = 2018
-
-# This is a list of skills
-[skills]
-programing :
-    Python
-    JavaScript
-    C
-    C++
-
-language :
-    Portuguese
-    English
-'''
+type( config ) # configparser.ConfigParser
 ```
 
+Também é possível utilizar os seguintes métodos para popular os valores de um objeto `ConfigParser`:
 
-### Como realizar o parse da string?
+- `read_file`: realiza o parser a partir de um objeto do tipo `file`
+- `read_string`: a partir de uma string.
+- `read_dict`: a partir de um objeto dict.
 
-```python
-config.read_string(configuration_string)
+### Conheçendo as seções e atributos do objeto `ConfigParser`
 
-type(
-    config
-)
-```
-<div style="max-width:800px; border: 1px solid var(--colab-border-color);"><style>
-      pre.function-repr-contents {
-        overflow-x: auto;
-        padding: 8px 12px;
-        max-height: 500px;
-      }
-
-      pre.function-repr-contents.function-repr-contents-collapsed {
-        cursor: pointer;
-        max-height: 100px;
-      }
-    </style>
-    <pre style="white-space: initial; background:
-         var(--colab-secondary-surface-color); padding: 8px 12px;
-         border-bottom: 1px solid var(--colab-border-color);"><b>configparser.ConfigParser</b><br/>def __init__(defaults=None, dict_type=_default_dict, allow_no_value=False, *, delimiters=(&#x27;=&#x27;, &#x27;:&#x27;), comment_prefixes=(&#x27;#&#x27;, &#x27;;&#x27;), inline_comment_prefixes=None, strict=True, empty_lines_in_values=True, default_section=DEFAULTSECT, interpolation=_UNSET, converters=_UNSET)</pre><pre class="function-repr-contents function-repr-contents-collapsed" style=""><a class="filepath" style="display:none" href="#">/usr/lib/python3.10/configparser.py</a>ConfigParser implementing interpolation.</pre>
-      <script>
-      if (google.colab.kernel.accessAllowed && google.colab.files && google.colab.files.view) {
-        for (const element of document.querySelectorAll('.filepath')) {
-          element.style.display = 'block'
-          element.onclick = (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            google.colab.files.view(element.textContent, 1197);
-          };
-        }
-      }
-      for (const element of document.querySelectorAll('.function-repr-contents')) {
-        element.onclick = (event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          element.classList.toggle('function-repr-contents-collapsed');
-        };
-      }
-      </script>
-      </div>
-
-
-### O que é uma seção?
-
-```python
->> config['DEFAULT']
-<Section: DEFAULT>
-```
-
-
-### Como saber quais são as demais seções?
+Os atributos são organizados em seções que agrupam atributos. A lista de seções existentes é acessada pelo método `.sections`.
 
 ```python
 >> config.sections()
-['education', 'skills']
+['personal', 'education', 'skills']
 ```
 
+Note que a seção `DEFAULT` não é listada. O seu propósito é guardar valores *defaults* para as demais seções.
 
-### Como verificar se uma seção existe dentro de um objeto `config`?
+Também é possível acessar uma seção por indexação, da mesma forma que fazemos com um dicionário do Python
 
 ```python
->> ('education' in config) or config.has_section('education')
-True
+config['DEFAULT'] # <Section: DEFAULT>
+
+config['personal'] # <Section: personal>
 ```
 
-
-### Como verificar se existe uma opção (chave) dentro de uma seção?
-
+O método `.options` permite conheçer todos os atributos (ou opções) de uma seção específica.
 ```python
->> config.has_option(section='education', option='year')
-True
+config.options('education')
+  ['school', 'major', 'year', 'email', 'local', 'profession']
 ```
 
+Note que todos os atributos da seção `DEFAULT` também são listados como atributos da seção `education`, mesmo que isso não faça muito sentido para o nosso exemplo.
 
-### Como verificar se existe uma opção para a seção default?
-```python
-'''
-Se especificado `section` igual a None ou string vazia,
-a seção default é verificada.
-'''
->> config.has_option(section=None, option='company')
-False
-
->> config.has_option(section=None, option='email')
-True
-```
-
-
-### Como acessar um valor na seção default?
-
-```python
->> config['DEFAULT']['name']
-'Giliard Godoi'
-```
-
-### Como acessar um valor em uma outra seção?
-
-```python
->> config['education']['school']
-'Federal University of Technology - Paraná'
-```
-
-Ou então, utilizar o método get
-```python
->> config.get(section='education', option='school')
-'Federal University of Technology - Paraná'
-```
-
-### Qual é o tipo de dado retornado por padrão?
-
-```python
->> type(  config['education']['year'] )
-str
-```
-
-### Isso serve também para listas?
-
-```python
->> config['skills']['programing']
-
-'\nPython\nJavaScript\nC\nC++'
-```
-
-### Como converter os valores para listas?
-
-```python
->> config['skills']['programing'].split()
-['Python', 'JavaScript', 'C', 'C++']
-
-```
-
-No entanto, a conversão (parse) para listas não é nativamente implementada para a linguagem Python.
-
-
-### Como converter o valor de uma variável para um tipo específico?
-
-```python
-
->> config.get(section='education', option='school')
-Federal University of Technology - Paraná
-
->> type(config.get(section='education', option='school'))
-<class 'str'>
-
->> config.getint('education', 'year')
-2018
-
->> type(config.getint('education', 'year'))
-<class 'int'>
-
->> config.getboolean('DEFAULT', 'secret_agent')
-True
-
->> type(config.getboolean('DEFAULT', 'secret_agent'))
-<class 'bool'>
-```
-
-Ou seja, existem três métodos para converter para tipos específicos:
-
-   1. `getint`
-   2. `getfloat`
-   3. `getboolean`
-
-```python
->> type(config.getint('education', 'year') )
-int
-
->> type(config.getboolean('DEFAULT', 'secret_agent'))
-bool
-```
-
-
-### É possível definir um valor fallback nos métodos get?
-
-```python
->> assert not config.has_option(section='company', option='name')
-
->> config.get(section='company', option='name', fallback='Does not exist')
-'Does not exist'
-```
-
-
-### Como saber todas as variáveis existentes de uma seção?
-
-```python
->> config.options('education')
-    ['school', 'major', 'year', 'name', 'email', 'local', 'secret_agent']
-```
-
-
-### Como obter os itens (chave-valor) para uma seção?
-
+O método `.items` retorna uma lista de tuplas com as chaves e valores de uma seção, da mesma forma que o método analogo do dicionário do Python.
 ```python
 >> config.items('education')
-
-[
-    ('name', 'Giliard Godoi'),
-    ('email', 'ggodoi@email.com'),
+  [('email', 'meu@email.com'),
     ('local', 'Brasil'),
-    ('secret_agent', 'True'),
+    ('profession', 'Student # isso é um comentário'),
+    ('major', 'Computer Science'),
     ('school', 'Federal University of Technology - Paraná'),
-    ('major', 'Software Development'),
-    ('year', '2018')
-]
+    ('year', '2018')]
 ```
 
-### Como obter os itens (chave-valor) para a seção default?
+Com isso é possível iterar sobre as chaves e dos valores de uma seção.
+```python
+for key, value in config.items('education'):
+    print(f'{key}: {value}')
+```
+
+Porém se tentarmos utilizar o método `.options`  passando a seção `DEFAULT` é lançada uma exception `NoSectionError`. Porém, é possível conheçer os atributos e valores da seção  `DEFAULT` com o método `.items`, conforme visto anteriormente, ou utilizando o método `.defaults` que retorna um dicionário.
+```python
+config.defaults()
+  {'email': 'meu@email.com',
+  'local': 'Brasil',
+  'profession': 'Student # isso é um comentário',
+  'major': 'Technology'}
+```
+
+### Verificando a existência de seções e atributos
+
+Ao passar a chave para uma seção inexistente no objeto `ConfigParser` é lançado uma exceção do tipo `KeyError`. Para verificar se uma seção existe no objeto, podemos fazer isso através do operador `in` ou do método `.has_section`.
+```python
+'education' in config
+  True
+
+config.has_section('education')
+  True
+
+config.has_section('certifications')
+  False
+```
+
+Para verificar se um atributo existe dentro de uma seção utilizamos o método `.has_option` e passamos como parâmetro o nome da seção e do atributo que queremos verificar.
+```python
+config.has_option(section='education', option='year')
+  True
+```
+Se o parâmetro para a seção for definido como `None` ou por string vazia, a seção default é verificada.
+```python
+config.has_option(section=None, option='email')
+  True
+
+config.has_option(section='', option='email')
+  True
+```
+
+Lembre-se que se um atributo não existe dentro de uma seção, o valor presente em `DEFAULT` é retornado. Este comportamento também se repete ao verificar a existência de um atributo.
+No exemplo a seguir, `email` não é explicitamente definido dentro da seção `education`.
+```python
+config.has_option(section='education', option='email')
+  True
+```
+
+### Acessando valores dos atributos
+
+A forma mais simples de acessar um valor de um objeto `ConfigParser` é por indexação.
 
 ```python
->> config.defaults()
-    {
-        'name': 'Giliard Godoi',
-        'email': 'ggodoi@email.com',
-        'local': 'Brasil',
-        'secret_agent': 'True'
-    }
+config['personal']['name']
+  'Giliard Godoi'
+
+config['education']['school']
+  'Federal University of Technology - Paraná'
+
+config['DEFAULT']['email']
+  'meu@email.com'
+
+# Acessando os valores de default
+config['personal']['profession']
+  'Student'
 ```
 
+Os valores da seção default não são utilizados se os atributos forem explicitamente definidos em uma seção específica.
+```python
+config['education']['major']
+  'Computer Science'
+```
 
-# Arquivos
+Também é possível acessar os valores de uma seção com o método `.get`.
+```python
+config.get(section='education', option='school')
+  'Federal University of Technology - Paraná'
+```
 
-As operações de leitura e escrita do arquivo são bem simples, como pode ser visto a seguir.
+O método `.get` permite definir um valor de fallback, isto é, o 'default do default', caso uma seção ou um atributo não existam.
+No exemplo a seguir a seção `company` não é definida para o nosso exemplo.
+Ao utilizar o método `.get`, o valor de fallback é retornado.
+```python
+assert not config.has_option(section='company', option='name')
+config.get(section='company', option='name', fallback='Does not exist')
+  'Does not exist'
+```
 
-### Como salvar as configurações em um arquivo?
+Como já foi mencionado, os valores dos arquivos `.ini` são armazenados como strings.
+E por isso, os valores dos atributos são todos do tipo string.
+```python
+type(config['education']['year'] )
+  str
+```
+
+### Converter valores para tipos específicos
+
+No entanto é possível converter os valores para os tipos `int`, `float` e `bool` com os métodos `.getint`, `.getfloat` e `.getbool`, respectivamente.
 
 ```python
-with open('config.ini', 'w') as f:
-    config.write(f)
+config.getint('education', 'year')
+  2018
 ```
 
+Se precisar armazenar listas, use separadores consistentes e o método `.split()` para recuperação.
+```python
+config['skills']['programming'].split(',')
+  ['Python', 'JavaScript', 'C', 'C++']
 
-### Como ler o arquivo config.ini?
+```
+
+### Salvando um arquivo `.ini`
+
 
 ```python
->> other = configparser.ConfigParser()
->> other.sections()
-[]
+config['project'] = {'name': 'ConfigParser Guide', 'version': '1.0'}
 
->> other.read('config.ini')
-['config.ini']
-
->> other.sections()
-['education', 'skills']
+with open('config.ini', 'w') as configfile:
+    config.write(configfile)
 ```
+
+## Dicas e boas práticas
+- Sempre use `getint()`, `getfloat()`, ou `getboolean()` quando precisar de tipos específicos.
+- Utilize `fallback=` no método `get()` para evitar erros ao acessar chaves inexistentes.
+- Se precisar armazenar listas, use separadores consistentes e o método `.split()` para recuperação.
 
 
 ## Referências

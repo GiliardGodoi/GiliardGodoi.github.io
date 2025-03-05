@@ -1,11 +1,11 @@
 import os
 import shutil
-import logging
+# import logging
 from pelican import signals
 
 # Configuração do logging
-logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
-logger = logging.getLogger(__name__)
+# logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
+# logger = logging.getLogger(__name__)
 
 def copy_images(generator):
     for article in generator.articles:
@@ -21,7 +21,7 @@ def copy_images(generator):
                     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
                     shutil.copy2(src_path, dest_path)
 
-                    logger.info(f'Copiando imagem: {src_path} -> {dest_path}')
+                    # logger.info(f'Copiando imagem: {src_path} -> {dest_path}')
 
 def register():
     signals.article_generator_finalized.connect(copy_images)

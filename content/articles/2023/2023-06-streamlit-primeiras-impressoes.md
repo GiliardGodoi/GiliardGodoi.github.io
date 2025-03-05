@@ -3,6 +3,7 @@ summary: Este artigo é um breve relato sobre as minhas impressões utilizando o
 date: 2023-06-26
 modified: 2024-04-07
 slug: streamlit-primeiras-impressoes
+status: draft
 authors: Giliard Godoi
 category: programming-skills
 tags: streamlit

@@ -1,7 +1,7 @@
-title: Análise dos casos de violência doméstica no Norte Pioneiro
+title: Análise dos casos de violência doméstica no Norte Pioneiro do Paraná
 summary: Um exemplo de extração de dados de arquivos `pdf` com o software Tabula.
 date: 2023-08-04
-modified: 2023-04-07
+modified: 2025-03-04
 slug: exemplo-analise-dados-violencia-domestica
 authors: Giliard Godoi
 category: data-analysis
