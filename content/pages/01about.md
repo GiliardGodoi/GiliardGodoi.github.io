@@ -1,9 +1,16 @@
 Title: Sobre
 
+<figure class="mx-auto text-center">
+    <img src="{static}/images/profile-park.png" alt="Profile photo. Barigui Park" class="rounded" width="30%"/>
+    <figcaption class="text-black-50">Parque Barigui, Verão de 2023. Curitiba, Paraná, Brasil.</figcaption>
+</figure>
 
-<pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold"><a href="https://giliardgodoi.github.io/">Giliard_Godoi</a></span>
+
+
+<pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace;">
+<span style="font-weight: bold"><a href="https://giliardgodoi.github.io/">Giliard_Godoi</a></span>
 <span style="color: #808080; text-decoration-color: #808080">├── </span><span style="font-weight: bold">📂 Formação_Acadêmica/</span>
-<span style="color: #808080; text-decoration-color: #808080">│   ├── </span><span style="font-weight: bold">🎓 Doutorado_ICMC_USP.txt</span>
+<span style="color: #808080; text-decoration-color: #808080">│   ├── </span><span style="font-weight: bold">🎓 Estudante_Doutorado_ICMC_USP.txt</span>
 <span style="color: #808080; text-decoration-color: #808080">│   ├── </span><span style="font-weight: bold">🎓 Mestrado_Informatica_UTFPR.txt</span>
 <span style="color: #808080; text-decoration-color: #808080">│   ├── </span><span style="font-weight: bold">🎓 Tecnólogo_ADS_UTFPR.txt</span>
 <span style="color: #808080; text-decoration-color: #808080">│   └── </span><span style="font-weight: bold">🎓 Licenciatura_Matemática_UENP.txt</span>
