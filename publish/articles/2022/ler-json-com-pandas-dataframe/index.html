@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+      <meta charset="UTF-8">
+    <meta name="generator" content="Pelican" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giliard Godoi - Lendo dados no formato JSON com pandas</title>
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
+Aprendizado de Máquina. Análise e Visualização de Dados.
+Programador Python.
+" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <!-- <link rel="manifest" href="/manifest.json"> -->
+      <meta name="theme-color" content="#333333">
+    <link rel="stylesheet" href="https://giliardgodoi.github.io/theme/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://giliardgodoi.github.io/theme/css/bootstrap/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://giliardgodoi.github.io/theme/css/theme.css">
+    <!-- Code highlight color scheme -->
+      <link href="https://giliardgodoi.github.io/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+
+
+    <meta name="tags" content="python" />
+    <meta name="tags" content="pandas" />
+    <meta name="tags" content="json" />
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+      <div class="container-fluid ">
+
+        <a href="https://giliardgodoi.github.io/" class="navbar-brand">
+            <img src="/images/logo.png" alt="Giliard Godoi" style="width: 30px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end pe-3" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div class="my-5">
+    <div class="p-5 text-center bg-orange">
+        <div class="container py-5">
+            <h1 class="text-body-emphasis"> Giliard Godoi </h1>
+            <p class="col-lg-8 mx-auto lead">
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
+Aprendizado de Máquina. Análise e Visualização de Dados.
+Programador Python.
+
+            </p>
+            <ul class="list-inline">
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-twitter text-decoration-none text-black-50" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-github text-decoration-none text-black-50" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-linkedin-in text-decoration-none text-black-50" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+              </ul>
+        </div>
+    </div>
+</div>    <main class="container flex-grow-1">
+<div class="container">
+  <article>
+    <header class="">
+      <h1>Lendo dados no formato <span class="caps">JSON</span> com&nbsp;pandas</h1>
+      <!--        -->
+      <span class="lead"><p>Conheça funções úteis da biblioteca pandas para trabalhar com dados no formato <span class="caps">JSON</span></p></span>
+      <div class="small">  <!-- bg-body-light p-3 rounded -->
+        <span class="fst-italic">
+          Por
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/author/giliard-godoi.html">
+            Giliard Godoi
+          </a>
+          Publicado em <time datetime="2022-08-15T00:00:00-03:00">seg 15 agosto 2022.</time>
+        </span> <br>
+        <span class="fst-italic">
+          Categoria:
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/category/data-analysis">
+            data-analysis
+          </a>
+ Tags:
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/tag/python">
+            #python
+          </a>
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/tag/pandas">
+            #pandas
+          </a>
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/tag/json">
+            #json
+          </a>
+        </span>
+      </div>
+    </header>
+    <section class="mt-5">
+      <h2>O que é <span class="caps">JSON</span>?</h2>
+<p><em>JavaScript Object Notation</em> (<span class="caps">JSON</span>) é uma representação de dados baseado em chave-valor, seguindo a sintaxe dos objetos da linguagem JavaScript.
+Popularizou-se como uma forma de transmissão de dados pela Web, como uma alternativa à estrutura <span class="caps">XML</span>.</p>
+<p>Outras linguagens também oferecem suporte para se trabalhar com dados nesse formato. Por exemplo, a biblioteca nativa <a href="https://docs.python.org/3/library/json.html"><code>json</code></a> permite converter strings no formato <span class="caps">JSON</span> para dicionários da linguagem Python.</p>
+<p>Para que essa conversão seja possível, é necessário estabelecer uma relação entre os tipos primitivos dessas duas linguagens. Essa correspondência é bastante simples pois ambas as linguagem oferecem um tipo primitivo para strings (texto), valores numéricos (inteiros e floats), tipos booleanos (True, False) e listas, dicionários e o valor nulo (Null no caso do JavaScript e None no caso do Python).</p>
+<p>Nesse artigo, veremos como transformar dados em <span class="caps">JSON</span> em dataframes em quatro exemplos.
+- Um exemplo básico;
+- Um exemplo intermediário
+- Um exemplo avançado;
+- E um exemplo um pouco mais avançado.</p>
+<p>O exemplo de dados no formato <span class="caps">JSON</span> utilizado nesse artigo é adaptado daquele presente na página de documentação da <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON">Mozilla Web Docs</a>, e que pode ser consultado nesse link.</p>
+<h2>Exemplo básico</h2>
+<p>Nesse primeiro exemplo, transformaremos a string no formato <span class="caps">JSON</span> em um dicionário em Python utilizando a biblioteca nativa <code>json</code>.</p>
+<p>A variável <code>single_character</code> é string com um único objeto no formato <span class="caps">JSON</span>. Esse objeto temos as chaves <code>'name'</code>, <code>'age'</code>, <code>'secretIdentity'</code> e <code>'powers'</code>, e seus respectivos valores.</p>
+<p>Note que o valor correspondente a chave <code>powers</code> é uma lista de strings. O uso de listas (ou <em>arrays</em> do JavaScript) codifica uma relação de um-para-muitos. No caso, um super-heroí possui vários poderes.</p>
+<p>Podemos transformar (ou decodificar) esses dados em um dicionário Python utilizando a função <code>json.loads</code>. E magicamente, temos um dicionário.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">single_character</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">{</span>
+<span class="s1">      "name": "Molecule Man",</span>
+<span class="s1">      "age": 29,</span>
+<span class="s1">      "secretIdentity": "Dan Jukes",</span>
+<span class="s1">      "powers": [</span>
+<span class="s1">        "Radiation resistance",</span>
+<span class="s1">        "Turning tiny",</span>
+<span class="s1">        "Radiation blast"</span>
+<span class="s1">      ]</span>
+<span class="s1">    }</span>
+<span class="s1">'''</span>
+
+<span class="n">superhero</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">single_character</span><span class="p">)</span>
+
+<span class="n">superhero</span>
+<span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Molecule Man'</span><span class="p">,</span>
+  <span class="s1">'age'</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+  <span class="s1">'secretIdentity'</span><span class="p">:</span> <span class="s1">'Dan Jukes'</span><span class="p">,</span>
+  <span class="s1">'powers'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Radiation resistance'</span><span class="p">,</span> <span class="s1">'Turning tiny'</span><span class="p">,</span> <span class="s1">'Radiation blast'</span><span class="p">]}</span>
+</code></pre></div>
+<p>Um pandas Dataframe pode ser construído a partir de uma lista de dicionários. Mas se passarmos esse simples dicionário <code>superhero</code> para o construtor do dataframe, também obtemos um dataframe.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">superhero</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation resistance</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Turning tiny</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation blast</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note que o atributo <code>powers</code>, que codifica uma lista de três poderes, e ele se desdobra em três registros (linhas).</p>
+<p>Porém, esse mesmo resultado pode ser obtido utilizando a função <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html"><code>pd.read_json</code></a></p>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">single_character</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation resistance</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Turning tiny</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation blast</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Exemplo Intermediário</h2>
+<p>Nesse próximo exemplo, a variável <code>squad</code> é uma lista de heróis, e ainda temos o mesmo atributo <code>powers</code> com uma lista de poderes para esses heróis.</p>
+<div class="highlight"><pre><span></span><code><span class="n">squad</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1"> [</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Molecule Man",</span>
+<span class="s1">      "age": 29,</span>
+<span class="s1">      "secretIdentity": "Dan Jukes",</span>
+<span class="s1">      "powers": [</span>
+<span class="s1">        "Radiation resistance",</span>
+<span class="s1">        "Turning tiny",</span>
+<span class="s1">        "Radiation blast"</span>
+<span class="s1">      ]</span>
+<span class="s1">    },</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Madame Uppercut",</span>
+<span class="s1">      "age": 39,</span>
+<span class="s1">      "secretIdentity": "Jane Wilson",</span>
+<span class="s1">      "powers": [</span>
+<span class="s1">        "Million tonne punch",</span>
+<span class="s1">        "Damage resistance",</span>
+<span class="s1">        "Superhuman reflexes"</span>
+<span class="s1">      ]</span>
+<span class="s1">    },</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Eternal Flame",</span>
+<span class="s1">      "age": 1000000,</span>
+<span class="s1">      "secretIdentity": "Unknown",</span>
+<span class="s1">      "powers": [</span>
+<span class="s1">        "Immortality",</span>
+<span class="s1">        "Heat Immunity",</span>
+<span class="s1">        "Inferno",</span>
+<span class="s1">        "Teleportation",</span>
+<span class="s1">        "Interdimensional travel"</span>
+<span class="s1">      ]</span>
+<span class="s1">    }</span>
+<span class="s1">  ]</span>
+<span class="s1">'''</span>
+</code></pre></div>
+<p>Nesse caso função <code>pd.read_json</code> não desdobra os valores da coluna <code>powers</code>. Os valores dessa coluna são diversas listas.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">squad</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>[Radiation resistance, Turning tiny, Radiation…</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>[Million tonne punch, Damage resistance, Super…</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>[Immortality, Heat Immunity, Inferno, Teleport…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Caso se queira desdobrar esse relacionamento um-para-vários, é possível utilizar o método <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.explode.html"><code>explode</code></a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">squad</span><span class="p">)</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">'powers'</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation resistance</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Turning tiny</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation blast</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>Million tonne punch</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>Damage resistance</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>Superhuman reflexes</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Immortality</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Heat Immunity</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Inferno</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Teleportation</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Interdimensional travel</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Exemplo Avançado</h2>
+<p>No próximo exemplo, os temos as informações do esquadrão de super-heróis: nomes, cidade, ano de formação, base secreta, além da relação de membros.</p>
+<p>Novamente temos uma relação de um-para-muitos: um esquadrão e vários super-heróis. Nesse exemplo, vamos omitir a relação um-para-muitos entre heróis e poderes.</p>
+<div class="highlight"><pre><span></span><code><span class="n">squad_advanced</span> <span class="o">=</span> <span class="s1">'''{</span>
+<span class="s1">  "squadName": "Super hero squad",</span>
+<span class="s1">  "homeTown": "Metro City",</span>
+<span class="s1">  "formed": 2016,</span>
+<span class="s1">  "secretBase": "Super tower",</span>
+<span class="s1">  "active": true,</span>
+<span class="s1">  "members": [</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Molecule Man",</span>
+<span class="s1">      "age": 29,</span>
+<span class="s1">      "secretIdentity": "Dan Jukes",</span>
+<span class="s1">      "powers" : "molecule powers"</span>
+<span class="s1">    },</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Madame Uppercut",</span>
+<span class="s1">      "age": 39,</span>
+<span class="s1">      "secretIdentity": "Jane Wilson",</span>
+<span class="s1">      "powers" : "badass"</span>
+<span class="s1">    },</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Eternal Flame",</span>
+<span class="s1">      "age": 1000000,</span>
+<span class="s1">      "secretIdentity": "Unknown",</span>
+<span class="s1">      "powers" : "flame"</span>
+<span class="s1">    }</span>
+<span class="s1">  ]</span>
+<span class="s1">}</span>
+<span class="s1">'''</span>
+</code></pre></div>
+<p>O dataframe resultante da função <code>pd.read_json</code> possui os atributos do esquadrão nome, cidade, ano de formação, base secreta e se está ou não em atividade.</p>
+<p>Os valores da coluna <code>members</code> no entanto, são dicionários correspondentes aos super-heróis.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">squad_advanced</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>squadName</th>
+<th>homeTown</th>
+<th>formed</th>
+<th>secretBase</th>
+<th>active</th>
+<th>members</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>{‘name’: ‘Molecule Man’, ‘age’: 29, ‘secretIde…</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>{‘name’: ‘Madame Uppercut’, ‘age’: 39, ‘secret…</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>{‘name’: ‘Eternal Flame’, ‘age’: 1000000, ‘sec…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ao utilizar o método <code>explode</code> para desdobrar essa relação os valores da coluna <code>members</code> corresponderá às chaves dos dicionários.</p>
+<p>Muito provavelmente, esse não é o resultado esperado para as nossas análises, conforme podemos ver.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">squad_advanced</span><span class="p">)</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">'members'</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>squadName</th>
+<th>homeTown</th>
+<th>formed</th>
+<th>secretBase</th>
+<th>active</th>
+<th>members</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>name</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>age</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>secretIdentity</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>powers</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>name</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>age</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>secretIdentity</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>powers</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>name</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>age</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>secretIdentity</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>2016</td>
+<td>Super tower</td>
+<td>True</td>
+<td>powers</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nesses casos podemos utilizar a função <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html"><code>pd.json_normalize</code></a> para obter melhores resultados.</p>
+<p>Contudo, essa função aceita dicionários Python, por isso é necessário utilizar a função <code>json.loads</code> para decodificar os dados <span class="caps">JSON</span>.</p>
+<p>Essa função recebe o parâmetro <code>record_paths</code> que indica qual é o atributo principal dos dados, nesse caso o atributo <code>members</code> com informações dos nossos três super-heróis.</p>
+<div class="highlight"><pre><span></span><code><span class="n">squad_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">squad_advanced</span><span class="p">)</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">squad_dict</span><span class="p">,</span> <span class="n">record_path</span><span class="o">=</span><span class="s1">'members'</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>molecule powers</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>badass</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>flame</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para manter os atributos que se refere às informações do esquadrão, utilizamos os parâmetros <code>meta</code> e passamos a lista de atributos que queremos manter.</p>
+<p>Note que os valores desses atributos são repetidos para cada um dos três super-heróis.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">squad_dict</span><span class="p">,</span>
+                  <span class="n">record_path</span><span class="o">=</span><span class="s1">'members'</span><span class="p">,</span>
+                  <span class="n">meta</span><span class="o">=</span><span class="p">[</span><span class="s1">'squadName'</span><span class="p">,</span> <span class="s1">'homeTown'</span><span class="p">,</span> <span class="s1">'secretBase'</span><span class="p">])</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+<th>squadName</th>
+<th>homeTown</th>
+<th>secretBase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>molecule powers</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>badass</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>flame</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Um exemplo um pouco mais avançado</h2>
+<p>Nesse último caso, vamos unir o que aprendemos nos dois últimos exemplos. Para tanto, voltamos com a relação um-para-vários presente no atributo <code>powers</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">squad_more_advanced</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">{</span>
+<span class="s1">  "squadName": "Super hero squad",</span>
+<span class="s1">  "homeTown": "Metro City",</span>
+<span class="s1">  "formed": 2016,</span>
+<span class="s1">  "secretBase": "Super tower",</span>
+<span class="s1">  "active": true,</span>
+<span class="s1">  "members": [</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Molecule Man",</span>
+<span class="s1">      "age": 29,</span>
+<span class="s1">      "secretIdentity": "Dan Jukes",</span>
+<span class="s1">      "powers": [</span>
+<span class="s1">        "Radiation resistance",</span>
+<span class="s1">        "Turning tiny",</span>
+<span class="s1">        "Radiation blast"</span>
+<span class="s1">      ]</span>
+<span class="s1">    },</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Madame Uppercut",</span>
+<span class="s1">      "age": 39,</span>
+<span class="s1">      "secretIdentity": "Jane Wilson",</span>
+<span class="s1">      "powers": [</span>
+<span class="s1">        "Million tonne punch",</span>
+<span class="s1">        "Damage resistance",</span>
+<span class="s1">        "Superhuman reflexes"</span>
+<span class="s1">      ]</span>
+<span class="s1">    },</span>
+<span class="s1">    {</span>
+<span class="s1">      "name": "Eternal Flame",</span>
+<span class="s1">      "age": 1000000,</span>
+<span class="s1">      "secretIdentity": "Unknown",</span>
+<span class="s1">      "powers": [</span>
+<span class="s1">        "Immortality",</span>
+<span class="s1">        "Heat Immunity",</span>
+<span class="s1">        "Inferno",</span>
+<span class="s1">        "Teleportation",</span>
+<span class="s1">        "Interdimensional travel"</span>
+<span class="s1">      ]</span>
+<span class="s1">    }</span>
+<span class="s1">  ]</span>
+<span class="s1">}</span>
+<span class="s1">'''</span>
+</code></pre></div>
+<p>Então, seguimos os mesmos passos:</p>
+<ol>
+<li>Decodificamos os dados em <span class="caps">JSON</span> em dicionários;</li>
+<li>Utilizamos a função <code>pd.json_normalize</code> definindo os parâmetros <code>record_paths</code> para chave que contém os nossos principais dados, e <code>meta</code> para aquelas chaves que queremos manter;</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">squad_dict_2</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">squad_more_advanced</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">squad_dict_2</span><span class="p">,</span>
+                  <span class="n">record_path</span><span class="o">=</span><span class="s1">'members'</span><span class="p">,</span>
+                  <span class="n">meta</span><span class="o">=</span><span class="p">[</span><span class="s1">'squadName'</span><span class="p">,</span> <span class="s1">'homeTown'</span><span class="p">,</span> <span class="s1">'secretBase'</span><span class="p">])</span>
+
+<span class="n">df</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+<th>squadName</th>
+<th>homeTown</th>
+<th>secretBase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>[Radiation resistance, Turning tiny, Radiation…</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>[Million tonne punch, Damage resistance, Super…</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>[Immortality, Heat Immunity, Inferno, Teleport…</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A coluna que corresponde a chave <code>powers</code>, que mantém informações sobre os poderes dos super-heróis, mantém listas com nomes dos poderes de cada super-herói.</p>
+<p>Poderíamos desdobrar os valores dessa coluna utilizando o método <code>explode</code>, conforme pode-se ver a seguir.</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">'powers'</span><span class="p">)</span>
+</code></pre></div>
+<div class="table-responsive">
+<table border="0" class="table text-center dataframe table-striped table-hover">
+<thead class="table-secondary">
+<tr>
+<th></th>
+<th>name</th>
+<th>age</th>
+<th>secretIdentity</th>
+<th>powers</th>
+<th>squadName</th>
+<th>homeTown</th>
+<th>secretBase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation resistance</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Turning tiny</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>0</th>
+<td>Molecule Man</td>
+<td>29</td>
+<td>Dan Jukes</td>
+<td>Radiation blast</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>Million tonne punch</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>Damage resistance</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Madame Uppercut</td>
+<td>39</td>
+<td>Jane Wilson</td>
+<td>Superhuman reflexes</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Immortality</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Heat Immunity</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Inferno</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Teleportation</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Eternal Flame</td>
+<td>1000000</td>
+<td>Unknown</td>
+<td>Interdimensional travel</td>
+<td>Super hero squad</td>
+<td>Metro City</td>
+<td>Super tower</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Conclusão</h2>
+<p><span class="caps">JSON</span> permite estruturar dados nos mais diferentes formatos. Atributos podem manter listas de valores, ou até mesmo lista de dicionários. As possibilidades são numerosas.</p>
+<p>Nesse artigo, comentamos sobre o uso de algumas funções e métodos para transformados dados no formato <span class="caps">JSON</span> em dataframes, sendo elas:</p>
+<ol>
+<li><a href="https://docs.python.org/3/library/json.html"><code>json.loads</code></a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html"><code>pd.read_json</code></a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.explode.html"><code>dataframe.explode</code></a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html"><code>pd.json_normalize</code></a></li>
+</ol>
+    </section>
+  </article>
+</div>
+    </main>
+<div class="container-fluid site-footer">
+  <div class="container p-5">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">Giliard Godoi | 2025 </span>
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
+          <li class="ms-3">
+            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+          </li>
+          <li class="ms-3">
+            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+          </li>
+          <li class="ms-3">
+            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+          </li>
+          <li class="ms-3">
+            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+          </li>
+        <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
+      </ul>
+    </footer>
+  </div>
+  </div>  </body>
+<script src="https://giliardgodoi.github.io/theme/js/bootstrap/bootstrap.min.js"></script>
+</html>

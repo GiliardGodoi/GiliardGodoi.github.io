@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+      <meta charset="UTF-8">
+    <meta name="generator" content="Pelican" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giliard Godoi - Gráfico de barras com rótulos customizados</title>
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
+Aprendizado de Máquina. Análise e Visualização de Dados.
+Programador Python.
+" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+      <!-- <link rel="manifest" href="/manifest.json"> -->
+      <meta name="theme-color" content="#333333">
+    <link rel="stylesheet" href="https://giliardgodoi.github.io/theme/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://giliardgodoi.github.io/theme/css/bootstrap/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://giliardgodoi.github.io/theme/css/theme.css">
+    <!-- Code highlight color scheme -->
+      <link href="https://giliardgodoi.github.io/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+
+
+    <meta name="tags" content="matplotlib" />
+    <meta name="tags" content="seaborn" />
+    <meta name="tags" content="tutorial" />
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+      <div class="container-fluid ">
+
+        <a href="https://giliardgodoi.github.io/" class="navbar-brand">
+            <img src="/images/logo.png" alt="Giliard Godoi" style="width: 30px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end pe-3" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div class="my-5">
+    <div class="p-5 text-center bg-orange">
+        <div class="container py-5">
+            <h1 class="text-body-emphasis"> Giliard Godoi </h1>
+            <p class="col-lg-8 mx-auto lead">
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
+Aprendizado de Máquina. Análise e Visualização de Dados.
+Programador Python.
+
+            </p>
+            <ul class="list-inline">
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-twitter text-decoration-none text-black-50" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-github text-decoration-none text-black-50" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-linkedin-in text-decoration-none text-black-50" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+              </ul>
+        </div>
+    </div>
+</div>    <main class="container flex-grow-1">
+<div class="container">
+  <article>
+    <header class="">
+      <h1>Gráfico de barras com rótulos&nbsp;customizados</h1>
+      <!--        -->
+      <span class="lead"><p>Tutorial para definir um gráfico de barras com rótulos&nbsp;customizados.</p></span>
+      <div class="small">  <!-- bg-body-light p-3 rounded -->
+        <span class="fst-italic">
+          Por
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/author/giliard-godoi.html">
+            Giliard Godoi
+          </a>
+          Publicado em <time datetime="2025-03-05T00:00:00-03:00">qua 05 março 2025.</time>
+        </span> <br>
+        <span class="fst-italic">
+          Categoria:
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/category/data-visualization">
+            data-visualization
+          </a>
+ Tags:
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/tag/matplotlib">
+            #matplotlib
+          </a>
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/tag/seaborn">
+            #seaborn
+          </a>
+          <a class="link-secondary link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="https://giliardgodoi.github.io/tag/tutorial">
+            #tutorial
+          </a>
+        </span>
+      </div>
+    </header>
+    <section class="mt-5">
+      <p>Neste tutorial vamos criar um gráfico de barras para as vendas de um produto A entre os anos de 2017 a 2021. A dificuldade aqui é alinhar o texto do valor da venda e a barra do gráfico para um determinado ano.</p>
+<p>Apesar de ser uma tarefa simples, esse é um bom exemplo de como eu abordo a criação de uma visualização de dados, através de um desenvolvimento iterativo.</p>
+<p>Nesse exemplo, nós vamos utilizar as bibliotecas <code>matplotlib</code> e <code>seaborn</code> com o estilo <code>whitegrid</code> definido.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"whitegrid"</span><span class="p">)</span>
+</code></pre></div>
+<p>Como exemplo, nós vamos analisar os dados de vendas entre os anos de 2017 a 2021 de um produto A.</p>
+<div class="highlight"><pre><span></span><code><span class="n">anos</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span> <span class="p">]</span>
+
+<span class="n">vendas</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mi">749</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">585</span><span class="p">]</span>
+</code></pre></div>
+<p>O primeiro passo é utilizar as funções presentes nas bibliotecas <code>matplotlib</code> e <code>seaborn</code> para obter o gráfico padrão, sem muitas customizações.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># definimos as dimensões da figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># comando para criar o gráfico</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Gráfico 01" class="mx-auto d-block img-fluid" src="./passo01.png"/></p>
+<p>Nesse gráfico os anos são representados no eixo X, enquanto os valores de vendas são apresentados no eixo Y. Foi definida a cor padrão <em>steelblue</em> para todas as barras. O tamanho do gráfico, e a proporção entre a largura e altura, foi definida como <code>(7,4)</code></p>
+<p>Desse gráfico básico, o que podemos querer melhorar nele? Por exemplo, alguns pontos seriam:</p>
+<ol>
+<li>Inserir um título informativo no gráfico.</li>
+<li>Adicionar um rótulo descritivo no eixo X ou Y.</li>
+<li>Remover elementos desnecessários para obter uma figura mais limpa.</li>
+<li>Talvez transformar os valores do eixo Y em rótulos das colunas para cada anos.</li>
+</ol>
+<p>A inserção do título e de um rótulo do eixo X é simples e pode ser feito através das funções <code>plt.title()</code> e <code>plt.xlabel()</code> da biblioteca <code>matplotlib</code>. Não há segredo nisso.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
+
+<span class="c1"># Adicionando o título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Quantidade de vendas nos últimos anos"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Adicionando o label para o eixo X</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Anos'</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Gráfico 02" class="mx-auto d-block img-fluid" src="./passo02.png"/></p>
+<p>Para eliminar a borda dos gráficos, podemos utilizar a função <code>.despine</code> disponibilizado pela biblioteca <code>seaborn</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Quantidade de vendas nos últimos anos"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Anos'</span><span class="p">)</span>
+
+<span class="c1"># remove o cortorno dos eixos.</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Gráfico 03" class="mx-auto d-block img-fluid" src="./passo03.png"/></p>
+<p>O gráfico já parece muito bom assim. Já é possível comparar os valores das vendas entre um ano e outro.
+Porém, vamos ver como o gráfico fica se retirarmos os valores que aparecem no eixo Y (ticks) talvez colocar o rótulo nesse eixo, e fixar os valores do intervalo que são mostrados.</p>
+<p>Fixar o intervalo do eixo Y é necessário para garantir que os rótulos que apareçam sob as barras não sejam truncados, isto é, sejam posicionados fora dos limites considerados pelo eixo Y.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Quantidade de vendas nos últimos anos"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Anos'</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># remove os valores do eixo Y 0, 100, 200 etc.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yticklabels</span><span class="o">=</span><span class="p">[])</span>
+
+<span class="c1"># Insere o rótulo vendas no eixo Y</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Vendas'</span><span class="p">)</span>
+
+<span class="c1"># Fixa o range considerado para o eixo y isto é, de 0 até 790</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">790</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="Gráfico 04" class="mx-auto d-block img-fluid" src="./passo04.png"/></p>
+<p>Talvez o rótulo no eixo Y não seja tão necessário assim, uma vez que o título do gráfico já é bem descritivo.</p>
+<p>Para posicionar os rótulos acima de cada barra, vamos percorrer os objetos que definem essas barras, os objetos <code>patches</code> para obter as coordenadas de início da barra (<code>p.get_x</code>) a sua largura (<code>p.get_width</code>) e altura (<code>p.get_height</code>). Os rótulos serão criados a partir do método <code>ax.annotate</code> do objeto <code>Axes</code> que representa o nosso gráfico.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Quantidade de vendas nos últimos anos"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Anos'</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yticklabels</span><span class="o">=</span><span class="p">[])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">790</span><span class="p">))</span>
+
+<span class="c1"># percorre os patches que definem as barras</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"</span><span class="si">%.0f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">(),</span> <span class="c1"># texto a ser impresso</span>
+                <span class="c1"># coordenadas (X, Y) do texto</span>
+               <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">())</span>
+             <span class="p">)</span>
+</code></pre></div>
+<p><img alt="Gráfico 05" class="mx-auto d-block img-fluid" src="./passo05.png"/></p>
+<p>Note que os rótulos ficaram ligeiramente deslocados em relação a barra. Para corrigir isso é necessário informar alguns parâmetros adicionais no método <code>ax.annotate</code> como alinhamento horizontal, alinhamento vertical e deslocamentos adicionais.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Quantidade de vendas nos últimos anos"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Anos'</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yticklabels</span><span class="o">=</span><span class="p">[])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">790</span><span class="p">))</span>
+
+
+<span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"</span><span class="si">%.0f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">(),</span> <span class="c1"># texto</span>
+                <span class="c1"># coordenada xy</span>
+                <span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="p">),</span>
+                <span class="c1"># Define o alinhamento horizontal e vertical do texto</span>
+                <span class="n">ha</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span>
+                <span class="c1"># Tamanho e cor da fonte</span>
+                <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+                <span class="c1"># Deslocamento adicional</span>
+                <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+                <span class="n">textcoords</span><span class="o">=</span><span class="s1">'offset points'</span>
+            <span class="p">)</span>
+</code></pre></div>
+<p>Os parâmetros <code>ha</code> e <code>va</code> definem o alinhamento do conteúdo da caixa de texto. Já <code>xytext</code> e <code>textcoords</code> controlam o posicionamento da caixa de texto em relação à coordenada anotada (xy).</p>
+<ul>
+<li><code>textcoords</code> define o sistema de coordenadas para interpretar xytext. Por exemplo, <code>'offset points'</code> define que o deslocamento é dados em pontos tipográficos (1/72 de polegada).</li>
+<li><code>xytext</code> define um deslocamento adicional em relação a (xy). Esse deslocamento pode ser um par de valores <code>(dx, dy)</code>, indicando quantos pontos ou unidades a anotação será movida.</li>
+</ul>
+<p>O valor <code>xytext = (-2, 5)</code> indica que o texto será movido 5 pontos tipográficos para cima e 2 pontos tipográficos à esquerda, ajustando o posicionamento do rótulo.</p>
+<p>Os resultados dessas modificações são apresentados na figura a seguir.</p>
+<p><img alt="Gráfico 06" class="mx-auto d-block img-fluid" src="./passo06.png"/></p>
+<h2>Extras</h2>
+<p>Como estamos percorrendo os objetos que definem as barras do nosso gráfico, é possível alterar as propriedades dessa colunas. Por exemplo, no código abaixo estamos alterando a transparência das barras e alterando a cor da barra que representa o maior valor de vendas.</p>
+<p>Além disso, a chamada ao método <code>ax.axis("tight")</code> faz com que o <code>matplotlib</code> recalcule certos parâmetros para melhorar os ajustes do gráfico ao tamanho da figura.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Quantidade de vendas nos últimos anos"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Anos'</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">yticklabels</span><span class="o">=</span><span class="p">[])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">790</span><span class="p">))</span>
+
+
+<span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+    <span class="c1"># Alterando a cor</span>
+    <span class="k">if</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">==</span> <span class="nb">max</span><span class="p">(</span><span class="n">vendas</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+    <span class="c1"># Alterando a transparência</span>
+    <span class="n">bar</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">"</span><span class="si">%.0f</span><span class="s2">"</span> <span class="o">%</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">(),</span>
+                    <span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="p">),</span>
+                    <span class="n">ha</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span>
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span>
+                    <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+                    <span class="n">textcoords</span><span class="o">=</span><span class="s1">'offset points'</span>
+                <span class="p">)</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"tight"</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="Gráfico 07" class="mx-auto d-block img-fluid" src="./passo07.png"/></p>
+<h2>Referências</h2>
+<p>Matheus Budkewicz. <strong>Gráficos de barra com matplotlib</strong>. Disponível em <a href="https://medium.com/horadecodar/gr%C3%A1ficos-de-barra-com-matplotlib-85628bfc4351">https://medium.com/horadecodar/gr%C3%A1ficos-de-barra-com-matplotlib-85628bfc4351</a> Acessado em: 21 de fev. de 2025.</p>
+<p>Matplotlib. <strong>matplotlib.pyplot.annotate</strong>. <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html</a> Acessado em: 21 de fev. de 2025.</p>
+<p>Matplotlib. <strong>matplotlib.patches.Patch</strong>. Disponível em: <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.patches.Patch.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.patches.Patch.html</a> Acessado em: 21 de fev. de 2025.</p>
+    </section>
+  </article>
+</div>
+    </main>
+<div class="container-fluid site-footer">
+  <div class="container p-5">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">Giliard Godoi | 2025 </span>
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
+          <li class="ms-3">
+            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+          </li>
+          <li class="ms-3">
+            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+          </li>
+          <li class="ms-3">
+            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+          </li>
+          <li class="ms-3">
+            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+          </li>
+        <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
+      </ul>
+    </footer>
+  </div>
+  </div>  </body>
+<script src="https://giliardgodoi.github.io/theme/js/bootstrap/bootstrap.min.js"></script>
+</html>

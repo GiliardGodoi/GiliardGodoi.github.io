@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Giliard Godoi - lectures</title><link href="https://giliardgodoi.github.io/" rel="alternate"></link><link href="https://giliardgodoi.github.io/feeds/lectures.atom.xml" rel="self"></link><id>https://giliardgodoi.github.io/</id><updated>2024-06-05T00:00:00-03:00</updated><subtitle>Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
+Aprendizado de Máquina. Análise e Visualização de Dados.
+Programador Python.
+</subtitle><entry><title>Apresentação no 14º EnGITEC</title><link href="https://giliardgodoi.github.io/articles/2024/participacao-14-engitec/" rel="alternate"></link><published>2024-06-05T00:00:00-03:00</published><updated>2024-06-05T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2024-06-05:/articles/2024/participacao-14-engitec/</id><summary type="html">&lt;p&gt;Criando um mapa das solicitação de serviço feitas pelo Poder Legislativo&amp;nbsp;Municipal&lt;/p&gt;</summary><content type="html">&lt;p&gt;No dia 05 de junho de 2024 eu fiz uma apresentação remota no 14º Encontro do Grupo Interlegis de Tecnologia (EnGITEC).&lt;/p&gt;
+&lt;p&gt;O tema do encontro desse ano foi &lt;em&gt;Legislativo Inteligente&lt;/em&gt; com o objetivo de discutir sobre a utilização da Inteligência Artifical no âmbito do Poder Legislativo.&lt;/p&gt;
+&lt;p&gt;Fugindo um pouco do &lt;em&gt;hype&lt;/em&gt; das Ingeligências Artificiais Generativas, a minha intenção era mostrar um exemplo do desenvolvimento de um modelo de Inteligência Artifical.&lt;/p&gt;
+&lt;p&gt;Para tanto, eu desenvolvi um pequeno projeto que utiliza Reconhecimento de Entidades Nomeadas (&lt;span class="caps"&gt;REN&lt;/span&gt;) para extrair os endereços das solicitações de serviços (Requerimentos) feitas pelo Poder Legislativo da minha cidade. Os dados são públicamente disponíveis pela Câmara de Vereadores no serviço &lt;span class="caps"&gt;SAPL&lt;/span&gt;, que inclusive possui uma &lt;span class="caps"&gt;API&lt;/span&gt; para baixar os dados.&lt;/p&gt;
+&lt;p&gt;Os slides da apresentação e o repositório com o código do projeto apresentado estão disponíveis nos seguintes links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://giliardgodoi.github.io/pdfs/apresentacao-14-engitec.pdf"&gt;Slides da apresentação&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/GiliardGodoi/spacy-ner-proposicao-legislativa"&gt;Repostitório com o código do projeto apresentado&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="lectures"></category><category term="engitec"></category><category term="ner"></category></entry></feed>

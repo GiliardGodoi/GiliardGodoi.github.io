@@ -1,4 +1,5 @@
 from pathlib import Path
+
 AUTHOR = 'Giliard Godoi'
 SITENAME = 'Giliard Godoi'
 SITEURL = ""
@@ -122,8 +123,8 @@ MARKUP = ("md", "ipynb")
 PLUGIN_PATHS = ['plugins/']
 PLUGINS = [
     'pelican-bootstrapify',
-    'image-article'
-    ]
+    'image-article',
+]
 
 IPYNB_SKIP_CSS = True
 IGNORE_FILES = [".ipynb_checkpoints"]
@@ -132,9 +133,31 @@ BOOTSTRAP_THEME = "flatly"
 BOOTSTRAPIFY = {
     "table": ["table", "table-hover", "table-striped", "text-center"],
     "thead" : ["table-secondary"],
-    "img": ["img-fluid"],
+    "img": ["img-fluid", "mx-auto",  "d-block"],
     # "a" : ["link-secondary", "text-decoration-none"],
     "blockquote": ["blockquote"],
+}
+
+# Markdown configurations
+MARKDOWN = {
+    "extension_configs": {
+        # Needed for code syntax highlighting
+        "markdown.extensions.codehilite": {
+                                        "css_class": "highlight",
+                                        'linenums' : False
+                                    },
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
+        # This is for enabling the TOC generation
+        # "markdown.extensions.toc": {
+        #                         "title": "Conteúdo",
+        #                         "toc_class" : "text-body-secondary",
+        #                     },
+        "markdown.extensions.footnotes" : {
+            'PLACE_MARKER' : '[FOOTNOTES]'
+        }
+    },
+    "output_format": "html5",
 }
 
 # Uncomment following line if you want document-relative URLs when developing
