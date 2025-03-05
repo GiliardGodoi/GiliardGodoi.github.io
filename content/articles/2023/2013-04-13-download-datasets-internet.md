@@ -2,7 +2,7 @@ title: Diferentes formas de baixar dados da internet com bibliotecas do Python
 date: 2023-04-13
 slug: download-datasets
 authors: Giliard Godoi
-summary: Vamos explorar como baixar *datasets* da internet com algumas bibliotecas do Python como urllib, requests e até o pandas.
+summary: Baixando *datasets* da internet com as bibliotecas urllib, requests e pandas.
 category: programming-skills
 tags: python, urllib, requests, pandas, json
 
