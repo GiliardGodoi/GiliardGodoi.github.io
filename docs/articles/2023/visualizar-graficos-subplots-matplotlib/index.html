@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Vários gráficos em uma única figura com Matplotlib</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -42,6 +39,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -51,10 +49,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -68,6 +63,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -106,7 +104,7 @@ Programador Python.
       <p>Quando fazemos Análise Exploratória dos Dados, talvez queiramos analisar a distribuição univariada dos atributos presentes em um conjunto de dados.</p>
 <p>Podemos utilizar a técnica <em>small multiplus</em> para criar pequenos gráficos, uma para cada atributo, para compor a nossa figura. Esse subgráficos são, para o <code>matplotlib</code> os <em>subplots</em>.</p>
 <p>Existem vários meios para construir vários gráficos em uma mesma figura ~que a princípio, nem eu mesmo sabia~.</p>
-<h2>Utilizando a função <code>plt.subplot</code></h2>
+<h2 id="utilizando-a-funcao-pltsubplot">Utilizando a função <code>plt.subplot</code></h2>
 <p>Sabemos que os diferentes <em>subplots</em> que compõe uma figura podiam ser acessados utilizando a sintaxe <code>.
 A função</code>plt.subplot` aceita que esses valores de linhas, colunas e indexes seja passado de duas formas:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># plt.subplot(rows columns index)</span>
@@ -140,19 +138,19 @@ A função</code>plt.subplot` aceita que esses valores de linhas, colunas e inde
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'tab:orange'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="gráfico da função" class="mx-auto d-block img-fluid" src="./exemplo-com-subplots.png"/></p>
-<h2>Utilizando <code>plt.subplots</code></h2>
+<p><img alt="gráfico da função" class="mx-auto img-fluid d-block" src="./exemplo-com-subplots.png"/></p>
+<h2 id="utilizando-pltsubplots">Utilizando <code>plt.subplots</code></h2>
 <p>Sim, <code>subplots</code> no plural!</p>
 <p>Já a função <code>plt.subplots</code> também aceita como parâmetros o número de linhas e o número de colunas da nossa figura, porém ela retorna dois objetos: um objeto do tipo <code>Figure</code> e um <em>array</em> de <code>Axes</code>.</p>
 <p>No exemplo a seguir, é criado uma nova figura com dois gráficos, alinhados em uma linha e duas colunas. O <em>array</em> de Axes é desempacotado (<em>unpacked</em>) já na chamada da função.</p>
 <div class="highlight"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="Exemplo com grid unidimensional 1 por 2" class="mx-auto d-block img-fluid" src="./exemplo-grid-unidimensional.png"/></p>
+<p><img alt="Exemplo com grid unidimensional 1 por 2" class="mx-auto img-fluid d-block" src="./exemplo-grid-unidimensional.png"/></p>
 <p>Essa chada cria dois gráficos lado à lado na figura.</p>
 <p>Nesse outro exemplo, é criado uma figura com quatro gráficos, distribuídos num <em>grid</em> de 2x2.</p>
 <div class="highlight"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="Exemplo com grid bidimensional" class="mx-auto d-block img-fluid" src="./exemplo-grid-bidimensional.png"/></p>
+<p><img alt="Exemplo com grid bidimensional" class="mx-auto img-fluid d-block" src="./exemplo-grid-bidimensional.png"/></p>
 <p>A variável <code>axs</code> retonarda nesse caso, nada mais é que um <em>array</em> do <code>numpy</code></p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">axs</span><span class="p">)</span>
@@ -161,7 +159,7 @@ A função</code>plt.subplot` aceita que esses valores de linhas, colunas e inde
     <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <p>Mas um <em>array</em> pode ser pouco intuitivo de se trabalhar.</p>
-<h2>A dica mágica: <code>flatten</code></h2>
+<h2 id="a-dica-magica-flatten">A dica mágica: <code>flatten</code></h2>
 <p>Como a variável <code>axs</code> é um <em>array</em> do <code>numpy</code>, então nós podemos utilizar o método <code>flatten</code> para transformar esse <em>array</em> com mais de uma dimensão em um <em>array</em> unidimensional.</p>
 <p>Imagine, por exemplo, que tenhamos uma dataframe com nove atributos numéricos e nós queremos analisar analisar a distribuição desses atributos separadamente.</p>
 <p>Podemos então utilizar um padrão de código como o do exemplo a seguir:</p>
@@ -177,7 +175,7 @@ A função</code>plt.subplot` aceita que esses valores de linhas, colunas e inde
 <p>Eu vi esse padrão de código <a href="https://www.kaggle.com/code/prasadperera/the-boston-housing-dataset">nesse notebook</a> do kaggle, que é parecido com <a href="https://www.kaggle.com/code/agnihotri/linear-regression-and-pca-boston-housing">esse outro aqui</a>!</p>
 <p>E a minha “contribuição” foi usar o <code>enumerate</code> ali… rsrs</p>
 <p>Maravilha, né?</p>
-<h2>Referências</h2>
+<h2 id="referencias">Referências</h2>
 <p>Documentação ofical do <code>Matplotlib</code>. <strong>matplotlib.pyplot.subplot</strong>. Disponível em <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html</a> Acessado em 24 de fev. de 2023.</p>
 <p>Documentação ofical do <code>Matplotlib</code>. <strong>matplotlib.pyplot.subplots</strong>. Disponível em <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</a> Acessado em 24 de fev. de 2023.</p>
 <p>Documentação oficial do <code>NumPy</code>. <strong>numpy.ndarray.flatten</strong>. Disponível em <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html">https://numpy.org/doc/stable/reference/generated/numpy.ndarray.flatten.html</a> Acessado em 24 de fev. de 2023.</p>
@@ -197,16 +195,29 @@ A função</code>plt.subplot` aceita que esses valores de linhas, colunas e inde
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Streamlit: interfaces para projetos de Inteligência Artifical de um jeito fácil</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -41,6 +38,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -50,10 +48,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -67,6 +62,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -102,7 +100,7 @@ Programador Python.
       <p><a href="https://streamlit.io/">Streamlit</a> é uma biblioteca low-code para construir interfaces web para projetos de Data Science e Inteligência Artificial.
 Imagine que você quer prototipar rapidamente uma tela, para demonstrar o funcionamento de seu modelo, ou como ele poderá ser utilizado pelo seu cliente.
 O Streamlit pode te ajudar a criar o protótipo de sua aplicação, demonstrando o real valor do seu projeto para possíveis <a href="https://pt.wikipedia.org/wiki/Stakeholder"><em>stakeholders</em></a>.</p>
-<h1>Facilidade de uso</h1>
+<h1 id="facilidade-de-uso">Facilidade de uso</h1>
 <p>Diferente de outras opções, o Streamlit presa pela facilidade do seu uso.
 O comando para instalar é:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>streamlit
@@ -127,7 +125,7 @@ Por exemplo, para criar uma tela de boas vindas, só precisaríamos das seguinte
 <p>Observer que o título de boas vindas foi mostrado na página da aplicação, e no <em>script</em> ela foi inserida como uma <em>string</em> e dentro dela, foi específicado um título utilizando uma sintaxe <a href="https://pt.wikipedia.org/wiki/Markdown">Markdown</a>.</p>
 <p>De maneira geral, qualquer objeto que não seja atribuída a uma variável vai ter o mesmo comportamento.
 É como se, por baixo dos panos, o Streamlit utilizasse a função <code>st.write</code>, que é responsável por entender o tipo da variável e criar uma representação adequada na tela da aplicação.</p>
-<h1>Documentação excelente</h1>
+<h1 id="documentacao-excelente">Documentação excelente</h1>
 <p>O Streamlit possui uma <a href="https://docs.streamlit.io/">documentação</a> fácil de navegar, e que apresenta as principais funcionalidades da biblioteca de um jeito intuitivo.</p>
 <p>Por exemplo, além da função <code>st.write</code> existem outras funções especializadas para exibir algum tipo de texto.
 O bloco de código abaixo lista algumas dessas funções:</p>
@@ -202,12 +200,12 @@ O bloco de código abaixo lista algumas dessas funções:</p>
 <span class="n">st</span><span class="o">.</span><span class="n">text_area</span><span class="p">(</span><span class="s1">'label'</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </code></pre></div>
 <p>Uma lista completa dos widgets disponíveis pode ser encontrada no seguinte <a href="https://docs.streamlit.io/library/api-reference/widgets">endereço</a>.</p>
-<h1>Para usuários avançados</h1>
+<h1 id="para-usuarios-avancados">Para usuários avançados</h1>
 <p>Caso os widgets disponíveis não sejam suficientes, é possível criar componentes customizados para a ferramenta.
 Os desenvolvedores do Streamlit já disponibilizaram alguns tutoriais que mostram como novos componentes podem ser criados.
 Existe também a possibilidade de utilizar componentes desenvolvidos por terceiros, e que são disponibilizados como pacotes.
 O site da ferramente chega a listar alguns desses componentes em seu <a href="https://streamlit.io/components">site oficial</a>.</p>
-<h1>Desvantagens</h1>
+<h1 id="desvantagens">Desvantagens</h1>
 <p>Como uma aplicação é definida em um <em>script</em>, qualquer intereção com um elemento da tela (botões, caixas de <em>inputs</em> para texto, cliques) todo o <em>script</em> é executado novamente.</p>
 <p>Portanto, esse é um princípio que devemos sempre ter em mente:</p>
 <blockquote class="blockquote">
@@ -223,7 +221,7 @@ O site da ferramente chega a listar alguns desses componentes em seu <a href="ht
 Se por um lado isso permite entregar novas funcionalidades de forma rápida, por outro, aplicativos podem ficar rapidamente desatualizados e simplesmente quebrarem (isto é, não rodar mais).</p>
 <p>Uma convensão adotada é adicionar o termo <code>experimental</code> em algumas funções, para indicar que elas são disponibilizadas em caráter de testes e que elas podem ser alteradas ou removidas entre uma versão e outra.
 Esse fato detalhado <a href="https://docs.streamlit.io/library/advanced-features/prerelease">nessa seção</a> da documentação.</p>
-<h1>Bônus: deploy o seu protótipo na nuvem</h1>
+<h1 id="bonus-deploy-o-seu-prototipo-na-nuvem">Bônus: deploy o seu protótipo na nuvem</h1>
 <p>A empresa que mantém o projeto do Streamlit também oferece o <em>Streamlit Community</em> que permite fazer o deploy de aplicações na nuvem.</p>
 <p>O código da aplicação precisa estar em um repositório público do GitHub e com a devida atuorização para que o Streamlit Community se conecte a sua conta no GitHub. Seguindo passo-a-passo deste <a href="https://docs.streamlit.io/streamlit-community-cloud/get-started">tutorial</a> é bem fácil realizar essas configurações.</p>
 <p>A versão gratuita do <em>Streamlit Community</em> permite aplicações que requeiram até 1Gb de memória, o que eu acho pouco, se pensarmos que alguns modelos de Deep Learning podem ser grandes.
@@ -253,16 +251,29 @@ O repositório dessa aplicação pode ser encontrado <a href="https://github.com
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

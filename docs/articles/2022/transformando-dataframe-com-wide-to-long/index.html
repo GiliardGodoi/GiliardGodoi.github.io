@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Transformando pandas dataframes com wide_to_long</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -43,6 +40,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -52,10 +50,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -69,6 +64,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -107,7 +105,7 @@ Programador Python.
       </div>
     </header>
     <section class="mt-5">
-      <h2><span class="caps">TL</span>;<span class="caps">DR</span></h2>
+      <h2 id="tldr"><span class="caps">TL</span>;<span class="caps">DR</span></h2>
 <ul>
 <li>Formato wide table</li>
 <li>Formato long table</li>
@@ -118,21 +116,21 @@ Programador Python.
 </ul>
 <p>Documentação: <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.wide_to_long.html"><code>pd.wide_to_long</code></a></p>
 <p>Exemplos mencionados no artigo também estão disponíveis no Google Collab.</p>
-<h2>Introdução</h2>
+<h2 id="introducao">Introdução</h2>
 <p>Este artigo discute a utilização da função <code>pd.wide_to_long</code> da biblioteca <a href="https://pandas.pydata.org/">Pandas</a>.
 “Wide tables” e “long tables” referem-se a como os dados estão organizados nas tabelas. Não sei se existe uma tradução melhor, mas eu vou adotar os conceitos de tabela no formato amplo (wide) e tabela no formato longo (long).</p>
-<h2>Formato wide table (Formato amplo?)</h2>
+<h2 id="formato-wide-table-formato-amplo">Formato wide table (Formato amplo?)</h2>
 <p>A organização da tabela no formato amplo é, possivelmente, o que mais naturalmente vem a mente quando pensamos em tabelas.</p>
 <p>Esse formato possui as seguintes características:</p>
 <ul>
 <li>Cada linha corresponde a uma observação de um fenômeno (dados de uma pessoa, de uma transação bancária, etc.)</li>
 <li>Cada coluna guarda o valor de um respectivo atributo dessa observação. Por exemplo, no caso de uma pessoa, poderíamos ter uma coluna para a altura, outra para o peso, outra para a data de nascimento.</li>
 </ul>
-<h2>Formato long table</h2>
+<h2 id="formato-long-table">Formato long table</h2>
 <p>Já no formato longo os atributos de uma observação (isto é, o que seria as colunas) estão organizados como registros de uma tabela, isto é, distribuídos pelas linhas da tabela.
 Um exemplo básico seria esse:</p>
-<p><img alt="Imagem com exemplo de tabelas no formato longo e amplo" class="mx-auto d-block img-fluid" src="./long-wide-table-example.jpg"/></p>
-<h2>Mas para que serve a função <code>pd.wide_to_long</code>?</h2>
+<p><img alt="Imagem com exemplo de tabelas no formato longo e amplo" class="mx-auto img-fluid d-block" src="./long-wide-table-example.jpg"/></p>
+<h2 id="mas-para-que-serve-a-funcao-pdwide_to_long">Mas para que serve a função <code>pd.wide_to_long</code>?</h2>
 <p>O próximo exemplo é baseado em um exemplo existente na documentação, mas eu inventei um contexto a mais para esses dados.</p>
 <p>No mundo real, e pelas mais diferentes razões, os dados podem estar organizados nas mais variadas formas.</p>
 <p>Imagine por exemplo, que por alguma razão, os nomes das colunas de uma tabela codificam uma informação importante, e queiramos utilizar essa informação como valores na nossa tabela.</p>
@@ -150,7 +148,7 @@ Um exemplo básico seria esse:</p>
 <li>Um carácter de separação: ‘-’</li>
 <li>Um sufixo: os valores</li>
 </ul>
-<h2>Parâmetros da função</h2>
+<h2 id="parametros-da-funcao">Parâmetros da função</h2>
 <p>De acordo com a documentação, a função <code>pd.wide_to_long</code> possui os seguintes parâmetros:</p>
 <ul>
 <li>df é o dataframe a ser transformado.</li>
@@ -164,7 +162,7 @@ Um exemplo básico seria esse:</p>
 </ul>
 <p>Particularmente, eu tenho a impressão que a biblioteca pandas poderia ser muito mais consistente na escolha dos nomes dos parâmetros. Porém, eu entendo que o desenvolvimento de qualquer software é uma atividade dinâmica que envolve diversas pessoas, durante um longo período de tempo, e ter essa consistência não é uma tarefa simples.</p>
 <p>De qualquer forma, eu não acho que o nome desses parâmetros (i e j) sejam bons indicadores do que eles são. Repare que o parâmetro i pode receber uma string ou uma lista, mas o parâmetro <code>j</code> só recebe uma string, que é o nome da nova (e única) coluna criada. À primeira vista, isso pareceu meio confuso para mim.</p>
-<h2>Exemplos de uso</h2>
+<h2 id="exemplos-de-uso">Exemplos de uso</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -177,7 +175,7 @@ Um exemplo básico seria esse:</p>
 <span class="o">&gt;&gt;</span> <span class="n">df</span>
 </code></pre></div>
 <div class="table-responsive">
-<table border="0" class="table text-center dataframe table-striped table-hover">
+<table border="0" class="table table-striped text-center table-hover dataframe">
 <thead class="table-secondary">
 <tr>
 <th></th>
@@ -260,7 +258,7 @@ Um exemplo básico seria esse:</p>
               <span class="p">)</span>
 </code></pre></div>
 <div class="table-responsive">
-<table border="0" class="table text-center dataframe table-striped table-hover">
+<table border="0" class="table table-striped text-center table-hover dataframe">
 <thead class="table-secondary">
 <tr>
 <th></th>
@@ -356,7 +354,7 @@ Um exemplo básico seria esse:</p>
 <span class="o">&gt;&gt;</span> <span class="n">df2</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
 </code></pre></div>
 <div class="table-responsive">
-<table border="0" class="table text-center dataframe table-striped table-hover">
+<table border="0" class="table table-striped text-center table-hover dataframe">
 <thead class="table-secondary">
 <tr>
 <th></th>
@@ -424,7 +422,7 @@ Um exemplo básico seria esse:</p>
 </tbody>
 </table>
 </div>
-<h2>Um exemplo avançado do uso do parâmetro <code>suffix</code></h2>
+<h2 id="um-exemplo-avancado-do-uso-do-parametro-suffix">Um exemplo avançado do uso do parâmetro <code>suffix</code></h2>
 <p>A página da documentação menciona rapidamente um caso de uso alternativo para o uso parâmetro <code>suffix</code>. Na verdade, essa menção encontra-se na própria descrição do parâmetro <code>suffix</code>.</p>
 <p>Imagine que temos dois produtos ‘A’ e ‘B’ e três canais de anúncio: <span class="caps">TV</span>, internet e rádio. Agora, digamos que estejamos interessados somente nos dados para dois canais de anúncio: <span class="caps">TV</span> e internet.</p>
 <p>Podemos utilizar o poder das expressões regulares para transformar os dados referente a esses dois canais de vendas e deixar o terceiro intacto.</p>
@@ -439,7 +437,7 @@ Um exemplo básico seria esse:</p>
 <span class="o">&gt;&gt;</span> <span class="n">df3</span>
 </code></pre></div>
 <div class="table-responsive">
-<table border="0" class="table text-center dataframe table-striped table-hover">
+<table border="0" class="table table-striped text-center table-hover dataframe">
 <thead class="table-secondary">
 <tr>
 <th></th>
@@ -509,7 +507,7 @@ Um exemplo básico seria esse:</p>
               <span class="p">)</span>
 </code></pre></div>
 <div class="table-responsive">
-<table border="0" class="table text-center dataframe table-striped table-hover">
+<table border="0" class="table table-striped text-center table-hover dataframe">
 <thead class="table-secondary">
 <tr>
 <th></th>
@@ -610,7 +608,7 @@ Um exemplo básico seria esse:</p>
                 <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'B-radio'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">))</span>
 </code></pre></div>
 <div class="table-responsive">
-<table border="0" class="table text-center dataframe table-striped table-hover">
+<table border="0" class="table table-striped text-center table-hover dataframe">
 <thead class="table-secondary">
 <tr>
 <th></th>
@@ -689,13 +687,13 @@ Um exemplo básico seria esse:</p>
 </tbody>
 </table>
 </div>
-<h2>Dica para definir <code>sutbnames</code> com expressões regulares</h2>
+<h2 id="dica-para-definir-sutbnames-com-expressoes-regulares">Dica para definir <code>sutbnames</code> com expressões regulares</h2>
 <p>Um outro exemplo rapidamente mencionado na documentação, é utilizar expressões regulares para identificar os prefixos de forma programática.</p>
 <p>Por exemplo, voltemos ao dataframe do primeiro exemplo.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;</span> <span class="n">df</span>
 </code></pre></div>
 <div class="table-responsive">
-<table border="1" class="table text-center dataframe table-striped table-hover">
+<table border="1" class="table table-striped text-center table-hover dataframe">
 <thead class="table-secondary">
 <tr>
 <th></th>
@@ -770,7 +768,7 @@ Um exemplo básico seria esse:</p>
 <span class="o">&gt;&gt;</span> <span class="n">stubnames</span>
     <span class="p">[</span><span class="s1">'A(weekly)'</span><span class="p">,</span> <span class="s1">'B(weekly)'</span><span class="p">]</span>
 </code></pre></div>
-<h2>Outras funções para transformação de um dataframe</h2>
+<h2 id="outras-funcoes-para-transformacao-de-um-dataframe">Outras funções para transformação de um dataframe</h2>
 <p>A biblioteca pandas também oferece outras funções para alterar a estrutura de um dataframe conforme as nossas necessidades.</p>
 <ul>
 <li><code>pd.melt</code> - converte um dataframe do formato wide para o formato longo.</li>
@@ -779,7 +777,7 @@ Um exemplo básico seria esse:</p>
 <li><code>dataframe.stack</code> empilha colunas em índices;</li>
 <li><code>dataframe.unstack</code> desempilha índices em colunas.</li>
 </ul>
-<h2>Conclusão</h2>
+<h2 id="conclusao">Conclusão</h2>
 <p>Neste rápido tutorial, vimos o uso da função <code>pd.wide_to_long</code>.</p>
 <p>Eu pessoalmente não conhecia essa função até bem pouco tempo atrás. Talvez porque o problema que essa função se propõe a resolver seja bem específico.</p>
     </section>
@@ -798,16 +796,29 @@ Um exemplo básico seria esse:</p>
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

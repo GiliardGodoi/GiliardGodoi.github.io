@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Gerenciando versões de datasets</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -41,6 +38,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -50,10 +48,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -67,6 +62,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -108,12 +106,12 @@ Além disso, subir os nossos dados para o repositório de código não é uma da
 O <span class="caps">DVC</span> possui um foco no versionamento dos arquivos que contém os nossos dados.
 Neste tutorial, vamos passar por um passo-a-passo do fluxo básico desse gerenciamento de versões dos conjuntos de dados.</p>
 <p>O código para reproduzir alguns passo desse tutorial está disponível no seguinte repositório: <a href="https://github.com/GiliardGodoi/algorithms/tree/master/dvc-tutorial">dvc-tutorial</a>.</p>
-<h2>Passo 0: instalar o <span class="caps">DVC</span></h2>
+<h2 id="passo-0-instalar-o-dvc">Passo 0: instalar o <span class="caps">DVC</span></h2>
 <p>A <a href="https://dvc.org/doc/install">página da documentação</a> traz em detalhes a forma de instalação do <span class="caps">DVC</span>. Neste tutorial nós só vamos executar o seguinte comando</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dvc
 </code></pre></div>
 <p>Existe também uma extensão do <span class="caps">DVC</span> para o <code>VS Code</code> que vale a pena explorar.</p>
-<h2>Passo #1: Iniciar <span class="caps">GIT</span> repositório e o projeto <span class="caps">DVC</span></h2>
+<h2 id="passo-1-iniciar-git-repositorio-e-o-projeto-dvc">Passo #1: Iniciar <span class="caps">GIT</span> repositório e o projeto <span class="caps">DVC</span></h2>
 <p>Digamos que desejamos criar um projeto em um diretório chamado <code>dvc-tutorial</code>. Dentro do diretório, a primeira coisa a se fazer é iniciar um repositório <span class="caps">GIT</span>.</p>
 <p>O fluxo de trabalho com o <span class="caps">DVC</span> está estreitamente relacionado ao do <span class="caps">GIT</span>. Um é o melhor amigo do outro. Portanto, o primeiro passo é iniciar um repositório do <span class="caps">GIT</span> e logo em seguida iniciar um repositório do <span class="caps">DVC</span>.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>dvc-tutorial
@@ -132,7 +130,7 @@ Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </sp
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Inicializando projeto DVC'</span>
 </code></pre></div>
 <p>Outra sugestão é que certamente nós não queremos incluir, mesmo que acidentalmente, o nosso arquivo de dados em um <em>commit</em> do <span class="caps">GIT</span>. Para evitar esse tipo de acidente, é interessante adicionar o diretório que contém os nossos arquivos de dados no arquivo <code>.gitignore</code> para eles serem ignorados pelo <span class="caps">GIT</span>. Os próximos passos deixarão claro que o que queremos rastrear são arquivos gerados pelo <span class="caps">DVC</span> que apontarão para os nossos arquivos de dados.</p>
-<h2>Passo 2: Rastrear os arquivos de dados</h2>
+<h2 id="passo-2-rastrear-os-arquivos-de-dados">Passo 2: Rastrear os arquivos de dados</h2>
 <p>Na documentação oficial, é sugerido obter um <em>dataset</em> de exemplo através do comando <code>dvc get</code>. No nosso caso vamos apenas gerar um <em>dataset fake</em> com o seguinte comando:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>fake.py
 </code></pre></div>
@@ -165,7 +163,7 @@ To<span class="w"> </span>track<span class="w"> </span>the<span class="w"> </spa
 <p>Desta forma é necessário que sempre após gerar uma nova versão do <em>dataset</em>, realizar um <em>commit</em> do arquivo de controle do <span class="caps">DVC</span>. Assim, estaremos também versionando os nossos dados.</p>
 <p>Porém, como o <span class="caps">DVC</span> faz para recuperar o arquivo anterior do nosso conjunto de dados?
 É isso que vamos ver no próximo passo.</p>
-<h2>Passo #3: Definir o repositório remoto de dados</h2>
+<h2 id="passo-3-definir-o-repositorio-remoto-de-dados">Passo #3: Definir o repositório remoto de dados</h2>
 <p>O <span class="caps">DVC</span> possibilita a configuração de um repositório remoto de dados, que mantém os arquivos correspondentes as várias versões desse dataset. Uma configuração básica é definir um outro diretório na mesma máquina para funcionar como o nosso ”repositório remoto”.
 Neste exemplo o repositório remoto vai ser apenas um outro diretório no mesmo nível que a pasta do nosso projeto.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
@@ -185,7 +183,7 @@ $<span class="w"> </span>dvc<span class="w"> </span>remote<span class="w"> </spa
 </code></pre></div>
 <p>Lembre-se, o <span class="caps">DVC</span> sempre vai utilizar aqueles arquivos de <em>hash</em> com a extensão <code>.dvc</code> para buscar o arquivo de dados correspondente. Com o comando <code>dvc pull</code> ele irá buscar o arquivo correspondente ao arquivos <em>hash</em> existentes no repositório do projeto.</p>
 <p>A <a href="https://dvc.org/doc/start#storing-and-sharing">documentação</a> do <span class="caps">DVC</span> mostra alternativas para configurações desse repositório remoto utilizando serviços de nuvens de diversos provedores.</p>
-<h2>Passo #4: Navegar entre as versões dos arquivos</h2>
+<h2 id="passo-4-navegar-entre-as-versoes-dos-arquivos">Passo #4: Navegar entre as versões dos arquivos</h2>
 <p>Nesse passo, vamos supor que realizamos alguma alteração no nosso <em>dataset</em> original:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>change.py
 $<span class="w"> </span>dvc<span class="w"> </span>status
@@ -220,7 +218,7 @@ M<span class="w">       </span>data<span class="se">\d</span>irty_data.csv
 </code></pre></div>
 <p>O <span class="caps">DVC</span> mantém um cache das nossas versões do <em>dataset</em> na pasta <code>.dvc\cache\files\md5\..</code>.</p>
 <p>E sim, se não tomarmos cuidado, várias versões do <em>dataset</em> pode consumir muito espaço de armazenamento. Porém, talvez apenas precisemos manter os passos seguidos para obter o nosso <em>dataset</em>.</p>
-<h3>Uma pausa para o café</h3>
+<h3 id="uma-pausa-para-o-cafe">Uma pausa para o café</h3>
 <p>Antes de prosseguir, vamos fazer uma pausa e recapitular o que aprendemos até aqui. O <span class="caps">DVC</span> e o <span class="caps">GIT</span> são melhores amigos que devem andar de mãos dadas.
 Portanto, um fluxo de trabalho possível entre o <span class="caps">DVC</span> e o <span class="caps">GIT</span> seria.</p>
 <ol>
@@ -230,7 +228,7 @@ Portanto, um fluxo de trabalho possível entre o <span class="caps">DVC</span> e
 <li>Incluir os arquivos com extensão <code>.dvc</code> para rastreamento do <span class="caps">GIT</span> e realizar um commit para persistir as mudanças.</li>
 </ol>
 <p>Basicamente esse é um fluxo básico de trabalho com o <span class="caps">DVC</span> e o <span class="caps">GIT</span>.</p>
-<h2>5º passo: Incluindo um pipeline</h2>
+<h2 id="5o-passo-incluindo-um-pipeline">5º passo: Incluindo um pipeline</h2>
 <p>O <span class="caps">DVC</span> também permite gerenciar o <em>pipeline</em> de pré-processamento, treinamento e validação de um modelo de Aprendizado de Máquina.
 Um pipeline é descrito por diferentes estágios necessários para se obter um resultado ou cumprir determinada tarefa.</p>
 <p>Através do comando <code>dvc stage add</code> é possível definir um estágio do pipeline.
@@ -245,7 +243,7 @@ Added<span class="w"> </span>stage<span class="w"> </span><span class="s1">'prep
 <span class="w">        </span>git<span class="w"> </span>add<span class="w"> </span>dvc.yaml<span class="w"> </span><span class="s1">'data\normalized\.gitignore'</span>
 </code></pre></div>
 <p>Note que após executar o comando, o texto de saída sugere rastrear o arquivo <code>dvc.yaml</code> com o <span class="caps">GIT</span>.</p>
-<h2>Passo #6: Reproduzir um pipeline</h2>
+<h2 id="passo-6-reproduzir-um-pipeline">Passo #6: Reproduzir um pipeline</h2>
 <p>É possível reproduzir todo o pipeline do projeto com o comando <code>dvc repro</code>.
 O dvc irá executar os <em>scripts</em> de cada estágio, se observar que houve uma mudança nos arquivos que um estágio depende (arquivos de entrada, ou de dados) ou mudanças em parâmetros (registrados no arquivo <code>params.yaml</code>).</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>repro
@@ -253,7 +251,7 @@ O dvc irá executar os <em>scripts</em> de cada estágio, se observar que houve 
 </code></pre></div>
 <p>Ao reproduzir a sequência de estágios de um pipeline, é gerado um arquivo chamado <code>dvc.lock</code> que registra o <em>hash</em> dos arquivos de dependência e arquivos de saída (<em>outputs</em>) gerados.
 Conforme podemos ver no exemplo de saída reproduzido acima, o <span class="caps">DVC</span> recomenda que esse arquivo seja rastreado pelo <span class="caps">GIT</span>.</p>
-<h3>Visualizando o pipeline</h3>
+<h3 id="visualizando-o-pipeline">Visualizando o pipeline</h3>
 <p>É possível visualizar o pipeline, isto é, a sequência de etapas registrada em nosso projeto com o comando <code>dvc dag</code>.
 É possível gerar essa visualização em diferentes formatos. Para saber mais consulte a documentação <a href="https://dvc.org/doc/command-reference/dag">nesta página</a>.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>dvc<span class="w"> </span>dag
@@ -261,14 +259,14 @@ Conforme podemos ver no exemplo de saída reproduzido acima, o <span class="caps
 <p><span class="caps">DAG</span> nesse contexto significa <em>Directed Acyclic Graph</em>.
 Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possuir dependências circulares, isto é, C depende de B, que depende de A, e este último depende de C.</p>
 <p>Também é possível utilizar o comando <code>dvc stage list</code> para listar todos os estágios registrados no arquivo <code>dvc.yaml</code>.</p>
-<h1>Recapitulando</h1>
+<h1 id="recapitulando">Recapitulando</h1>
 <p>1) Quais são os arquivos usados pelo <span class="caps">DVC</span> para gerenciamento de um projeto? Qual a função de cada um desses arquivos?</p>
 <div class="highlight"><pre><span></span><code>Os arquivos são:
 - asdfa
 - asdfa
 - asdfa
 </code></pre></div>
-<h1>Referências</h1>
+<h1 id="referencias">Referências</h1>
 <ul>
 <li><strong><span class="caps">DVC</span> Documentation</strong>. Disponível em <a href="https://dvc.org/doc">https://dvc.org/doc</a>.</li>
 <li><strong>Awesome Pipeline: A curated list of awesome pipeline toolkits</strong>. Disponível em <a href="https://github.com/pditommaso/awesome-pipeline">https://github.com/pditommaso/awesome-pipeline</a></li>
@@ -289,16 +287,29 @@ Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possu
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

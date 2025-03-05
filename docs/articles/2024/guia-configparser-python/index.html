@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Um guia rápido para arquivos de configuração INI com `configparser`</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -43,6 +40,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -52,10 +50,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -69,6 +64,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -107,8 +105,8 @@ Programador Python.
       </div>
     </header>
     <section class="mt-5">
-      <p><img alt="Mapa mental das biblioteca configparser" class="mx-auto d-block img-fluid" src="./mind-map-configparser.png"/></p>
-<h2>Caracterísitcas dos arquivos <code>.ini</code></h2>
+      <p><img alt="Mapa mental das biblioteca configparser" class="mx-auto img-fluid d-block" src="./mind-map-configparser.png"/></p>
+<h2 id="caracterisitcas-dos-arquivos-ini">Caracterísitcas dos arquivos <code>.ini</code></h2>
 <p>A extensão <code>.ini</code> são um formato simples e amplamente utilizados para armazenar configurações de aplicativos. A especificação foi primeiramente projetada para os programas do <a href="https://en.wikipedia.org/wiki/INI_file">sistema Microsoft Windows</a>. Contudo, eles acabaram sendo adotados pela comunidade de softwares abertos, onde também podem aparecer sob a extensão <code>.cfg</code> — embora possam ter alguns detalhes diferentes.</p>
 <p>Um exemplo de arquivo <code>.ini</code> seria:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[DEFAULT]</span>
@@ -139,7 +137,7 @@ Programador Python.
 </ol>
 <p>No Python, a biblioteca padrão <a href="https://docs.python.org/3/library/configparser.html"><code>configparser</code></a> facilita a leitura e escrita desses arquivos.</p>
 <p>Ao realizar o parse de um arquivo, é retornado um objeto semelhante a um dicionário do Python, porém com alguns métodos extras que serão apresentados a seguir.</p>
-<h2>Configparser na prática</h2>
+<h2 id="configparser-na-pratica">Configparser na prática</h2>
 <p>De forma geral, a biblioteca <code>configparser</code> disponibiliza as seguintes funcionalidades:</p>
 <ol>
 <li>Realizar o parser de um arquivo <code>.ini</code> para um objeto do tipo <code>ConfigParser</code>.</li>
@@ -149,7 +147,7 @@ Programador Python.
 <li>Acessar os valores dos atributos.</li>
 <li>Converter os valores dos atributos para tipos específicos de dados.</li>
 </ol>
-<h3>Parse de um arquivo <code>.ini</code></h3>
+<h3 id="parse-de-um-arquivo-ini">Parse de um arquivo <code>.ini</code></h3>
 <p>Para realizar o parse de um arquivo <code>.ini</code> primeiro instanciamos um objeto do tipo <code>ConfigParser</code>, e então passamos a localização, isto é, o arquivo para o método <code>.read</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">configparser</span>
 
@@ -164,7 +162,7 @@ Programador Python.
 <li><code>read_string</code>: a partir de uma string.</li>
 <li><code>read_dict</code>: a partir de um objeto dict.</li>
 </ul>
-<h3>Conheçendo as seções e atributos do objeto <code>ConfigParser</code></h3>
+<h3 id="conhecendo-as-secoes-e-atributos-do-objeto-configparser">Conheçendo as seções e atributos do objeto <code>ConfigParser</code></h3>
 <p>Os atributos são organizados em seções que agrupam atributos. A lista de seções existentes é acessada pelo método <code>.sections</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;</span> <span class="n">config</span><span class="o">.</span><span class="n">sections</span><span class="p">()</span>
 <span class="p">[</span><span class="s1">'personal'</span><span class="p">,</span> <span class="s1">'education'</span><span class="p">,</span> <span class="s1">'skills'</span><span class="p">]</span>
@@ -200,7 +198,7 @@ Programador Python.
   <span class="s1">'profession'</span><span class="p">:</span> <span class="s1">'Student # isso é um comentário'</span><span class="p">,</span>
   <span class="s1">'major'</span><span class="p">:</span> <span class="s1">'Technology'</span><span class="p">}</span>
 </code></pre></div>
-<h3>Verificando a existência de seções e atributos</h3>
+<h3 id="verificando-a-existencia-de-secoes-e-atributos">Verificando a existência de seções e atributos</h3>
 <p>Ao passar a chave para uma seção inexistente no objeto <code>ConfigParser</code> é lançado uma exceção do tipo <code>KeyError</code>. Para verificar se uma seção existe no objeto, podemos fazer isso através do operador <code>in</code> ou do método <code>.has_section</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="s1">'education'</span> <span class="ow">in</span> <span class="n">config</span>
   <span class="kc">True</span>
@@ -227,7 +225,7 @@ No exemplo a seguir, <code>email</code> não é explicitamente definido dentro 
 <div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">has_option</span><span class="p">(</span><span class="n">section</span><span class="o">=</span><span class="s1">'education'</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="s1">'email'</span><span class="p">)</span>
   <span class="kc">True</span>
 </code></pre></div>
-<h3>Acessando valores dos atributos</h3>
+<h3 id="acessando-valores-dos-atributos">Acessando valores dos atributos</h3>
 <p>A forma mais simples de acessar um valor de um objeto <code>ConfigParser</code> é por indexação.</p>
 <div class="highlight"><pre><span></span><code><span class="n">config</span><span class="p">[</span><span class="s1">'personal'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span>
   <span class="s1">'Giliard Godoi'</span>
@@ -262,7 +260,7 @@ E por isso, os valores dos atributos são todos do tipo string.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">'education'</span><span class="p">][</span><span class="s1">'year'</span><span class="p">]</span> <span class="p">)</span>
   <span class="nb">str</span>
 </code></pre></div>
-<h3>Converter valores para tipos específicos</h3>
+<h3 id="converter-valores-para-tipos-especificos">Converter valores para tipos específicos</h3>
 <p>No entanto é possível converter os valores para os tipos <code>int</code>, <code>float</code> e <code>bool</code> com os métodos <code>.getint</code>, <code>.getfloat</code> e <code>.getbool</code>, respectivamente.</p>
 <div class="highlight"><pre><span></span><code><span class="n">config</span><span class="o">.</span><span class="n">getint</span><span class="p">(</span><span class="s1">'education'</span><span class="p">,</span> <span class="s1">'year'</span><span class="p">)</span>
   <span class="mi">2018</span>
@@ -271,19 +269,19 @@ E por isso, os valores dos atributos são todos do tipo string.</p>
 <div class="highlight"><pre><span></span><code><span class="n">config</span><span class="p">[</span><span class="s1">'skills'</span><span class="p">][</span><span class="s1">'programming'</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
   <span class="p">[</span><span class="s1">'Python'</span><span class="p">,</span> <span class="s1">'JavaScript'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'C++'</span><span class="p">]</span>
 </code></pre></div>
-<h3>Salvando um arquivo <code>.ini</code></h3>
+<h3 id="salvando-um-arquivo-ini">Salvando um arquivo <code>.ini</code></h3>
 <div class="highlight"><pre><span></span><code><span class="n">config</span><span class="p">[</span><span class="s1">'project'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'ConfigParser Guide'</span><span class="p">,</span> <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'1.0'</span><span class="p">}</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'config.ini'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">configfile</span><span class="p">:</span>
     <span class="n">config</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">configfile</span><span class="p">)</span>
 </code></pre></div>
-<h2>Dicas e boas práticas</h2>
+<h2 id="dicas-e-boas-praticas">Dicas e boas práticas</h2>
 <ul>
 <li>Sempre use <code>getint()</code>, <code>getfloat()</code>, ou <code>getboolean()</code> quando precisar de tipos específicos.</li>
 <li>Utilize <code>fallback=</code> no método <code>get()</code> para evitar erros ao acessar chaves inexistentes.</li>
 <li>Se precisar armazenar listas, use separadores consistentes e o método <code>.split()</code> para recuperação.</li>
 </ul>
-<h2>Referências</h2>
+<h2 id="referencias">Referências</h2>
 <ol>
 <li><a href="https://docs.python.org/3/library/configparser.html">Documentação oficial do configparser</a></li>
 <li><a href="https://en.wikipedia.org/wiki/INI_file"><span class="caps">INI</span> file - Wikipedia</a></li>
@@ -304,16 +302,29 @@ E por isso, os valores dos atributos são todos do tipo string.</p>
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Um guia rápido para o pacote pathlib</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -42,6 +39,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -51,10 +49,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -68,6 +63,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -106,21 +104,21 @@ Programador Python.
       <p>As vezes eu tenho uma dúvida muito simples sobre o funcionamento de uma função ou método do Python.
 Então eu crio esses guias rápidos, no estilo “Perguntas e Respostas” para me ajudar a evitar uma pesquisa no Google.</p>
 <p>Nesse guia eu trato sobre o pacote para manipulação de diretórios e arquivos <code>pathlib</code>.</p>
-<h2>Perguntas e Respostas</h2>
-<h3>Como importar?</h3>
+<h2 id="perguntas-e-respostas">Perguntas e Respostas</h2>
+<h3 id="como-importar">Como importar?</h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 </code></pre></div>
-<h3>Como representar um caminho?</h3>
+<h3 id="como-representar-um-caminho">Como representar um caminho?</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
 </code></pre></div>
-<h3>Como saber se o diretório ou arquivo existe?</h3>
+<h3 id="como-saber-se-o-diretorio-ou-arquivo-existe">Como saber se o diretório ou arquivo existe?</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'script.py'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 <span class="kc">False</span>
 </code></pre></div>
 <p>Retorna <code>True</code> ou <code>False</code>.</p>
-<h3>Como saber se é um arquivo ou um diretório?</h3>
+<h3 id="como-saber-se-e-um-arquivo-ou-um-diretorio">Como saber se é um arquivo ou um diretório?</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
 <span class="kc">True</span>
@@ -131,25 +129,25 @@ Então eu crio esses guias rápidos, no estilo “Perguntas e Respostas” para 
 <span class="kc">False</span>
 </code></pre></div>
 <p>Importante notar, entretanto, que se o arquivo ou o diretório realmente não existe no sistema operacional, os métodos <code>is_file</code> e <code>is_dir</code> sempre retornarão <code>False</code>.</p>
-<h3>Como saber o nome de um arquivo\diretório ?</h3>
+<h3 id="como-saber-o-nome-de-um-arquivodiretorio">Como saber o nome de um arquivo\diretório ?</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'bar\script.py'</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">name</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="s1">'script.py'</span>
 </code></pre></div>
-<h3>Como criar um arquivo?</h3>
+<h3 id="como-criar-um-arquivo">Como criar um arquivo?</h3>
 <p>Como criar um arquivo no sistema de arquivo.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'script.py'</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">touch</span><span class="p">()</span>
 </code></pre></div>
 <p>Esse método também pode ser usado para alterar o timestamp de um arquivo que já existia previamente.</p>
-<h3>Como remover um arquivo?</h3>
+<h3 id="como-remover-um-arquivo">Como remover um arquivo?</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">bar</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'main.py'</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bar</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
 </code></pre></div>
-<h3>Como renomear um arquivo?</h3>
+<h3 id="como-renomear-um-arquivo">Como renomear um arquivo?</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'script.py'</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bar</span> <span class="o">=</span> <span class="n">foo</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">'main.py'</span><span class="p">)</span>
@@ -176,7 +174,7 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 <span class="kc">True</span>
 </code></pre></div>
 <p>Isso simplifica como fazer cópias de um mesmo arquivo, talvez?</p>
-<h3>Como saber a extensão de um arquivo?</h3>
+<h3 id="como-saber-a-extensao-de-um-arquivo">Como saber a extensão de um arquivo?</h3>
 <p>Com o atributo <code>.suffix</code></p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'script.py'</span><span class="p">)</span>
 
@@ -189,7 +187,7 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">suffixes</span>
 <span class="p">[</span><span class="s1">'.tar'</span><span class="p">,</span> <span class="s1">'.gar'</span><span class="p">]</span>
 </code></pre></div>
-<h3>Como ler e escrever texto em um arquivo?</h3>
+<h3 id="como-ler-e-escrever-texto-em-um-arquivo">Como ler e escrever texto em um arquivo?</h3>
 <p>Existem vários modos de se fazer isso.</p>
 <p>A maneira mais direta é utilizando os métodos <code>write_text</code> e <code>read_text</code></p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'README.md'</span><span class="p">)</span>
@@ -201,12 +199,12 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 <span class="s2">"Some text here!"</span>
 </code></pre></div>
 <p>Também podemos fazer algo parecido com os métodos <code>write_bytes</code> e <code>read_bytes</code> para arquivos binários.</p>
-<h3>Como criar um diretório novo?</h3>
+<h3 id="como-criar-um-diretorio-novo">Como criar um diretório novo?</h3>
 <div class="highlight"><pre><span></span><code><span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
 
 <span class="n">foo</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
 </code></pre></div>
-<h3>Como listar os arquivos ou subdiretórios a partir do diretório atual?</h3>
+<h3 id="como-listar-os-arquivos-ou-subdiretorios-a-partir-do-diretorio-atual">Como listar os arquivos ou subdiretórios a partir do diretório atual?</h3>
 <p>Podemos iterar com ajuda do método <code>iterdir()</code></p>
 <div class="highlight"><pre><span></span><code><span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'tutorial'</span><span class="p">)</span>
 
@@ -232,7 +230,7 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"**/*.ipynb"</span><span class="p">)</span>
 </code></pre></div>
 <p>Lembre-se que os métodos <code>iterdir</code>, <code>glob</code> e <code>rglob</code> retornam um iterador e não a lista propriamente dita.</p>
-<h3>Como remover um diretório?</h3>
+<h3 id="como-remover-um-diretorio">Como remover um diretório?</h3>
 <p>Se o diretório está vazio, basta o comando:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
 
@@ -241,7 +239,7 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 <p>Caso o diretório não esteja vazio, tem-se duas opções:</p>
 <p>A primeira é remover todos os arquivos e subdiretórios a partir do diretório atual, utilizando recursão e um a um.</p>
 <p>Ou então podemos utilizar a função <code>shutil.rmtree</code> do módulo <code>shutil</code>.</p>
-<h3>Como concatenar o nome de um diretório como um nome de um subdiretório ou um arquivo?</h3>
+<h3 id="como-concatenar-o-nome-de-um-diretorio-como-um-nome-de-um-subdiretorio-ou-um-arquivo">Como concatenar o nome de um diretório como um nome de um subdiretório ou um arquivo?</h3>
 <p>Podemos utilizar o operador <code>/</code> como no exemplo a seguir:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">/</span> <span class="s1">'bar'</span> <span class="o">/</span> <span class="s1">'test'</span> <span class="o">/</span> <span class="s1">'test_script.py'</span>
@@ -257,7 +255,7 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'test'</span><span class="p">,</span> <span class="s1">'test_script.py'</span><span class="p">)</span>
 </code></pre></div>
 <p>Por incrível que parece o operador de adição <code>+</code> não retorna a concatenação de vários caminhos.</p>
-<h3>Como saber o diretório pai de um arquivo ou diretório?</h3>
+<h3 id="como-saber-o-diretorio-pai-de-um-arquivo-ou-diretorio">Como saber o diretório pai de um arquivo ou diretório?</h3>
 <p>Podemos tentar algo como:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">parent</span> <span class="c1"># retorna o primeiro diretório pai</span>
@@ -278,23 +276,23 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parts</span>
 <span class="p">(</span><span class="s1">'folder'</span><span class="p">,</span> <span class="s1">'script.py'</span><span class="p">)</span>
 </code></pre></div>
-<h3>Como saber o diretório de trabalho atual?</h3>
+<h3 id="como-saber-o-diretorio-de-trabalho-atual">Como saber o diretório de trabalho atual?</h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
 <span class="s1">'/home/user/folder_x'</span>
 </code></pre></div>
 <p>Também conhecido como <em>current working diretory</em> ou <code>cwd</code>.</p>
-<h2>Exemplos</h2>
+<h2 id="exemplos">Exemplos</h2>
 <p>Os dois exemplos a seguir foram visto nesse post do <a href="https://realpython.com/python-pathlib/#examples"><em>blog Real Python</em></a> .
 1. Contar os arquivos em um diretório atual, agrupado pela extensão do arquivo;
 2. Mostrar a estrutura de diretórios.</p>
-<h3>Contar arquivos</h3>
+<h3 id="contar-arquivos">Contar arquivos</h3>
 <p>O primeiro <em>snippet</em> de código mostra como contar os arquivos conforme as suas extensões:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Counter</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">suffix</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">())</span>
 <span class="n">Counter</span><span class="p">({</span><span class="s1">'.html'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'.png'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">'.xml'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'.ico'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'.md'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'.webmanifest'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 </code></pre></div>
-<h3>Mostrar a estrutura de diretórios</h3>
+<h3 id="mostrar-a-estrutura-de-diretorios">Mostrar a estrutura de diretórios</h3>
 <p>O segundo mostra um forma de criar uma visualização no terminal para a estrutura de diretórios.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tree</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'+ </span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
@@ -305,9 +303,9 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 
 <span class="n">tree</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">())</span>
 </code></pre></div>
-<h2>Para saber mais</h2>
+<h2 id="para-saber-mais">Para saber mais</h2>
 <p>Para saber mais sobre o módulo <code>pathlib</code>, além da página da documentação, eu recomendo essa live do Dunossauro do Canal Live de Python sobre <a href="https://www.youtube.com/watch?v=E_hox7iZjOE">Manipulação de arquivos e pastas com pathlib - Live de Python #199 - YouTube</a>.</p>
-<h2>Referências</h2>
+<h2 id="referencias">Referências</h2>
 <ol>
 <li>Python Documentation. <strong>pathlib — Object-oriented filesystem paths</strong>. Disponível em: <a href="https://docs.python.org/3/library/pathlib.html">https://docs.python.org/3/library/pathlib.html</a> Acessado em: 14 de fev. de 2023.</li>
 <li>Eduardo Mendes: Live de Python. <strong>Manipulação de arquivos e pastas com pathlib - Live de Python #199</strong> . Disponível em: <a href="https://www.youtube.com/watch?v=E_hox7iZjOE">https://www.youtube.com/watch?v=E_hox7iZjOE</a> Acessado em 14 de fev. de 2023.</li>
@@ -329,16 +327,29 @@ Poderíamos renomea-lo de forma virtual somente.</p>
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Giliard Godoi - programming-skills</title><link href="https://giliardgodoi.github.io/" rel="alternate"></link><link href="https://giliardgodoi.github.io/feeds/programming-skills.atom.xml" rel="self"></link><id>https://giliardgodoi.github.io/</id><updated>2025-03-04T00:00:00-03:00</updated><subtitle>Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-</subtitle><entry><title>Gerenciando versões de datasets</title><link href="https://giliardgodoi.github.io/articles/2025/versionamento-dataset/" rel="alternate"></link><published>2025-02-21T00:00:00-03:00</published><updated>2025-02-21T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2025-02-21:/articles/2025/versionamento-dataset/</id><summary type="html">&lt;p&gt;Tutorial para conhecer o fluxo básico de trabalho com &lt;em&gt;Data Version Control&lt;/em&gt; (&lt;span class="caps"&gt;DVC&lt;/span&gt;)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Em um projeto de &lt;em&gt;Data Science&lt;/em&gt; é comum termos várias versões de um mesmo conjunto de dados.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Giliard Godoi - programming-skills</title><link href="https://giliardgodoi.github.io/" rel="alternate"></link><link href="https://giliardgodoi.github.io/feeds/programming-skills.atom.xml" rel="self"></link><id>https://giliardgodoi.github.io/</id><updated>2025-03-04T00:00:00-03:00</updated><subtitle>Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.</subtitle><entry><title>Gerenciando versões de datasets</title><link href="https://giliardgodoi.github.io/articles/2025/versionamento-dataset/" rel="alternate"></link><published>2025-02-21T00:00:00-03:00</published><updated>2025-02-21T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2025-02-21:/articles/2025/versionamento-dataset/</id><summary type="html">&lt;p&gt;Tutorial para conhecer o fluxo básico de trabalho com &lt;em&gt;Data Version Control&lt;/em&gt; (&lt;span class="caps"&gt;DVC&lt;/span&gt;)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Em um projeto de &lt;em&gt;Data Science&lt;/em&gt; é comum termos várias versões de um mesmo conjunto de dados.
 Podemos retirar instâncias com ruídos, incluir mais instâncias, acrescentar ou diminuir atributos, fazer imputação de valores faltantes.
 Enfim, são várias as técnicas de pré-processamento e extração de características que podemos aplicar aos nossos dados.&lt;/p&gt;
 &lt;p&gt;O GitHub possui uma limitação sobre o tamanho de arquivos que podemos subir para os repositórios, e um limite maior pode requerer uma assinatura &lt;em&gt;enterprise&lt;/em&gt; ou algo do tipo (Maiores informações &lt;a href="https://docs.github.com/pt/repositories/working-with-files/managing-large-files"&gt;aqui&lt;/a&gt;).
@@ -11,12 +8,12 @@ Além disso, subir os nossos dados para o repositório de código não é uma da
 O &lt;span class="caps"&gt;DVC&lt;/span&gt; possui um foco no versionamento dos arquivos que contém os nossos dados.
 Neste tutorial, vamos passar por um passo-a-passo do fluxo básico desse gerenciamento de versões dos conjuntos de dados.&lt;/p&gt;
 &lt;p&gt;O código para reproduzir alguns passo desse tutorial está disponível no seguinte repositório: &lt;a href="https://github.com/GiliardGodoi/algorithms/tree/master/dvc-tutorial"&gt;dvc-tutorial&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Passo 0: instalar o &lt;span class="caps"&gt;DVC&lt;/span&gt;&lt;/h2&gt;
+&lt;h2 id="passo-0-instalar-o-dvc"&gt;Passo 0: instalar o &lt;span class="caps"&gt;DVC&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;A &lt;a href="https://dvc.org/doc/install"&gt;página da documentação&lt;/a&gt; traz em detalhes a forma de instalação do &lt;span class="caps"&gt;DVC&lt;/span&gt;. Neste tutorial nós só vamos executar o seguinte comando&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;dvc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Existe também uma extensão do &lt;span class="caps"&gt;DVC&lt;/span&gt; para o &lt;code&gt;VS Code&lt;/code&gt; que vale a pena explorar.&lt;/p&gt;
-&lt;h2&gt;Passo #1: Iniciar &lt;span class="caps"&gt;GIT&lt;/span&gt; repositório e o projeto &lt;span class="caps"&gt;DVC&lt;/span&gt;&lt;/h2&gt;
+&lt;h2 id="passo-1-iniciar-git-repositorio-e-o-projeto-dvc"&gt;Passo #1: Iniciar &lt;span class="caps"&gt;GIT&lt;/span&gt; repositório e o projeto &lt;span class="caps"&gt;DVC&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;Digamos que desejamos criar um projeto em um diretório chamado &lt;code&gt;dvc-tutorial&lt;/code&gt;. Dentro do diretório, a primeira coisa a se fazer é iniciar um repositório &lt;span class="caps"&gt;GIT&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;O fluxo de trabalho com o &lt;span class="caps"&gt;DVC&lt;/span&gt; está estreitamente relacionado ao do &lt;span class="caps"&gt;GIT&lt;/span&gt;. Um é o melhor amigo do outro. Portanto, o primeiro passo é iniciar um repositório do &lt;span class="caps"&gt;GIT&lt;/span&gt; e logo em seguida iniciar um repositório do &lt;span class="caps"&gt;DVC&lt;/span&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;dvc-tutorial
@@ -35,7 +32,7 @@ Changes&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Inicializando projeto DVC'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Outra sugestão é que certamente nós não queremos incluir, mesmo que acidentalmente, o nosso arquivo de dados em um &lt;em&gt;commit&lt;/em&gt; do &lt;span class="caps"&gt;GIT&lt;/span&gt;. Para evitar esse tipo de acidente, é interessante adicionar o diretório que contém os nossos arquivos de dados no arquivo &lt;code&gt;.gitignore&lt;/code&gt; para eles serem ignorados pelo &lt;span class="caps"&gt;GIT&lt;/span&gt;. Os próximos passos deixarão claro que o que queremos rastrear são arquivos gerados pelo &lt;span class="caps"&gt;DVC&lt;/span&gt; que apontarão para os nossos arquivos de dados.&lt;/p&gt;
-&lt;h2&gt;Passo 2: Rastrear os arquivos de dados&lt;/h2&gt;
+&lt;h2 id="passo-2-rastrear-os-arquivos-de-dados"&gt;Passo 2: Rastrear os arquivos de dados&lt;/h2&gt;
 &lt;p&gt;Na documentação oficial, é sugerido obter um &lt;em&gt;dataset&lt;/em&gt; de exemplo através do comando &lt;code&gt;dvc get&lt;/code&gt;. No nosso caso vamos apenas gerar um &lt;em&gt;dataset fake&lt;/em&gt; com o seguinte comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;python&lt;span class="w"&gt; &lt;/span&gt;fake.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -68,7 +65,7 @@ To&lt;span class="w"&gt; &lt;/span&gt;track&lt;span class="w"&gt; &lt;/span&gt;t
 &lt;p&gt;Desta forma é necessário que sempre após gerar uma nova versão do &lt;em&gt;dataset&lt;/em&gt;, realizar um &lt;em&gt;commit&lt;/em&gt; do arquivo de controle do &lt;span class="caps"&gt;DVC&lt;/span&gt;. Assim, estaremos também versionando os nossos dados.&lt;/p&gt;
 &lt;p&gt;Porém, como o &lt;span class="caps"&gt;DVC&lt;/span&gt; faz para recuperar o arquivo anterior do nosso conjunto de dados?
 É isso que vamos ver no próximo passo.&lt;/p&gt;
-&lt;h2&gt;Passo #3: Definir o repositório remoto de dados&lt;/h2&gt;
+&lt;h2 id="passo-3-definir-o-repositorio-remoto-de-dados"&gt;Passo #3: Definir o repositório remoto de dados&lt;/h2&gt;
 &lt;p&gt;O &lt;span class="caps"&gt;DVC&lt;/span&gt; possibilita a configuração de um repositório remoto de dados, que mantém os arquivos correspondentes as várias versões desse dataset. Uma configuração básica é definir um outro diretório na mesma máquina para funcionar como o nosso ”repositório remoto”.
 Neste exemplo o repositório remoto vai ser apenas um outro diretório no mesmo nível que a pasta do nosso projeto.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;..
@@ -88,7 +85,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;dvc&lt;span class="w"&gt; &lt;/span&gt;remo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Lembre-se, o &lt;span class="caps"&gt;DVC&lt;/span&gt; sempre vai utilizar aqueles arquivos de &lt;em&gt;hash&lt;/em&gt; com a extensão &lt;code&gt;.dvc&lt;/code&gt; para buscar o arquivo de dados correspondente. Com o comando &lt;code&gt;dvc pull&lt;/code&gt; ele irá buscar o arquivo correspondente ao arquivos &lt;em&gt;hash&lt;/em&gt; existentes no repositório do projeto.&lt;/p&gt;
 &lt;p&gt;A &lt;a href="https://dvc.org/doc/start#storing-and-sharing"&gt;documentação&lt;/a&gt; do &lt;span class="caps"&gt;DVC&lt;/span&gt; mostra alternativas para configurações desse repositório remoto utilizando serviços de nuvens de diversos provedores.&lt;/p&gt;
-&lt;h2&gt;Passo #4: Navegar entre as versões dos arquivos&lt;/h2&gt;
+&lt;h2 id="passo-4-navegar-entre-as-versoes-dos-arquivos"&gt;Passo #4: Navegar entre as versões dos arquivos&lt;/h2&gt;
 &lt;p&gt;Nesse passo, vamos supor que realizamos alguma alteração no nosso &lt;em&gt;dataset&lt;/em&gt; original:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;python&lt;span class="w"&gt; &lt;/span&gt;change.py
 $&lt;span class="w"&gt; &lt;/span&gt;dvc&lt;span class="w"&gt; &lt;/span&gt;status
@@ -123,7 +120,7 @@ M&lt;span class="w"&gt;       &lt;/span&gt;data&lt;span class="se"&gt;\d&lt;/spa
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;O &lt;span class="caps"&gt;DVC&lt;/span&gt; mantém um cache das nossas versões do &lt;em&gt;dataset&lt;/em&gt; na pasta &lt;code&gt;.dvc\cache\files\md5\..&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;E sim, se não tomarmos cuidado, várias versões do &lt;em&gt;dataset&lt;/em&gt; pode consumir muito espaço de armazenamento. Porém, talvez apenas precisemos manter os passos seguidos para obter o nosso &lt;em&gt;dataset&lt;/em&gt;.&lt;/p&gt;
-&lt;h3&gt;Uma pausa para o café&lt;/h3&gt;
+&lt;h3 id="uma-pausa-para-o-cafe"&gt;Uma pausa para o café&lt;/h3&gt;
 &lt;p&gt;Antes de prosseguir, vamos fazer uma pausa e recapitular o que aprendemos até aqui. O &lt;span class="caps"&gt;DVC&lt;/span&gt; e o &lt;span class="caps"&gt;GIT&lt;/span&gt; são melhores amigos que devem andar de mãos dadas.
 Portanto, um fluxo de trabalho possível entre o &lt;span class="caps"&gt;DVC&lt;/span&gt; e o &lt;span class="caps"&gt;GIT&lt;/span&gt; seria.&lt;/p&gt;
 &lt;ol&gt;
@@ -133,7 +130,7 @@ Portanto, um fluxo de trabalho possível entre o &lt;span class="caps"&gt;DVC&lt
 &lt;li&gt;Incluir os arquivos com extensão &lt;code&gt;.dvc&lt;/code&gt; para rastreamento do &lt;span class="caps"&gt;GIT&lt;/span&gt; e realizar um commit para persistir as mudanças.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Basicamente esse é um fluxo básico de trabalho com o &lt;span class="caps"&gt;DVC&lt;/span&gt; e o &lt;span class="caps"&gt;GIT&lt;/span&gt;.&lt;/p&gt;
-&lt;h2&gt;5º passo: Incluindo um pipeline&lt;/h2&gt;
+&lt;h2 id="5o-passo-incluindo-um-pipeline"&gt;5º passo: Incluindo um pipeline&lt;/h2&gt;
 &lt;p&gt;O &lt;span class="caps"&gt;DVC&lt;/span&gt; também permite gerenciar o &lt;em&gt;pipeline&lt;/em&gt; de pré-processamento, treinamento e validação de um modelo de Aprendizado de Máquina.
 Um pipeline é descrito por diferentes estágios necessários para se obter um resultado ou cumprir determinada tarefa.&lt;/p&gt;
 &lt;p&gt;Através do comando &lt;code&gt;dvc stage add&lt;/code&gt; é possível definir um estágio do pipeline.
@@ -148,7 +145,7 @@ Added&lt;span class="w"&gt; &lt;/span&gt;stage&lt;span class="w"&gt; &lt;/span&g
 &lt;span class="w"&gt;        &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;dvc.yaml&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'data\normalized\.gitignore'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note que após executar o comando, o texto de saída sugere rastrear o arquivo &lt;code&gt;dvc.yaml&lt;/code&gt; com o &lt;span class="caps"&gt;GIT&lt;/span&gt;.&lt;/p&gt;
-&lt;h2&gt;Passo #6: Reproduzir um pipeline&lt;/h2&gt;
+&lt;h2 id="passo-6-reproduzir-um-pipeline"&gt;Passo #6: Reproduzir um pipeline&lt;/h2&gt;
 &lt;p&gt;É possível reproduzir todo o pipeline do projeto com o comando &lt;code&gt;dvc repro&lt;/code&gt;.
 O dvc irá executar os &lt;em&gt;scripts&lt;/em&gt; de cada estágio, se observar que houve uma mudança nos arquivos que um estágio depende (arquivos de entrada, ou de dados) ou mudanças em parâmetros (registrados no arquivo &lt;code&gt;params.yaml&lt;/code&gt;).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;dvc&lt;span class="w"&gt; &lt;/span&gt;repro
@@ -156,7 +153,7 @@ O dvc irá executar os &lt;em&gt;scripts&lt;/em&gt; de cada estágio, se observa
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Ao reproduzir a sequência de estágios de um pipeline, é gerado um arquivo chamado &lt;code&gt;dvc.lock&lt;/code&gt; que registra o &lt;em&gt;hash&lt;/em&gt; dos arquivos de dependência e arquivos de saída (&lt;em&gt;outputs&lt;/em&gt;) gerados.
 Conforme podemos ver no exemplo de saída reproduzido acima, o &lt;span class="caps"&gt;DVC&lt;/span&gt; recomenda que esse arquivo seja rastreado pelo &lt;span class="caps"&gt;GIT&lt;/span&gt;.&lt;/p&gt;
-&lt;h3&gt;Visualizando o pipeline&lt;/h3&gt;
+&lt;h3 id="visualizando-o-pipeline"&gt;Visualizando o pipeline&lt;/h3&gt;
 &lt;p&gt;É possível visualizar o pipeline, isto é, a sequência de etapas registrada em nosso projeto com o comando &lt;code&gt;dvc dag&lt;/code&gt;.
 É possível gerar essa visualização em diferentes formatos. Para saber mais consulte a documentação &lt;a href="https://dvc.org/doc/command-reference/dag"&gt;nesta página&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;dvc&lt;span class="w"&gt; &lt;/span&gt;dag
@@ -164,19 +161,19 @@ Conforme podemos ver no exemplo de saída reproduzido acima, o &lt;span class="c
 &lt;p&gt;&lt;span class="caps"&gt;DAG&lt;/span&gt; nesse contexto significa &lt;em&gt;Directed Acyclic Graph&lt;/em&gt;.
 Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possuir dependências circulares, isto é, C depende de B, que depende de A, e este último depende de C.&lt;/p&gt;
 &lt;p&gt;Também é possível utilizar o comando &lt;code&gt;dvc stage list&lt;/code&gt; para listar todos os estágios registrados no arquivo &lt;code&gt;dvc.yaml&lt;/code&gt;.&lt;/p&gt;
-&lt;h1&gt;Recapitulando&lt;/h1&gt;
+&lt;h1 id="recapitulando"&gt;Recapitulando&lt;/h1&gt;
 &lt;p&gt;1) Quais são os arquivos usados pelo &lt;span class="caps"&gt;DVC&lt;/span&gt; para gerenciamento de um projeto? Qual a função de cada um desses arquivos?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Os arquivos são:
 - asdfa
 - asdfa
 - asdfa
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Referências&lt;/h1&gt;
+&lt;h1 id="referencias"&gt;Referências&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;DVC&lt;/span&gt; Documentation&lt;/strong&gt;. Disponível em &lt;a href="https://dvc.org/doc"&gt;https://dvc.org/doc&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Awesome Pipeline: A curated list of awesome pipeline toolkits&lt;/strong&gt;. Disponível em &lt;a href="https://github.com/pditommaso/awesome-pipeline"&gt;https://github.com/pditommaso/awesome-pipeline&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="programming-skills"></category><category term="dvc"></category></entry><entry><title>Um guia rápido para arquivos de configuração INI com `configparser`</title><link href="https://giliardgodoi.github.io/articles/2024/guia-configparser-python/" rel="alternate"></link><published>2024-05-26T00:00:00-03:00</published><updated>2025-03-04T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2024-05-26:/articles/2024/guia-configparser-python/</id><summary type="html">&lt;p&gt;Conheça as principais funções da&amp;nbsp;biblioteca &lt;code&gt;configparser&lt;/code&gt; para manipular&amp;nbsp;arquivos &lt;code&gt;.ini&lt;/code&gt; no&amp;nbsp;Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Mapa mental das biblioteca configparser" class="mx-auto d-block img-fluid" src="./mind-map-configparser.png"/&gt;&lt;/p&gt;
-&lt;h2&gt;Caracterísitcas dos arquivos &lt;code&gt;.ini&lt;/code&gt;&lt;/h2&gt;
+&lt;/ul&gt;</content><category term="programming-skills"></category><category term="dvc"></category></entry><entry><title>Um guia rápido para arquivos de configuração INI com `configparser`</title><link href="https://giliardgodoi.github.io/articles/2024/guia-configparser-python/" rel="alternate"></link><published>2024-05-26T00:00:00-03:00</published><updated>2025-03-04T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2024-05-26:/articles/2024/guia-configparser-python/</id><summary type="html">&lt;p&gt;Conheça as principais funções da&amp;nbsp;biblioteca &lt;code&gt;configparser&lt;/code&gt; para manipular&amp;nbsp;arquivos &lt;code&gt;.ini&lt;/code&gt; no&amp;nbsp;Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Mapa mental das biblioteca configparser" class="mx-auto img-fluid d-block" src="./mind-map-configparser.png"/&gt;&lt;/p&gt;
+&lt;h2 id="caracterisitcas-dos-arquivos-ini"&gt;Caracterísitcas dos arquivos &lt;code&gt;.ini&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;A extensão &lt;code&gt;.ini&lt;/code&gt; são um formato simples e amplamente utilizados para armazenar configurações de aplicativos. A especificação foi primeiramente projetada para os programas do &lt;a href="https://en.wikipedia.org/wiki/INI_file"&gt;sistema Microsoft Windows&lt;/a&gt;. Contudo, eles acabaram sendo adotados pela comunidade de softwares abertos, onde também podem aparecer sob a extensão &lt;code&gt;.cfg&lt;/code&gt; — embora possam ter alguns detalhes diferentes.&lt;/p&gt;
 &lt;p&gt;Um exemplo de arquivo &lt;code&gt;.ini&lt;/code&gt; seria:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[DEFAULT]&lt;/span&gt;
@@ -207,7 +204,7 @@ Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possu
 &lt;/ol&gt;
 &lt;p&gt;No Python, a biblioteca padrão &lt;a href="https://docs.python.org/3/library/configparser.html"&gt;&lt;code&gt;configparser&lt;/code&gt;&lt;/a&gt; facilita a leitura e escrita desses arquivos.&lt;/p&gt;
 &lt;p&gt;Ao realizar o parse de um arquivo, é retornado um objeto semelhante a um dicionário do Python, porém com alguns métodos extras que serão apresentados a seguir.&lt;/p&gt;
-&lt;h2&gt;Configparser na prática&lt;/h2&gt;
+&lt;h2 id="configparser-na-pratica"&gt;Configparser na prática&lt;/h2&gt;
 &lt;p&gt;De forma geral, a biblioteca &lt;code&gt;configparser&lt;/code&gt; disponibiliza as seguintes funcionalidades:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Realizar o parser de um arquivo &lt;code&gt;.ini&lt;/code&gt; para um objeto do tipo &lt;code&gt;ConfigParser&lt;/code&gt;.&lt;/li&gt;
@@ -217,7 +214,7 @@ Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possu
 &lt;li&gt;Acessar os valores dos atributos.&lt;/li&gt;
 &lt;li&gt;Converter os valores dos atributos para tipos específicos de dados.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;Parse de um arquivo &lt;code&gt;.ini&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id="parse-de-um-arquivo-ini"&gt;Parse de um arquivo &lt;code&gt;.ini&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Para realizar o parse de um arquivo &lt;code&gt;.ini&lt;/code&gt; primeiro instanciamos um objeto do tipo &lt;code&gt;ConfigParser&lt;/code&gt;, e então passamos a localização, isto é, o arquivo para o método &lt;code&gt;.read&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;configparser&lt;/span&gt;
 
@@ -232,7 +229,7 @@ Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possu
 &lt;li&gt;&lt;code&gt;read_string&lt;/code&gt;: a partir de uma string.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;read_dict&lt;/code&gt;: a partir de um objeto dict.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Conheçendo as seções e atributos do objeto &lt;code&gt;ConfigParser&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id="conhecendo-as-secoes-e-atributos-do-objeto-configparser"&gt;Conheçendo as seções e atributos do objeto &lt;code&gt;ConfigParser&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Os atributos são organizados em seções que agrupam atributos. A lista de seções existentes é acessada pelo método &lt;code&gt;.sections&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sections&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'personal'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'education'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'skills'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -268,7 +265,7 @@ Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possu
   &lt;span class="s1"&gt;'profession'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Student # isso é um comentário'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
   &lt;span class="s1"&gt;'major'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Technology'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Verificando a existência de seções e atributos&lt;/h3&gt;
+&lt;h3 id="verificando-a-existencia-de-secoes-e-atributos"&gt;Verificando a existência de seções e atributos&lt;/h3&gt;
 &lt;p&gt;Ao passar a chave para uma seção inexistente no objeto &lt;code&gt;ConfigParser&lt;/code&gt; é lançado uma exceção do tipo &lt;code&gt;KeyError&lt;/code&gt;. Para verificar se uma seção existe no objeto, podemos fazer isso através do operador &lt;code&gt;in&lt;/code&gt; ou do método &lt;code&gt;.has_section&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="s1"&gt;'education'&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;
   &lt;span class="kc"&gt;True&lt;/span&gt;
@@ -295,7 +292,7 @@ No exemplo a seguir, &lt;code&gt;email&lt;/code&gt; não é explicitamente defi
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;has_option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'education'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'email'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Acessando valores dos atributos&lt;/h3&gt;
+&lt;h3 id="acessando-valores-dos-atributos"&gt;Acessando valores dos atributos&lt;/h3&gt;
 &lt;p&gt;A forma mais simples de acessar um valor de um objeto &lt;code&gt;ConfigParser&lt;/code&gt; é por indexação.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'personal'&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'name'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
   &lt;span class="s1"&gt;'Giliard Godoi'&lt;/span&gt;
@@ -330,7 +327,7 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'education'&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'year'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="nb"&gt;str&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Converter valores para tipos específicos&lt;/h3&gt;
+&lt;h3 id="converter-valores-para-tipos-especificos"&gt;Converter valores para tipos específicos&lt;/h3&gt;
 &lt;p&gt;No entanto é possível converter os valores para os tipos &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt; e &lt;code&gt;bool&lt;/code&gt; com os métodos &lt;code&gt;.getint&lt;/code&gt;, &lt;code&gt;.getfloat&lt;/code&gt; e &lt;code&gt;.getbool&lt;/code&gt;, respectivamente.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'education'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'year'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="mi"&gt;2018&lt;/span&gt;
@@ -339,24 +336,24 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'skills'&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="s1"&gt;'programming'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;','&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'Python'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'JavaScript'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'C'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'C++'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Salvando um arquivo &lt;code&gt;.ini&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id="salvando-um-arquivo-ini"&gt;Salvando um arquivo &lt;code&gt;.ini&lt;/code&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'project'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'name'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'ConfigParser Guide'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'version'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'1.0'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'config.ini'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'w'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;configfile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;configfile&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Dicas e boas práticas&lt;/h2&gt;
+&lt;h2 id="dicas-e-boas-praticas"&gt;Dicas e boas práticas&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Sempre use &lt;code&gt;getint()&lt;/code&gt;, &lt;code&gt;getfloat()&lt;/code&gt;, ou &lt;code&gt;getboolean()&lt;/code&gt; quando precisar de tipos específicos.&lt;/li&gt;
 &lt;li&gt;Utilize &lt;code&gt;fallback=&lt;/code&gt; no método &lt;code&gt;get()&lt;/code&gt; para evitar erros ao acessar chaves inexistentes.&lt;/li&gt;
 &lt;li&gt;Se precisar armazenar listas, use separadores consistentes e o método &lt;code&gt;.split()&lt;/code&gt; para recuperação.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Referências&lt;/h2&gt;
+&lt;h2 id="referencias"&gt;Referências&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://docs.python.org/3/library/configparser.html"&gt;Documentação oficial do configparser&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/INI_file"&gt;&lt;span class="caps"&gt;INI&lt;/span&gt; file - Wikipedia&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</content><category term="programming-skills"></category><category term="config"></category><category term="toml"></category><category term="yaml"></category></entry><entry><title>Diferentes formas de baixar dados da internet com bibliotecas do Python</title><link href="https://giliardgodoi.github.io/articles/2023/download-datasets/" rel="alternate"></link><published>2023-04-13T00:00:00-03:00</published><updated>2023-04-13T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2023-04-13:/articles/2023/download-datasets/</id><summary type="html">&lt;p&gt;Vamos explorar como baixar &lt;em&gt;datasets&lt;/em&gt; da internet com algumas bibliotecas do Python como urllib, requests e até o&amp;nbsp;pandas.&lt;/p&gt;</summary><content type="html">&lt;p&gt;(Re)Lendo o livro &lt;a href="https://www.amazon.com.br/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646"&gt;&lt;em&gt;Hands-On Machine Learning with Scikit-Learn, Keras &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; TensorFlow&lt;/em&gt;&lt;/a&gt; o autor mostra diversas maneiras de baixar &lt;em&gt;datasets&lt;/em&gt; da &lt;em&gt;internet&lt;/em&gt;. Nesse artigo, vou resumir algumas maneiras utilizando as bibliotecas padrão do Python para fazer &lt;em&gt;download&lt;/em&gt; de arquivos compactados, arquivos no formato &lt;em&gt;csv&lt;/em&gt; e &lt;em&gt;json&lt;/em&gt;.&lt;/p&gt;
-&lt;h2&gt;Repositórios dados&lt;/h2&gt;
+&lt;h2 id="repositorios-dados"&gt;Repositórios dados&lt;/h2&gt;
 &lt;p&gt;Existem muitos sites que reunem e disponibilizam &lt;em&gt;datasets&lt;/em&gt; de forma pública. Alguns desses repositório, inclusive, disponibilizam dados com a finalidade de incentivar o aprendizado e a prática de &lt;em&gt;machine learning&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Alguns desses repositórios são:&lt;/p&gt;
 &lt;ol&gt;
@@ -365,7 +362,7 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://www.kaggle.com/datasets"&gt;Kaggle Datasets&lt;/a&gt;: possui a promessa de &lt;em&gt;Find Open Datasets and Machine Learning Projects&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Portal de Dados Abertos do Governo Federal &lt;a href="https://dados.gov.br/home"&gt;https://dados.gov.br/home&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Baixando arquivos compactados com &lt;code&gt;urllib&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id="baixando-arquivos-compactados-com-urllib"&gt;Baixando arquivos compactados com &lt;code&gt;urllib&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;O primeiro exemplo é baixar um arquivo com compactado, na extensão .tar (e família) utilizando a biblioteca &lt;code&gt;urllib&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tarfile&lt;/span&gt;
@@ -412,7 +409,7 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;Também podemos utilizar &lt;code&gt;urllib.requests.urlretrieve&lt;/code&gt; para baixar arquivos em outros formatos como &lt;code&gt;.txt&lt;/code&gt; ou &lt;code&gt;.csv&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Porém, vamos olhar outras possibilidades, como a biblioteca &lt;code&gt;requests&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Baixando arquivos com &lt;code&gt;requests&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id="baixando-arquivos-com-requests"&gt;Baixando arquivos com &lt;code&gt;requests&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;O uso é similar com a biblioteca &lt;code&gt;requests&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
 
@@ -431,7 +428,7 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;li&gt;Aqui tomamos um cuidado ao garantir que estamos utilizando o conjunto de caractéres corretos para ler esse arquivo, que é o &lt;code&gt;utf-8&lt;/code&gt;;&lt;/li&gt;
 &lt;li&gt;E salvamos esse arquivo localmente.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Utilizando &lt;code&gt;pandas&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id="utilizando-pandas"&gt;Utilizando &lt;code&gt;pandas&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;Uma outra opção interessante é passar a &lt;code&gt;url&lt;/code&gt; direto como argumento da função &lt;code&gt;pd.read_csv&lt;/code&gt; da biblioteca pandas.&lt;/p&gt;
 &lt;p&gt;Assim para a url acima já poderíamos ter feito:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
@@ -443,7 +440,7 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Existe a possibilidade de salvar esses dados localmente com o método &lt;code&gt;df.to_csv&lt;/code&gt; presente no objeto DataFrame.&lt;/p&gt;
-&lt;h2&gt;Baixando arquivos &lt;span class="caps"&gt;JSON&lt;/span&gt;&lt;/h2&gt;
+&lt;h2 id="baixando-arquivos-json"&gt;Baixando arquivos &lt;span class="caps"&gt;JSON&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;A última dica é sobre baixar arquivos no formato &lt;span class="caps"&gt;JSON&lt;/span&gt;. Em um primeiro momento, poderíamos utilizar a biblioteca &lt;code&gt;json&lt;/code&gt; para transformar a &lt;em&gt;string&lt;/em&gt; retornada na resposta para um dicionário do Python, como no exemplo abaixo:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
 
@@ -460,26 +457,26 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Pode não ser perfeito, mas deve resolver um punhado de situação.&lt;/p&gt;
-&lt;h2&gt;Desabafo&lt;/h2&gt;
+&lt;h2 id="desabafo"&gt;Desabafo&lt;/h2&gt;
 &lt;p&gt;A onda do chatGPT me desanimou para criara conteúdos desse tipo: sem querer encher linguiça, direto ao ponto; sem &lt;em&gt;enrolation&lt;/em&gt; para ser um caça níquel de publicidade.&lt;/p&gt;
 &lt;p&gt;Mas quer saber, eu vou fazer porque acho divertido! E é sobre isso!&lt;/p&gt;</content><category term="programming-skills"></category><category term="python"></category><category term="urllib"></category><category term="requests"></category><category term="pandas"></category><category term="json"></category></entry><entry><title>Um guia rápido para o pacote pathlib</title><link href="https://giliardgodoi.github.io/articles/2023/guia-pathlib/" rel="alternate"></link><published>2023-03-04T00:00:00-03:00</published><updated>2023-03-04T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2023-03-04:/articles/2023/guia-pathlib/</id><summary type="html">&lt;p&gt;Guia rápido para a&amp;nbsp;biblioteca &lt;code&gt;pathlib&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;As vezes eu tenho uma dúvida muito simples sobre o funcionamento de uma função ou método do Python.
 Então eu crio esses guias rápidos, no estilo “Perguntas e Respostas” para me ajudar a evitar uma pesquisa no Google.&lt;/p&gt;
 &lt;p&gt;Nesse guia eu trato sobre o pacote para manipulação de diretórios e arquivos &lt;code&gt;pathlib&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Perguntas e Respostas&lt;/h2&gt;
-&lt;h3&gt;Como importar?&lt;/h3&gt;
+&lt;h2 id="perguntas-e-respostas"&gt;Perguntas e Respostas&lt;/h2&gt;
+&lt;h3 id="como-importar"&gt;Como importar?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Como representar um caminho?&lt;/h3&gt;
+&lt;h3 id="como-representar-um-caminho"&gt;Como representar um caminho?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Como saber se o diretório ou arquivo existe?&lt;/h3&gt;
+&lt;h3 id="como-saber-se-o-diretorio-ou-arquivo-existe"&gt;Como saber se o diretório ou arquivo existe?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'script.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Retorna &lt;code&gt;True&lt;/code&gt; ou &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Como saber se é um arquivo ou um diretório?&lt;/h3&gt;
+&lt;h3 id="como-saber-se-e-um-arquivo-ou-um-diretorio"&gt;Como saber se é um arquivo ou um diretório?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_dir&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="kc"&gt;True&lt;/span&gt;
@@ -490,25 +487,25 @@ Então eu crio esses guias rápidos, no estilo “Perguntas e Respostas” para 
 &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Importante notar, entretanto, que se o arquivo ou o diretório realmente não existe no sistema operacional, os métodos &lt;code&gt;is_file&lt;/code&gt; e &lt;code&gt;is_dir&lt;/code&gt; sempre retornarão &lt;code&gt;False&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Como saber o nome de um arquivo\diretório ?&lt;/h3&gt;
+&lt;h3 id="como-saber-o-nome-de-um-arquivodiretorio"&gt;Como saber o nome de um arquivo\diretório ?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'bar\script.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="s1"&gt;'script.py'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Como criar um arquivo?&lt;/h3&gt;
+&lt;h3 id="como-criar-um-arquivo"&gt;Como criar um arquivo?&lt;/h3&gt;
 &lt;p&gt;Como criar um arquivo no sistema de arquivo.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'script.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;touch&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Esse método também pode ser usado para alterar o timestamp de um arquivo que já existia previamente.&lt;/p&gt;
-&lt;h3&gt;Como remover um arquivo?&lt;/h3&gt;
+&lt;h3 id="como-remover-um-arquivo"&gt;Como remover um arquivo?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'main.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;bar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unlink&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Como renomear um arquivo?&lt;/h3&gt;
+&lt;h3 id="como-renomear-um-arquivo"&gt;Como renomear um arquivo?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'script.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;bar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'main.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -535,7 +532,7 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Isso simplifica como fazer cópias de um mesmo arquivo, talvez?&lt;/p&gt;
-&lt;h3&gt;Como saber a extensão de um arquivo?&lt;/h3&gt;
+&lt;h3 id="como-saber-a-extensao-de-um-arquivo"&gt;Como saber a extensão de um arquivo?&lt;/h3&gt;
 &lt;p&gt;Com o atributo &lt;code&gt;.suffix&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'script.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -548,7 +545,7 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;suffixes&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.tar'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.gar'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Como ler e escrever texto em um arquivo?&lt;/h3&gt;
+&lt;h3 id="como-ler-e-escrever-texto-em-um-arquivo"&gt;Como ler e escrever texto em um arquivo?&lt;/h3&gt;
 &lt;p&gt;Existem vários modos de se fazer isso.&lt;/p&gt;
 &lt;p&gt;A maneira mais direta é utilizando os métodos &lt;code&gt;write_text&lt;/code&gt; e &lt;code&gt;read_text&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'README.md'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -560,12 +557,12 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 &lt;span class="s2"&gt;"Some text here!"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Também podemos fazer algo parecido com os métodos &lt;code&gt;write_bytes&lt;/code&gt; e &lt;code&gt;read_bytes&lt;/code&gt; para arquivos binários.&lt;/p&gt;
-&lt;h3&gt;Como criar um diretório novo?&lt;/h3&gt;
+&lt;h3 id="como-criar-um-diretorio-novo"&gt;Como criar um diretório novo?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Como listar os arquivos ou subdiretórios a partir do diretório atual?&lt;/h3&gt;
+&lt;h3 id="como-listar-os-arquivos-ou-subdiretorios-a-partir-do-diretorio-atual"&gt;Como listar os arquivos ou subdiretórios a partir do diretório atual?&lt;/h3&gt;
 &lt;p&gt;Podemos iterar com ajuda do método &lt;code&gt;iterdir()&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'tutorial'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -591,7 +588,7 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"**/*.ipynb"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Lembre-se que os métodos &lt;code&gt;iterdir&lt;/code&gt;, &lt;code&gt;glob&lt;/code&gt; e &lt;code&gt;rglob&lt;/code&gt; retornam um iterador e não a lista propriamente dita.&lt;/p&gt;
-&lt;h3&gt;Como remover um diretório?&lt;/h3&gt;
+&lt;h3 id="como-remover-um-diretorio"&gt;Como remover um diretório?&lt;/h3&gt;
 &lt;p&gt;Se o diretório está vazio, basta o comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -600,7 +597,7 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 &lt;p&gt;Caso o diretório não esteja vazio, tem-se duas opções:&lt;/p&gt;
 &lt;p&gt;A primeira é remover todos os arquivos e subdiretórios a partir do diretório atual, utilizando recursão e um a um.&lt;/p&gt;
 &lt;p&gt;Ou então podemos utilizar a função &lt;code&gt;shutil.rmtree&lt;/code&gt; do módulo &lt;code&gt;shutil&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Como concatenar o nome de um diretório como um nome de um subdiretório ou um arquivo?&lt;/h3&gt;
+&lt;h3 id="como-concatenar-o-nome-de-um-diretorio-como-um-nome-de-um-subdiretorio-ou-um-arquivo"&gt;Como concatenar o nome de um diretório como um nome de um subdiretório ou um arquivo?&lt;/h3&gt;
 &lt;p&gt;Podemos utilizar o operador &lt;code&gt;/&lt;/code&gt; como no exemplo a seguir:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="s1"&gt;'bar'&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="s1"&gt;'test'&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="s1"&gt;'test_script.py'&lt;/span&gt;
@@ -616,7 +613,7 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'bar'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'test'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'test_script.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Por incrível que parece o operador de adição &lt;code&gt;+&lt;/code&gt; não retorna a concatenação de vários caminhos.&lt;/p&gt;
-&lt;h3&gt;Como saber o diretório pai de um arquivo ou diretório?&lt;/h3&gt;
+&lt;h3 id="como-saber-o-diretorio-pai-de-um-arquivo-ou-diretorio"&gt;Como saber o diretório pai de um arquivo ou diretório?&lt;/h3&gt;
 &lt;p&gt;Podemos tentar algo como:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'foo'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parent&lt;/span&gt; &lt;span class="c1"&gt;# retorna o primeiro diretório pai&lt;/span&gt;
@@ -637,23 +634,23 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parts&lt;/span&gt;
 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'folder'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'script.py'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Como saber o diretório de trabalho atual?&lt;/h3&gt;
+&lt;h3 id="como-saber-o-diretorio-de-trabalho-atual"&gt;Como saber o diretório de trabalho atual?&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cwd&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="s1"&gt;'/home/user/folder_x'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Também conhecido como &lt;em&gt;current working diretory&lt;/em&gt; ou &lt;code&gt;cwd&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Exemplos&lt;/h2&gt;
+&lt;h2 id="exemplos"&gt;Exemplos&lt;/h2&gt;
 &lt;p&gt;Os dois exemplos a seguir foram visto nesse post do &lt;a href="https://realpython.com/python-pathlib/#examples"&gt;&lt;em&gt;blog Real Python&lt;/em&gt;&lt;/a&gt; .
 1. Contar os arquivos em um diretório atual, agrupado pela extensão do arquivo;
 2. Mostrar a estrutura de diretórios.&lt;/p&gt;
-&lt;h3&gt;Contar arquivos&lt;/h3&gt;
+&lt;h3 id="contar-arquivos"&gt;Contar arquivos&lt;/h3&gt;
 &lt;p&gt;O primeiro &lt;em&gt;snippet&lt;/em&gt; de código mostra como contar os arquivos conforme as suas extensões:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;suffix&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cwd&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iterdir&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_file&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;span class="n"&gt;Counter&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;'.html'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.png'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.xml'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.ico'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.md'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.webmanifest'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Mostrar a estrutura de diretórios&lt;/h3&gt;
+&lt;h3 id="mostrar-a-estrutura-de-diretorios"&gt;Mostrar a estrutura de diretórios&lt;/h3&gt;
 &lt;p&gt;O segundo mostra um forma de criar uma visualização no terminal para a estrutura de diretórios.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s1"&gt;'+ &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -664,9 +661,9 @@ Poderíamos renomea-lo de forma virtual somente.&lt;/p&gt;
 
 &lt;span class="n"&gt;tree&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cwd&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Para saber mais&lt;/h2&gt;
+&lt;h2 id="para-saber-mais"&gt;Para saber mais&lt;/h2&gt;
 &lt;p&gt;Para saber mais sobre o módulo &lt;code&gt;pathlib&lt;/code&gt;, além da página da documentação, eu recomendo essa live do Dunossauro do Canal Live de Python sobre &lt;a href="https://www.youtube.com/watch?v=E_hox7iZjOE"&gt;Manipulação de arquivos e pastas com pathlib - Live de Python #199 - YouTube&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Referências&lt;/h2&gt;
+&lt;h2 id="referencias"&gt;Referências&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Python Documentation. &lt;strong&gt;pathlib — Object-oriented filesystem paths&lt;/strong&gt;. Disponível em: &lt;a href="https://docs.python.org/3/library/pathlib.html"&gt;https://docs.python.org/3/library/pathlib.html&lt;/a&gt; Acessado em: 14 de fev. de 2023.&lt;/li&gt;
 &lt;li&gt;Eduardo Mendes: Live de Python. &lt;strong&gt;Manipulação de arquivos e pastas com pathlib - Live de Python #199&lt;/strong&gt; . Disponível em: &lt;a href="https://www.youtube.com/watch?v=E_hox7iZjOE"&gt;https://www.youtube.com/watch?v=E_hox7iZjOE&lt;/a&gt; Acessado em 14 de fev. de 2023.&lt;/li&gt;
@@ -679,7 +676,7 @@ No ambiente de simulações, eu estava desenvolvendo um &lt;a href="https://pt.w
 Porém, existia algumas análises específicas em que eu queria demonstrar como os algoritmos de cruzamento em que eu estava trabalhando, funcionavam.
 Então eu instalei eles, como se fossem um pacote, nesse ambiente em que eu estava fazendo a análise de dados.&lt;/p&gt;
 &lt;p&gt;Recentemente, eu passei por uma situação semelhante e então resolvi escrever esse post.&lt;/p&gt;
-&lt;h1&gt;Registrando um kernel para um ambiente&lt;/h1&gt;
+&lt;h1 id="registrando-um-kernel-para-um-ambiente"&gt;Registrando um kernel para um ambiente&lt;/h1&gt;
 &lt;p&gt;Vamos supor que eu criei um ambiente com a nova versão do Python 3.11 usando o &lt;code&gt;conda&lt;/code&gt; (Eu gosto de usar o &lt;code&gt;conda&lt;/code&gt; não me critique!)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;--name&lt;span class="w"&gt; &lt;/span&gt;py311&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.11
 conda&lt;span class="w"&gt; &lt;/span&gt;activate&lt;span class="w"&gt; &lt;/span&gt;py311
@@ -702,26 +699,26 @@ python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;
 &lt;p&gt;Pronto! Agora podemos sair do ambiente &lt;code&gt;py311&lt;/code&gt; e voltar para o ambiente &lt;code&gt;base&lt;/code&gt; onde o nosso &lt;em&gt;full Jupyter Notebook&lt;/em&gt;  está instalado.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;deactivate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Criando um notebook com um kernel específico&lt;/h1&gt;
+&lt;h1 id="criando-um-notebook-com-um-kernel-especifico"&gt;Criando um notebook com um kernel específico&lt;/h1&gt;
 &lt;p&gt;Para criar um novo &lt;em&gt;notebook&lt;/em&gt; basta selecionar o kernel desejado no menu &lt;em&gt;new&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="jupyter kernels disponíveis" class="mx-auto d-block img-fluid" src="./jupyter-kernels.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="jupyter kernels disponíveis" class="mx-auto img-fluid d-block" src="./jupyter-kernels.png"/&gt;&lt;/p&gt;
 &lt;p&gt;Para checar a versão do python do kernel selecionado podemos usar tando o &lt;code&gt;sys.version&lt;/code&gt; quanto a função &lt;code&gt;python_version&lt;/code&gt; do módulo &lt;code&gt;platform&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Versão do kernel" class="mx-auto d-block img-fluid" src="./jupyter-kernels-version.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Versão do kernel" class="mx-auto img-fluid d-block" src="./jupyter-kernels-version.png"/&gt;&lt;/p&gt;
 &lt;p&gt;É importante observar que, quando utilizamos o comando &lt;code&gt;!python --version&lt;/code&gt; é como se esse comando fosse jogado para o terminal e recuperasse a versão do python do terminal, isto é, do terminal em que estamos rodando o ambiente &lt;code&gt;base&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Então essa não é a versão do kernel que estamos ativando.&lt;/p&gt;
-&lt;h1&gt;Listando os Kernels disponíveis&lt;/h1&gt;
+&lt;h1 id="listando-os-kernels-disponiveis"&gt;Listando os Kernels disponíveis&lt;/h1&gt;
 &lt;p&gt;Para listar os kernels disponíveis, utilize o seguinte comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;jupyter&lt;span class="w"&gt; &lt;/span&gt;kernelspec&lt;span class="w"&gt; &lt;/span&gt;list
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Removendo um kernel&lt;/h1&gt;
+&lt;h1 id="removendo-um-kernel"&gt;Removendo um kernel&lt;/h1&gt;
 &lt;p&gt;Segundo esse post &lt;a href="https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove"&gt;aqui&lt;/a&gt; para remover um kernel basta utilizar o seguinte comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;jupyter kernelspec remove &amp;lt;kernel-name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Porém, eu não testei o que acontece se eu remover (desinstalar) o ambiente primeiro e depois remover o kernel, ou fazer o inverso.&lt;/p&gt;
-&lt;h1&gt;Referências&lt;/h1&gt;
+&lt;h1 id="referencias"&gt;Referências&lt;/h1&gt;
 &lt;p&gt;Ipython Documentation. &lt;em&gt;Installing the IPython kernel&lt;/em&gt;. Disponível em: &lt;a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html"&gt;https://ipython.readthedocs.io/en/stable/install/kernel_install.html&lt;/a&gt;. Acessado em 28 de jan. de 2023.&lt;/p&gt;
 &lt;p&gt;Noopur R K. &lt;em&gt;How to add your Conda environment to your jupyter notebook in just 4 steps&lt;/em&gt;. Disponível em: &lt;a href="https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084"&gt;https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084&lt;/a&gt;. Acessado em 28 de jan. de 2023.&lt;/p&gt;
-&lt;p&gt;Felipe Almeida. &lt;em&gt;Jupyter Notebook Kernels: How to Add, Change, Remove&lt;/em&gt;. Disponível em &lt;a href="https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove"&gt;https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove&lt;/a&gt;. Acessado em 28 de jan. de 2023.&lt;/p&gt;</content><category term="programming-skills"></category><category term="python"></category><category term="jupyter"></category></entry><entry><title>Como criar um blog com Pelican?</title><link href="https://giliardgodoi.github.io/articles/2022/meu-blog-com-pelican/" rel="alternate"></link><published>2022-12-26T00:00:00-03:00</published><updated>2023-01-09T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2022-12-26:/articles/2022/meu-blog-com-pelican/</id><summary type="html">&lt;p&gt;Da definição do ambiente até a instalação de&amp;nbsp;temas.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;O que é Pelican?&lt;/h1&gt;
+&lt;p&gt;Felipe Almeida. &lt;em&gt;Jupyter Notebook Kernels: How to Add, Change, Remove&lt;/em&gt;. Disponível em &lt;a href="https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove"&gt;https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove&lt;/a&gt;. Acessado em 28 de jan. de 2023.&lt;/p&gt;</content><category term="programming-skills"></category><category term="python"></category><category term="jupyter"></category></entry><entry><title>Como criar um blog com Pelican?</title><link href="https://giliardgodoi.github.io/articles/2022/meu-blog-com-pelican/" rel="alternate"></link><published>2022-12-26T00:00:00-03:00</published><updated>2023-01-09T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2022-12-26:/articles/2022/meu-blog-com-pelican/</id><summary type="html">&lt;p&gt;Da definição do ambiente até a instalação de&amp;nbsp;temas.&lt;/p&gt;</summary><content type="html">&lt;h1 id="o-que-e-pelican"&gt;O que é Pelican?&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://getpelican.com/"&gt;Pelican&lt;/a&gt; é um gerador de site estático escrito em Python.
 Essa ferramenta tem por objetivo criar e gerenciar um pequeno &lt;em&gt;blog&lt;/em&gt; como é esse que você está lendo.
 Ou seja, não é uma ferramenta para criar documentação de projetos de &lt;em&gt;software&lt;/em&gt;, como tantas outras ferramentas existentes por aí.&lt;/p&gt;
@@ -730,7 +727,7 @@ A própria ferramenta converte esses arquivos para páginas web (html) com os es
 Também é possível utilizar outras extensões de arquivos (como .ipynb) com o uso de plugins.&lt;/p&gt;
 &lt;p&gt;Neste artigo, reconstruírei o passo-a-passo que eu utilizei para construir o meu &lt;em&gt;blog&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Entretanto, antes de instalar o Pelican, talvez você queira saber dos &lt;a href="#a-falta-de-atualização-do-pelican"&gt;problemas existentes com esse framework&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Instalação básica&lt;/h1&gt;
+&lt;h1 id="instalacao-basica"&gt;Instalação básica&lt;/h1&gt;
 &lt;p&gt;A instalação básica é descrita na própria documentação do Pelican, que pode ser acessada no seguinte link:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://docs.getpelican.com/en/latest/install.html"&gt;docs.getpelican.com/en/latest/install.html&lt;/a&gt;.&lt;/li&gt;
@@ -747,7 +744,7 @@ Também é possível utilizar outras extensões de arquivos (como .ipynb) com o 
 &lt;p&gt;Também já fiz a instalação de pacotes adicionais como é o caso do typogrify, conforme recomendado — ainda que eu não entendi muito bem, quando e onde essa biblioteca é utilizada.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;typogrify
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Primeiro projeto&lt;/h1&gt;
+&lt;h1 id="primeiro-projeto"&gt;Primeiro projeto&lt;/h1&gt;
 &lt;p&gt;Pelican possui uma ferramenta de linha de comando que facilita a criação dos nossos projetos.
 Para isso basta digitar:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pelican-quickstart
@@ -774,14 +771,14 @@ O primeiro &lt;em&gt;script&lt;/em&gt; seria as configurações de desenvolvimen
 &lt;p&gt;A pasta &lt;code&gt;content&lt;/code&gt; abriga o conteúdo do site: os artigos, imagens, as páginas de seções fixas, e outros arquivos de configuração.
 Instruções sobre como escrever conteúdo para o site pode ser encontrada na seguinte página: &lt;a href="https://docs.getpelican.com/en/latest/content.html"&gt;docs.getpelican.com/ … /content.html&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A pasta &lt;code&gt;output&lt;/code&gt; contém todo o conteúdo publicável do site, isto é, arquivos html e css. É possível alterar essa pasta destino nos arquivos de configurações, alterando a variável &lt;code&gt;OUTPUT_PATH&lt;/code&gt;. Para conhecer mais sobre as configurações, visite a seguinte página &lt;a href="https://docs.getpelican.com/en/latest/settings.html"&gt;docs.getpelican.com/ … /settings.html&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Quero controlar as versões do meu site?&lt;/h1&gt;
+&lt;h1 id="quero-controlar-as-versoes-do-meu-site"&gt;Quero controlar as versões do meu site?&lt;/h1&gt;
 &lt;p&gt;Para controlar as versões do projeto utilizando o &lt;code&gt;Git&lt;/code&gt; precisamos inicializar o repositório antes com:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;init
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Particularmente, eu não utilizo muito esse comando.
 Eu prefiro criar o repositório no GitHub primeiro, para fazer o clone localmente depois.
 Isso permite pular toda uma configuração para sincronizar o repositório local com o remoto.&lt;/p&gt;
-&lt;h1&gt;Alterando o tema&lt;/h1&gt;
+&lt;h1 id="alterando-o-tema"&gt;Alterando o tema&lt;/h1&gt;
 &lt;p&gt;Existe uma diversidade de temas disponíveis para customizar o seu &lt;em&gt;blog&lt;/em&gt;.
 Esses temas estão reunidos pelos organizadores do projeto no seguinte repositório:&lt;/p&gt;
 &lt;ul&gt;
@@ -810,7 +807,7 @@ Em caso de dúvida, leia as instruções de instalação do tema de sua escolha
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;TAGS_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'tags.html'&lt;/span&gt;
 &lt;span class="n"&gt;ARCHIVES_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'archives.html'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Escrevendo uma publicação&lt;/h1&gt;
+&lt;h1 id="escrevendo-uma-publicacao"&gt;Escrevendo uma publicação&lt;/h1&gt;
 &lt;p&gt;Para escrever postagens é bem simples, como pode ser visto nessa &lt;a href="https://docs.getpelican.com/en/latest/content.html#writing-content"&gt;página da documentação&lt;/a&gt; da ferramenta.&lt;/p&gt;
 &lt;p&gt;No meu caso, eu prefiro escrever os conteúdos em Markdown. Portanto, as instruções a seguir serão feitas considerando esse formato de arquivo.&lt;/p&gt;
 &lt;p&gt;Primeiro, definimos o cabeçalho do arquivo com alguns parâmetros obrigatórios (como título, data e autor) e outros campos opcionais.&lt;/p&gt;
@@ -829,7 +826,7 @@ Here starts the content of my blog post.
 &lt;p&gt;Logo abaixo desse cabeçalho já podemos escrever o texto de nossa postagem.
 O título da postagem, definido pelo parâmetro &lt;code&gt;Title&lt;/code&gt;, irá aparecer antes texto da postagem.
 Então não é necessário incluí-lo novamente após o cabeçalho de parâmetros.&lt;/p&gt;
-&lt;h1&gt;Escrevendo páginas para seções fixas&lt;/h1&gt;
+&lt;h1 id="escrevendo-paginas-para-secoes-fixas"&gt;Escrevendo páginas para seções fixas&lt;/h1&gt;
 &lt;p&gt;Mesmo para um &lt;em&gt;blog&lt;/em&gt; é interessante possuir páginas estáticas com seções que não se alteram constantemente.
 É o caso de páginas que diz um pouco sobre o autor ou formas de entrar em contato.&lt;/p&gt;
 &lt;p&gt;Para tanto, é possível criar uma pasta &lt;code&gt;pages&lt;/code&gt; dentro de &lt;code&gt;content&lt;/code&gt; e o Pelican já irá entender que todo o conteúdo dentro dessa pasta se refere a seções com conteúdo fixo.&lt;/p&gt;
@@ -854,7 +851,7 @@ Porém, esse não é o caso do tema &lt;code&gt;voce&lt;/code&gt;.&lt;/p&gt;
         &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Note que as URLs das páginas possuem uma formatação especial adicionada por uma configuração extra que pode ser vista na próxima seção.&lt;/p&gt;
-&lt;h1&gt;Customizando as URLs&lt;/h1&gt;
+&lt;h1 id="customizando-as-urls"&gt;Customizando as URLs&lt;/h1&gt;
 &lt;p&gt;É possível alterar o local e alterar as configurações das URLs finais dos &lt;em&gt;posts&lt;/em&gt;.
 Por exemplo, com as configurações básicas definidas anteriormente, as URLs dos artigos ficariam com o seguinte padrão:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;blog-demo.com/my-first-article-with-papyrus.html
@@ -874,7 +871,7 @@ Para tanto, basta alterar as variáveis &lt;code&gt;ARTICLE_URL&lt;/code&gt; e 
 &lt;span class="n"&gt;TAG_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"tag/&lt;/span&gt;&lt;span class="si"&gt;{slug}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
 &lt;span class="n"&gt;TAG_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"tag/&lt;/span&gt;&lt;span class="si"&gt;{slug}&lt;/span&gt;&lt;span class="s2"&gt;/index.html"&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1&gt;Definir uma página customizada para o erro 404 (Página não encontrada)&lt;/h1&gt;
+&lt;h1 id="definir-uma-pagina-customizada-para-o-erro-404-pagina-nao-encontrada"&gt;Definir uma página customizada para o erro 404 (Página não encontrada)&lt;/h1&gt;
 &lt;p&gt;Também é possível definir uma página customizada para o erro 404 de página não encontrada.&lt;/p&gt;
 &lt;p&gt;A princípio basta adicionar um arquivo &lt;code&gt;404.md&lt;/code&gt; sob o diretório &lt;code&gt;pages&lt;/code&gt; com as seguintes configurações:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Title: Not Found
@@ -886,7 +883,7 @@ The requested item could not be located. Perhaps you might want to check
 the [&lt;span class="nt"&gt;Archives&lt;/span&gt;](&lt;span class="na"&gt;/archives.html&lt;/span&gt;)?
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Diferentemente do que diz a &lt;a href="https://docs.getpelican.com/en/latest/tips.html#custom-404-pages"&gt;documentação&lt;/a&gt;, foi necessário adicionar o parâmetro &lt;code&gt;permalink: /404.html&lt;/code&gt; nessa página para que ela funcionasse de forma apropriada com o GitHub Pages.&lt;/p&gt;
-&lt;h1&gt;Definir pastas para conteúdo estático&lt;/h1&gt;
+&lt;h1 id="definir-pastas-para-conteudo-estatico"&gt;Definir pastas para conteúdo estático&lt;/h1&gt;
 &lt;p&gt;Conteúdos estáticos são arquivos que serão disponibilizados ao visitante do &lt;em&gt;blog&lt;/em&gt; de alguma forma, mas não serão processados pelo Pelican, como acontece com os arquivos em &lt;em&gt;markdown&lt;/em&gt; que serão convertidos em &lt;em&gt;html&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Arquivos estáticos são arquivos de imagens, favico (aquele ícone que aparece no guia do navegador junto com o título do site) e outros aruivos de configuração do site.
 Esses arquivos ficarão em pastas separadas, por exemplo, as imagens ficarão em uma pasta &lt;code&gt;images&lt;/code&gt; e os arquivos demais arquivos de configuração na pasta &lt;code&gt;extras&lt;/code&gt;.&lt;/p&gt;
@@ -906,7 +903,7 @@ e uma última para os arquivos de &lt;em&gt;datasets&lt;/em&gt; que serão utili
 Exemplo de como disponibilizar um arquivo em pdf.
 [&lt;span class="nt"&gt;Pelican Documenation&lt;/span&gt;](&lt;span class="na"&gt;{static}/pdfs/pelican.pdf&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Configurar o ícone do site&lt;/h2&gt;
+&lt;h2 id="configurar-o-icone-do-site"&gt;Configurar o ícone do site&lt;/h2&gt;
 &lt;p&gt;Favicon são aqueles ícones que identificam um site nas guias do navegador ou então na barra de endereços. Você pode saber mais sobre eles nessa página da &lt;a href="https://pt.wikipedia.org/wiki/Favicon"&gt;Wikipedia&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para gerar os arquivos necessários, você pode utilizar um gerador de favicon existente na internet.
 Tudo o que você precisa é uma imagem base e o gerador vai gerar todos os arquivos necessários.
@@ -927,26 +924,26 @@ No meu caso, o gerador também criou ícones adicionais para outras plataformas 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;A variável &lt;code&gt;EXTRA_PATH_METADATA&lt;/code&gt; é um dicionário onde a chave indica a localização do arquivo em relação a pasta &lt;code&gt;content&lt;/code&gt;.Os valores são outros dicionários python, mas no fim das contas eles representam a localização dos arquivos em relação a pasta &lt;code&gt;output&lt;/code&gt; e o nome final do arquivo.&lt;/p&gt;
 &lt;p&gt;Como eu utilizo o GitHub Pages para publicar o meu site, eu também adicionei um arquivo &lt;code&gt;README.md&lt;/code&gt; para aparecer na descrição do repositório no Github do &lt;a href="https://github.com/GiliardGodoi/GiliardGodoi.github.io"&gt;meu blog&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;A falta de atualização do Pelican&lt;/h1&gt;
+&lt;h1 id="a-falta-de-atualizacao-do-pelican"&gt;A falta de atualização do Pelican&lt;/h1&gt;
 &lt;p&gt;Pelican como uma ferramenta, apesar de estar sendo atualizada, ela vem recebendo bem menos updates no seu repositório.
 Na data de publicação desse artigo, o último &lt;em&gt;commit&lt;/em&gt; em seu repositório foi em 26 de outubro de 2022.&lt;/p&gt;
 &lt;p&gt;Outro framework famoso para geração de sites estáticos, &lt;a href="https://github.com/gohugoio/hugo"&gt;Hugo&lt;/a&gt; vem recebendo atualizações bem mais rápidas. O último commit em seu repositório é de apenas 10 horas atrás. E pelo histórico, novos &lt;em&gt;commits&lt;/em&gt; ocorrem quase que diariamente no &lt;em&gt;branch&lt;/em&gt; principal (não sei se isso é uma boa prática, porém é assim que é).&lt;/p&gt;
 &lt;p&gt;E esse problema fica ainda pior quando falamos de seus plugings, como vimos no caso do suporte aos &lt;em&gt;Jupyters Notebooks&lt;/em&gt;.
 Para citar outro exemplo, o plugin &lt;a href="https://github.com/ingwinlu/pelican-bootstrapify"&gt;&lt;code&gt;pelican-bootstrapify&lt;/code&gt;&lt;/a&gt; teve seu último commit em maio de 2018! Sim, há mais de 4 anos!&lt;/p&gt;
-&lt;h1&gt;Referências&lt;/h1&gt;
+&lt;h1 id="referencias"&gt;Referências&lt;/h1&gt;
 &lt;p&gt;Pelican. &lt;strong&gt;Documentação Oficial&lt;/strong&gt;.
 Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getpelican.com/en/lastest&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;David Colton. &lt;strong&gt;Adding a personal touch&lt;/strong&gt;. Disponível em: &lt;a href="https://davidcolton.github.io/articles/2020/03/08/new_theme_for_blog/"&gt;davidcolton.github.io/articles/2020/03/08/new_theme_for_blog/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;David Colton. &lt;strong&gt;Building My Blog With Pelican And Python&lt;/strong&gt;. Disponível em: &lt;a href="https://davidcolton.github.io/articles/2020/03/04/building_my_blog/"&gt;davidcolton.github.io/articles/2020/03/04/building_my_blog/&lt;/a&gt;&lt;/p&gt;</content><category term="programming-skills"></category><category term="pelican"></category></entry><entry><title>Gerando QR code com Python</title><link href="https://giliardgodoi.github.io/articles/2022/gerando-qr-code-python/" rel="alternate"></link><published>2022-09-27T00:00:00-03:00</published><updated>2022-09-27T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2022-09-27:/articles/2022/gerando-qr-code-python/</id><summary type="html">&lt;p&gt;Customizando a geração de &lt;span class="caps"&gt;QR&lt;/span&gt;&amp;nbsp;codes&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Criando &lt;span class="caps"&gt;QR&lt;/span&gt; codes com Python&lt;/h1&gt;
+&lt;p&gt;David Colton. &lt;strong&gt;Building My Blog With Pelican And Python&lt;/strong&gt;. Disponível em: &lt;a href="https://davidcolton.github.io/articles/2020/03/04/building_my_blog/"&gt;davidcolton.github.io/articles/2020/03/04/building_my_blog/&lt;/a&gt;&lt;/p&gt;</content><category term="programming-skills"></category><category term="pelican"></category></entry><entry><title>Gerando QR code com Python</title><link href="https://giliardgodoi.github.io/articles/2022/gerando-qr-code-python/" rel="alternate"></link><published>2022-09-27T00:00:00-03:00</published><updated>2022-09-27T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2022-09-27:/articles/2022/gerando-qr-code-python/</id><summary type="html">&lt;p&gt;Customizando a geração de &lt;span class="caps"&gt;QR&lt;/span&gt;&amp;nbsp;codes&lt;/p&gt;</summary><content type="html">&lt;h1 id="criando-qr-codes-com-python"&gt;Criando &lt;span class="caps"&gt;QR&lt;/span&gt; codes com Python&lt;/h1&gt;
 &lt;p&gt;Por esses dias eu queria produzir um &lt;span class="caps"&gt;QR&lt;/span&gt; code para um link do &lt;em&gt;site&lt;/em&gt; da Câmara de Vereadores de Santo Antônio da Platina - &lt;span class="caps"&gt;PR&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;A maioria dos geradores disponíveis na &lt;em&gt;internet&lt;/em&gt; produzem imagens padrões, e seria interessante customizar esse &lt;span class="caps"&gt;QR&lt;/span&gt; code com as cores dominantes do &lt;em&gt;site&lt;/em&gt; da instituição.&lt;/p&gt;
 &lt;p&gt;Como bom programador Python eu utilizei uma biblioteca chamada &lt;code&gt;qrcode&lt;/code&gt;. Ela está disponível no PyPl (&lt;a href="https://pypi.org/project/qrcode/"&gt;link&lt;/a&gt;) e também nesse repositório: &lt;a href="https://github.com/lincolnloop/python-qrcode"&gt;github.com/lincolnloop/python-qrcode&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Como funciona os &lt;span class="caps"&gt;QR&lt;/span&gt; codes&lt;/h2&gt;
+&lt;h2 id="como-funciona-os-qr-codes"&gt;Como funciona os &lt;span class="caps"&gt;QR&lt;/span&gt; codes&lt;/h2&gt;
 &lt;p&gt;Eu tentei encontrar algum artigo didático sobre a geração de &lt;span class="caps"&gt;QR&lt;/span&gt; code e como eles funcionam, porém não encontrei uma resposta satisfatória.&lt;/p&gt;
 &lt;p&gt;Porém, quis o destino (ou o algortimo do Twitter) que eu esbarrasse com essa &lt;em&gt;thread&lt;/em&gt; que faz uma introdução bem legal e com várias imagens ilustrativas.&lt;/p&gt;
 &lt;p&gt;Seria interessante dar uma olhada nessa &lt;em&gt;thread&lt;/em&gt; antes de continuar lendo essa postagem.&lt;/p&gt;
 &lt;script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"&gt;&lt;/script&gt;
-&lt;blockquote class="twitter-tweet blockquote" data-dnt="true" data-lang="en" data-theme="light"&gt;
+&lt;blockquote class="blockquote twitter-tweet" data-dnt="true" data-lang="en" data-theme="light"&gt;
 &lt;p dir="ltr" lang="en"&gt;Ever wondered how a &lt;span class="caps"&gt;QR&lt;/span&gt; code works? &lt;br/&gt;No, me neither but it's low-key fascinating.
     &lt;br/&gt;&lt;br/&gt;(Warning, there is some extremely nerdy s*** here.👇 )
     &lt;a href="https://t.co/SgQJVvhu0q"&gt;pic.twitter.com/SgQJVvhu0q&lt;/a&gt; &lt;/p&gt;— Dan Hollick 🇿🇦 (@DanHollick)
@@ -956,11 +953,11 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
 &lt;blockquote class="blockquote"&gt;
 &lt;p&gt;&lt;a href="https://www.denso-wave.com/en/technology/vol1.html"&gt;&lt;span class="caps"&gt;QR&lt;/span&gt; code: development history&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;Instalação&lt;/h2&gt;
+&lt;h2 id="instalacao"&gt;Instalação&lt;/h2&gt;
 &lt;p&gt;Para instalar a biblioteca segui as instruções apresentadas no repositório. A adição do comando &lt;code&gt;[pil]&lt;/code&gt; força a instalação da biblioteca &lt;a href="https://pypi.org/project/Pillow/"&gt;Pillow&lt;/a&gt;, responsável por gerar e trabalhar com alguns formatos de imagens (&lt;code&gt;.png&lt;/code&gt; por exemplo).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;!&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;qrcode&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;pil&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Gerando &lt;span class="caps"&gt;QR&lt;/span&gt; Codes&lt;/h2&gt;
+&lt;h2 id="gerando-qr-codes"&gt;Gerando &lt;span class="caps"&gt;QR&lt;/span&gt; Codes&lt;/h2&gt;
 &lt;p&gt;O meu objetivo é produzir um &lt;span class="caps"&gt;QR&lt;/span&gt; code que direcione uma pessoa até a página &lt;em&gt;web&lt;/em&gt; em que está disponível a pauta das reuniões da Câmara Municipal.&lt;/p&gt;
 &lt;p&gt;Então, a &lt;em&gt;url&lt;/em&gt; que eu vou codificar é a seguinte:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"https://sapl.santoantoniodaplatina.pr.leg.br/sessao/pauta-sessao"&lt;/span&gt;
@@ -991,7 +988,7 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;img&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;# &amp;lt;class 'qrcode.image.pil.PilImage'&amp;gt;&lt;/span&gt;
 &lt;span class="n"&gt;img&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_9_1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_9_1.png"/&gt;&lt;/p&gt;
 &lt;p&gt;Observe que alterando o parâmetro &lt;code&gt;error_correction&lt;/code&gt; para &lt;code&gt;qrcode.constants.ERROR_CORRECT_H&lt;/code&gt;altera-se o padrão da imagem. Isso significa também que existe uma maior redundância na codificação de informações que torna o &lt;span class="caps"&gt;QR&lt;/span&gt; code mais robusto a danos ou obstruções que impeçam a leitura dos dados codificados.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;qrcode&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QRCode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -1008,8 +1005,8 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
 
 &lt;span class="n"&gt;img&lt;/span&gt; &lt;span class="c1"&gt;# &amp;lt;class 'qrcode.image.pil.PilImage'&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_11_1.png"/&gt;&lt;/p&gt;
-&lt;h3&gt;Customização&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_11_1.png"/&gt;&lt;/p&gt;
+&lt;h3 id="customizacao"&gt;Customização&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;qrcodes&lt;/code&gt; oferece possibilidade de customizar as cores do &lt;span class="caps"&gt;QR&lt;/span&gt; code com a máscara &lt;code&gt;SolidFillColorMask&lt;/code&gt;, ou opções de gradiente, além de inserir imagens no &lt;em&gt;background&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Também é possível escolher entre diferentes estilos de formas e desenhos para o &lt;span class="caps"&gt;QR&lt;/span&gt; code.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# factory para gerar uma imagem que poderá ser transformada em .png e jpeg&lt;/span&gt;
@@ -1039,7 +1036,7 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
 &lt;span class="c1"&gt;# help(HorizontalGradiantColorMask)&lt;/span&gt;
 &lt;span class="c1"&gt;# help(VerticalGradiantColorMask)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4&gt;RoundedModuleDrawer&lt;/h4&gt;
+&lt;h4 id="roundedmoduledrawer"&gt;RoundedModuleDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;qrcode&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QRCode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;error_correction&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;qrcode&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constants&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ERROR_CORRECT_L&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                    &lt;span class="n"&gt;box_size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                    &lt;span class="n"&gt;border&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1050,28 +1047,28 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RoundedModuleDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_17_0.png"/&gt;&lt;/p&gt;
-&lt;h4&gt;CircleModuleDrawer&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_17_0.png"/&gt;&lt;/p&gt;
+&lt;h4 id="circlemoduledrawer"&gt;CircleModuleDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CircleModuleDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_19_0.png"/&gt;&lt;/p&gt;
-&lt;h4&gt;GappedSquareModuleDrawer&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_19_0.png"/&gt;&lt;/p&gt;
+&lt;h4 id="gappedsquaremoduledrawer"&gt;GappedSquareModuleDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;GappedSquareModuleDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_21_0.png"/&gt;&lt;/p&gt;
-&lt;h4&gt;HorizontalBarsDrawer&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_21_0.png"/&gt;&lt;/p&gt;
+&lt;h4 id="horizontalbarsdrawer"&gt;HorizontalBarsDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;HorizontalBarsDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_23_0.png"/&gt;&lt;/p&gt;
-&lt;h4&gt;VerticalBarsDrawer&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_23_0.png"/&gt;&lt;/p&gt;
+&lt;h4 id="verticalbarsdrawer"&gt;VerticalBarsDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;VerticalBarsDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_25_0.png"/&gt;&lt;/p&gt;</content><category term="programming-skills"></category><category term="qrcode"></category></entry></feed>
+&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_25_0.png"/&gt;&lt;/p&gt;</content><category term="programming-skills"></category><category term="qrcode"></category></entry></feed>

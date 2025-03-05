@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Gerando QR code com Python</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -41,6 +38,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -50,10 +48,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -67,6 +62,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -99,16 +97,16 @@ Programador Python.
       </div>
     </header>
     <section class="mt-5">
-      <h1>Criando <span class="caps">QR</span> codes com Python</h1>
+      <h1 id="criando-qr-codes-com-python">Criando <span class="caps">QR</span> codes com Python</h1>
 <p>Por esses dias eu queria produzir um <span class="caps">QR</span> code para um link do <em>site</em> da Câmara de Vereadores de Santo Antônio da Platina - <span class="caps">PR</span>.</p>
 <p>A maioria dos geradores disponíveis na <em>internet</em> produzem imagens padrões, e seria interessante customizar esse <span class="caps">QR</span> code com as cores dominantes do <em>site</em> da instituição.</p>
 <p>Como bom programador Python eu utilizei uma biblioteca chamada <code>qrcode</code>. Ela está disponível no PyPl (<a href="https://pypi.org/project/qrcode/">link</a>) e também nesse repositório: <a href="https://github.com/lincolnloop/python-qrcode">github.com/lincolnloop/python-qrcode</a>.</p>
-<h2>Como funciona os <span class="caps">QR</span> codes</h2>
+<h2 id="como-funciona-os-qr-codes">Como funciona os <span class="caps">QR</span> codes</h2>
 <p>Eu tentei encontrar algum artigo didático sobre a geração de <span class="caps">QR</span> code e como eles funcionam, porém não encontrei uma resposta satisfatória.</p>
 <p>Porém, quis o destino (ou o algortimo do Twitter) que eu esbarrasse com essa <em>thread</em> que faz uma introdução bem legal e com várias imagens ilustrativas.</p>
 <p>Seria interessante dar uma olhada nessa <em>thread</em> antes de continuar lendo essa postagem.</p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<blockquote class="twitter-tweet blockquote" data-dnt="true" data-lang="en" data-theme="light">
+<blockquote class="blockquote twitter-tweet" data-dnt="true" data-lang="en" data-theme="light">
 <p dir="ltr" lang="en">Ever wondered how a <span class="caps">QR</span> code works? <br/>No, me neither but it's low-key fascinating.
     <br/><br/>(Warning, there is some extremely nerdy s*** here.👇 )
     <a href="https://t.co/SgQJVvhu0q">pic.twitter.com/SgQJVvhu0q</a> </p>— Dan Hollick 🇿🇦 (@DanHollick)
@@ -118,11 +116,11 @@ Programador Python.
 <blockquote class="blockquote">
 <p><a href="https://www.denso-wave.com/en/technology/vol1.html"><span class="caps">QR</span> code: development history</a></p>
 </blockquote>
-<h2>Instalação</h2>
+<h2 id="instalacao">Instalação</h2>
 <p>Para instalar a biblioteca segui as instruções apresentadas no repositório. A adição do comando <code>[pil]</code> força a instalação da biblioteca <a href="https://pypi.org/project/Pillow/">Pillow</a>, responsável por gerar e trabalhar com alguns formatos de imagens (<code>.png</code> por exemplo).</p>
 <div class="highlight"><pre><span></span><code><span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">qrcode</span><span class="p">[</span><span class="n">pil</span><span class="p">]</span>
 </code></pre></div>
-<h2>Gerando <span class="caps">QR</span> Codes</h2>
+<h2 id="gerando-qr-codes">Gerando <span class="caps">QR</span> Codes</h2>
 <p>O meu objetivo é produzir um <span class="caps">QR</span> code que direcione uma pessoa até a página <em>web</em> em que está disponível a pauta das reuniões da Câmara Municipal.</p>
 <p>Então, a <em>url</em> que eu vou codificar é a seguinte:</p>
 <div class="highlight"><pre><span></span><code><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://sapl.santoantoniodaplatina.pr.leg.br/sessao/pauta-sessao"</span>
@@ -153,7 +151,7 @@ Programador Python.
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">img</span><span class="p">))</span> <span class="c1"># &lt;class 'qrcode.image.pil.PilImage'&gt;</span>
 <span class="n">img</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_9_1.png"/></p>
+<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_9_1.png"/></p>
 <p>Observe que alterando o parâmetro <code>error_correction</code> para <code>qrcode.constants.ERROR_CORRECT_H</code>altera-se o padrão da imagem. Isso significa também que existe uma maior redundância na codificação de informações que torna o <span class="caps">QR</span> code mais robusto a danos ou obstruções que impeçam a leitura dos dados codificados.</p>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span>
     <span class="n">version</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
@@ -170,8 +168,8 @@ Programador Python.
 
 <span class="n">img</span> <span class="c1"># &lt;class 'qrcode.image.pil.PilImage'&gt;</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_11_1.png"/></p>
-<h3>Customização</h3>
+<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_11_1.png"/></p>
+<h3 id="customizacao">Customização</h3>
 <p><code>qrcodes</code> oferece possibilidade de customizar as cores do <span class="caps">QR</span> code com a máscara <code>SolidFillColorMask</code>, ou opções de gradiente, além de inserir imagens no <em>background</em>.</p>
 <p>Também é possível escolher entre diferentes estilos de formas e desenhos para o <span class="caps">QR</span> code.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># factory para gerar uma imagem que poderá ser transformada em .png e jpeg</span>
@@ -201,7 +199,7 @@ Programador Python.
 <span class="c1"># help(HorizontalGradiantColorMask)</span>
 <span class="c1"># help(VerticalGradiantColorMask)</span>
 </code></pre></div>
-<h4>RoundedModuleDrawer</h4>
+<h4 id="roundedmoduledrawer">RoundedModuleDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span><span class="n">error_correction</span><span class="o">=</span><span class="n">qrcode</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">ERROR_CORRECT_L</span><span class="p">,</span>
                    <span class="n">box_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                    <span class="n">border</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -212,31 +210,31 @@ Programador Python.
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">RoundedModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_17_0.png"/></p>
-<h4>CircleModuleDrawer</h4>
+<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_17_0.png"/></p>
+<h4 id="circlemoduledrawer">CircleModuleDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">CircleModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_19_0.png"/></p>
-<h4>GappedSquareModuleDrawer</h4>
+<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_19_0.png"/></p>
+<h4 id="gappedsquaremoduledrawer">GappedSquareModuleDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">GappedSquareModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_21_0.png"/></p>
-<h4>HorizontalBarsDrawer</h4>
+<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_21_0.png"/></p>
+<h4 id="horizontalbarsdrawer">HorizontalBarsDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">HorizontalBarsDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_23_0.png"/></p>
-<h4>VerticalBarsDrawer</h4>
+<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_23_0.png"/></p>
+<h4 id="verticalbarsdrawer">VerticalBarsDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">VerticalBarsDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto d-block img-fluid" src="./gerando-qr-codes-com-Python_25_0.png"/></p>
+<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_25_0.png"/></p>
     </section>
   </article>
 </div>
@@ -253,16 +251,29 @@ Programador Python.
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

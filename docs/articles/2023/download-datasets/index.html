@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Diferentes formas de baixar dados da internet com bibliotecas do Python</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -45,6 +42,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -54,10 +52,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -71,6 +66,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -116,7 +114,7 @@ Programador Python.
     </header>
     <section class="mt-5">
       <p>(Re)Lendo o livro <a href="https://www.amazon.com.br/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646"><em>Hands-On Machine Learning with Scikit-Learn, Keras <span class="amp">&amp;</span> TensorFlow</em></a> o autor mostra diversas maneiras de baixar <em>datasets</em> da <em>internet</em>. Nesse artigo, vou resumir algumas maneiras utilizando as bibliotecas padrão do Python para fazer <em>download</em> de arquivos compactados, arquivos no formato <em>csv</em> e <em>json</em>.</p>
-<h2>Repositórios dados</h2>
+<h2 id="repositorios-dados">Repositórios dados</h2>
 <p>Existem muitos sites que reunem e disponibilizam <em>datasets</em> de forma pública. Alguns desses repositório, inclusive, disponibilizam dados com a finalidade de incentivar o aprendizado e a prática de <em>machine learning</em>.</p>
 <p>Alguns desses repositórios são:</p>
 <ol>
@@ -125,7 +123,7 @@ Programador Python.
 <li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a>: possui a promessa de <em>Find Open Datasets and Machine Learning Projects</em>.</li>
 <li>Portal de Dados Abertos do Governo Federal <a href="https://dados.gov.br/home">https://dados.gov.br/home</a></li>
 </ol>
-<h2>Baixando arquivos compactados com <code>urllib</code></h2>
+<h2 id="baixando-arquivos-compactados-com-urllib">Baixando arquivos compactados com <code>urllib</code></h2>
 <p>O primeiro exemplo é baixar um arquivo com compactado, na extensão .tar (e família) utilizando a biblioteca <code>urllib</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">urllib</span>
 <span class="kn">import</span> <span class="nn">tarfile</span>
@@ -172,7 +170,7 @@ Programador Python.
 </ol>
 <p>Também podemos utilizar <code>urllib.requests.urlretrieve</code> para baixar arquivos em outros formatos como <code>.txt</code> ou <code>.csv</code>.</p>
 <p>Porém, vamos olhar outras possibilidades, como a biblioteca <code>requests</code>.</p>
-<h2>Baixando arquivos com <code>requests</code></h2>
+<h2 id="baixando-arquivos-com-requests">Baixando arquivos com <code>requests</code></h2>
 <p>O uso é similar com a biblioteca <code>requests</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -191,7 +189,7 @@ Programador Python.
 <li>Aqui tomamos um cuidado ao garantir que estamos utilizando o conjunto de caractéres corretos para ler esse arquivo, que é o <code>utf-8</code>;</li>
 <li>E salvamos esse arquivo localmente.</li>
 </ol>
-<h2>Utilizando <code>pandas</code></h2>
+<h2 id="utilizando-pandas">Utilizando <code>pandas</code></h2>
 <p>Uma outra opção interessante é passar a <code>url</code> direto como argumento da função <code>pd.read_csv</code> da biblioteca pandas.</p>
 <p>Assim para a url acima já poderíamos ter feito:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -203,7 +201,7 @@ Programador Python.
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
 <p>Existe a possibilidade de salvar esses dados localmente com o método <code>df.to_csv</code> presente no objeto DataFrame.</p>
-<h2>Baixando arquivos <span class="caps">JSON</span></h2>
+<h2 id="baixando-arquivos-json">Baixando arquivos <span class="caps">JSON</span></h2>
 <p>A última dica é sobre baixar arquivos no formato <span class="caps">JSON</span>. Em um primeiro momento, poderíamos utilizar a biblioteca <code>json</code> para transformar a <em>string</em> retornada na resposta para um dicionário do Python, como no exemplo abaixo:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 
@@ -220,7 +218,7 @@ Programador Python.
 <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div>
 <p>Pode não ser perfeito, mas deve resolver um punhado de situação.</p>
-<h2>Desabafo</h2>
+<h2 id="desabafo">Desabafo</h2>
 <p>A onda do chatGPT me desanimou para criara conteúdos desse tipo: sem querer encher linguiça, direto ao ponto; sem <em>enrolation</em> para ser um caça níquel de publicidade.</p>
 <p>Mas quer saber, eu vou fazer porque acho divertido! E é sobre isso!</p>
     </section>
@@ -239,16 +237,29 @@ Programador Python.
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

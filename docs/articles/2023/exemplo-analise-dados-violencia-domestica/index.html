@@ -5,10 +5,7 @@
     <meta name="generator" content="Pelican" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giliard Godoi - Análise dos casos de violência doméstica no Norte Pioneiro do Paraná</title>
-      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-" />
+      <meta name="description" content="Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python." />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
       <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
@@ -40,6 +37,7 @@ Programador Python.
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link">Sobre</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link">Contato</a></li>
             <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link">Publicações</a></li>
+            <li class="nav-item"> <a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link">Projetos</a></li>
           </ul>
         </div>
       </div>
@@ -49,10 +47,7 @@ Programador Python.
         <div class="container py-5">
             <h1 class="text-body-emphasis"> Giliard Godoi </h1>
             <p class="col-lg-8 mx-auto lead">
-                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Ingeligência Artificial.
-Aprendizado de Máquina. Análise e Visualização de Dados.
-Programador Python.
-
+                Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python.
             </p>
             <ul class="list-inline">
                   <li class="list-inline-item ms-2">
@@ -66,6 +61,9 @@ Programador Python.
                   </li>
                   <li class="list-inline-item ms-2">
                     <a class="fab fa-youtube text-decoration-none text-black-50" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+                  </li>
+                  <li class="list-inline-item ms-2">
+                    <a class="fa fa-graduation-cap text-decoration-none text-black-50" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24"></a>
                   </li>
               </ul>
         </div>
@@ -102,9 +100,9 @@ E com isso impedem também a realização de outras análises.</p>
 Com é possível extrair os dados das tabelas e exportar para arquivos abertos como arquivos com valores separados por vírgulas (csv - <a href="https://pt.wikipedia.org/wiki/Comma-separated_values">Comma-Separated Values</a>).</p>
 <p>Esse é um programa feito em Java, então você vai precisar instalar o Java na sua máquina para executar o Tabula. As instruções para instalação podem ser encontradas na documentação do repositório da ferramenta, disponível nesse <a href="https://github.com/tabulapdf/tabula?tab=readme-ov-file#using-tabula">endereço</a>.</p>
 <p>Após executar o programa, só precisa selecionar o arquivo em <span class="caps">PDF</span> e selecionar a área em que está a sua tabela.</p>
-<p><img alt="Exemplo do software Tabula" class="mx-auto d-block img-fluid" src="./tabula-exemplo.png"/></p>
+<p><img alt="Exemplo do software Tabula" class="mx-auto img-fluid d-block" src="./tabula-exemplo.png"/></p>
 <p>E então, o programa cuida do resto…</p>
-<p><img alt="Dados extraidos com o software tabula" class="mx-auto d-block img-fluid" src="./tabula-exemplo-dois.png"/></p>
+<p><img alt="Dados extraidos com o software tabula" class="mx-auto img-fluid d-block" src="./tabula-exemplo-dois.png"/></p>
 <p>Com os dados em um formato aberto, então é possível realizar a leitura com um código em Python, por exemplo, e realizar análises complementares e criar gráficos como o observados a seguir.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -150,17 +148,17 @@ Com é possível extrair os dados das tabelas e exportar para arquivos abertos c
 </code></pre></div>
 <p>O gráfico a seguir apresenta a quantidade dos casos de violência doméstica, por natureza jurídica, nos municípios da região do Norte Pioneiro do Estado do Paraná, no período de 01/01/2016 a 31/12/2020.</p>
 <!-- ![Registro de violência doméstica no Norte Pioneiro](../../images/2023/grafico-violencia-domestica-norte-pioneiro.png) -->
-<p><img alt="Registro de violência doméstica no Norte Pioneiro" class="mx-auto d-block img-fluid" src="./grafico-violencia-domestica-norte-pioneiro.png"/></p>
+<p><img alt="Registro de violência doméstica no Norte Pioneiro" class="mx-auto img-fluid d-block" src="./grafico-violencia-domestica-norte-pioneiro.png"/></p>
 <p>No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020.
 Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.</p>
 <p>Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais.
 A razão para tanto, pode ser que este é o único município da região que possui uma Delegacia Especial da Mulher.</p>
 <p>Nesse cenário, podemos levantar a hipótese se existe uma subnotificação dos casos de violência doméstica nos demais municípios que não contam com uma unidade especializada para atender a esses casos.</p>
-<h1>Aviso</h1>
+<h1 id="aviso">Aviso</h1>
 <blockquote class="blockquote">
 <p>As opiniões expressas nesse artigo são somente minhas, e não refletem necessáriamente a opinião de instituições ou pessoas eventualmente citadas nesse artigo.</p>
 </blockquote>
-<h1>Referências</h1>
+<h1 id="referencias">Referências</h1>
 <p>Câmara de Santo Antônio da Platina. <strong>Requerimento nº 598 de 2020, de autoria da Vereadora Mirian Rodrigues Bonomo Montanheiro</strong>. Disponível em: <a href="https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613">https://sapl.santoantoniodaplatina.pr.leg.br/materia/2613</a>. Último acesso em 07 de abr. de 2024.</p>
 <p>Tabula Oficial Webpage. <a href="https://tabula.technology/">https://tabula.technology/</a></p>
     </section>
@@ -179,16 +177,29 @@ A razão para tanto, pode ser que este é o único município da região que pos
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
           <li class="ms-3">
-            <a class="fab fa-twitter text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-twitter "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-github text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-github "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-linkedin-in text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
+              <span class="fab fa-linkedin-in "></span>
+            </a>
           </li>
           <li class="ms-3">
-            <a class="fab fa-youtube text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24"></a>
+            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
+              <span class="fab fa-youtube "></span>
+            </a>
+          </li>
+          <li class="ms-3">
+            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
+              <span class="fa fa-graduation-cap "></span>
+            </a>
           </li>
         <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
