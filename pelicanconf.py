@@ -4,7 +4,7 @@ AUTHOR = 'Giliard Godoi'
 SITENAME = 'Giliard Godoi'
 SITEURL = ""
 SITETITLE = 'Giliard Godoi'
-SITESUBTITLE = "Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial.Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python."
+SITESUBTITLE = "Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python."
 
 SITEIMAGE = "/images/profile-park.png width=250 height=150"
 # GRAVATAR_IMAGE = 'https://gravatar.com/giliardgodoi'
