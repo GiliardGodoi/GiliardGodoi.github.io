@@ -1,5 +1,5 @@
-title: Apresentação no 14º EnGITEC
-summary: Criando um mapa das solicitação de serviço feitas pelo Poder Legislativo Municipal
+title: Criando um mapa das solicitação de serviço feitas pelo Poder Legislativo Municipal
+summary: Slides e código do projeto apresentado no 14º Encontro do Grupo Interlegis de Tecnologia (EnGITEC).
 date: 2024-06-05
 slug: participacao-14-engitec
 authors: Giliard Godoi
