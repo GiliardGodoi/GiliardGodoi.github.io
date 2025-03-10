@@ -24,12 +24,14 @@
     <meta name="tags" content="seaborn" />
     <meta name="tags" content="tutorial" />
 
+  <script src="https://giliardgodoi.github.io/theme/js/codeblocks.js"></script>
+
 </head>
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
       <div class="container-fluid ">
 
-        <a href="https://giliardgodoi.github.io/" class="navbar-brand">
+        <a href="https://giliardgodoi.github.io/" class="navbar-brand ps-3">
             <img src="/images/logo.png" alt="Giliard Godoi" style="width: 30px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -72,6 +74,7 @@
         </div>
     </div>
 </div>    <main class="container flex-grow-1">
+      <div class="px-5 mx-md-5">
 <div class="container">
   <article>
     <header class="">
@@ -125,7 +128,7 @@
 <span class="c1"># comando para criar o gráfico</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="Gráfico 01" class="mx-auto img-fluid d-block" src="./passo01.png"/></p>
+<p><img alt="Gráfico 01" class="img-fluid mx-auto d-block" src="./passo01.png"/></p>
 <p>Nesse gráfico os anos são representados no eixo X, enquanto os valores de vendas são apresentados no eixo Y. Foi definida a cor padrão <em>steelblue</em> para todas as barras. O tamanho do gráfico, e a proporção entre a largura e altura, foi definida como <code>(7,4)</code></p>
 <p>Desse gráfico básico, o que podemos querer melhorar nele? Por exemplo, alguns pontos seriam:</p>
 <ol>
@@ -144,7 +147,7 @@
 <span class="c1"># Adicionando o label para o eixo X</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Anos'</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="Gráfico 02" class="mx-auto img-fluid d-block" src="./passo02.png"/></p>
+<p><img alt="Gráfico 02" class="img-fluid mx-auto d-block" src="./passo02.png"/></p>
 <p>Para eliminar a borda dos gráficos, podemos utilizar a função <code>.despine</code> disponibilizado pela biblioteca <code>seaborn</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
@@ -155,7 +158,7 @@
 <span class="c1"># remove o cortorno dos eixos.</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="Gráfico 03" class="mx-auto img-fluid d-block" src="./passo03.png"/></p>
+<p><img alt="Gráfico 03" class="img-fluid mx-auto d-block" src="./passo03.png"/></p>
 <p>O gráfico já parece muito bom assim. Já é possível comparar os valores das vendas entre um ano e outro.
 Porém, vamos ver como o gráfico fica se retirarmos os valores que aparecem no eixo Y (ticks) talvez colocar o rótulo nesse eixo, e fixar os valores do intervalo que são mostrados.</p>
 <p>Fixar o intervalo do eixo Y é necessário para garantir que os rótulos que apareçam sob as barras não sejam truncados, isto é, sejam posicionados fora dos limites considerados pelo eixo Y.</p>
@@ -176,7 +179,7 @@ Porém, vamos ver como o gráfico fica se retirarmos os valores que aparecem no 
 <span class="c1"># Fixa o range considerado para o eixo y isto é, de 0 até 790</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">790</span><span class="p">))</span>
 </code></pre></div>
-<p><img alt="Gráfico 04" class="mx-auto img-fluid d-block" src="./passo04.png"/></p>
+<p><img alt="Gráfico 04" class="img-fluid mx-auto d-block" src="./passo04.png"/></p>
 <p>Talvez o rótulo no eixo Y não seja tão necessário assim, uma vez que o título do gráfico já é bem descritivo.</p>
 <p>Para posicionar os rótulos acima de cada barra, vamos percorrer os objetos que definem essas barras, os objetos <code>patches</code> para obter as coordenadas de início da barra (<code>p.get_x</code>) a sua largura (<code>p.get_width</code>) e altura (<code>p.get_height</code>). Os rótulos serão criados a partir do método <code>ax.annotate</code> do objeto <code>Axes</code> que representa o nosso gráfico.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -197,7 +200,7 @@ Porém, vamos ver como o gráfico fica se retirarmos os valores que aparecem no 
                <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">get_height</span><span class="p">())</span>
              <span class="p">)</span>
 </code></pre></div>
-<p><img alt="Gráfico 05" class="mx-auto img-fluid d-block" src="./passo05.png"/></p>
+<p><img alt="Gráfico 05" class="img-fluid mx-auto d-block" src="./passo05.png"/></p>
 <p>Note que os rótulos ficaram ligeiramente deslocados em relação a barra. Para corrigir isso é necessário informar alguns parâmetros adicionais no método <code>ax.annotate</code> como alinhamento horizontal, alinhamento vertical e deslocamentos adicionais.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anos</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">vendas</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'steelblue'</span><span class="p">)</span>
@@ -232,7 +235,7 @@ Porém, vamos ver como o gráfico fica se retirarmos os valores que aparecem no 
 </ul>
 <p>O valor <code>xytext = (-2, 5)</code> indica que o texto será movido 5 pontos tipográficos para cima e 2 pontos tipográficos à esquerda, ajustando o posicionamento do rótulo.</p>
 <p>Os resultados dessas modificações são apresentados na figura a seguir.</p>
-<p><img alt="Gráfico 06" class="mx-auto img-fluid d-block" src="./passo06.png"/></p>
+<p><img alt="Gráfico 06" class="img-fluid mx-auto d-block" src="./passo06.png"/></p>
 <h2 id="extras">Extras</h2>
 <p>Como estamos percorrendo os objetos que definem as barras do nosso gráfico, é possível alterar as propriedades dessa colunas. Por exemplo, no código abaixo estamos alterando a transparência das barras e alterando a cor da barra que representa o maior valor de vendas.</p>
 <p>Além disso, a chamada ao método <code>ax.axis("tight")</code> faz com que o <code>matplotlib</code> recalcule certos parâmetros para melhorar os ajustes do gráfico ao tamanho da figura.</p>
@@ -266,7 +269,7 @@ Porém, vamos ver como o gráfico fica se retirarmos os valores que aparecem no 
 
 <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">"tight"</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="Gráfico 07" class="mx-auto img-fluid d-block" src="./passo07.png"/></p>
+<p><img alt="Gráfico 07" class="img-fluid mx-auto d-block" src="./passo07.png"/></p>
 <h2 id="referencias">Referências</h2>
 <p>Matheus Budkewicz. <strong>Gráficos de barra com matplotlib</strong>. Disponível em <a href="https://medium.com/horadecodar/gr%C3%A1ficos-de-barra-com-matplotlib-85628bfc4351">https://medium.com/horadecodar/gr%C3%A1ficos-de-barra-com-matplotlib-85628bfc4351</a> Acessado em: 21 de fev. de 2025.</p>
 <p>Matplotlib. <strong>matplotlib.pyplot.annotate</strong>. <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html</a> Acessado em: 21 de fev. de 2025.</p>
@@ -274,49 +277,118 @@ Porém, vamos ver como o gráfico fica se retirarmos os valores que aparecem no 
     </section>
   </article>
 </div>
+      </div>
     </main>
 <div class="container-fluid site-footer">
-  <div class="container p-5">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
-        </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">Giliard Godoi | 2025 </span>
+  <div class="container px-5">
+    <footer class="py-3 my-4 border-top">
+      <div class="row justify-content-between py-5">
+        <div class="col-10 col-lg-8 mb-3">
+            <div class="d-flex align-items-center my-3">
+                <a href="/" class="me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
+                  </a>
+                    <span class="ms-2 text-body-secondary">Giliard Godoi | 2025 </span>
+            </div>
+            <p class="text-body-secondary">Desenvolvido com <a class="link-secondary text-decoration-none" href="https://getpelican.com/" target="_blank">Pelican</a> e pensado para compartilhar conhecimento.</p>
+            <ul class="nav justify-content-start list-unstyled mb-3">
+                <li class="ms-0">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="col-6 col-lg-2 mb-3"></div> -->
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Sobre</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link link-secondary text-decoration-none">Sobre</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link link-secondary text-decoration-none">Contato</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link link-secondary text-decoration-none">Publicações</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link link-secondary text-decoration-none">Projetos</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Arquivos</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/authors.html" class="nav-link link-secondary text-decoration-none">Autores</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/archives.html" class="nav-link link-secondary text-decoration-none">Arquivos</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/categories.html" class="nav-link link-secondary text-decoration-none">Categorias</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/tags.html" class="nav-link link-secondary text-decoration-none">Tags</a></li>
+          </ul>
+        </div>
       </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-twitter "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-github "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
-              <span class="fab fa-linkedin-in "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-youtube "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
-              <span class="fa fa-graduation-cap "></span>
-            </a>
-          </li>
-        <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
-      </ul>
+      <!-- <div class="d-flex flex-wrap justify-content-between align-items-center px-3">
+        <div class="col d-flex align-items-center text-body-secondary">
+          <span>Powered by Pelican </span>
+        </div>
+        <div class="col d-flex align-items-center">
+            <ul class="nav justify-content-start list-unstyled ms-auto d-flex">
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+              </ul>
+        </div>
+      </div> -->
     </footer>
   </div>
-  </div>  </body>
+</div>    <button id="btnTopo" class="btn btn-primary fw-bold">
+      <i class="fas fa-arrow-up"></i> <span class="px-1">Topo</span>
+    </button>
+  </body>
 <script src="https://giliardgodoi.github.io/theme/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://giliardgodoi.github.io/theme/js/custom.js"></script>
 </html>

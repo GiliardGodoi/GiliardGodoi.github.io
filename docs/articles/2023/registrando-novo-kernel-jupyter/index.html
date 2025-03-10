@@ -23,12 +23,14 @@
     <meta name="tags" content="python" />
     <meta name="tags" content="jupyter" />
 
+  <script src="https://giliardgodoi.github.io/theme/js/codeblocks.js"></script>
+
 </head>
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
       <div class="container-fluid ">
 
-        <a href="https://giliardgodoi.github.io/" class="navbar-brand">
+        <a href="https://giliardgodoi.github.io/" class="navbar-brand ps-3">
             <img src="/images/logo.png" alt="Giliard Godoi" style="width: 30px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -71,6 +73,7 @@
         </div>
     </div>
 </div>    <main class="container flex-grow-1">
+      <div class="px-5 mx-md-5">
 <div class="container">
   <article>
     <header class="">
@@ -134,9 +137,9 @@ python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"
 </code></pre></div>
 <h1 id="criando-um-notebook-com-um-kernel-especifico">Criando um notebook com um kernel específico</h1>
 <p>Para criar um novo <em>notebook</em> basta selecionar o kernel desejado no menu <em>new</em>.</p>
-<p><img alt="jupyter kernels disponíveis" class="mx-auto img-fluid d-block" src="./jupyter-kernels.png"/></p>
+<p><img alt="jupyter kernels disponíveis" class="img-fluid mx-auto d-block" src="./jupyter-kernels.png"/></p>
 <p>Para checar a versão do python do kernel selecionado podemos usar tando o <code>sys.version</code> quanto a função <code>python_version</code> do módulo <code>platform</code>.</p>
-<p><img alt="Versão do kernel" class="mx-auto img-fluid d-block" src="./jupyter-kernels-version.png"/></p>
+<p><img alt="Versão do kernel" class="img-fluid mx-auto d-block" src="./jupyter-kernels-version.png"/></p>
 <p>É importante observar que, quando utilizamos o comando <code>!python --version</code> é como se esse comando fosse jogado para o terminal e recuperasse a versão do python do terminal, isto é, do terminal em que estamos rodando o ambiente <code>base</code>.</p>
 <p>Então essa não é a versão do kernel que estamos ativando.</p>
 <h1 id="listando-os-kernels-disponiveis">Listando os Kernels disponíveis</h1>
@@ -155,49 +158,118 @@ python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"
     </section>
   </article>
 </div>
+      </div>
     </main>
 <div class="container-fluid site-footer">
-  <div class="container p-5">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
-        </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">Giliard Godoi | 2025 </span>
+  <div class="container px-5">
+    <footer class="py-3 my-4 border-top">
+      <div class="row justify-content-between py-5">
+        <div class="col-10 col-lg-8 mb-3">
+            <div class="d-flex align-items-center my-3">
+                <a href="/" class="me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
+                  </a>
+                    <span class="ms-2 text-body-secondary">Giliard Godoi | 2025 </span>
+            </div>
+            <p class="text-body-secondary">Desenvolvido com <a class="link-secondary text-decoration-none" href="https://getpelican.com/" target="_blank">Pelican</a> e pensado para compartilhar conhecimento.</p>
+            <ul class="nav justify-content-start list-unstyled mb-3">
+                <li class="ms-0">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="col-6 col-lg-2 mb-3"></div> -->
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Sobre</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link link-secondary text-decoration-none">Sobre</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link link-secondary text-decoration-none">Contato</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link link-secondary text-decoration-none">Publicações</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link link-secondary text-decoration-none">Projetos</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Arquivos</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/authors.html" class="nav-link link-secondary text-decoration-none">Autores</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/archives.html" class="nav-link link-secondary text-decoration-none">Arquivos</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/categories.html" class="nav-link link-secondary text-decoration-none">Categorias</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/tags.html" class="nav-link link-secondary text-decoration-none">Tags</a></li>
+          </ul>
+        </div>
       </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-twitter "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-github "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
-              <span class="fab fa-linkedin-in "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-youtube "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
-              <span class="fa fa-graduation-cap "></span>
-            </a>
-          </li>
-        <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
-      </ul>
+      <!-- <div class="d-flex flex-wrap justify-content-between align-items-center px-3">
+        <div class="col d-flex align-items-center text-body-secondary">
+          <span>Powered by Pelican </span>
+        </div>
+        <div class="col d-flex align-items-center">
+            <ul class="nav justify-content-start list-unstyled ms-auto d-flex">
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+              </ul>
+        </div>
+      </div> -->
     </footer>
   </div>
-  </div>  </body>
+</div>    <button id="btnTopo" class="btn btn-primary fw-bold">
+      <i class="fas fa-arrow-up"></i> <span class="px-1">Topo</span>
+    </button>
+  </body>
 <script src="https://giliardgodoi.github.io/theme/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://giliardgodoi.github.io/theme/js/custom.js"></script>
 </html>

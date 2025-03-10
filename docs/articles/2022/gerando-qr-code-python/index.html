@@ -22,12 +22,14 @@
 
     <meta name="tags" content="qrcode" />
 
+  <script src="https://giliardgodoi.github.io/theme/js/codeblocks.js"></script>
+
 </head>
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
       <div class="container-fluid ">
 
-        <a href="https://giliardgodoi.github.io/" class="navbar-brand">
+        <a href="https://giliardgodoi.github.io/" class="navbar-brand ps-3">
             <img src="/images/logo.png" alt="Giliard Godoi" style="width: 30px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -70,6 +72,7 @@
         </div>
     </div>
 </div>    <main class="container flex-grow-1">
+      <div class="px-5 mx-md-5">
 <div class="container">
   <article>
     <header class="">
@@ -106,7 +109,7 @@
 <p>Porém, quis o destino (ou o algortimo do Twitter) que eu esbarrasse com essa <em>thread</em> que faz uma introdução bem legal e com várias imagens ilustrativas.</p>
 <p>Seria interessante dar uma olhada nessa <em>thread</em> antes de continuar lendo essa postagem.</p>
 <script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-<blockquote class="blockquote twitter-tweet" data-dnt="true" data-lang="en" data-theme="light">
+<blockquote class="twitter-tweet blockquote" data-dnt="true" data-lang="en" data-theme="light">
 <p dir="ltr" lang="en">Ever wondered how a <span class="caps">QR</span> code works? <br/>No, me neither but it's low-key fascinating.
     <br/><br/>(Warning, there is some extremely nerdy s*** here.👇 )
     <a href="https://t.co/SgQJVvhu0q">pic.twitter.com/SgQJVvhu0q</a> </p>— Dan Hollick 🇿🇦 (@DanHollick)
@@ -151,7 +154,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">img</span><span class="p">))</span> <span class="c1"># &lt;class 'qrcode.image.pil.PilImage'&gt;</span>
 <span class="n">img</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_9_1.png"/></p>
+<p><img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_9_1.png"/></p>
 <p>Observe que alterando o parâmetro <code>error_correction</code> para <code>qrcode.constants.ERROR_CORRECT_H</code>altera-se o padrão da imagem. Isso significa também que existe uma maior redundância na codificação de informações que torna o <span class="caps">QR</span> code mais robusto a danos ou obstruções que impeçam a leitura dos dados codificados.</p>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span> <span class="o">=</span> <span class="n">qrcode</span><span class="o">.</span><span class="n">QRCode</span><span class="p">(</span>
     <span class="n">version</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
@@ -168,7 +171,7 @@
 
 <span class="n">img</span> <span class="c1"># &lt;class 'qrcode.image.pil.PilImage'&gt;</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_11_1.png"/></p>
+<p><img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_11_1.png"/></p>
 <h3 id="customizacao">Customização</h3>
 <p><code>qrcodes</code> oferece possibilidade de customizar as cores do <span class="caps">QR</span> code com a máscara <code>SolidFillColorMask</code>, ou opções de gradiente, além de inserir imagens no <em>background</em>.</p>
 <p>Também é possível escolher entre diferentes estilos de formas e desenhos para o <span class="caps">QR</span> code.</p>
@@ -210,77 +213,146 @@
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">RoundedModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_17_0.png"/></p>
+<p><img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_17_0.png"/></p>
 <h4 id="circlemoduledrawer">CircleModuleDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">CircleModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_19_0.png"/></p>
+<p><img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_19_0.png"/></p>
 <h4 id="gappedsquaremoduledrawer">GappedSquareModuleDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">GappedSquareModuleDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_21_0.png"/></p>
+<p><img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_21_0.png"/></p>
 <h4 id="horizontalbarsdrawer">HorizontalBarsDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">HorizontalBarsDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_23_0.png"/></p>
+<p><img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_23_0.png"/></p>
 <h4 id="verticalbarsdrawer">VerticalBarsDrawer</h4>
 <div class="highlight"><pre><span></span><code><span class="n">qr</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">image_factory</span> <span class="o">=</span> <span class="n">StyledPilImage</span><span class="p">,</span>
               <span class="n">module_drawer</span> <span class="o">=</span> <span class="n">VerticalBarsDrawer</span><span class="p">(),</span>
               <span class="n">color_mask</span> <span class="o">=</span> <span class="n">custom_blue_color</span> <span class="p">)</span>
 </code></pre></div>
-<p><img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_25_0.png"/></p>
+<p><img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_25_0.png"/></p>
     </section>
   </article>
 </div>
+      </div>
     </main>
 <div class="container-fluid site-footer">
-  <div class="container p-5">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
-        </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">Giliard Godoi | 2025 </span>
+  <div class="container px-5">
+    <footer class="py-3 my-4 border-top">
+      <div class="row justify-content-between py-5">
+        <div class="col-10 col-lg-8 mb-3">
+            <div class="d-flex align-items-center my-3">
+                <a href="/" class="me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
+                  </a>
+                    <span class="ms-2 text-body-secondary">Giliard Godoi | 2025 </span>
+            </div>
+            <p class="text-body-secondary">Desenvolvido com <a class="link-secondary text-decoration-none" href="https://getpelican.com/" target="_blank">Pelican</a> e pensado para compartilhar conhecimento.</p>
+            <ul class="nav justify-content-start list-unstyled mb-3">
+                <li class="ms-0">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="col-6 col-lg-2 mb-3"></div> -->
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Sobre</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link link-secondary text-decoration-none">Sobre</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link link-secondary text-decoration-none">Contato</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link link-secondary text-decoration-none">Publicações</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link link-secondary text-decoration-none">Projetos</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Arquivos</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/authors.html" class="nav-link link-secondary text-decoration-none">Autores</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/archives.html" class="nav-link link-secondary text-decoration-none">Arquivos</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/categories.html" class="nav-link link-secondary text-decoration-none">Categorias</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/tags.html" class="nav-link link-secondary text-decoration-none">Tags</a></li>
+          </ul>
+        </div>
       </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-twitter "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-github "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
-              <span class="fab fa-linkedin-in "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-youtube "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
-              <span class="fa fa-graduation-cap "></span>
-            </a>
-          </li>
-        <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
-      </ul>
+      <!-- <div class="d-flex flex-wrap justify-content-between align-items-center px-3">
+        <div class="col d-flex align-items-center text-body-secondary">
+          <span>Powered by Pelican </span>
+        </div>
+        <div class="col d-flex align-items-center">
+            <ul class="nav justify-content-start list-unstyled ms-auto d-flex">
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+              </ul>
+        </div>
+      </div> -->
     </footer>
   </div>
-  </div>  </body>
+</div>    <button id="btnTopo" class="btn btn-primary fw-bold">
+      <i class="fas fa-arrow-up"></i> <span class="px-1">Topo</span>
+    </button>
+  </body>
 <script src="https://giliardgodoi.github.io/theme/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://giliardgodoi.github.io/theme/js/custom.js"></script>
 </html>

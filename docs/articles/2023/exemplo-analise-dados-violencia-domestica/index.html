@@ -21,12 +21,14 @@
 
 
 
+  <script src="https://giliardgodoi.github.io/theme/js/codeblocks.js"></script>
+
 </head>
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
       <div class="container-fluid ">
 
-        <a href="https://giliardgodoi.github.io/" class="navbar-brand">
+        <a href="https://giliardgodoi.github.io/" class="navbar-brand ps-3">
             <img src="/images/logo.png" alt="Giliard Godoi" style="width: 30px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -69,6 +71,7 @@
         </div>
     </div>
 </div>    <main class="container flex-grow-1">
+      <div class="px-5 mx-md-5">
 <div class="container">
   <article>
     <header class="">
@@ -100,9 +103,9 @@ E com isso impedem também a realização de outras análises.</p>
 Com é possível extrair os dados das tabelas e exportar para arquivos abertos como arquivos com valores separados por vírgulas (csv - <a href="https://pt.wikipedia.org/wiki/Comma-separated_values">Comma-Separated Values</a>).</p>
 <p>Esse é um programa feito em Java, então você vai precisar instalar o Java na sua máquina para executar o Tabula. As instruções para instalação podem ser encontradas na documentação do repositório da ferramenta, disponível nesse <a href="https://github.com/tabulapdf/tabula?tab=readme-ov-file#using-tabula">endereço</a>.</p>
 <p>Após executar o programa, só precisa selecionar o arquivo em <span class="caps">PDF</span> e selecionar a área em que está a sua tabela.</p>
-<p><img alt="Exemplo do software Tabula" class="mx-auto img-fluid d-block" src="./tabula-exemplo.png"/></p>
+<p><img alt="Exemplo do software Tabula" class="img-fluid mx-auto d-block" src="./tabula-exemplo.png"/></p>
 <p>E então, o programa cuida do resto…</p>
-<p><img alt="Dados extraidos com o software tabula" class="mx-auto img-fluid d-block" src="./tabula-exemplo-dois.png"/></p>
+<p><img alt="Dados extraidos com o software tabula" class="img-fluid mx-auto d-block" src="./tabula-exemplo-dois.png"/></p>
 <p>Com os dados em um formato aberto, então é possível realizar a leitura com um código em Python, por exemplo, e realizar análises complementares e criar gráficos como o observados a seguir.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -148,7 +151,7 @@ Com é possível extrair os dados das tabelas e exportar para arquivos abertos c
 </code></pre></div>
 <p>O gráfico a seguir apresenta a quantidade dos casos de violência doméstica, por natureza jurídica, nos municípios da região do Norte Pioneiro do Estado do Paraná, no período de 01/01/2016 a 31/12/2020.</p>
 <!-- ![Registro de violência doméstica no Norte Pioneiro](../../images/2023/grafico-violencia-domestica-norte-pioneiro.png) -->
-<p><img alt="Registro de violência doméstica no Norte Pioneiro" class="mx-auto img-fluid d-block" src="./grafico-violencia-domestica-norte-pioneiro.png"/></p>
+<p><img alt="Registro de violência doméstica no Norte Pioneiro" class="img-fluid mx-auto d-block" src="./grafico-violencia-domestica-norte-pioneiro.png"/></p>
 <p>No eixo vertical (eixo Y) temos representado a quantidade de casos, enquanto que no eixo horizontal (eixo X) são representados os anos de 2016 à 2020.
 Os municípios de Jacarezinho e Santo Antônio da Platina estão destacados, enquanto os demais municípios do Norte Pioneiro estão representados por linhas cinza-claro.</p>
 <p>Com essa representação é possível observar que o município de Jacarezinho se destaca entre os demais.
@@ -164,49 +167,118 @@ A razão para tanto, pode ser que este é o único município da região que pos
     </section>
   </article>
 </div>
+      </div>
     </main>
 <div class="container-fluid site-footer">
-  <div class="container p-5">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
-        </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">Giliard Godoi | 2025 </span>
+  <div class="container px-5">
+    <footer class="py-3 my-4 border-top">
+      <div class="row justify-content-between py-5">
+        <div class="col-10 col-lg-8 mb-3">
+            <div class="d-flex align-items-center my-3">
+                <a href="/" class="me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
+                  </a>
+                    <span class="ms-2 text-body-secondary">Giliard Godoi | 2025 </span>
+            </div>
+            <p class="text-body-secondary">Desenvolvido com <a class="link-secondary text-decoration-none" href="https://getpelican.com/" target="_blank">Pelican</a> e pensado para compartilhar conhecimento.</p>
+            <ul class="nav justify-content-start list-unstyled mb-3">
+                <li class="ms-0">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="col-6 col-lg-2 mb-3"></div> -->
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Sobre</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link link-secondary text-decoration-none">Sobre</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link link-secondary text-decoration-none">Contato</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link link-secondary text-decoration-none">Publicações</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link link-secondary text-decoration-none">Projetos</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Arquivos</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/authors.html" class="nav-link link-secondary text-decoration-none">Autores</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/archives.html" class="nav-link link-secondary text-decoration-none">Arquivos</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/categories.html" class="nav-link link-secondary text-decoration-none">Categorias</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/tags.html" class="nav-link link-secondary text-decoration-none">Tags</a></li>
+          </ul>
+        </div>
       </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-twitter "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-github "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
-              <span class="fab fa-linkedin-in "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-youtube "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
-              <span class="fa fa-graduation-cap "></span>
-            </a>
-          </li>
-        <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
-      </ul>
+      <!-- <div class="d-flex flex-wrap justify-content-between align-items-center px-3">
+        <div class="col d-flex align-items-center text-body-secondary">
+          <span>Powered by Pelican </span>
+        </div>
+        <div class="col d-flex align-items-center">
+            <ul class="nav justify-content-start list-unstyled ms-auto d-flex">
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+              </ul>
+        </div>
+      </div> -->
     </footer>
   </div>
-  </div>  </body>
+</div>    <button id="btnTopo" class="btn btn-primary fw-bold">
+      <i class="fas fa-arrow-up"></i> <span class="px-1">Topo</span>
+    </button>
+  </body>
 <script src="https://giliardgodoi.github.io/theme/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://giliardgodoi.github.io/theme/js/custom.js"></script>
 </html>

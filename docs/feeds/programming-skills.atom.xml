@@ -172,7 +172,7 @@ Isso se refere ao fato de que pipelines definidos dentro do dvc não podem possu
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;span class="caps"&gt;DVC&lt;/span&gt; Documentation&lt;/strong&gt;. Disponível em &lt;a href="https://dvc.org/doc"&gt;https://dvc.org/doc&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Awesome Pipeline: A curated list of awesome pipeline toolkits&lt;/strong&gt;. Disponível em &lt;a href="https://github.com/pditommaso/awesome-pipeline"&gt;https://github.com/pditommaso/awesome-pipeline&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="programming-skills"></category><category term="dvc"></category></entry><entry><title>Um guia rápido para arquivos de configuração INI com `configparser`</title><link href="https://giliardgodoi.github.io/articles/2024/guia-configparser-python/" rel="alternate"></link><published>2024-05-26T00:00:00-03:00</published><updated>2025-03-04T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2024-05-26:/articles/2024/guia-configparser-python/</id><summary type="html">&lt;p&gt;Conheça as principais funções da&amp;nbsp;biblioteca &lt;code&gt;configparser&lt;/code&gt; para manipular&amp;nbsp;arquivos &lt;code&gt;.ini&lt;/code&gt; no&amp;nbsp;Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Mapa mental das biblioteca configparser" class="mx-auto img-fluid d-block" src="./mind-map-configparser.png"/&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="programming-skills"></category><category term="dvc"></category></entry><entry><title>Um guia rápido para arquivos de configuração INI com `configparser`</title><link href="https://giliardgodoi.github.io/articles/2024/guia-configparser-python/" rel="alternate"></link><published>2024-05-26T00:00:00-03:00</published><updated>2025-03-04T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2024-05-26:/articles/2024/guia-configparser-python/</id><summary type="html">&lt;p&gt;Conheça as principais funções da&amp;nbsp;biblioteca &lt;code&gt;configparser&lt;/code&gt; para manipular&amp;nbsp;arquivos &lt;code&gt;.ini&lt;/code&gt; no&amp;nbsp;Python.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Mapa mental das biblioteca configparser" class="img-fluid mx-auto d-block" src="./mind-map-configparser.png"/&gt;&lt;/p&gt;
 &lt;h2 id="caracterisitcas-dos-arquivos-ini"&gt;Caracterísitcas dos arquivos &lt;code&gt;.ini&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;A extensão &lt;code&gt;.ini&lt;/code&gt; são um formato simples e amplamente utilizados para armazenar configurações de aplicativos. A especificação foi primeiramente projetada para os programas do &lt;a href="https://en.wikipedia.org/wiki/INI_file"&gt;sistema Microsoft Windows&lt;/a&gt;. Contudo, eles acabaram sendo adotados pela comunidade de softwares abertos, onde também podem aparecer sob a extensão &lt;code&gt;.cfg&lt;/code&gt; — embora possam ter alguns detalhes diferentes.&lt;/p&gt;
 &lt;p&gt;Um exemplo de arquivo &lt;code&gt;.ini&lt;/code&gt; seria:&lt;/p&gt;
@@ -352,7 +352,7 @@ E por isso, os valores dos atributos são todos do tipo string.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://docs.python.org/3/library/configparser.html"&gt;Documentação oficial do configparser&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/INI_file"&gt;&lt;span class="caps"&gt;INI&lt;/span&gt; file - Wikipedia&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="programming-skills"></category><category term="config"></category><category term="toml"></category><category term="yaml"></category></entry><entry><title>Diferentes formas de baixar dados da internet com bibliotecas do Python</title><link href="https://giliardgodoi.github.io/articles/2023/download-datasets/" rel="alternate"></link><published>2023-04-13T00:00:00-03:00</published><updated>2023-04-13T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2023-04-13:/articles/2023/download-datasets/</id><summary type="html">&lt;p&gt;Vamos explorar como baixar &lt;em&gt;datasets&lt;/em&gt; da internet com algumas bibliotecas do Python como urllib, requests e até o&amp;nbsp;pandas.&lt;/p&gt;</summary><content type="html">&lt;p&gt;(Re)Lendo o livro &lt;a href="https://www.amazon.com.br/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646"&gt;&lt;em&gt;Hands-On Machine Learning with Scikit-Learn, Keras &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; TensorFlow&lt;/em&gt;&lt;/a&gt; o autor mostra diversas maneiras de baixar &lt;em&gt;datasets&lt;/em&gt; da &lt;em&gt;internet&lt;/em&gt;. Nesse artigo, vou resumir algumas maneiras utilizando as bibliotecas padrão do Python para fazer &lt;em&gt;download&lt;/em&gt; de arquivos compactados, arquivos no formato &lt;em&gt;csv&lt;/em&gt; e &lt;em&gt;json&lt;/em&gt;.&lt;/p&gt;
+&lt;/ol&gt;</content><category term="programming-skills"></category><category term="config"></category><category term="toml"></category><category term="yaml"></category></entry><entry><title>Diferentes formas de baixar dados da internet com bibliotecas do Python</title><link href="https://giliardgodoi.github.io/articles/2023/download-datasets/" rel="alternate"></link><published>2023-04-13T00:00:00-03:00</published><updated>2023-04-13T00:00:00-03:00</updated><author><name>Giliard Godoi</name></author><id>tag:giliardgodoi.github.io,2023-04-13:/articles/2023/download-datasets/</id><summary type="html">&lt;p&gt;Baixando &lt;em&gt;datasets&lt;/em&gt; da internet com as bibliotecas urllib, requests e&amp;nbsp;pandas.&lt;/p&gt;</summary><content type="html">&lt;p&gt;(Re)Lendo o livro &lt;a href="https://www.amazon.com.br/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646"&gt;&lt;em&gt;Hands-On Machine Learning with Scikit-Learn, Keras &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; TensorFlow&lt;/em&gt;&lt;/a&gt; o autor mostra diversas maneiras de baixar &lt;em&gt;datasets&lt;/em&gt; da &lt;em&gt;internet&lt;/em&gt;. Nesse artigo, vou resumir algumas maneiras utilizando as bibliotecas padrão do Python para fazer &lt;em&gt;download&lt;/em&gt; de arquivos compactados, arquivos no formato &lt;em&gt;csv&lt;/em&gt; e &lt;em&gt;json&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id="repositorios-dados"&gt;Repositórios dados&lt;/h2&gt;
 &lt;p&gt;Existem muitos sites que reunem e disponibilizam &lt;em&gt;datasets&lt;/em&gt; de forma pública. Alguns desses repositório, inclusive, disponibilizam dados com a finalidade de incentivar o aprendizado e a prática de &lt;em&gt;machine learning&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Alguns desses repositórios são:&lt;/p&gt;
@@ -701,9 +701,9 @@ python&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id="criando-um-notebook-com-um-kernel-especifico"&gt;Criando um notebook com um kernel específico&lt;/h1&gt;
 &lt;p&gt;Para criar um novo &lt;em&gt;notebook&lt;/em&gt; basta selecionar o kernel desejado no menu &lt;em&gt;new&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="jupyter kernels disponíveis" class="mx-auto img-fluid d-block" src="./jupyter-kernels.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="jupyter kernels disponíveis" class="img-fluid mx-auto d-block" src="./jupyter-kernels.png"/&gt;&lt;/p&gt;
 &lt;p&gt;Para checar a versão do python do kernel selecionado podemos usar tando o &lt;code&gt;sys.version&lt;/code&gt; quanto a função &lt;code&gt;python_version&lt;/code&gt; do módulo &lt;code&gt;platform&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Versão do kernel" class="mx-auto img-fluid d-block" src="./jupyter-kernels-version.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Versão do kernel" class="img-fluid mx-auto d-block" src="./jupyter-kernels-version.png"/&gt;&lt;/p&gt;
 &lt;p&gt;É importante observar que, quando utilizamos o comando &lt;code&gt;!python --version&lt;/code&gt; é como se esse comando fosse jogado para o terminal e recuperasse a versão do python do terminal, isto é, do terminal em que estamos rodando o ambiente &lt;code&gt;base&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Então essa não é a versão do kernel que estamos ativando.&lt;/p&gt;
 &lt;h1 id="listando-os-kernels-disponiveis"&gt;Listando os Kernels disponíveis&lt;/h1&gt;
@@ -943,7 +943,7 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
 &lt;p&gt;Porém, quis o destino (ou o algortimo do Twitter) que eu esbarrasse com essa &lt;em&gt;thread&lt;/em&gt; que faz uma introdução bem legal e com várias imagens ilustrativas.&lt;/p&gt;
 &lt;p&gt;Seria interessante dar uma olhada nessa &lt;em&gt;thread&lt;/em&gt; antes de continuar lendo essa postagem.&lt;/p&gt;
 &lt;script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"&gt;&lt;/script&gt;
-&lt;blockquote class="blockquote twitter-tweet" data-dnt="true" data-lang="en" data-theme="light"&gt;
+&lt;blockquote class="twitter-tweet blockquote" data-dnt="true" data-lang="en" data-theme="light"&gt;
 &lt;p dir="ltr" lang="en"&gt;Ever wondered how a &lt;span class="caps"&gt;QR&lt;/span&gt; code works? &lt;br/&gt;No, me neither but it's low-key fascinating.
     &lt;br/&gt;&lt;br/&gt;(Warning, there is some extremely nerdy s*** here.👇 )
     &lt;a href="https://t.co/SgQJVvhu0q"&gt;pic.twitter.com/SgQJVvhu0q&lt;/a&gt; &lt;/p&gt;— Dan Hollick 🇿🇦 (@DanHollick)
@@ -988,7 +988,7 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;img&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;# &amp;lt;class 'qrcode.image.pil.PilImage'&amp;gt;&lt;/span&gt;
 &lt;span class="n"&gt;img&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_9_1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_9_1.png"/&gt;&lt;/p&gt;
 &lt;p&gt;Observe que alterando o parâmetro &lt;code&gt;error_correction&lt;/code&gt; para &lt;code&gt;qrcode.constants.ERROR_CORRECT_H&lt;/code&gt;altera-se o padrão da imagem. Isso significa também que existe uma maior redundância na codificação de informações que torna o &lt;span class="caps"&gt;QR&lt;/span&gt; code mais robusto a danos ou obstruções que impeçam a leitura dos dados codificados.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;qrcode&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;QRCode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -1005,7 +1005,7 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
 
 &lt;span class="n"&gt;img&lt;/span&gt; &lt;span class="c1"&gt;# &amp;lt;class 'qrcode.image.pil.PilImage'&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_11_1.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_11_1.png"/&gt;&lt;/p&gt;
 &lt;h3 id="customizacao"&gt;Customização&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;qrcodes&lt;/code&gt; oferece possibilidade de customizar as cores do &lt;span class="caps"&gt;QR&lt;/span&gt; code com a máscara &lt;code&gt;SolidFillColorMask&lt;/code&gt;, ou opções de gradiente, além de inserir imagens no &lt;em&gt;background&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Também é possível escolher entre diferentes estilos de formas e desenhos para o &lt;span class="caps"&gt;QR&lt;/span&gt; code.&lt;/p&gt;
@@ -1047,28 +1047,28 @@ Disponível em: &lt;a href="https://docs.getpelican.com/en/latest/"&gt;docs.getp
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RoundedModuleDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_17_0.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_17_0.png"/&gt;&lt;/p&gt;
 &lt;h4 id="circlemoduledrawer"&gt;CircleModuleDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CircleModuleDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_19_0.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_19_0.png"/&gt;&lt;/p&gt;
 &lt;h4 id="gappedsquaremoduledrawer"&gt;GappedSquareModuleDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;GappedSquareModuleDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_21_0.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_21_0.png"/&gt;&lt;/p&gt;
 &lt;h4 id="horizontalbarsdrawer"&gt;HorizontalBarsDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;HorizontalBarsDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_23_0.png"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_23_0.png"/&gt;&lt;/p&gt;
 &lt;h4 id="verticalbarsdrawer"&gt;VerticalBarsDrawer&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;qr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;image_factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;StyledPilImage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;module_drawer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;VerticalBarsDrawer&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
               &lt;span class="n"&gt;color_mask&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;custom_blue_color&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="png" class="mx-auto img-fluid d-block" src="./gerando-qr-codes-com-Python_25_0.png"/&gt;&lt;/p&gt;</content><category term="programming-skills"></category><category term="qrcode"></category></entry></feed>
+&lt;p&gt;&lt;img alt="png" class="img-fluid mx-auto d-block" src="./gerando-qr-codes-com-Python_25_0.png"/&gt;&lt;/p&gt;</content><category term="programming-skills"></category><category term="qrcode"></category></entry></feed>

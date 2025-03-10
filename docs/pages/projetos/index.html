@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
       <div class="container-fluid ">
 
-        <a href="https://giliardgodoi.github.io/" class="navbar-brand">
+        <a href="https://giliardgodoi.github.io/" class="navbar-brand ps-3">
             <img src="/images/logo.png" alt="Giliard Godoi" style="width: 30px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -66,58 +66,180 @@
         </div>
     </div>
 </div>    <main class="container flex-grow-1">
+      <div class="px-5 mx-md-5">
   <article>
     <header>
       <h2>Projetos</h2>
     </header>
     
 
-    <p>Repositórios destaque.</p>
+    <div class="toc">
+<ul>
+<li><a href="#1-classificacao-de-decisoes-juciais-segundo-temas-repetitivos-do-stj-e-stf">1. Classificação de Decisões Juciais segundo Temas Repetitivos do <span class="caps">STJ</span> e <span class="caps">STF</span></a></li>
+<li><a href="#2-operadores-de-cruzamento-para-algoritmos-geneticos-aplicados-ao-problema-da-arvore-de-steiner-em-grafos">2. Operadores de cruzamento para Algoritmos Genéticos aplicados ao Problema da Árvore de Steiner em Grafos</a></li>
+<li><a href="#3-pesquisa-com-redes-corporais-sem-fio-wireless-body-area-networks-wban">3. Pesquisa com Redes Corporais Sem Fio (Wireless Body Area Networks - <span class="caps">WBAN</span>)</a></li>
+</ul>
+</div>
+<h2 id="1-classificacao-de-decisoes-juciais-segundo-temas-repetitivos-do-stj-e-stf">1. Classificação de Decisões Juciais segundo Temas Repetitivos do <span class="caps">STJ</span> e <span class="caps">STF</span></h2>
+<p>Participação como pesquisador voluntário no Projeto de Pesquisa para desenvolvimento de ferramentas baseadas em Inteligência Artifical (<span class="caps">IA</span>) e Aprendizado de Máquina, desenvolvido no âmbito da parceria entre o Instituto de Ciências Matemáticas e de Computação (<span class="caps">ICMC</span>) da Universidade de São Paulo (<span class="caps">USP</span>) e o Tribunal de Justiça do Estado de São Paulo (<span class="caps">TJSP</span>). A participação neste projeto ocorreu entre  <strong>outubro de 2022 a agosto de 2024</strong>.</p>
+<p>As minhas contribuições no projeto foram:</p>
+<ol>
+<li>Análise dos resultados dos experimentos de classificação durante o chamado ‘<em>Desafio de Maio de 2023</em>‘. Foram testadas mais de 800 configurações de modelos de classificação, e os resultados foram consolidados e analisados utilizando a biblioteca <code>pandas</code>, e as bibliotecas <code>matplotlib</code> e <code>seaborn</code> para visualização dos resultados;</li>
+<li>Treinamento de um modelo de Reconhecimento de Entidades Nomeadas (<span class="caps">NER</span>) para identificação de entidades em textos judiciais, utilizando a biblioteca <a href="https://spacy.io/">Spacy</a> e o conjunto de dados <a href="https://github.com/peluz/lener-br">LeNER-Br</a>;</li>
+<li>Anotação de um novo conjunto de Entidades específicas para as necessidades do projeto, utilizando a ferramenta <a href="https://inception-project.github.io/">Inception</a> e treinamento de modelos baseados em <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Redes Neurais Recorrentes <span class="caps">LSTM</span></a> e modelos <em>Transformers</em> como BERTimbau e outros modelos da biblioteca <a href="https://huggingface.co/"><code>Hugging Face</code></a> específicos para o domínio jurídico em Português Brasileiro;</li>
+<li>Desenvolvimento de protótipos de interfaces gráficas para comunicação dos resultados dos diversos modelos de <span class="caps">IA</span> aos usuários clientes. As interfaces foram desenvolvidas utilizando a biblioteca <a href="https://streamlit.io/"><code>streamlit</code></a>. Ver os artigos sobre o <em>LegalSum</em> e <em>LegalClass</em>;</li>
+<li>Refinamento dos <em>workflows</em> de pré-processamento e preparação dos documentos para classificação, utilizando as bibliotecas <code>pandas</code>, <code>nltk</code>, <code>spacy</code>, <code>scikit-learn</code> e <code>re</code> (<em>Regular Expressions</em>) e outras;</li>
+<li>Desenvolvimento de <em>scripts</em> para segmentação dos documentos segundo a estrutura dos acórdãos (voto do relator, relatório, fundamentação, e declaração de voto contrário) e extração de metadados dos documentos contidos no conteúdo dos acórdãos;</li>
+<li>Participação em reuniões de alinhamento com os clientes do projeto, e apresentação dos resultados obtidos durante o desenvolvimento das atividades.</li>
+</ol>
+<h2 id="2-operadores-de-cruzamento-para-algoritmos-geneticos-aplicados-ao-problema-da-arvore-de-steiner-em-grafos">2. Operadores de cruzamento para Algoritmos Genéticos aplicados ao Problema da Árvore de Steiner em Grafos</h2>
+<p>Projeto de pesquisa desenvolvido durante o Mestrado em Informática do Programa de Pós-Graduação Profissional em Informática da Universidade Federal do Paraná (<span class="caps">UFPR</span>), sob a orientação do Prof. Dr. Danilo Sipoli Sanches, <strong>realizado no período de agosto de 2019 a dezembro de 2021</strong>.</p>
+<p>Considerando um grafo não direcionado e ponderado $G(V, E)$, onde $V$ representa o conjunto de vértices e $E$ o conjunto de arestas, e $T \in V$ um subconjunto de $V$ de vértices especiais denominados terminais. O Problema da Árvore de Steiner em Grafos (<em>Steiner Tree Problem in Graphs - <span class="caps">STPG</span></em>) consiste em determinar uma árvore de custo mínimo que conecta todos os vértices de $T$. O <span class="caps">STPG</span> é um problema <span class="caps">NP</span>-difícil, e possui diversas aplicações práticas em redes de comunicação, redes de distribuição de energia, e em problemas de roteamento de veículos.</p>
+<p>A utilização de Algoritmos Evolutivos para esse problema não é tão comum quanto se pode pensar.
+A maioria dos trabalhos na literatura utiliza métodos baseados em programação inteira, métodos exatos, ou heurísticas. A proposta deste projeto foi investigar a utilização de Algoritmos Genéticos para o <span class="caps">STPG</span>, especificamente a adaptação de operadores baseados na partição de grafos como o <a href="https://dl.acm.org/doi/10.1145/1569901.1570026">Partition Crossover (<span class="caps">PX</span>)</a> e o <a href="https://direct.mit.edu/evco/article-abstract/28/2/255/94983/A-New-Generalized-Partition-Crossover-for-the">Generalized Partition Crossover (<span class="caps">GPX</span>)</a> para o <span class="caps">STPG</span>. Esses operadores foram originalmente propostos para o Problema do Caixeiro Viajante, e apresentaram bons resultados em comparação com operadores clássicos da literatura.</p>
+<p>As atividades desenvolvidas durante o projeto foram:</p>
+<ol>
+<li>Revisão bibliográfica sobre o <span class="caps">STPG</span>, incluindo o estudo de heurísticas clássicas e algoritmos evolutivos para o problema;</li>
+<li>Estudo dos operadores de cruzamento <span class="caps">PX</span>, <span class="caps">GPAX</span> e <span class="caps">GPX</span> a partir dos trabalhos de <a href="https://link.springer.com/article/10.1057/jors.1993.69">Tinós et al. (2020)</a>, <a href="https://dl.acm.org/doi/10.1145/2576768.2598245">Tinós et al. (2014)</a> e <a href="https://dl.acm.org/doi/10.1145/1569901.1570026">Whitley et al. (2009)</a>;</li>
+<li>Implementação de um Algoritmo Genético com operadores clássicos para o <span class="caps">STPG</span>, seguindo a descrição das propostas de <a href="https://link.springer.com/article/10.1057/jors.1993.69">Kapsalis, Rayward-Smith and Smith (1993)</a> e <a href="https://doi.org/10.1002/net.3230260403">Esbensen (1995)</a>;</li>
+<li>Implementação de operadores para o <span class="caps">GA</span> baseados em uma versão randômica dos algoritmos de Prim e Kruskal, baseado na descrição de <a href="https://ieeexplore.ieee.org/document/1206445">Raidl and Julstrom (2003)</a>;</li>
+</ol>
+<p>O repositório <a href="https://github.com/GiliardGodoi/ppgi-stpg-gpx">github/ppgi-stpg-gpx</a> contém o código fonte dos operadores de cruzamento e dos experimentos conduzidos. Os resultados principais foram reportados no artigo <a href="https://link.springer.com/chapter/10.1007/978-3-030-91702-9_8"><em>A Graph-Based Crossover and Soft-Repair Operators for the Steiner Tree Problem</em></a> apresentado no <span class="caps">BRACIS</span> 2021.</p>
+<p>O repositório <a href="https://github.com/GiliardGodoi/xsteiner">github/xsteiner</a> contém uma refatoração do código com a inclusão de novos operadores, melhor organização dos módulos e outras mudanças.</p>
+<p>Durante a realização desse projeto considero que foram trabalhadas as seguintes competências:</p>
+<ol>
+<li>Estudo de algoritmos avançados e Estrutura de Dados;</li>
+<li>Desenho e condução de experimentos computacionais;</li>
+<li>Análise e visualização de resultados experimentais;</li>
+<li>Escrita e apresentação de artigos científicos;</li>
+<li>Desenvolvimento de software.</li>
+</ol>
+<h2 id="3-pesquisa-com-redes-corporais-sem-fio-wireless-body-area-networks-wban">3. Pesquisa com Redes Corporais Sem Fio (<em>Wireless Body Area Networks - <span class="caps">WBAN</span></em>)</h2>
+<p>Estágio curricular obrigatório realizado no Laboratório de Computação de Alto Desempenho (LeCAD) na Universidade Tecnológica Federal do Paraná (<span class="caps">UTFPR</span>), Campus de Cornélio Procópio (<span class="caps">PR</span>), sob a supervisão do Prof. Dr. Rogério Santos Pozza. O estágio foi realizado no período de <strong>abril a junho de 2018</strong>. Após esse período, as pesquisas continuaram até <strong>dezembro de 2018</strong> para a conclusão do trabalho de conclusão de curso.</p>
+<p>As atividades envolveram:</p>
+<ol>
+<li>Pesquisa na área de Redes Corporais Sem Fios (Wireless Body Area Networks - <span class="caps">WBAN</span>);</li>
+<li>Estudo de estratégias para controle da potência de transmissão em nós sensores visando o melhor uso da energia disponível;</li>
+<li>Simulação de uma rede <span class="caps">WBAN</span> utilizando o software Castalia;</li>
+<li>Implementação de um algoritmo de controle baseado em uma simples regra probabilística;</li>
+<li>Utilização de uma abordagem Cross-Layer, em que a comunicação entre camadas não adjacentes do modelo <span class="caps">OSI</span> é explorada;</li>
+<li>As pesquisas do estágio foram estendidas para um trabalho de conclusão de cursos, um artigo apresentado em um simpósio nacional, e alguns resultados foram mencionados na tese de doutorado do orientador;</li>
+<li>Os resultados mostraram que as a abordagem Cross-Layer e o controle estatístico da potência de transmissão são alternativas viáveis para reduzir o consumo energético enquanto mantém a taxa de pacotes enviados e recebidos na rede.</li>
+</ol>
 
   </article>
+      </div>
     </main>
 <div class="container-fluid site-footer">
-  <div class="container p-5">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
-        </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">Giliard Godoi | 2025 </span>
+  <div class="container px-5">
+    <footer class="py-3 my-4 border-top">
+      <div class="row justify-content-between py-5">
+        <div class="col-10 col-lg-8 mb-3">
+            <div class="d-flex align-items-center my-3">
+                <a href="/" class="me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <img src="/images/logo.png" alt="Avatar Logo" style="width:40px;">
+                  </a>
+                    <span class="ms-2 text-body-secondary">Giliard Godoi | 2025 </span>
+            </div>
+            <p class="text-body-secondary">Desenvolvido com <a class="link-secondary text-decoration-none" href="https://getpelican.com/" target="_blank">Pelican</a> e pensado para compartilhar conhecimento.</p>
+            <ul class="nav justify-content-start list-unstyled mb-3">
+                <li class="ms-0">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="col-6 col-lg-2 mb-3"></div> -->
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Sobre</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/sobre/" class="nav-link link-secondary text-decoration-none">Sobre</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/contato/" class="nav-link link-secondary text-decoration-none">Contato</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/publicacoes/" class="nav-link link-secondary text-decoration-none">Publicações</a></li>
+              <li class="nav-item"><a href="https://giliardgodoi.github.io/pages/projetos/" class="nav-link link-secondary text-decoration-none">Projetos</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-1 mb-3">
+          <h5>Arquivos</h5>
+          <ul class="nav flex-column pb-3 mb-3">
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/authors.html" class="nav-link link-secondary text-decoration-none">Autores</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/archives.html" class="nav-link link-secondary text-decoration-none">Arquivos</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/categories.html" class="nav-link link-secondary text-decoration-none">Categorias</a></li>
+            <li class="nav-item"><a href="https://giliardgodoi.github.io/tags.html" class="nav-link link-secondary text-decoration-none">Tags</a></li>
+          </ul>
+        </div>
       </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex fs-4">
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-twitter "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-github "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24" height="24">
-              <span class="fab fa-linkedin-in "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24" height="24">
-              <span class="fab fa-youtube "></span>
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24" height="24">
-              <span class="fa fa-graduation-cap "></span>
-            </a>
-          </li>
-        <!-- <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
-      </ul>
+      <!-- <div class="d-flex flex-wrap justify-content-between align-items-center px-3">
+        <div class="col d-flex align-items-center text-body-secondary">
+          <span>Powered by Pelican </span>
+        </div>
+        <div class="col d-flex align-items-center">
+            <ul class="nav justify-content-start list-unstyled ms-auto d-flex">
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://twitter.com/giliardgodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-twitter "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://github.com/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-github "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.linkedin.com/in/giliardgodoi/" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-linkedin-in "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="https://www.youtube.com/user/GiliardGodoi" target="_blank" width="24"
+                    height="24">
+                    <span class="fab fa-youtube "></span>
+                  </a>
+                </li>
+                <li class="ms-3">
+                  <a class="text-decoration-none link-secondary" href="http://lattes.cnpq.br/3223316854344499" target="_blank" width="24"
+                    height="24">
+                    <span class="fa fa-graduation-cap "></span>
+                  </a>
+                </li>
+              </ul>
+        </div>
+      </div> -->
     </footer>
   </div>
-  </div>  </body>
+</div>    <button id="btnTopo" class="btn btn-primary fw-bold">
+      <i class="fas fa-arrow-up"></i> <span class="px-1">Topo</span>
+    </button>
+  </body>
 <script src="https://giliardgodoi.github.io/theme/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://giliardgodoi.github.io/theme/js/custom.js"></script>
 </html>
