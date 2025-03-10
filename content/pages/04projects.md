@@ -3,9 +3,9 @@ Title: Projetos
 
 [TOC]
 
-## [2023-2024] Classificação de Decisões Juciais segundo Temas Repetitivos do STJ e STF
+## 1. Classificação de Decisões Juciais segundo Temas Repetitivos do STJ e STF
 
-Participação como pesquisador voluntário no Projeto de Pesquisa para desenvolvimento de ferramentas baseadas em Inteligência Artifical (IA) e Aprendizado de Máquina, desenvolvido no âmbito da parceria entre o Instituto de Ciências Matemáticas e de Computação (ICMC) da Universidade de São Paulo (USP) e o Tribunal de Justiça do Estado de São Paulo (TJSP). A participação neste projeto se deu entre os meses de outubro de 2022 a agosto de 2024.
+Participação como pesquisador voluntário no Projeto de Pesquisa para desenvolvimento de ferramentas baseadas em Inteligência Artifical (IA) e Aprendizado de Máquina, desenvolvido no âmbito da parceria entre o Instituto de Ciências Matemáticas e de Computação (ICMC) da Universidade de São Paulo (USP) e o Tribunal de Justiça do Estado de São Paulo (TJSP). A participação neste projeto ocorreu entre  **outubro de 2022 a agosto de 2024**.
 
 As minhas contribuições no projeto foram:
 
@@ -18,9 +18,9 @@ As minhas contribuições no projeto foram:
 7. Participação em reuniões de alinhamento com os clientes do projeto, e apresentação dos resultados obtidos durante o desenvolvimento das atividades.
 
 
-## [2019-2021] Operadores de cruzamento para Algoritmos Genéticos aplicados ao Problema da Árvore de Steiner em Grafos
+## 2. Operadores de cruzamento para Algoritmos Genéticos aplicados ao Problema da Árvore de Steiner em Grafos
 
-Projeto de pesquisa desenvolvido durante o Mestrado em Informática do Programa de Pós-Graduação Profissional em Informática da Universidade Federal do Paraná (UFPR), sob a orientação do Prof. Dr. Danilo Sipoli Sanches, realizado no período de agosto de 2019 a dezembro de 2021.
+Projeto de pesquisa desenvolvido durante o Mestrado em Informática do Programa de Pós-Graduação Profissional em Informática da Universidade Federal do Paraná (UFPR), sob a orientação do Prof. Dr. Danilo Sipoli Sanches, **realizado no período de agosto de 2019 a dezembro de 2021**.
 
 Considerando um grafo não direcionado e ponderado $G(V, E)$, onde $V$ representa o conjunto de vértices e $E$ o conjunto de arestas, e $T \in V$ um subconjunto de $V$ de vértices especiais denominados terminais. O Problema da Árvore de Steiner em Grafos (*Steiner Tree Problem in Graphs - STPG*) consiste em determinar uma árvore de custo mínimo que conecta todos os vértices de $T$. O STPG é um problema NP-difícil, e possui diversas aplicações práticas em redes de comunicação, redes de distribuição de energia, e em problemas de roteamento de veículos.
 
@@ -46,9 +46,9 @@ Durante a realização desse projeto considero que foram trabalhadas as seguinte
 4. Escrita e apresentação de artigos científicos;
 5. Desenvolvimento de software.
 
-## [2018-2018] Pesquisa com Redes Corporais Sem Fio (*Wireless Body Area Networks - WBAN*)
+## 3. Pesquisa com Redes Corporais Sem Fio (*Wireless Body Area Networks - WBAN*)
 
-Estágio curricular obrigatório realizado no Laboratório de Computação de Alto Desempenho (LeCAD) na Universidade Tecnológica Federal do Paraná (UTFPR), Campus de Cornélio Procópio (PR), sob a supervisão do Prof. Dr. Rogério Santos Pozza. O estágio foi realizado no período de abril a junho de 2018.
+Estágio curricular obrigatório realizado no Laboratório de Computação de Alto Desempenho (LeCAD) na Universidade Tecnológica Federal do Paraná (UTFPR), Campus de Cornélio Procópio (PR), sob a supervisão do Prof. Dr. Rogério Santos Pozza. O estágio foi realizado no período de **abril a junho de 2018**. Após esse período, as pesquisas continuaram até **dezembro de 2018** para a conclusão do trabalho de conclusão de curso.
 
 As atividades envolveram:
 

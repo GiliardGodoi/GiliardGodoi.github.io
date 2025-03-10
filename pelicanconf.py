@@ -139,7 +139,7 @@ MARKDOWN = {
         "markdown.extensions.meta": {},
         # This is for enabling the TOC generation
         "markdown.extensions.toc": {
-                                "title": "Índice",
+                                "title": "",
                                 # "toc_class" : "list-unstyled",
                             },
         "markdown.extensions.footnotes" : {
