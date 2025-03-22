@@ -16,8 +16,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Configurar locale
+        run: sudo locale-gen pt_BR.UTF-8
+
       - name: Checkout do código-fonte
         uses: actions/checkout@v4
         with:
