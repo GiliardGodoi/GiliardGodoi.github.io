@@ -6,6 +6,8 @@ authors: Giliard Godoi
 category: lectures
 tags: engitec, ner
 
+![Exemplo NER](exemplo-ner.png)
+
 
 No dia 05 de junho de 2024 eu fiz uma apresentação remota no 14º Encontro do Grupo Interlegis de Tecnologia (EnGITEC).
 
