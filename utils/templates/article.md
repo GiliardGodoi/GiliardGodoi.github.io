@@ -1,7 +1,7 @@
-title: Um post teste
-summary: Conheça as principais funções da biblioteca `configparser` para manipular arquivos `.ini` no Python.
+title: Título padrão
+summary: Descrição do conteúdo
 date: 2025-02-28
-slug: teste
+slug: caminho-para-postagem
 status: draft
 authors: Giliard Godoi
 category: programming-skills
