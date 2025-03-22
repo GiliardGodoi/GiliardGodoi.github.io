@@ -99,7 +99,6 @@ EXTRA_PATH_METADATA = {
     "extras/mstile-150x150.png" : {"path" : "mstile-150x150.png"},
     "extras/safari-pinned-tab.svg" : {"path" : "safari-pinned-tab.svg"},
     "extras/site.webmanifest" : {"path" : "site.webmanifest"},
-    "extras/README.md" : {"path" : "README.md"},
     "extras/.nojekyll" : {"path" : '.nojekyll'}
 }
 
