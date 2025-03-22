@@ -3,7 +3,7 @@ name: Deploy Pelican to GitHub Pages
 on:
   push:
     branches:
-      - main  # Substitua pela branch onde você mantém o conteúdo-fonte do site
+      - publication  # Substitua pela branch onde você mantém o conteúdo-fonte do site
 
 jobs:
   build:
