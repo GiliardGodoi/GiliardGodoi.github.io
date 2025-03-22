@@ -2,7 +2,7 @@ from pathlib import Path
 
 AUTHOR = 'Giliard Godoi'
 SITENAME = 'Giliard Godoi'
-SITEURL = ""
+SITEURL = "https://giliardgodoi.github.io"
 SITETITLE = 'Giliard Godoi'
 SITESUBTITLE = "Pesquisador. Aluno de Doutorado. Processamento de Língua Natural. Inteligência Artificial. Aprendizado de Máquina. Análise e Visualização de Dados. Programador Python."
 
@@ -15,6 +15,7 @@ PATH = "content"
 
 TIMEZONE = 'America/Sao_Paulo'
 DEFAULT_LANG = 'pt'
+DEFAULT_DATE_FORMAT = "%d de %B de %Y"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
