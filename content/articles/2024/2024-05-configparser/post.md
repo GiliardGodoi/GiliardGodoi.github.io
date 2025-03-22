@@ -1,4 +1,4 @@
-title: Um guia rápido para arquivos de configuração INI com `configparser`
+title: Um guia rápido para arquivos de configuração .ini com configparser
 summary: Conheça as principais funções da biblioteca `configparser` para manipular arquivos `.ini` no Python.
 date: 2024-05-26
 modified: 2025-03-04
