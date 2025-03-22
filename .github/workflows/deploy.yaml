@@ -5,6 +5,14 @@ on:
     branches:
       - pelican-2025  # Substitua pela branch onde você mantém o conteúdo-fonte do site
 
+  # Permite rodar o deploy manualmente
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,6 +38,23 @@ jobs:
         run: |
           pelican content -o output -s pelicanconf.py
 
-      - name: Publicar no GitHub Pages
-        run: |
-          ghp-import output -b gh-pages -p
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload dos arquivos para GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: output  # Diretório onde o Pelican gera o site estático
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
