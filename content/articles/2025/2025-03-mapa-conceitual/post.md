@@ -56,6 +56,8 @@ Algumas ferramentas que eu utilizo ou já utilizei para construir mapas mentais 
     </figcaption>
 </figure>
 
+Esta postagem foi motivada por uma resenha do texto de Anastasiou e Alves (2007) feita para a disciplina SMA5839 Preparação Pedagógica, oferecida no Programa de Pós-graduação em Ciência da Computação e Matemática Computacional, do ICMC. Uma cópia da resenha está disponível pelo seguinte link: [resenha_mapas_conceituais.pdf]({static}/pdfs/resenha_mapas_conceituais.pdf)
+
 ## Referências
 
 

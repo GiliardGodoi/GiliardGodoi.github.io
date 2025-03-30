@@ -20,7 +20,7 @@ As minhas contribuições no projeto foram:
 
 ## 2. Operadores de cruzamento para Algoritmos Genéticos aplicados ao Problema da Árvore de Steiner em Grafos
 
-Projeto de pesquisa desenvolvido durante o Mestrado em Informática do Programa de Pós-Graduação Profissional em Informática da Universidade Federal do Paraná (UFPR), sob a orientação do Prof. Dr. Danilo Sipoli Sanches, **realizado no período de agosto de 2019 a dezembro de 2021**.
+Projeto de pesquisa desenvolvido durante o Mestrado em Informática do Programa de Pós-Graduação Profissional em Informática da Universidade Tecnológica Federal do Paraná (UTFPR), sob a orientação do Prof. Dr. Danilo Sipoli Sanches, *realizado no período de agosto de 2019 a dezembro de 2021*.
 
 Considerando um grafo não direcionado e ponderado $G(V, E)$, onde $V$ representa o conjunto de vértices e $E$ o conjunto de arestas, e $T \in V$ um subconjunto de $V$ de vértices especiais denominados terminais. O Problema da Árvore de Steiner em Grafos (*Steiner Tree Problem in Graphs - STPG*) consiste em determinar uma árvore de custo mínimo que conecta todos os vértices de $T$. O STPG é um problema NP-difícil, e possui diversas aplicações práticas em redes de comunicação, redes de distribuição de energia, e em problemas de roteamento de veículos.
 
@@ -37,6 +37,8 @@ As atividades desenvolvidas durante o projeto foram:
 O repositório [github/ppgi-stpg-gpx](https://github.com/GiliardGodoi/ppgi-stpg-gpx) contém o código fonte dos operadores de cruzamento e dos experimentos conduzidos. Os resultados principais foram reportados no artigo [*A Graph-Based Crossover and Soft-Repair Operators for the Steiner Tree Problem*](https://link.springer.com/chapter/10.1007/978-3-030-91702-9_8) apresentado no BRACIS 2021.
 
 O repositório [github/xsteiner](https://github.com/GiliardGodoi/xsteiner) contém uma refatoração do código com a inclusão de novos operadores, melhor organização dos módulos e outras mudanças.
+
+O arquivo da dissertação pode ser encontrada no repositório da Universidade, [através desse link](https://repositorio.utfpr.edu.br/jspui/handle/1/30181).
 
 Durante a realização desse projeto considero que foram trabalhadas as seguintes competências:
 
