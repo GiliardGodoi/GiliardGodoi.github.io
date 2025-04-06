@@ -63,6 +63,8 @@ git submodule update --init --recursive
 
 O tema utilizado [`pelican-minimum`](https://github.com/GiliardGodoi/pelican-minimum) é uma versão customizada e pessoal. O tema utiliza o framework CSS [Bootstrap](https://getbootstrap.com/) (versão 5) e os ícones [Font Awesome](https://fontawesome.com/) como dependência.
 
+A imagem da capa foi disponibilizada para uso livre por [Tom Hermans](https://unsplash.com/pt-br/@tomhermans) no [Unsplash](https://unsplash.com/pt-br/fotografias/reservar-lote-na-mesa-9BoqXzEeQqM).
+
 ## Detalhes
 
 O ícone que aparece na guia do navegador foi criado utilizando o site [favicon.io](https://favicon.io/favicon-generator/). O ícone é uma letra `G` estilizada utilizando a fonte `Playwrite BE VLG` e a cor *Laranja Queimado* (`#FF6F3C`). Os arquivos gerados foram salvos na pasta `content/extras`. Os arquivos devem ser declarados na variável `EXTRA_PATH_METADATA` do arquivo `pelicanconf.py` indicando a origem e o destino dos arquivos.
