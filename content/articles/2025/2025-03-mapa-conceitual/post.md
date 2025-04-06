@@ -60,30 +60,28 @@ Esta postagem foi motivada por uma resenha do texto de Anastasiou e Alves (2007)
 
 ## Referências
 
+Anastasiou, L. G. C., & Alves, L. P. (2007). **Processos de ensinagem na universidade: pressupostos para as estratégias de trabalho em aula**. Joinville: Univille.
 
+**Mapa conceitual**, Wikipedia. Disponível em: [https://pt.wikipedia.org/wiki/Mapa\_conceitual](https://pt.wikipedia.org/wiki/Mapa_conceitual).
 
-\[1\] Anastasiou, L. G. C., & Alves, L. P. (2007). **Processos de ensinagem na universidade: pressupostos para as estratégias de trabalho em aula**. Joinville: Univille.
+**Teoria da Aprendizagem Significativa de David Ausubel**, Ensinar História. Disponível em: [https://ensinarhistoria.com.br/teoria-da-aprendizagem-significativa-de-david-ausubel/](https://ensinarhistoria.com.br/teoria-da-aprendizagem-significativa-de-david-ausubel/).
 
-\[2\] **Mapa conceitual**, Wikipedia. Disponível em: [https://pt.wikipedia.org/wiki/Mapa\_conceitual](https://pt.wikipedia.org/wiki/Mapa_conceitual).
+**Mapa mental**, Wikipedia. Disponível em: [https://pt.wikipedia.org/wiki/Mapa\_mental](https://pt.wikipedia.org/wiki/Mapa_mental).
 
-\[3\] **Teoria da Aprendizagem Significativa de David Ausubel**, Ensinar História. Disponível em: [https://ensinarhistoria.com.br/teoria-da-aprendizagem-significativa-de-david-ausubel/](https://ensinarhistoria.com.br/teoria-da-aprendizagem-significativa-de-david-ausubel/).
+**Um guia rápido para arquivos de configuração .ini com `configparser`**. Disponível em: [https://giliardgodoi.github.io/articles/2024/guia-configparser-python/](https://giliardgodoi.github.io/articles/2024/guia-configparser-python/).
 
-\[4\] **Mapa mental**, Wikipedia. Disponível em: [https://pt.wikipedia.org/wiki/Mapa\_mental](https://pt.wikipedia.org/wiki/Mapa_mental).
+**MermaidJS Documentation**, MermaidJS. Disponível em: [https://mermaid.js.org](https://mermaid.js.org).
 
-\[5\] **Um guia rápido para arquivos de configuração .ini com `configparser`**. Disponível em: [https://giliardgodoi.github.io/articles/2024/guia-configparser-python/](https://giliardgodoi.github.io/articles/2024/guia-configparser-python/).
+**Bokeh: data visualization**, Bokeh. Disponível em: [https://bokeh.org/](https://bokeh.org/).
 
-\[6\] **MermaidJS Documentation**, MermaidJS. Disponível em: [https://mermaid.js.org](https://mermaid.js.org).
+**Mermaid Live Editor**, MermaidJS. Disponível em: [https://mermaid.live/](https://mermaid.live/).
 
-\[7\] **Bokeh: data visualization**, Bokeh. Disponível em: [https://bokeh.org/](https://bokeh.org/).
+**GoConqr**, Disponível em: [https://www.goconqr.com/](https://www.goconqr.com/).
 
-\[8\] **Mermaid Live Editor**, MermaidJS. Disponível em: [https://mermaid.live/](https://mermaid.live/).
+**Coggle**, Disponível em: [http://Coggle.it](http://Coggle.it).
 
-\[9\] **GoConqr**, Disponível em: [https://www.goconqr.com/](https://www.goconqr.com/).
+**Excalidraw**, Disponível em: [https://excalidraw.com/](https://excalidraw.com/).
 
-\[10\] **Coggle**, Disponível em: [http://Coggle.it](http://Coggle.it).
-
-\[11\] **Excalidraw**, Disponível em: [https://excalidraw.com/](https://excalidraw.com/).
-
-\[12\] **Miro**, Disponível em: [http://Miro.com](http://Miro.com).
+**Miro**, Disponível em: [http://Miro.com](http://Miro.com).
 
 
