@@ -6,7 +6,7 @@ Uma relação das minhas publicações também podem ser encontradas no meu [Cur
 
 ## 2025
 
-**GODOI, G. Almeida de**; RIVOLLI, A.; LOPES FREIRE, D.; SOUZA FERNANDES PEREIRA, F.; REGINA VENTURA, N.; MARINO GONÇALVES DE ALMEIDA, A.; PAULO FAINA GARCIA, L.; DE SOUZA DIAS, M.; CARLOS PONCE DE LEON FERREIRA DE CARVALHO, A. [Assessing rule-based document segmentation and word normalization for legal ruling classification](https://proceedings.open.tudelft.nl/DGO2025/article/view/948). Conference on Digital Government Research, [S. l.], v. 1, 2025. DOI: 10.59490/dgo.2025.948.
+**GODOI, G. Almeida de**; RIVOLLI, A.; LOPES FREIRE, D.; SOUZA FERNANDES PEREIRA, F.; REGINA VENTURA, N.; MARINO GONÇALVES DE ALMEIDA, A.; PAULO FAINA GARCIA, L.; DE SOUZA DIAS, M.; CARLOS PONCE DE LEON FERREIRA DE CARVALHO, A. [**Assessing rule-based document segmentation and word normalization for legal ruling classification**](https://proceedings.open.tudelft.nl/DGO2025/article/view/948). Conference on Digital Government Research, [S. l.], v. 1, 2025. DOI: 10.59490/dgo.2025.948.
 
 ## 2024
 
