@@ -3,7 +3,7 @@ summary: Slides e código do projeto apresentado no 14º Encontro do Grupo Inter
 date: 2024-06-05
 slug: participacao-14-engitec
 authors: Giliard Godoi
-category: lectures
+category: presentations
 tags: engitec, ner
 
 ![Exemplo NER](exemplo-ner.png)
