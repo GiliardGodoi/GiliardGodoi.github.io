@@ -6,6 +6,13 @@ slug: digital-governement-research-conference
 category: presentations
 tags: digital governement
 
+<figure id="fig-01">
+    <img src="image.png" alt="Imagem de Divulgação." style="max-height: 400px;">
+    <figcaption align="center">
+        <em>Vista da Orla do Guaíba e Usina do Gasômetro. Porto Alegre, Rio Grande do Sul</em>
+    </figcaption>
+</figure>
+
 Participar pela primeira vez do [Annual International Conference on Digital Government Research (DGO 2025\)](https://dgsociety.org/dgo-2025/) foi uma experiência verdadeiramente marcante. O evento aconteceu entre os dias 09 e 12 de junho, em Porto Alegre (RS) com todo um significado especial por ser a primeira edição realizada na América do Sul.
 
 Ao falarmos sobre os recentes avanços tecnológicos, é comum que sentimentos ambíguos surjam. Primeiro, o encantamento diante das novas possibilidades; depois, as preocupações sobre os riscos e impactos negativos. As redes sociais são um exemplo claro: aproxima pessoas distantes, mas também se tornaram terreno fértil para a disseminação de desinformação.
