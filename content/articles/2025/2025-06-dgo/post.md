@@ -15,7 +15,7 @@ tags: digital governement
 
 Participar pela primeira vez do [Annual International Conference on Digital Government Research (DGO 2025\)](https://dgsociety.org/dgo-2025/) foi uma experiência verdadeiramente marcante. O evento aconteceu entre os dias 09 e 12 de junho, em Porto Alegre (RS) com todo um significado especial por ser a primeira edição realizada na América do Sul.
 
-Ao falarmos sobre os recentes avanços tecnológicos, é comum que sentimentos ambíguos surjam. Primeiro, o encantamento diante das novas possibilidades; depois, as preocupações sobre os riscos e impactos negativos. As redes sociais são um exemplo claro: aproxima pessoas distantes, mas também se tornaram terreno fértil para a disseminação de desinformação.
+Ao falarmos sobre os recentes avanços tecnológicos, é comum que sentimentos ambíguos surjam. Primeiro, o encantamento diante das novas possibilidades; depois, as preocupações sobre os riscos e impactos negativos. As redes sociais são um exemplo disso: se por um lado essas redes aproximam pessoas distantes, por outro elas se tornaram terreno fértil para a disseminação de desinformação e notícias falsas (*fake news*).
 
 O mesmo vale para as tecnologias de Inteligência Artificial Generativa. Essas IAs, capazes de imitar a escrita e o raciocínio humano ou gerar imagens impressionantes, expandem nossa criatividade, mas também agravam o problema da desinformação, levantando dúvidas sobre nossa capacidade de distinguir o que é real do que é artificial.
 
