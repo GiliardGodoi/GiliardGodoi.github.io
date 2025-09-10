@@ -6,6 +6,14 @@ authors: Giliard Godoi
 category: data-visualization
 tags: matplotlib, seaborn, tutorial
 
+<span style="font-style: italic; color: #666666;">
+Importante! O seguinte tutorial foi feito em meados de 2023 juntamente com o texto sobre [Análise dos casos de feminicídio no Norte Pioneiro](https://giliardgodoi.github.io/articles/2023/exemplo-analise-dados-violencia-domestica/). É claro, atualmente esse tipo de tutorial seira dispensável com a presença de tantas IAs Generativas melhor orientada aos interesses do indivíduo.
+</span>
+
+<div style="text-align:center; margin: 20px 0; color: #aaa;">
+   ❧ ❧ ❧
+</div>
+
 Neste tutorial vamos criar um gráfico de barras para as vendas de um produto A entre os anos de 2017 a 2021. A dificuldade aqui é alinhar o texto do valor da venda e a barra do gráfico para um determinado ano.
 
 Apesar de ser uma tarefa simples, esse é um bom exemplo de como eu abordo a criação de uma visualização de dados, através de um desenvolvimento iterativo.
